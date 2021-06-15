@@ -1,3 +1,38 @@
+# FERIA D'ART
+Group project for the website of a non-profit art promotion association located in Brussels
+
+## FERIA D'ART : Contenu attendu pour le site
+
+### ACCUEIL => NEWS => NOUVEL ARTICLE - NOUVEL EVENT
+
+La page d'accueil sera une page d'actualité.
+Elles souhaitent un style **professionel mais festif**
+
+### QUI SOMMES-NOUS 
+
+Qui Sommes Nous ? Se réfère au projet principalement
+
+### ARTICLES
+
+### EVENEMENTS / EDITIONS => INSCRIPTION
+
+### GALERIES => VIDEOS / PHOTOS
+
+### LIVRE D'OR
+
+### CONTACT
+
+### LINK SOCIAL NETWORK / PARTNERS
+
+### BACK OFFICE => + DB pour LIVRE D'OR
+
+Il ne sera pas possible de faire un livre d'or avec des images que les utilisateurs peuvent dessiner, comme demandé par le client. Utilisation trop importante de données.
+
+Le logo reste d'actualité, les couleur jaune et mauve peuvent être présentent sur le site, voir où, comment...
+Le style des années 1990 (décennie de la naissance de chacune des collaboratrices) peut être une idée pour le design du site, voir ce que ça peut donner
+
+Association créée en Janvier 2020
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
 
 <p align="center">
