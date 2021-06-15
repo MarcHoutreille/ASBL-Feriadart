@@ -7,6 +7,15 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
+## How to install in your computer through Linux Terminal
+1. clone the repo to your computer
+2. $ cd ASBL-Feriadart
+3. $ composer install
+4. $ npm install
+5. $ cp .env.example .env
+6. $ php artisan key:generate
+7. $ npm run dev
+8. $ php artisan serve
 ## About Laravel
 
 Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
