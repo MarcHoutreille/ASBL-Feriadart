@@ -49,8 +49,9 @@ Association créée en Janvier 2020
 4. $ npm install
 5. $ cp .env.example .env
 6. $ php artisan key:generate
-7. $ npm run dev
-8. $ php artisan serve
+7. $ php artisan serve
+
+
 ## About Laravel
 
 Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
