@@ -2,7 +2,16 @@
 
 use Illuminate\Support\Facades\Route;
 
-use App\Http\Controllers\PagesController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\AboutController;
+use App\Http\Controllers\ContactController;
+use App\Http\Controllers\GalleryController;
+use App\Http\Controllers\EventsController;
+use App\Http\Controllers\ArticlesController;
+use App\Http\Controllers\GuestbookController;
+use App\Http\Controllers\BackofficeController;
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -16,8 +25,17 @@ use App\Http\Controllers\PagesController;
 */
 
 
-Route::get('/', [PagesController::class, 'index']); 
-Route::get('/about', [PagesController::class, 'about']); 
-Route::get('/contact', [PagesController::class, 'contact']); 
+Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('/about', [AboutController::class, 'index'])->name('about');
+Route::get('/contact', [ContactController::class, 'index'])->name('contact');
+
+Route::resource('/articles', ArticlesController::class);
+Route::resource('/events', EventsController::class);
+Route::resource('/gallery', GalleryController::class);
+Route::resource('/guestbook', GalleryController::class);
+Route::resource('/backoffice', BackofficeController::class);
+
+
+
 
 
