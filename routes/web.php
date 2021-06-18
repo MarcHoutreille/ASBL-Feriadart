@@ -10,8 +10,7 @@ use App\Http\Controllers\EventsController;
 use App\Http\Controllers\ArticlesController;
 use App\Http\Controllers\GuestbookController;
 use App\Http\Controllers\BackofficeController;
-
-
+use App\Http\Controllers\DashboardController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,7 +23,6 @@ use App\Http\Controllers\BackofficeController;
 |
 */
 
-
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/about', [AboutController::class, 'index'])->name('about');
 Route::get('/contact', [ContactController::class, 'index'])->name('contact');
@@ -35,7 +33,4 @@ Route::resource('/gallery', GalleryController::class);
 Route::resource('/guestbook', GuestbookController::class);
 Route::resource('/backoffice', BackofficeController::class);
 
-
-
-
-
+require __DIR__.'/auth.php';
