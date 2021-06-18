@@ -13,30 +13,33 @@
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-nav-link :href="route('backoffice.index')" :active="request()->routeIs('backoffice.index')">
-                        {{ __('BackOffice') }}
+                        {{ __('Backoffice') }}
                     </x-nav-link>
-                    <x-nav-link :href="route('backofficeartistsvideos.index')" :active="request()->routeIs('backofficeartistsvideos.index')">
-                        {{ __('ArtistsVideos') }}
+                    <x-nav-link :href="route('articles.index')" :active="request()->routeIs('articles.index')">
+                        {{ __('Articles') }}
                     </x-nav-link>
-                    <x-nav-link :href="route('backofficeartistspictures.index')" :active="request()->routeIs('backofficeartistspictures.index')">
-                        {{ __('ArtistsPictures') }}
-                    </x-nav-link>
-                    <x-nav-link :href="route('backofficeevents.index')" :active="request()->routeIs('backofficeevents.index')">
+                    <x-nav-link :href="route('events.index')" :active="request()->routeIs('events.index')">
                         {{ __('Events') }}
                     </x-nav-link>
-                    <x-nav-link :href="route('backofficeeventsvideos.index')" :active="request()->routeIs('backofficeeventsvideos.index')">
-                        {{ __('EventsVideos') }}
+                    <x-nav-link :href="route('eventsInscriptions.index')" :active="request()->routeIs('eventsInscriptions.index')">
+                        {{ __('Events Inscriptions') }}
                     </x-nav-link>
-                    <x-nav-link :href="route('backofficeeventspictures.index')" :active="request()->routeIs('backofficeeventspictures.index')">
-                        {{ __('EventsPictures') }}
+                    <x-nav-link :href="route('eventsPictures.index')" :active="request()->routeIs('eventsPictures.index')">
+                        {{ __('Events Pictures') }}
                     </x-nav-link>
-                    <x-nav-link :href="route('backofficeeventsinscriptions.index')" :active="request()->routeIs('backofficeeventsinscriptions.index')">
-                        {{ __('EventsInscriptions') }}
+                    <x-nav-link :href="route('eventsVideos.index')" :active="request()->routeIs('eventsVideos.index')">
+                        {{ __('Events Videos') }}
                     </x-nav-link>
-                    <x-nav-link :href="route('backofficeguestbook.index')" :active="request()->routeIs('backofficeguestbook.index')">
-                        {{ __('GuestBook') }}
+                    <x-nav-link :href="route('artistsPictures.index')" :active="request()->routeIs('artistsPictures.index')">
+                        {{ __('Artists Pictures') }}
                     </x-nav-link>
-                    <x-nav-link :href="route('backofficecontact.index')" :active="request()->routeIs('backofficecontact.index')">
+                    <x-nav-link :href="route('artistsVideos.index')" :active="request()->routeIs('artistsVideos.index')">
+                        {{ __('Artists Videos') }}
+                    </x-nav-link>
+                    <x-nav-link :href="route('guestbook.index')" :active="request()->routeIs('guestbook.index')">
+                        {{ __('Guestbook') }}
+                    </x-nav-link>
+                    <x-nav-link :href="route('contact.index')" :active="request()->routeIs('contact.index')">
                         {{ __('Contact') }}
                     </x-nav-link>
                 </div>
@@ -90,6 +93,33 @@
             <x-responsive-nav-link :href="route('backoffice.index')" :active="request()->routeIs('backoffice.index')">
                 {{ __('Backoffice') }}
             </x-responsive-nav-link>
+            <x-responsive-nav-link :href="route('articles.index')" :active="request()->routeIs('articles.index')">
+                {{ __('Articles') }}
+            </x-responsive-nav-link>
+            <x-responsive-nav-link :href="route('events.index')" :active="request()->routeIs('events.index')">
+                {{ __('Events') }}
+            </x-responsive-nav-link>
+            <x-responsive-nav-link :href="route('eventsInscriptions.index')" :active="request()->routeIs('inscriptions.index')">
+                {{ __('Events Inscriptions') }}
+            </x-responsive-nav-link>
+            <x-responsive-nav-link :href="route('eventsPictures.index')" :active="request()->routeIs('eventsPictures.index')">
+                {{ __('Events Pictures') }}
+            </x-responsive-nav-link>
+            <x-responsive-nav-link :href="route('eventsVideos.index')" :active="request()->routeIs('eventsVideos.index')">
+                {{ __('Events Videos') }}
+            </x-responsive-nav-link>
+            <x-responsive-nav-link :href="route('artistsPictures.index')" :active="request()->routeIs('artistsPictures.index')">
+                {{ __('Artists Pictures') }}
+            </x-responsive-nav-link>
+            <x-responsive-nav-link :href="route('artistsVideos.index')" :active="request()->routeIs('artistsVideos.index')">
+                {{ __('Artists Videos') }}
+            </x-responsive-nav-link>
+            <x-responsive-nav-link :href="route('guestbook.index')" :active="request()->routeIs('guestbook.index')">
+                {{ __('Guestbook') }}
+            </x-responsive-nav-link>
+            <x-responsive-nav-link :href="route('contact.index')" :active="request()->routeIs('contact.index')">
+                {{ __('Contact') }}
+            </x-responsive-nav-link>
         </div>
 
         <!-- Responsive Settings Options -->
@@ -103,7 +133,6 @@
                 <!-- Authentication -->
                 <form method="POST" action="{{ route('logout') }}">
                     @csrf
-
                     <x-responsive-nav-link :href="route('logout')"
                             onclick="event.preventDefault();
                                         this.closest('form').submit();">

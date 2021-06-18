@@ -4,26 +4,22 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AboutController;
-use App\Http\Controllers\ContactController;
-use App\Http\Controllers\GalleryController;
-use App\Http\Controllers\EventsController;
 use App\Http\Controllers\ArticlesController;
+use App\Http\Controllers\EventsController;
+use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\GuestbookController;
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\BackofficeController;
 
+use App\Http\Controllers\BackofficeArticlesController;
+use App\Http\Controllers\BackofficeEventsController;
+use App\Http\Controllers\BackofficeEventsInscriptionsController;
 use App\Http\Controllers\BackofficeArtistsPicturesController;
 use App\Http\Controllers\BackofficeArtistsVideosController;
 use App\Http\Controllers\BackofficeEventsPicturesController;
 use App\Http\Controllers\BackofficeEventsVideosController;
-use App\Http\Controllers\BackofficeEventsController;
-use App\Http\Controllers\BackofficeEventsInscriptionsController;
 use App\Http\Controllers\BackofficeGuestbookController;
 use App\Http\Controllers\BackofficeContactController;
-use App\Http\Controllers\BackofficeArticlesController;
-
-
-
-
 
 /*
 |--------------------------------------------------------------------------
@@ -37,27 +33,22 @@ use App\Http\Controllers\BackofficeArticlesController;
 */
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('/articles', [ArticlesController::class, 'index'])->name('articles');
+Route::get('/events', [EventsController::class, 'index'])->name('events');
+Route::get('/gallery', [GalleryController::class, 'index'])->name('gallery');
 Route::get('/about', [AboutController::class, 'index'])->name('about');
+Route::get('/guestbook', [GuestbookController::class, 'index'])->name('guestbook');
 Route::get('/contact', [ContactController::class, 'index'])->name('contact');
+Route::get('/backoffice', [BackofficeController::class, 'index'])->name('backoffice.index');
 
-Route::resource('/articles', ArticlesController::class);
-Route::resource('/events', EventsController::class);
-Route::resource('/gallery', GalleryController::class);
-Route::resource('/guestbook', GuestbookController::class);
-Route::resource('/backoffice', BackofficeController::class);
-
-Route::resource('/backofficeartistspictures', BackofficeArtistsPicturesController::class);
-Route::resource('/backofficeartistsvideos', BackofficeArtistsVideosController::class);
-Route::resource('/backofficeeventspictures', BackofficeEventsPicturesController::class);
-Route::resource('/backofficeeventsvideos', BackofficeEventsVideosController::class);
-Route::resource('/backofficearticles', BackofficeArticlesController::class);
-Route::resource('/backofficeevents', BackofficeEventsController::class);
-Route::resource('/backofficeeventsinscriptions', BackofficeEventsInscriptionsController::class);
-Route::resource('/backofficeguestbook', BackofficeGuestbookController::class);
-Route::resource('/backofficecontact', BackofficeContactController::class);
-
-
-
-
+Route::resource('/backoffice/articles', BackofficeArticlesController::class);
+Route::resource('/backoffice/events', BackofficeEventsController::class);
+Route::resource('/backoffice/eventsInscriptions', BackofficeEventsInscriptionsController::class);
+Route::resource('/backoffice/eventsPictures', BackofficeEventsPicturesController::class);
+Route::resource('/backoffice/eventsVideos', BackofficeEventsVideosController::class);
+Route::resource('/backoffice/artistsPictures', BackofficeArtistsPicturesController::class);
+Route::resource('/backoffice/artistsVideos', BackofficeArtistsVideosController::class);
+Route::resource('/backoffice/guestbook', BackofficeGuestbookController::class);
+Route::resource('/backoffice/contact', BackofficeContactController::class);
 
 require __DIR__.'/auth.php';

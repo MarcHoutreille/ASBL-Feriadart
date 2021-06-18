@@ -6,11 +6,11 @@
         <div class="justify-around sm:flex mx-4">
             <a href="{{ route('home') }}" class="hover:text-gray-900 sm:mx-1"><img class="m-auto rounded-full h-12" src="images/FeriaLogoWhite.png" alt="logo"></a>
             <a href="{{ route('home') }}" class="text-center block mt-2 hover:text-gray-900 ">Home</a>
-            <a href="{{ route('events.index') }}" class="text-center block mt-2 hover:text-gray-900 ">Events</a>
-            <a href="{{ route('gallery.index') }}" class="text-center block mt-2 hover:text-gray-900">Gallery</a>
-            <a href="{{ route('articles.index') }}" class="text-center block mt-2 hover:text-gray-900">Articles</a>
+            <a href="{{ route('events') }}" class="text-center block mt-2 hover:text-gray-900 ">Events</a>
+            <a href="{{ route('gallery') }}" class="text-center block mt-2 hover:text-gray-900">Gallery</a>
+            <a href="{{ route('articles') }}" class="text-center block mt-2 hover:text-gray-900">Articles</a>
             <a href="{{ route('about') }}" class="text-center block mt-2 hover:text-gray-900">About Us</a>
-            <a href="{{ route('guestbook.index') }}" class="text-center block mt-2 hover:text-gray-900">Guestbook</a>
+            <a href="{{ route('guestbook') }}" class="text-center block mt-2 hover:text-gray-900">Guestbook</a>
             <a href="{{ route('contact') }}" class="text-center block mt-2 hover:text-gray-900">Contact</a>
             @if (Route::has('login'))@auth 
             <a href="{{ route('backoffice.index') }}" class="text-center block mt-2 hover:text-gray-900">Backoffice</a>
