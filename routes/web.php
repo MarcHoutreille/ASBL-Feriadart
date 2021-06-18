@@ -32,7 +32,7 @@ Route::get('/contact', [ContactController::class, 'index'])->name('contact');
 Route::resource('/articles', ArticlesController::class);
 Route::resource('/events', EventsController::class);
 Route::resource('/gallery', GalleryController::class);
-Route::resource('/guestbook', GalleryController::class);
+Route::resource('/guestbook', GuestbookController::class);
 Route::resource('/backoffice', BackofficeController::class);
 
 
