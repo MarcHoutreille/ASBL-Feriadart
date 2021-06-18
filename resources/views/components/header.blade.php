@@ -12,6 +12,11 @@
             <a href="{{ route('about') }}" class="text-center block mt-2 hover:text-gray-900">About Us</a>
             <a href="{{ route('guestbook.index') }}" class="text-center block mt-2 hover:text-gray-900">Guestbook</a>
             <a href="{{ route('contact') }}" class="text-center block mt-2 hover:text-gray-900">Contact</a>
+            @if (Route::has('login'))@auth 
+            <a href="{{ route('backoffice.index') }}" class="text-center block mt-2 hover:text-gray-900">Backoffice</a>
+            @endauth
+            @endif
+
         </div>
     </nav>
 </header>

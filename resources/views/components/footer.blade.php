@@ -4,18 +4,23 @@
         <div class="lg:w-1/4 md:w-1/2 w-full px-4">
             <h2 class="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">CATEGORIES</h2>
             <nav class="list-none mb-10">
+        @if (Route::has('login'))
+        @auth 
+
             <li>
-                <a class="text-gray-600 hover:text-gray-800">First Link</a>
+                <a href="{{ route('backoffice.index') }}" class="text-sm text-gray-700 underline">Backoffice</a>
             </li>
+        @else
             <li>
-                <a class="text-gray-600 hover:text-gray-800">Second Link</a>
+                <a href="{{ route('login') }}" class="text-sm text-gray-700 underline">Log in</a>
             </li>
+            @if (Route::has('register'))
             <li>
-                <a class="text-gray-600 hover:text-gray-800">Third Link</a>
+        <a href="{{ route('register') }}" class="text-sm text-gray-700 underline">Register</a>
             </li>
-            <li>
-                <a class="text-gray-600 hover:text-gray-800">Fourth Link</a>
-            </li>
+        @endif
+        @endauth
+        @endif    
             </nav>
         </div>
         <div class="lg:w-1/4 md:w-1/2 w-full px-4">

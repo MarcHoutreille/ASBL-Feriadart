@@ -5,7 +5,7 @@
             <div class="flex">
                 <!-- Logo -->
                 <div class="flex-shrink-0 flex items-center">
-                    <a href="{{ route('backoffice.index') }}">
+                    <a href="{{ route('home') }}">
                         <x-application-logo class="block h-10 w-auto fill-current text-gray-600" />
                     </a>
                 </div>
@@ -13,7 +13,31 @@
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-nav-link :href="route('backoffice.index')" :active="request()->routeIs('backoffice.index')">
-                        {{ __('Backoffice') }}
+                        {{ __('BackOffice') }}
+                    </x-nav-link>
+                    <x-nav-link :href="route('backofficeartistsvideos.index')" :active="request()->routeIs('backofficeartistsvideos.index')">
+                        {{ __('ArtistsVideos') }}
+                    </x-nav-link>
+                    <x-nav-link :href="route('backofficeartistspictures.index')" :active="request()->routeIs('backofficeartistspictures.index')">
+                        {{ __('ArtistsPictures') }}
+                    </x-nav-link>
+                    <x-nav-link :href="route('backofficeevents.index')" :active="request()->routeIs('backofficeevents.index')">
+                        {{ __('Events') }}
+                    </x-nav-link>
+                    <x-nav-link :href="route('backofficeeventsvideos.index')" :active="request()->routeIs('backofficeeventsvideos.index')">
+                        {{ __('EventsVideos') }}
+                    </x-nav-link>
+                    <x-nav-link :href="route('backofficeeventspictures.index')" :active="request()->routeIs('backofficeeventspictures.index')">
+                        {{ __('EventsPictures') }}
+                    </x-nav-link>
+                    <x-nav-link :href="route('backofficeeventsinscriptions.index')" :active="request()->routeIs('backofficeeventsinscriptions.index')">
+                        {{ __('EventsInscriptions') }}
+                    </x-nav-link>
+                    <x-nav-link :href="route('backofficeguestbook.index')" :active="request()->routeIs('backofficeguestbook.index')">
+                        {{ __('GuestBook') }}
+                    </x-nav-link>
+                    <x-nav-link :href="route('backofficecontact.index')" :active="request()->routeIs('backofficecontact.index')">
+                        {{ __('Contact') }}
                     </x-nav-link>
                 </div>
             </div>

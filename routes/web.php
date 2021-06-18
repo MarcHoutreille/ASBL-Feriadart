@@ -10,7 +10,20 @@ use App\Http\Controllers\EventsController;
 use App\Http\Controllers\ArticlesController;
 use App\Http\Controllers\GuestbookController;
 use App\Http\Controllers\BackofficeController;
-use App\Http\Controllers\DashboardController;
+
+use App\Http\Controllers\BackofficeArtistsPicturesController;
+use App\Http\Controllers\BackofficeArtistsVideosController;
+use App\Http\Controllers\BackofficeEventsPicturesController;
+use App\Http\Controllers\BackofficeEventsVideosController;
+use App\Http\Controllers\BackofficeEventsController;
+use App\Http\Controllers\BackofficeEventsInscriptionsController;
+use App\Http\Controllers\BackofficeGuestbookController;
+use App\Http\Controllers\BackofficeContactController;
+use App\Http\Controllers\BackofficeArticlesController;
+
+
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -32,5 +45,19 @@ Route::resource('/events', EventsController::class);
 Route::resource('/gallery', GalleryController::class);
 Route::resource('/guestbook', GuestbookController::class);
 Route::resource('/backoffice', BackofficeController::class);
+
+Route::resource('/backofficeartistspictures', BackofficeArtistsPicturesController::class);
+Route::resource('/backofficeartistsvideos', BackofficeArtistsVideosController::class);
+Route::resource('/backofficeeventspictures', BackofficeEventsPicturesController::class);
+Route::resource('/backofficeeventsvideos', BackofficeEventsVideosController::class);
+Route::resource('/backofficearticles', BackofficeArticlesController::class);
+Route::resource('/backofficeevents', BackofficeEventsController::class);
+Route::resource('/backofficeeventsinscriptions', BackofficeEventsInscriptionsController::class);
+Route::resource('/backofficeguestbook', BackofficeGuestbookController::class);
+Route::resource('/backofficecontact', BackofficeContactController::class);
+
+
+
+
 
 require __DIR__.'/auth.php';
