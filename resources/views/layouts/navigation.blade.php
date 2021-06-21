@@ -22,19 +22,19 @@
                         {{ __('Events') }}
                     </x-nav-link>
                     <x-nav-link :href="route('eventsInscriptions.index')" :active="request()->routeIs('eventsInscriptions.index')">
-                        {{ __('Events Inscriptions') }}
+                        {{ __('Events') }} {{ __('Inscriptions') }}
                     </x-nav-link>
                     <x-nav-link :href="route('eventsPictures.index')" :active="request()->routeIs('eventsPictures.index')">
-                        {{ __('Events Pictures') }}
+                        {{ __('Events') }} {{ __('Pictures') }}
                     </x-nav-link>
                     <x-nav-link :href="route('eventsVideos.index')" :active="request()->routeIs('eventsVideos.index')">
-                        {{ __('Events Videos') }}
+                        {{ __('Events') }} {{ __('Videos') }}
                     </x-nav-link>
                     <x-nav-link :href="route('artistsPictures.index')" :active="request()->routeIs('artistsPictures.index')">
-                        {{ __('Artists Pictures') }}
+                        {{ __('Artists') }}  {{ __('Pictures') }}
                     </x-nav-link>
                     <x-nav-link :href="route('artistsVideos.index')" :active="request()->routeIs('artistsVideos.index')">
-                        {{ __('Artists Videos') }}
+                        {{ __('Artists') }}  {{ __('Videos') }}
                     </x-nav-link>
                     <x-nav-link :href="route('guestbook.index')" :active="request()->routeIs('guestbook.index')">
                         {{ __('Guestbook') }}
@@ -99,19 +99,19 @@
                 {{ __('Events') }}
             </x-responsive-nav-link>
             <x-responsive-nav-link :href="route('eventsInscriptions.index')" :active="request()->routeIs('inscriptions.index')">
-                {{ __('Events Inscriptions') }}
+                {{ __('Events') }} {{ __('Inscriptions') }}
             </x-responsive-nav-link>
             <x-responsive-nav-link :href="route('eventsPictures.index')" :active="request()->routeIs('eventsPictures.index')">
-                {{ __('Events Pictures') }}
+                {{ __('Events') }} {{ __('Pictures') }}
             </x-responsive-nav-link>
             <x-responsive-nav-link :href="route('eventsVideos.index')" :active="request()->routeIs('eventsVideos.index')">
-                {{ __('Events Videos') }}
+                {{ __('Events') }} {{ __('Videos') }}
             </x-responsive-nav-link>
             <x-responsive-nav-link :href="route('artistsPictures.index')" :active="request()->routeIs('artistsPictures.index')">
-                {{ __('Artists Pictures') }}
+                {{ __('Artists') }}  {{ __('Pictures') }}
             </x-responsive-nav-link>
             <x-responsive-nav-link :href="route('artistsVideos.index')" :active="request()->routeIs('artistsVideos.index')">
-                {{ __('Artists Videos') }}
+                {{ __('Artists') }}  {{ __('Videos') }}
             </x-responsive-nav-link>
             <x-responsive-nav-link :href="route('guestbook.index')" :active="request()->routeIs('guestbook.index')">
                 {{ __('Guestbook') }}
