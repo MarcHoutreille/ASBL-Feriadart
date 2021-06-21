@@ -11,6 +11,7 @@
         <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     </head>
     <body class="font-sans antialiased">
+        <x-header />
         <div class="min-h-screen bg-gray-100">
             @include('layouts.navigation')
             <!-- Page Heading -->
@@ -24,6 +25,7 @@
                 {{ $slot }}
             </main>
         </div>
+        <x-footer />
         <!-- Scripts -->
         <script src="{{ asset('js/app.js') }}" defer></script>
     </body>

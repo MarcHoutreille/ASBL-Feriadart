@@ -1,11 +1,11 @@
 <header class="text-gray-700 underline">
-    <div class="h-0 xs:h-30 md:h-60">
+    <div class="overflow-hidden	h-0 xs:h-30 md:h-40">
         <img class="invisible sm:visible" src="/images/FeriaBijtels.png" alt="Feria D'art">
     </div>
 
     <nav class="relative bg-gray-400 md:text-lg md:h-18 p-3">
         <div class="justify-around sm:flex mx-4">
-            <a href="{{ route('home') }}" class="sm:mx-1"><img class="m-auto rounded-full h-12" src="images/FeriaLogoWhite.png" alt="logo"></a>
+            <a href="{{ route('home') }}" class="sm:mx-1"><img class="m-auto rounded-full h-12" src="/images/FeriaLogoWhite.png" alt="logo"></a>
             <a href="{{ route('home') }}" class="text-center block mt-2 hover:text-white @if (request()->routeIs('home')) text-white @endif">{{ __('Home') }}</a>
             <a href="{{ route('events') }}" class="text-center block mt-2 hover:text-white @if (request()->routeIs('events')) text-white @endif">{{ __('Events') }}</a>
             <a href="{{ route('gallery') }}" class="text-center block mt-2 hover:text-white @if (request()->routeIs('gallery')) text-white @endif">{{ __('Gallery') }}</a>
