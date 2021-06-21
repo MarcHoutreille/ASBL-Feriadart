@@ -39,7 +39,7 @@ Route::get('/gallery', [GalleryController::class, 'index'])->name('gallery');
 Route::get('/about', [AboutController::class, 'index'])->name('about');
 Route::get('/guestbook', [GuestbookController::class, 'index'])->name('guestbook');
 Route::get('/contact', [ContactController::class, 'index'])->name('contact');
-Route::get('/backoffice', [BackofficeController::class, 'index'])->name('backoffice.index');
+Route::get('/backoffice', [BackofficeController::class, 'index'])->middleware(['auth', 'verified'])->name('backoffice.index');
 
 Route::resource('/backoffice/articles', BackofficeArticlesController::class);
 Route::resource('/backoffice/events', BackofficeEventsController::class);
