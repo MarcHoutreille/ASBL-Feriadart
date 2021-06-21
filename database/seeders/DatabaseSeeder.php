@@ -15,6 +15,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+        //Create default admin user
         $admin = User::create([
             'name'=> 'Admin',
             'username'=> 'admin',
@@ -22,6 +23,7 @@ class DatabaseSeeder extends Seeder
             'password' => Hash::make('password')
         ]);
         
-        User::factory(10)->create();
+        //Create 10 random users
+        //User::factory(10)->create();
     }
 }
