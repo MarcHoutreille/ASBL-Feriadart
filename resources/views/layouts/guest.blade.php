@@ -10,13 +10,11 @@
         <!-- Styles -->
         <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     </head>
-    <body class="font-mono">
+    <body class="font-mono min-h-screen antialiased">
         <x-header />
-        <div class="text-gray-900 antialiased">
-            <main class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
-                {{ $slot }}
-            </main>
-        </div>
+        <main class="relative flex items-top justify-center text-gray-900 bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
+            {{ $slot }}
+        </main>
         <x-footer />
         <!-- Scripts -->
         <script src="{{ asset('js/app.js') }}" defer></script>
