@@ -32,6 +32,8 @@ use App\Http\Controllers\BackofficeContactController;
 |
 */
 
+Route::get('lang/{lang}', ['as' => 'lang.switch', 'uses' => 'App\Http\Controllers\LanguageController@switchLang']);
+
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/articles', [ArticlesController::class, 'index'])->name('articles');
 Route::get('/events', [EventsController::class, 'index'])->name('events');

@@ -10,20 +10,19 @@
         <!-- Styles -->
         <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     </head>
-    <body class="font-sans antialiased">
-        <div class="min-h-screen bg-gray-100">
-            @include('layouts.navigation')
-            <!-- Page Heading -->
-            <header class="bg-white shadow">
-                <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-                    {{ $header }}
-                </div>
-            </header>
-            <!-- Page Content -->
-            <main>
-                {{ $slot }}
-            </main>
-        </div>
+    <body class="font-mono min-h-screen antialiased">
+        <x-navigation />
+        <!-- Page Heading -->
+        <header class="bg-white shadow">
+            <div class="mx-auto p-4">
+                {{ $header }}
+            </div>
+        </header>
+        <!-- Page Content -->
+        <main class="relative flex items-top justify-center text-gray-900 bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
+            {{ $slot }}
+        </main>
+        <x-footer />
         <!-- Scripts -->
         <script src="{{ asset('js/app.js') }}" defer></script>
     </body>

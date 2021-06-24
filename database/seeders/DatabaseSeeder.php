@@ -3,6 +3,8 @@
 namespace Database\Seeders;
 
 use App\Models\User;
+use App\Models\Event;
+use App\Models\Article;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
 
@@ -25,5 +27,15 @@ class DatabaseSeeder extends Seeder
         
         //Create 10 random users
         //User::factory(10)->create();
+
+        //Create 10 random articles
+        Article::factory(10)->create([
+            "user_id" => $admin->id,
+        ]);
+
+        //Create 10 random events
+        Event::factory(10)->create([
+            "user_id" => $admin->id,
+        ]);
     }
 }

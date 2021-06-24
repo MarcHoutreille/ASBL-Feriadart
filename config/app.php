@@ -230,4 +230,9 @@ return [
 
     ],
 
+    'languages' => [
+        'fr' => 'Français',
+        'nl' => 'Nederlands',
+        'en' => 'English',
+    ],
 ];
