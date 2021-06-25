@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Contact;
 use Illuminate\Http\Request;
 
 class BackofficeContactController extends Controller
@@ -13,7 +14,10 @@ class BackofficeContactController extends Controller
      */
     public function index()
     {
-        return view('backoffice.contact');
+        $contacts = Contact::all();
+        return view('backoffice.contact', [
+            'contacts' => $contacts
+        ]);
     }
 
     /**
@@ -34,7 +38,19 @@ class BackofficeContactController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'name' => 'required',
+            'email' => 'required',
+            'message' => 'required',
+        ]);
+
+        Contact::create([
+            'name' => $request->input('name'),
+            'email' => $request->input('email'),
+            'message' => $request->input('message'),
+        ]);
+
+        return back();
     }
 
     /**
@@ -56,7 +72,12 @@ class BackofficeContactController extends Controller
      */
     public function edit($id)
     {
-        //
+        $contacts = Contact::all();
+        $contact = Contact::find($id);
+        return view('backoffice.contactedit', [
+            'contactToEdit' => $contact,
+            'contacts' => $contacts
+        ]);
     }
 
     /**
@@ -68,7 +89,15 @@ class BackofficeContactController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $contact = Contact::find($id);
+        $contact->name = $request->name;
+        $contact->email = $request->email;
+        $contact->message = $request->message;
+        $query = $contact->save();
+
+        if($query){
+            return redirect()->route('contact.index')->with('success','Updated Successfully');
+        }
     }
 
     /**

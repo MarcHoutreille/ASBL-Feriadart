@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use App\Models\User;
 use App\Models\Event;
 use App\Models\Article;
+use App\Models\Contact;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
 
@@ -37,5 +38,8 @@ class DatabaseSeeder extends Seeder
         Event::factory(10)->create([
             "user_id" => $admin->id,
         ]);
+
+        //Create 10 random contact messages
+        Contact::factory(10)->create();
     }
 }
