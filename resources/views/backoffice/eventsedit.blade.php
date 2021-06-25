@@ -34,6 +34,48 @@
                         </thead>
                         <tbody class="bg-white divide-y divide-gray-200">
                             @foreach ($events as $event)
+                            @if ($event->id == $eventToEdit->id)
+                            <tr>
+                                <form action="{{ route('events.update', $event) }}" method="POST">
+                                @csrf
+                                @method('PUT')
+                                <td class="px-4 py-4 whitespace-normal">
+                                    <div class="flex items-center">
+                                        <div class="flex-shrink-0 h-10 w-10">
+                                            <img class="h-10 w-10 rounded-full" src="{{ $event->img_src }}" alt="{{ $event->name }}">
+                                        </div>
+                                        <div class="ml-4">
+                                            <div class="text-sm font-medium text-gray-900">
+                                                <input name="date_start" type=datetime-local value="{{ date('Y-m-d\TH:i', strtotime($event->date_start)) }}"/>
+                                            </div>
+                                            <div class="text-sm font-medium text-gray-500">
+                                                <input name="date_end" type=datetime-local value="{{ date('Y-m-d\TH:i', strtotime($event->date_end)) }}"/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="px-4 py-4 whitespace-normal">
+                                    <div class="text-sm text-gray-900"><input name="name" type=text value="{{ $event->name }}"/></div>
+                                    <div class="text-sm text-gray-500"><textarea name="description" >{{ $event->description }}</textarea></div>
+                                </td>
+                                <td class="px-4 py-4 whitespace-normal">
+                                    <div class="text-sm text-gray-900"><input name="place" type=text value="{{ $event->place }}"/></div>
+                                    <div class="text-sm text-gray-900"><input name="adress" type=text value="{{ $event->address }}"/></div>
+                                </td>
+                                <td class="px-4 py-4 whitespace-normal text-sm text-gray-500">
+                                    <div class="text-sm text-gray-900"><input name="telephone" type=tel value="{{ $event->telephone }}"/></div>
+                                    <div class="text-sm text-gray-500"><input name="email" type=email value="{{ $event->email }}"/></div>
+                                </td>
+                                <td class="px-4 py-4 whitespace-normal text-sm text-gray-500">
+                                    <div class="text-sm text-gray-900"><input name="url" type=text value="{{ $event->url }}"/></div>
+                                    <div class="text-sm text-gray-500"><input name="img_src" type=text value="{{ $event->img_src }}"/></div>
+                                </td>
+                                <td class="px-4 py-4 whitespace-normal text-right text-sm font-medium">
+                                    <button type=submit class="text-indigo-600 hover:text-indigo-900">{{ __('Save') }}</button>
+                                </td>
+                                </form>
+                            </tr>
+                            @else
                             <tr>
                                 <td class="px-4 py-4 whitespace-normal">
                                     <div class="flex items-center">
@@ -70,6 +112,7 @@
                                     <a href="{{ route('events.edit', $event) }}" class="text-indigo-600 hover:text-indigo-900">{{ __('Edit') }}</a>
                                 </td>
                             </tr>
+                            @endif
                             @endforeach
                         </tbody>
                     </table>

@@ -61,7 +61,12 @@ class BackofficeEventsController extends Controller
      */
     public function edit($id)
     {
-        //
+        $events = Event::all();
+        $event = Event::find($id);
+        return view('backoffice.eventsedit', [
+            'eventToEdit' => $event,
+            'events' => $events
+        ]);
     }
 
     /**
@@ -73,7 +78,20 @@ class BackofficeEventsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $event = Event::find($id);
+        $event->date_start=$request->date_start;
+        $event->date_end=$request->date_end;
+        $event->name=$request->name;
+        $event->description=$request->description;
+        $event->telephone=$request->telephone;
+        $event->email=$request->email;
+        $event->url=$request->url;
+        $event->img_src=$request->img_src;
+        $query=$event->save();
+
+        if($query){
+            return redirect()->route('events.index')->with('success','Updated Successfully');;
+        }
     }
 
     /**
