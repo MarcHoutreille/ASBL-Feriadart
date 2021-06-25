@@ -6,6 +6,7 @@ use App\Models\User;
 use App\Models\Event;
 use App\Models\Article;
 use App\Models\Contact;
+use App\Models\Guestbook;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
 
@@ -41,5 +42,8 @@ class DatabaseSeeder extends Seeder
 
         //Create 10 random contact messages
         Contact::factory(10)->create();
+
+        //Create 10 random guestbook comments
+        Guestbook::factory(10)->create();
     }
 }

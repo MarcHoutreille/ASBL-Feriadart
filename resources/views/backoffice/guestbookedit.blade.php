@@ -34,6 +34,41 @@
                         </thead>
                         <tbody class="bg-white divide-y divide-gray-200">
                             @foreach ($guests as $guest)
+                            @if ($guest->id == $guestToEdit->id)
+                            <tr>
+                                <form action="{{ route('guestbook.update', $guest) }}" method="POST">
+                                @csrf
+                                @method('PUT')
+                                <td class="px-4 py-4 whitespace-normal">
+                                    <div class="flex items-center">
+                                        <div class="flex-shrink-0 h-10 w-10">
+                                            <img class="h-10 w-10 rounded-full" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=4&w=256&h=256&q=60" alt="">
+                                        </div>
+                                        <div class="ml-4">
+                                            <div class="text-sm font-medium text-gray-900">
+                                                <input name="created_at" type=datetime-local value="{{ date('Y-m-d\TH:i', strtotime($guest->created_at)) }}"/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="px-4 py-4 whitespace-normal">
+                                    <div class="text-sm text-gray-900"><input name="name" type=text value="{{ $guest->name }}"/></div>
+                                </td>
+                                <td class="px-4 py-4 whitespace-normal">
+                                    <div class="text-sm text-gray-900"><input name="title" type=text value="{{ $guest->title }}"/></div>
+                                </td>
+                                <td class="px-4 py-4 whitespace-normal text-sm text-gray-500">
+                                    <div class="text-sm text-gray-900"><input name="email" type=tel value="{{ $guest->email }}"/></div>
+                                </td>
+                                <td class="px-4 py-4 whitespace-normal text-sm text-gray-500">
+                                    <div class="text-sm text-gray-500"><textarea name="message" >{{ $guest->message }}</textarea></div>
+                                </td>
+                                <td class="px-4 py-4 whitespace-normal text-right text-sm font-medium">
+                                    <button type=submit class="text-indigo-600 hover:text-indigo-900">{{ __('Save') }}</button>
+                                </td>
+                                </form>
+                            </tr>
+                            @else
                             <tr>
                                 <td class="px-4 py-4 whitespace-normal">
                                     <div class="flex items-center">
@@ -63,6 +98,7 @@
                                     <a href="{{ route('guestbook.edit', $guest) }}" class="text-indigo-600 hover:text-indigo-900">{{ __('Edit') }}</a>
                                 </td>
                             </tr>
+                            @endif
                             @endforeach
                         </tbody>
                     </table>

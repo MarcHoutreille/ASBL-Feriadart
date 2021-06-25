@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Guestbook;
 use Illuminate\Http\Request;
 
 class GuestbookController extends Controller
@@ -13,7 +14,8 @@ class GuestbookController extends Controller
      */
     public function index()
     {
-        return view('guestbook/index');
+        $guests = Guestbook::all();
+        return view('guestbook.index', ['guests' => $guests]);
     }
 
 

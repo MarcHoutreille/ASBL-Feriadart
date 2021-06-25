@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Guestbook;
 use Illuminate\Http\Request;
 
 class BackofficeGuestbookController extends Controller
@@ -13,8 +14,8 @@ class BackofficeGuestbookController extends Controller
      */
     public function index()
     {
-        return view('backoffice.guestbook');
-
+        $guests = Guestbook::all();
+        return view('backoffice.guestbook', ['guests' => $guests]);
     }
 
     /**
@@ -35,7 +36,21 @@ class BackofficeGuestbookController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'name' => 'required',
+            'title' => 'required',
+            'email' => 'required',
+            'message' => 'required',
+        ]);
+
+        Guestbook::create([
+            'name' => $request->input('name'),
+            'title' => $request->input('title'),
+            'email' => $request->input('email'),
+            'message' => $request->input('message'),
+        ]);
+
+        return back();
     }
 
     /**
@@ -57,7 +72,12 @@ class BackofficeGuestbookController extends Controller
      */
     public function edit($id)
     {
-        //
+        $guests = Guestbook::all();
+        $guest = Guestbook::find($id);
+        return view('backoffice.guestbookedit', [
+            'guestToEdit' => $guest,
+            'guests' => $guests
+        ]);
     }
 
     /**
@@ -69,7 +89,15 @@ class BackofficeGuestbookController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $guest = Guestbook::find($id);
+        $guest->name = $request->name;
+        $guest->email = $request->email;
+        $guest->message = $request->message;
+        $query = $guest->save();
+
+        if($query){
+            return redirect()->route('guestbook.index')->with('success','Updated Successfully');
+        }
     }
 
     /**
