@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Event;
 use Illuminate\Http\Request;
 
 class BackofficeEventsController extends Controller
@@ -13,7 +14,10 @@ class BackofficeEventsController extends Controller
      */
     public function index()
     {
-        return view('backoffice.events');
+        $events = Event::all();
+        return view('backoffice.events', [
+            'events' => $events
+        ]);
 
     }
 
