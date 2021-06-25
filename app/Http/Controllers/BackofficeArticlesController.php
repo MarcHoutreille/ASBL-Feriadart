@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Article;
 use Illuminate\Http\Request;
 
 class BackofficeArticlesController extends Controller
@@ -13,7 +14,11 @@ class BackofficeArticlesController extends Controller
      */
     public function index()
     {
-        return view('backoffice.articles');
+        $articles = Article::all();
+        return view('backoffice.articles', [
+            'articles' => $articles
+        ]);
+
     }
 
     /**
@@ -56,7 +61,12 @@ class BackofficeArticlesController extends Controller
      */
     public function edit($id)
     {
-        //
+        $articles = Article::all();
+        $article = Article::find($id);
+        return view('backoffice.articlesedit', [
+            'articleToEdit' => $article,
+            'articles' => $articles
+        ]);
     }
 
     /**
@@ -68,7 +78,18 @@ class BackofficeArticlesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $article = Article::find($id);
+        $article->created_at = $request->created_at;
+        $article->title = $request->title;
+        $article->slug = $request->slug;
+        $article->excerpt = $request->excerpt;
+        $article->body = $request->body;
+        $article->img_src = $request->img_src;
+        $query = $article->save();
+
+        if($query){
+            return redirect()->route('articles.index')->with('success','Updated Successfully');
+        }
     }
 
     /**

@@ -34,8 +34,44 @@
                         </thead>
                         <tbody class="bg-white divide-y divide-gray-200">
                             @foreach ($articles as $article)
+                            @if ($article->id == $articleToEdit->id)
                             <tr>
+                                <form action="{{ route('articles.update', $article) }}" method="POST">
+                                @csrf
+                                @method('PUT')
                                 <td class="px-4 py-4 whitespace-normal">
+                                    <div class="flex items-center">
+                                        <div class="flex-shrink-0 h-10 w-10">
+                                            <img class="h-10 w-10 rounded-full" src="{{ $article->img_src }}" alt="{{ $article->title }}">
+                                        </div>
+                                        <div class="ml-4">
+                                            <div class="text-sm font-medium text-gray-900">
+                                                <input name="created_at" type=datetime-local value="{{ date('Y-m-d\TH:i', strtotime($article->created_at)) }}"/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="px-4 py-4 whitespace-normal">
+                                    <div class="text-sm text-gray-900"><input name="title" type=text value="{{ $article->title }}"/></div>
+                                    <div class="text-sm text-gray-500"><input name="slug" type=text value="{{ $article->slug }}"/></div>
+                                </td>
+                                <td class="px-4 py-4 whitespace-normal">
+                                    <div class="text-sm text-gray-900"><input name="excerpt" type=text value="{{ $article->excerpt }}"/></div>
+                                </td>
+                                <td class="px-4 py-4 whitespace-normal text-sm text-gray-500">
+                                    <div class="text-sm text-gray-900"><textarea name="body" >{{ $article->body }}</textarea></div>
+                                </td>
+                                <td class="px-4 py-4 whitespace-normal text-sm text-gray-500">
+                                    <div class="text-sm text-gray-500"><input name="img_src" type=text value="{{ $article->img_src }}"/></div>
+                                </td>
+                                <td class="px-4 py-4 whitespace-normal text-right text-sm font-medium">
+                                    <button type=submit class="text-indigo-600 hover:text-indigo-900">{{ __('Save') }}</button>
+                                </td>
+                                </form>
+                            </tr>
+                            @else
+                            <tr>
+                            <td class="px-4 py-4 whitespace-normal">
                                     <div class="flex items-center">
                                         <div class="flex-shrink-0 h-10 w-10">
                                             <img class="h-10 w-10 rounded-full" src="{{ $article->img_src }}" alt="{{ $article->name }}">
@@ -64,6 +100,7 @@
                                     <a href="{{ route('articles.edit', $article) }}" class="text-indigo-600 hover:text-indigo-900">{{ __('Edit') }}</a>
                                 </td>
                             </tr>
+                            @endif
                             @endforeach
                         </tbody>
                     </table>
