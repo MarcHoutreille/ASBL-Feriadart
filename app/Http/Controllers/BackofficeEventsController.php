@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Event;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class BackofficeEventsController extends Controller
 {
@@ -39,7 +40,23 @@ class BackofficeEventsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'date_start' => 'required',
+            'date_end' => 'required',
+            'name' => 'required',
+            'img_src' => 'required',
+            'description' => 'required',
+            'place' => 'required',
+            'address' => 'required',
+            'url' => 'required',
+            'telephone' => 'required',
+            'email' => 'required',
+        ]);
+        $name = $request->input('name');
+        $request['slug'] = str_replace('.','',(str_replace(' ','-',strtolower($name))));
+        $request['user_id'] = Auth::user()->id;
+        Event::create($request->only('user_id', 'date_start', 'date_end', 'name', 'slug', 'img_src', 'description', 'place', 'address', 'url', 'telephone', 'email'));
+        return back()->with('message', 'Evento agregado exitosamente');
     }
 
     /**

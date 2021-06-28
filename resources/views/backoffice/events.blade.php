@@ -4,18 +4,15 @@
             {{ __('Events') }}
         </h2>
     </x-slot>
-     
-   
 
     <!-- This example requires Tailwind CSS v2.0+ -->
     <div class="flex flex-col py-14">
 
-        <div class="grid place-items-end mr-36">
-            <button class="px-6 py-3 bg-gray-200 text-black rounded shadow" id="addEvent-btn">
-                New Event
-              </button>
+        <div class="mx-auto pb-14">
+            <button class="px-6 py-3 bg-green-700 text-white rounded shadow" id="addEvent-btn">
+                {{ __('Add Event')}}
+            </button>
         </div>
-
 
         <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
             <div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
@@ -81,8 +78,8 @@
                                     <a href="{{ route('events.edit', $event) }}" class="text-indigo-600 hover:text-indigo-900 my-4">{{ __('Edit') }}</a>
                                     @can('delete', $event)
                                     <form action="{{ route('events.destroy', $event) }}" method="POST" class="my-4">
-                                    @csrf
-                                    @method('DELETE')
+                                        @csrf
+                                        @method('DELETE')
                                         <button type="submit" class="text-red-600 hover:text-red-900">{{ __('Delete') }}</button>
                                     </form>
                                     @endcan
@@ -96,78 +93,85 @@
         </div>
     </div>
 
-    
+
     <div class="bg-black bg-opacity-50 absolute inset-0 hidden justify-center items-start" id="overlay">
         <div class="bg-gray-200 w-2/3 py-2 px-3 rounded shadow-xl text-gray-800 mt-6">
             <div class="flex justify-between items-center">
-                <h4 class="text-lg font-bold">Add a New Event</h4>
+                <h4 class="text-lg font-bold">{{ __('Add Event') }}</h4>
                 <svg class="h-6 w-6 cursor-pointer p-1 hover:bg-gray-300 rounded-full" id="close-modal" fill="currentColor" viewBox="0 0 20 20">
-                    <path fill-rule="evenodd"
-                        d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
-                        clip-rule="evenodd"></path>
+                    <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path>
                 </svg>
             </div>
-            <div class="mt-2 text-sm">
-                <div class="md:p-12 bg-gray-200 flex flex-row flex-wrap">
-                    <form class="md:w-1/2-screen m-0 p-5 bg-white w-full tw-h-full shadow md:rounded-lg">
-                      
-                      
-                      <div class="flex-col flex py-3">
-                        <label class="pb-2 text-gray-700 font-semibold">Date</label>
-                        <input type="text" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" placeholder="">
-                      </div>
-                      
-                      <div class="flex-col flex py-3">
-                        <label class="pb-2 text-gray-700 font-semibold">Name Event</label>
-                        <input type="text" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" placeholder="">
-                      </div>
-                      
-                      <div class="flex-col flex py-3">
-                        <label class="pb-2 text-gray-700 font-semibold">Place </label>
-                        <input type="text" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" placeholder="">
-                      </div>
-                      <div class="flex-col flex py-3">
-                        <label class="pb-2 text-gray-700 font-semibold">Links</label>
-                        <input type="text" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" placeholder="">
-                      </div>
-                      
-                      <div class="flex-col flex py-3">
-                        <label class="pb-2 text-gray-700 font-semibold">Contact</label>
-                        <input type="text" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" placeholder="">
-                      
-                      </div>
-                   
-                    </form>
-                  </div>
-            </div>
-            <div class="mt-3 flex justify-end space-x-3">
-                <button class="px-3 py-1 rounded hover:bg-red-300 hover:bg-opacity-50 hover:text-red-900" id="close-modal2">Cancel</button>
-                <button class="px-3 py-1 bg-red-800 text-gray-200 hover:bg-red-600 rounded">Add</button>
-            </div>
+            <form action="{{ route('events.store') }}" method="POST">
+                @csrf
+                <div class="mt-2 text-sm">
+                    <div class="md:p-12 bg-gray-200 flex flex-row flex-wrap">
+                        <div class="md:w-1/2-screen m-0 p-5 bg-white w-full tw-h-full shadow md:rounded-lg">
+                            <div class="flex-col flex py-3">
+                                <label class="pb-2 text-gray-700 font-semibold">{{ __('Start Date') }}</label>
+                                <input type="datetime-local" name="date_start" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" placeholder="">
+                            </div>
+                            <div class="flex-col flex py-3">
+                                <label class="pb-2 text-gray-700 font-semibold">{{ __('End Date') }}</label>
+                                <input type="datetime-local" name="date_end" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" placeholder="">
+                            </div>
+                            <div class="flex-col flex py-3">
+                                <label class="pb-2 text-gray-700 font-semibold">{{ __('Event Name') }}</label>
+                                <input type="text" name="name" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" placeholder="">
+                            </div>
+                            <div class="flex-col flex py-3">
+                                <label class="pb-2 text-gray-700 font-semibold">{{ __('Image Link') }}</label>
+                                <input type="text" name="img_src" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" placeholder="">
+                            </div>
+                            <div class="flex-col flex py-3">
+                                <label class="pb-2 text-gray-700 font-semibold">{{ __('Description') }}</label>
+                                <textarea name="description" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" rows="10"></textarea>
+                            </div>
+                            <div class="flex-col flex py-3">
+                                <label class="pb-2 text-gray-700 font-semibold">{{ __('Place') }}</label>
+                                <input type="text" name="place" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" placeholder="">
+                            </div>
+                            <div class="flex-col flex py-3">
+                                <label class="pb-2 text-gray-700 font-semibold">{{ __('Address') }}</label>
+                                <input type="text" name="address" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" placeholder="">
+                            </div>
+                            <div class="flex-col flex py-3">
+                                <label class="pb-2 text-gray-700 font-semibold">{{ __('Event URL') }}</label>
+                                <input type="text" name="url" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" placeholder="">
+                            </div>
+                            <div class="flex-col flex py-3">
+                                <label class="pb-2 text-gray-700 font-semibold">{{ __('Telephone') }}</label>
+                                <input type="tel" name="telephone" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" placeholder="">
+                            </div>
+                            <div class="flex-col flex py-3">
+                                <label class="pb-2 text-gray-700 font-semibold">{{ __('Email') }}</label>
+                                <input type="email" name="email" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" placeholder="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-3 flex justify-end space-x-3">
+                    <button class="px-3 py-1 hover:text-red-800 hover:bg-red-600 hover:bg-opacity-50 rounded" id="close-modal2">{{ __('Cancel') }}</button>
+                    <button class="px-3 py-1 text-gray-200 bg-green-800 hover:bg-green-600 rounded" type="submit">{{ __('Add') }}</button>
+                </div>
+            </form>
         </div>
     </div>
-    
+
     <script>
-        window.addEventListener('DOMContentLoaded', () =>{
-            const overlay = document.querySelector('#overlay')
-            const delBtn = document.querySelector('#addEvent-btn')
-            const closeBtn = document.querySelector('#close-modal')
-            const closeBtn2 = document.querySelector('#close-modal2')
-
-
+        window.addEventListener('DOMContentLoaded', () => {
+            const overlay = document.querySelector('#overlay');
+            const delBtn = document.querySelector('#addEvent-btn');
+            const closeBtn = document.querySelector('#close-modal');
+            const closeBtn2 = document.querySelector('#close-modal2');
             const toggleModal = () => {
-                overlay.classList.toggle('hidden')
-                overlay.classList.toggle('flex')
+                overlay.classList.toggle('hidden');
+                overlay.classList.toggle('flex');
             }
-
-            delBtn.addEventListener('click', toggleModal)
-
-            closeBtn.addEventListener('click', toggleModal)
-            closeBtn2.addEventListener('click', toggleModal)
-
-
-        })
-
+            delBtn.addEventListener('click', toggleModal);
+            closeBtn.addEventListener('click', toggleModal);
+            closeBtn2.addEventListener('click', toggleModal);
+        });
     </script>
 
 </x-app-layout>
