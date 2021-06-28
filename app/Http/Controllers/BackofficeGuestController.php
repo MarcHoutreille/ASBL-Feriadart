@@ -99,7 +99,7 @@ class BackofficeGuestController extends Controller
         $query = $guest->save();
 
         if($query){
-            return redirect()->route('guestbook.index')->with('success','Updated Successfully');
+            return redirect()->route('guest.index')->with('success','Updated Successfully');
         }
     }
 
@@ -111,7 +111,7 @@ class BackofficeGuestController extends Controller
      */
     public function destroy(Guest $guest)
     {
-        //dd($guest);
+        // dd($guest);
         $this->authorize('delete', $guest);
         $guest->delete();
         return back();

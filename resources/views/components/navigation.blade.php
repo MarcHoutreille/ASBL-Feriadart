@@ -36,7 +36,7 @@
                     <x-nav-link :href="route('artistsVideos.index')" :active="request()->routeIs('artistsVideos.index')">
                         {{ __('Artists') }}  {{ __('Videos') }}
                     </x-nav-link>
-                    <x-nav-link :href="route('guestbook.index')" :active="request()->routeIs('guestbook.index')">
+                    <x-nav-link :href="route('guest.index')" :active="request()->routeIs('guest.index')">
                         {{ __('Guestbook') }}
                     </x-nav-link>
                     <x-nav-link :href="route('contact.index')" :active="request()->routeIs('contact.index')">
@@ -113,7 +113,7 @@
             <x-responsive-nav-link :href="route('artistsVideos.index')" :active="request()->routeIs('artistsVideos.index')">
                 {{ __('Artists') }}  {{ __('Videos') }}
             </x-responsive-nav-link>
-            <x-responsive-nav-link :href="route('guestbook.index')" :active="request()->routeIs('guestbook.index')">
+            <x-responsive-nav-link :href="route('guest.index')" :active="request()->routeIs('guest.index')">
                 {{ __('Guestbook') }}
             </x-responsive-nav-link>
             <x-responsive-nav-link :href="route('contact.index')" :active="request()->routeIs('contact.index')">

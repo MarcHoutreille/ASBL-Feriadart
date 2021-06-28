@@ -52,7 +52,7 @@ Route::resource('/backoffice/eventsPictures', BackofficeEventsPicturesController
 Route::resource('/backoffice/eventsVideos', BackofficeEventsVideosController::class);
 Route::resource('/backoffice/artistsPictures', BackofficeArtistsPicturesController::class);
 Route::resource('/backoffice/artistsVideos', BackofficeArtistsVideosController::class);
-Route::resource('/backoffice/guestbook', BackofficeGuestController::class);
+Route::resource('/backoffice/guest', BackofficeGuestController::class);
 Route::resource('/backoffice/contact', BackofficeContactController::class);
 
 require __DIR__.'/auth.php';

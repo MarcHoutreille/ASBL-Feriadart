@@ -36,7 +36,7 @@
                             @foreach ($guests as $guest)
                             @if ($guest->id == $guestToEdit->id)
                             <tr>
-                                <form action="{{ route('guestbook.update', $guest) }}" method="POST">
+                                <form action="{{ route('guest.update', $guest) }}" method="POST">
                                 @csrf
                                 @method('PUT')
                                 <td class="px-4 py-4 whitespace-normal">
@@ -95,9 +95,9 @@
                                     <div class="text-sm text-gray-900">{{ $guest->message }}</div>
                                 </td>
                                 <td class="px-4 py-4 whitespace-normal text-right text-sm font-medium">
-                                    <a href="{{ route('guestbook.edit', $guest) }}" class="text-indigo-600 hover:text-indigo-900 my-4">{{ __('Edit') }}</a>
+                                    <a href="{{ route('guest.edit', $guest) }}" class="text-indigo-600 hover:text-indigo-900 my-4">{{ __('Edit') }}</a>
                                     @can('delete', $guest)
-                                    <form action="{{ route('guestbook.destroy', $guest) }}" method="POST" class="my-4">
+                                    <form action="{{ route('guest.destroy', $guest) }}" method="POST" class="my-4">
                                     @csrf
                                     @method('DELETE')
                                         <button type="submit" class="text-red-600 hover:text-red-900">{{ __('Delete') }}</button>
