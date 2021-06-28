@@ -18,7 +18,7 @@ use App\Http\Controllers\BackofficeArtistsPicturesController;
 use App\Http\Controllers\BackofficeArtistsVideosController;
 use App\Http\Controllers\BackofficeEventsPicturesController;
 use App\Http\Controllers\BackofficeEventsVideosController;
-use App\Http\Controllers\BackofficeGuestbookController;
+use App\Http\Controllers\BackofficeGuestController;
 use App\Http\Controllers\BackofficeContactController;
 
 /*
@@ -38,6 +38,7 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/articles', [ArticlesController::class, 'index'])->name('articles');
 Route::get('/articles/{article:slug}', [ArticlesController::class, 'show'])->name('article.show');
 Route::get('/events', [EventsController::class, 'index'])->name('events');
+Route::get('/events/{events}', [EventsController::class, 'index'])->name('event.show');
 Route::get('/gallery', [GalleryController::class, 'index'])->name('gallery');
 Route::get('/about', [AboutController::class, 'index'])->name('about');
 Route::get('/guestbook', [GuestbookController::class, 'index'])->name('guestbook');
@@ -51,7 +52,7 @@ Route::resource('/backoffice/eventsPictures', BackofficeEventsPicturesController
 Route::resource('/backoffice/eventsVideos', BackofficeEventsVideosController::class);
 Route::resource('/backoffice/artistsPictures', BackofficeArtistsPicturesController::class);
 Route::resource('/backoffice/artistsVideos', BackofficeArtistsVideosController::class);
-Route::resource('/backoffice/guestbook', BackofficeGuestbookController::class);
+Route::resource('/backoffice/guestbook', BackofficeGuestController::class);
 Route::resource('/backoffice/contact', BackofficeContactController::class);
 
 require __DIR__.'/auth.php';

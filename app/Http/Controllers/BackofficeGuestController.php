@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Guestbook;
+use App\Models\Guest;
 use Illuminate\Http\Request;
 
-class BackofficeGuestbookController extends Controller
+class BackofficeGuestController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +14,10 @@ class BackofficeGuestbookController extends Controller
      */
     public function index()
     {
-        $guests = Guestbook::all();
-        return view('backoffice.guestbook', ['guests' => $guests]);
+        $guests = Guest::all();
+        return view('backoffice.guestbook', [
+            'guests' => $guests
+        ]);
     }
 
     /**
@@ -43,7 +45,7 @@ class BackofficeGuestbookController extends Controller
             'message' => 'required',
         ]);
 
-        Guestbook::create([
+        Guest::create([
             'name' => $request->input('name'),
             'title' => $request->input('title'),
             'email' => $request->input('email'),
@@ -72,8 +74,8 @@ class BackofficeGuestbookController extends Controller
      */
     public function edit($id)
     {
-        $guests = Guestbook::all();
-        $guest = Guestbook::find($id);
+        $guests = Guest::all();
+        $guest = Guest::find($id);
         return view('backoffice.guestbookedit', [
             'guestToEdit' => $guest,
             'guests' => $guests
@@ -89,8 +91,9 @@ class BackofficeGuestbookController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $guest = Guestbook::find($id);
+        $guest = Guest::find($id);
         $guest->name = $request->name;
+        $guest->title = $request->title;
         $guest->email = $request->email;
         $guest->message = $request->message;
         $query = $guest->save();
@@ -106,8 +109,9 @@ class BackofficeGuestbookController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Guestbook $guest)
+    public function destroy(Guest $guest)
     {
+        //dd($guest);
         $this->authorize('delete', $guest);
         $guest->delete();
         return back();

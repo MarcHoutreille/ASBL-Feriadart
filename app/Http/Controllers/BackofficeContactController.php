@@ -108,6 +108,7 @@ class BackofficeContactController extends Controller
      */
     public function destroy(Contact $contact)
     {
+        //dd($contact);
         $this->authorize('delete', $contact);
         $contact->delete();
         return back();

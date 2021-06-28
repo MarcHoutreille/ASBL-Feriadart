@@ -2,17 +2,17 @@
 
 namespace Database\Factories;
 
-use App\Models\Guestbook;
+use App\Models\Guest;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-class GuestbookFactory extends Factory
+class GuestFactory extends Factory
 {
     /**
      * The name of the factory's corresponding model.
      *
      * @var string
      */
-    protected $model = Guestbook::class;
+    protected $model = Guest::class;
 
     /**
      * Define the model's default state.

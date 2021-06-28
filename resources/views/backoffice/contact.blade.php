@@ -54,7 +54,14 @@
                                     <div class="text-sm text-gray-900">{{ $contact->message }}</div>
                                 </td>
                                 <td class="px-4 py-4 whitespace-normal text-right text-sm font-medium">
-                                    <a href="{{ route('contact.edit', $contact) }}" class="text-indigo-600 hover:text-indigo-900">{{ __('Edit') }}</a>
+                                    <a href="{{ route('contact.edit', $contact) }}" class="text-indigo-600 hover:text-indigo-900 my-4">{{ __('Edit') }}</a>
+                                    @can('delete', $contact)
+                                    <form action="{{ route('contact.destroy', $contact) }}" method="POST" class="my-4">
+                                    @csrf
+                                    @method('DELETE')
+                                        <button type="submit" class="text-red-600 hover:text-red-900">{{ __('Delete') }}</button>
+                                    </form>
+                                    @endcan
                                 </td>
                             </tr>
                             @endforeach
