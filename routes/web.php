@@ -36,6 +36,7 @@ Route::get('lang/{lang}', ['as' => 'lang.switch', 'uses' => 'App\Http\Controller
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/articles', [ArticlesController::class, 'index'])->name('articles');
+Route::get('/articles/{article}', [ArticlesController::class, 'show'])->name('article.show');
 Route::get('/events', [EventsController::class, 'index'])->name('events');
 Route::get('/gallery', [GalleryController::class, 'index'])->name('gallery');
 Route::get('/about', [AboutController::class, 'index'])->name('about');

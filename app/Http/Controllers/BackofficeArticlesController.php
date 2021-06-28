@@ -85,6 +85,9 @@ class BackofficeArticlesController extends Controller
         $article->excerpt = $request->excerpt;
         $article->body = $request->body;
         $article->img_src = $request->img_src;
+        $article->author = $request->author;
+        $article->contact = $request->contact;
+        $article->url = $request->url;
         $query = $article->save();
 
         if($query){

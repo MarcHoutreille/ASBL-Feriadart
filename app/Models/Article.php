@@ -15,6 +15,9 @@ class Article extends Model
         'img_src',
         'body',
         'excerpt',
+        'author',
+        'contact',
+        'url',
     ];
 
     public function user()
@@ -27,6 +30,8 @@ class Article extends Model
             $query
             ->where('title', 'like', '%' . $search . '%')
             ->orWhere('body', 'like', '%' . $search . '%')
+            ->orWhere('excerpt', 'like', '%' . $search . '%')
+            ->orWhere('author', 'like', '%' . $search . '%')
             ->orWhere('created_at', 'like', '%' . $search . '%');
         });
     }

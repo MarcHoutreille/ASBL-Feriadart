@@ -30,7 +30,10 @@ class ArticleFactory extends Factory
             'slug' => $slug,
             'img_src' => $this->faker->imageUrl($width = 720, $height = 400, 'Event'),
             'body' => $body,
-            "excerpt" => substr($body,0,50) . '...',
+            'excerpt' => substr($body,0,50) . '...',
+            'author' => $this->faker->name(),
+            'contact' => $this->faker->email(),
+            'url' => $this->faker->url(),
         ];
     }
 }

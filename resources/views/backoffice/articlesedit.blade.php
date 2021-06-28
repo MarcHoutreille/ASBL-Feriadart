@@ -16,6 +16,9 @@
                                     {{ __('Date') }}
                                 </th>
                                 <th scope="col" class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                    {{ __('Author') }}
+                                </th>
+                                <th scope="col" class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                                     {{ __('Title') }}
                                 </th>
                                 <th scope="col" class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
@@ -25,7 +28,7 @@
                                     {{ __('Body') }}
                                 </th>
                                 <th scope="col" class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                    {{ __('Image') }}
+                                    {{ __('Links') }}
                                 </th>
                                 <th scope="col" class="relative px-4 py-3">
                                     <span class="sr-only">{{ __('Edit') }}</span>
@@ -52,6 +55,10 @@
                                     </div>
                                 </td>
                                 <td class="px-4 py-4 whitespace-normal">
+                                    <div class="text-sm text-gray-900"><input name="author" type=text value="{{ $article->author }}"/></div>
+                                    <div class="text-sm text-gray-500"><input name="contact" type=text value="{{ $article->contact }}"/></div>
+                                </td>
+                                <td class="px-4 py-4 whitespace-normal">
                                     <div class="text-sm text-gray-900"><input name="title" type=text value="{{ $article->title }}"/></div>
                                     <div class="text-sm text-gray-500"><input name="slug" type=text value="{{ $article->slug }}"/></div>
                                 </td>
@@ -62,6 +69,7 @@
                                     <div class="text-sm text-gray-900"><textarea name="body" >{{ $article->body }}</textarea></div>
                                 </td>
                                 <td class="px-4 py-4 whitespace-normal text-sm text-gray-500">
+                                    <div class="text-sm text-gray-900"><input name="url" type=text value="{{ $article->url }}"/></div>
                                     <div class="text-sm text-gray-500"><input name="img_src" type=text value="{{ $article->img_src }}"/></div>
                                 </td>
                                 <td class="px-4 py-4 whitespace-normal text-right text-sm font-medium">
@@ -84,6 +92,10 @@
                                     </div>
                                 </td>
                                 <td class="px-4 py-4 whitespace-normal">
+                                    <div class="text-sm text-gray-900">{{ $article->author }}</div>
+                                    <div class="text-sm text-gray-500">{{ $article->contact }}</div>
+                                </td>
+                                <td class="px-4 py-4 whitespace-normal">
                                     <div class="text-sm text-gray-900">{{ $article->title }}</div>
                                     <div class="text-sm text-gray-500">{{ $article->slug }}</div>
                                 </td>
@@ -94,6 +106,7 @@
                                     <div class="text-sm text-gray-900">{{ $article->body }}</div>
                                 </td>
                                 <td class="px-4 py-4 whitespace-normal text-sm text-gray-500">
+                                    <div class="text-sm text-gray-900">{{ $article->url }}</div>
                                     <div class="text-sm text-gray-500">{{ $article->img_src }}</div>
                                 </td>
                                 <td class="px-4 py-4 whitespace-normal text-right text-sm font-medium">

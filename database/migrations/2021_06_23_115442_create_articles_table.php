@@ -21,6 +21,9 @@ class CreateArticlesTable extends Migration
             $table->string('img_src');
             $table->text("excerpt");
             $table->text("body");
+            $table->string("author");
+            $table->string("contact");
+            $table->string("url");
             $table->timestamps();
         });
     }
