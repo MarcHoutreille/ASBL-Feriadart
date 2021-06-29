@@ -10,8 +10,8 @@ class HomeController extends Controller
 {
     public function index()
     {
-        $articles = Article::paginate(2)->sortByDesc('created_at');
-        $events = Event::paginate(3)->sortBy('date_start');
+        $articles = Article::all()->sortByDesc('created_at')->take(2);
+        $events = Event::all()->sortBy('date_start')->take(3);
         return view('index', ['events' => $events, 'articles' => $articles]);
     }
 
