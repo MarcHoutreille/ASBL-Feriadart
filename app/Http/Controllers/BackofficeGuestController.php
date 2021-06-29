@@ -27,7 +27,12 @@ class BackofficeGuestController extends Controller
      */
     public function create()
     {
-        //
+        $guests = Guest::all()->sortBy('created_at');
+        $create = true;
+        return view('backoffice.guestbook', [
+            'guests' => $guests,
+            'create' => $create,
+        ]);
     }
 
     /**
@@ -52,7 +57,7 @@ class BackofficeGuestController extends Controller
             'message' => $request->input('message'),
         ]);
 
-        return back();
+        return redirect()->route('guest.index')->with('success','Added Successfully');
     }
 
     /**
@@ -74,11 +79,13 @@ class BackofficeGuestController extends Controller
      */
     public function edit($id)
     {
-        $guests = Guest::all();
+        $guests = Guest::all()->sortBy('created_at');
         $guest = Guest::find($id);
-        return view('backoffice.guestbookedit', [
+        $edit = true;
+        return view('backoffice.guestbook', [
             'guestToEdit' => $guest,
-            'guests' => $guests
+            'guests' => $guests,
+            'edit' => $edit,
         ]);
     }
 

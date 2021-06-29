@@ -9,9 +9,12 @@
 
         <!-- Add Event Button -->
         <div class="mx-auto pb-14">
-            <button class="px-6 py-3 bg-green-700 text-white rounded shadow" id="addEvent-btn">
-                {{ __('Add Event')}}
-            </button>
+            <form action="{{ route('events.create') }}" method="GET">
+            @csrf
+                <button class="px-6 py-3 bg-green-700 text-white rounded shadow" id="addEvent-btn">
+                    {{ __('Add Event')}}
+                </button>
+            </form>
         </div>
 
         <!-- Events Table -->
@@ -95,65 +98,68 @@
     </div>
 
     <!-- Add Event Modal -->
-    <div class="bg-black bg-opacity-50 absolute inset-0 hidden justify-center items-start" id="overlay">
+    <div class="bg-black bg-opacity-50 absolute inset-0 {{ (isset($edit) || isset($create)) ? 'flex' : 'hidden' }} justify-center items-start" id="overlay">
         <div class="bg-gray-200 w-2/3 py-2 px-3 rounded shadow-xl text-gray-800 mt-6">
             <div class="flex justify-between items-center">
-                <h4 class="text-lg font-bold">{{ __('Add Event') }}</h4>
+            <h4 class="text-lg font-bold">{{ isset($create) ? __('Add Event') : __('Update Event') }}</h4>
                 <svg class="h-6 w-6 cursor-pointer p-1 hover:bg-gray-300 rounded-full" id="close-modal" fill="currentColor" viewBox="0 0 20 20">
                     <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path>
                 </svg>
             </div>
-            <form action="{{ route('events.store') }}" method="POST">
+            <form action="{{ isset($edit) ? route('events.update', $eventToEdit) : route('events.store') }}" method="POST">
                 @csrf
                 <div class="mt-2 text-sm">
                     <div class="md:p-12 bg-gray-200 flex flex-row flex-wrap">
                         <div class="md:w-1/2-screen m-0 p-5 bg-white w-full tw-h-full shadow md:rounded-lg">
+                            @isset($edit)
+                            @method('PUT')
+                            @endisset
                             <div class="flex-col flex py-3">
                                 <label class="pb-2 text-gray-700 font-semibold">{{ __('Start Date') }}</label>
-                                <input type="datetime-local" name="date_start" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" placeholder="">
+                                <input type="datetime-local" name="date_start" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" @isset($edit) value="{{ date('Y-m-d\TH:i', strtotime($eventToEdit->created_at)) }}" @endisset />
                             </div>
                             <div class="flex-col flex py-3">
                                 <label class="pb-2 text-gray-700 font-semibold">{{ __('End Date') }}</label>
-                                <input type="datetime-local" name="date_end" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" placeholder="">
+                                <input type="datetime-local" name="date_end" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" @isset($edit) value="{{ date('Y-m-d\TH:i', strtotime($eventToEdit->created_at)) }}" @endisset />
                             </div>
                             <div class="flex-col flex py-3">
                                 <label class="pb-2 text-gray-700 font-semibold">{{ __('Event Name') }}</label>
-                                <input type="text" name="name" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" placeholder="">
+                                <input type="text" name="name" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" @isset($edit) value="{{ $eventToEdit->name }}" @endisset />
                             </div>
                             <div class="flex-col flex py-3">
                                 <label class="pb-2 text-gray-700 font-semibold">{{ __('Image Link') }}</label>
-                                <input type="text" name="img_src" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" placeholder="">
+                                <input type="text" name="img_src" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" @isset($edit) value="{{ $eventToEdit->img_src }}" @endisset />
                             </div>
                             <div class="flex-col flex py-3">
                                 <label class="pb-2 text-gray-700 font-semibold">{{ __('Description') }}</label>
-                                <textarea name="description" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" rows="10"></textarea>
+                                <textarea name="description" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" rows="10">@isset($edit) {{ $eventToEdit->description }} @endisset</textarea>
                             </div>
                             <div class="flex-col flex py-3">
                                 <label class="pb-2 text-gray-700 font-semibold">{{ __('Place') }}</label>
-                                <input type="text" name="place" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" placeholder="">
+                                <input type="text" name="place" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" @isset($edit) value="{{ $eventToEdit->place }}" @endisset />
                             </div>
                             <div class="flex-col flex py-3">
                                 <label class="pb-2 text-gray-700 font-semibold">{{ __('Address') }}</label>
-                                <input type="text" name="address" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" placeholder="">
+                                <input type="text" name="address" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" @isset($edit) value="{{ $eventToEdit->address }}" @endisset />
                             </div>
                             <div class="flex-col flex py-3">
                                 <label class="pb-2 text-gray-700 font-semibold">{{ __('Event URL') }}</label>
-                                <input type="text" name="url" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" placeholder="">
+                                <input type="text" name="url" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" @isset($edit) value="{{ $eventToEdit->url }}" @endisset />
                             </div>
                             <div class="flex-col flex py-3">
                                 <label class="pb-2 text-gray-700 font-semibold">{{ __('Telephone') }}</label>
-                                <input type="tel" name="telephone" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" placeholder="">
+                                <input type="tel" name="telephone" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" @isset($edit) value="{{ $eventToEdit->telephone }}" @endisset />
                             </div>
                             <div class="flex-col flex py-3">
                                 <label class="pb-2 text-gray-700 font-semibold">{{ __('Email') }}</label>
-                                <input type="email" name="email" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" placeholder="">
+                                <input type="email" name="email" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" @isset($edit) value="{{ $eventToEdit->email }}" @endisset />
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="mt-3 flex justify-end space-x-3">
                     <button class="px-3 py-1 hover:text-red-800 hover:bg-red-600 hover:bg-opacity-50 rounded" id="close-modal2">{{ __('Cancel') }}</button>
-                    <button class="px-3 py-1 text-gray-200 bg-green-800 hover:bg-green-600 rounded" type="submit">{{ __('Add') }}</button>
+                    <button class="px-3 py-1 text-gray-200 bg-green-800 hover:bg-green-600 rounded" type="submit">{{ isset($edit) ? __('Update') : __('Add') }}</button>
                 </div>
             </form>
         </div>

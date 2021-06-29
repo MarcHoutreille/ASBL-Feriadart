@@ -29,7 +29,12 @@ class BackofficeEventsController extends Controller
      */
     public function create()
     {
-        //
+        $events = Event::all()->sortBy('date_start');
+        $create = true;
+        return view('backoffice.events', [
+            'events' => $events,
+            'create' => $create,
+        ]);
     }
 
     /**
@@ -56,7 +61,7 @@ class BackofficeEventsController extends Controller
         $request['slug'] = str_replace('.','',(str_replace(' ','-',strtolower($name))));
         $request['user_id'] = Auth::user()->id;
         Event::create($request->only('user_id', 'date_start', 'date_end', 'name', 'slug', 'img_src', 'description', 'place', 'address', 'url', 'telephone', 'email'));
-        return back()->with('message', 'Added Succesfully');
+        return redirect()->route('events.index')->with('success', 'Added Succesfully');
     }
 
     /**
@@ -78,11 +83,13 @@ class BackofficeEventsController extends Controller
      */
     public function edit($id)
     {
-        $events = Event::all();
+        $events = Event::all()->sortBy('date_start');
         $event = Event::find($id);
-        return view('backoffice.eventsedit', [
+        $edit = true;
+        return view('backoffice.events', [
             'eventToEdit' => $event,
-            'events' => $events
+            'events' => $events,
+            'edit' => $edit,
         ]);
     }
 
@@ -99,11 +106,14 @@ class BackofficeEventsController extends Controller
         $event->date_start = $request->date_start;
         $event->date_end = $request->date_end;
         $event->name = $request->name;
+        $event->slug = str_replace('.','',(str_replace(' ','-',strtolower($request->name))));
+        $event->img_src = $request->img_src;
         $event->description = $request->description;
+        $event->place = $request->place;
+        $event->address = $request->address;
         $event->telephone = $request->telephone;
         $event->email = $request->email;
         $event->url = $request->url;
-        $event->img_src = $request->img_src;
         $query = $event->save();
 
         if($query){

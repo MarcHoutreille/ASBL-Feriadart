@@ -29,7 +29,12 @@ class BackofficeArticlesController extends Controller
      */
     public function create()
     {
-        //
+        $articles = Article::all()->sortByDesc('created_at');
+        $create = true;
+        return view('backoffice.articles', [
+            'articles' => $articles,
+            'create' => $create,
+        ]);
     }
 
     /**
@@ -53,7 +58,7 @@ class BackofficeArticlesController extends Controller
         $request['slug'] = str_replace('.','',(str_replace(' ','-',strtolower($title))));
         $request['user_id'] = Auth::user()->id;
         Article::create($request->only('user_id', 'title', 'excerpt', 'body', 'slug', 'author', 'contact', 'url', 'img_src'));
-        return back()->with('message', 'Added Succesfully');
+        return redirect()->route('articles.index')->with('success', 'Added Succesfully');
     }
 
     /**
@@ -75,11 +80,13 @@ class BackofficeArticlesController extends Controller
      */
     public function edit($id)
     {
-        $articles = Article::all();
+        $articles = Article::all()->sortByDesc('created_at');
         $article = Article::find($id);
-        return view('backoffice.articlesedit', [
+        $edit = true;
+        return view('backoffice.articles', [
             'articleToEdit' => $article,
-            'articles' => $articles
+            'articles' => $articles,
+            'edit' => $edit,
         ]);
     }
 
@@ -95,7 +102,7 @@ class BackofficeArticlesController extends Controller
         $article = Article::find($id);
         $article->created_at = $request->created_at;
         $article->title = $request->title;
-        $article->slug = $request->slug;
+        $article->slug = str_replace('.','',(str_replace(' ','-',strtolower($request->title))));
         $article->excerpt = $request->excerpt;
         $article->body = $request->body;
         $article->img_src = $request->img_src;

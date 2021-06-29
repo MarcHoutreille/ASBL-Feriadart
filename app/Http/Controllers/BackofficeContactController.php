@@ -27,7 +27,12 @@ class BackofficeContactController extends Controller
      */
     public function create()
     {
-        //
+        $contacts = Contact::all()->sortBy('created_at');
+        $create = true;
+        return view('backoffice.contact', [
+            'contacts' => $contacts,
+            'create' => $create,
+        ]);
     }
 
     /**
@@ -50,7 +55,7 @@ class BackofficeContactController extends Controller
             'message' => $request->input('message'),
         ]);
 
-        return back();
+        return redirect()->route('contact.index')->with('success','Added Successfully');
     }
 
     /**
@@ -72,11 +77,13 @@ class BackofficeContactController extends Controller
      */
     public function edit($id)
     {
-        $contacts = Contact::all();
+        $contacts = Contact::all()->sortBy('created_at');
         $contact = Contact::find($id);
-        return view('backoffice.contactedit', [
+        $edit = true;
+        return view('backoffice.contact', [
             'contactToEdit' => $contact,
-            'contacts' => $contacts
+            'contacts' => $contacts,
+            'edit' => $edit,
         ]);
     }
 
