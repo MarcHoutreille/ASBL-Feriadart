@@ -14,7 +14,7 @@ class BackofficeGuestController extends Controller
      */
     public function index()
     {
-        $guests = Guest::all();
+        $guests = Guest::all()->sortBy('created_at');
         return view('backoffice.guestbook', [
             'guests' => $guests
         ]);
@@ -92,6 +92,7 @@ class BackofficeGuestController extends Controller
     public function update(Request $request, $id)
     {
         $guest = Guest::find($id);
+        $guest->created_at = $request->created_at;
         $guest->name = $request->name;
         $guest->title = $request->title;
         $guest->email = $request->email;

@@ -30,6 +30,11 @@ class DatabaseSeeder extends Seeder
         //Create 10 random users
         //User::factory(10)->create();
 
+        //Create 10 random articles
+        Article::factory(10)->create([
+            'user_id' => $admin->id,
+        ]);
+
         //Create REAL article
         Article::create([
             'user_id' => $admin->id,
@@ -67,9 +72,9 @@ class DatabaseSeeder extends Seeder
             'contact' => 'feriadart@gmail.com - +32494999246',
             'url' => 'https://www.facebook.com/FeriadArt/',
         ]);
-
-        //Create 10 random articles
-        Article::factory(10)->create([
+        
+        //Create 10 random events
+        Event::factory(10)->create([
             'user_id' => $admin->id,
         ]);
 
@@ -117,11 +122,6 @@ class DatabaseSeeder extends Seeder
             'telephone' => '+32494999246',
             'email' => 'feriadart@gmail.com',
             'url' => 'https://www.facebook.com/events/695373977721327/',           
-        ]);
-        
-        //Create 10 random events
-        Event::factory(10)->create([
-            'user_id' => $admin->id,
         ]);
 
         //Create 10 random contact messages

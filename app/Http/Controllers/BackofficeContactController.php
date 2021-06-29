@@ -14,7 +14,7 @@ class BackofficeContactController extends Controller
      */
     public function index()
     {
-        $contacts = Contact::all();
+        $contacts = Contact::all()->sortBy('created_at');
         return view('backoffice.contact', [
             'contacts' => $contacts
         ]);
@@ -90,6 +90,7 @@ class BackofficeContactController extends Controller
     public function update(Request $request, $id)
     {
         $contact = Contact::find($id);
+        $contact->created_at = $request->created_at;
         $contact->name = $request->name;
         $contact->email = $request->email;
         $contact->message = $request->message;

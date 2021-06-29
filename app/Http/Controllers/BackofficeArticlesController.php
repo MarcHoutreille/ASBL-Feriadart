@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Article;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class BackofficeArticlesController extends Controller
 {
@@ -14,7 +15,7 @@ class BackofficeArticlesController extends Controller
      */
     public function index()
     {
-        $articles = Article::all();
+        $articles = Article::all()->sortByDesc('created_at');
         return view('backoffice.articles', [
             'articles' => $articles
         ]);
@@ -39,7 +40,20 @@ class BackofficeArticlesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'title' => 'required',
+            'excerpt' => 'required',
+            'body' => 'required',
+            'author' => 'required',
+            'contact' => 'required',
+            'url' => 'required',
+            'img_src' => 'required',
+        ]);
+        $title = $request->input('title');
+        $request['slug'] = str_replace('.','',(str_replace(' ','-',strtolower($title))));
+        $request['user_id'] = Auth::user()->id;
+        Article::create($request->only('user_id', 'title', 'excerpt', 'body', 'slug', 'author', 'contact', 'url', 'img_src'));
+        return back()->with('message', 'Added Succesfully');
     }
 
     /**

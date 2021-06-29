@@ -5,15 +5,16 @@
         </h2>
     </x-slot>
 
-    <!-- This example requires Tailwind CSS v2.0+ -->
     <div class="flex flex-col py-14">
 
+        <!-- Add Event Button -->
         <div class="mx-auto pb-14">
             <button class="px-6 py-3 bg-green-700 text-white rounded shadow" id="addEvent-btn">
                 {{ __('Add Event')}}
             </button>
         </div>
 
+        <!-- Events Table -->
         <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
             <div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
                 <div class="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">
@@ -93,7 +94,7 @@
         </div>
     </div>
 
-
+    <!-- Add Event Modal -->
     <div class="bg-black bg-opacity-50 absolute inset-0 hidden justify-center items-start" id="overlay">
         <div class="bg-gray-200 w-2/3 py-2 px-3 rounded shadow-xl text-gray-800 mt-6">
             <div class="flex justify-between items-center">
@@ -158,6 +159,7 @@
         </div>
     </div>
 
+    <!-- Button Javascript -->
     <script>
         window.addEventListener('DOMContentLoaded', () => {
             const overlay = document.querySelector('#overlay');

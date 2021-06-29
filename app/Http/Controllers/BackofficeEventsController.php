@@ -15,7 +15,7 @@ class BackofficeEventsController extends Controller
      */
     public function index()
     {
-        $events = Event::all();
+        $events = Event::all()->sortBy('date_start');
         return view('backoffice.events', [
             'events' => $events
         ]);
@@ -56,7 +56,7 @@ class BackofficeEventsController extends Controller
         $request['slug'] = str_replace('.','',(str_replace(' ','-',strtolower($name))));
         $request['user_id'] = Auth::user()->id;
         Event::create($request->only('user_id', 'date_start', 'date_end', 'name', 'slug', 'img_src', 'description', 'place', 'address', 'url', 'telephone', 'email'));
-        return back()->with('message', 'Evento agregado exitosamente');
+        return back()->with('message', 'Added Succesfully');
     }
 
     /**

@@ -66,13 +66,13 @@
 |        | PUT|PATCH | backoffice/eventsVideos/{eventsVideo}                  | eventsVideos.update        | App\Http\Controllers\BackofficeEventsVideosController@update            | web          |
 |        | DELETE    | backoffice/eventsVideos/{eventsVideo}                  | eventsVideos.destroy       | App\Http\Controllers\BackofficeEventsVideosController@destroy           | web          |
 |        | GET|HEAD  | backoffice/eventsVideos/{eventsVideo}/edit             | eventsVideos.edit          | App\Http\Controllers\BackofficeEventsVideosController@edit              | web          |
-|        | GET|HEAD  | backoffice/guestbook                                   | guestbook.index            | App\Http\Controllers\BackofficeGuestbookController@index                | web          |
-|        | POST      | backoffice/guestbook                                   | guestbook.store            | App\Http\Controllers\BackofficeGuestbookController@store                | web          |
-|        | GET|HEAD  | backoffice/guestbook/create                            | guestbook.create           | App\Http\Controllers\BackofficeGuestbookController@create               | web          |
-|        | GET|HEAD  | backoffice/guestbook/{guestbook}                       | guestbook.show             | App\Http\Controllers\BackofficeGuestbookController@show                 | web          |
-|        | PUT|PATCH | backoffice/guestbook/{guestbook}                       | guestbook.update           | App\Http\Controllers\BackofficeGuestbookController@update               | web          |
-|        | DELETE    | backoffice/guestbook/{guestbook}                       | guestbook.destroy          | App\Http\Controllers\BackofficeGuestbookController@destroy              | web          |
-|        | GET|HEAD  | backoffice/guestbook/{guestbook}/edit                  | guestbook.edit             | App\Http\Controllers\BackofficeGuestbookController@edit                 | web          |
+|        | GET|HEAD  | backoffice/guest                                       | guest.index                | App\Http\Controllers\BackofficeGuestController@index                    | web          |
+|        | POST      | backoffice/guest                                       | guest.store                | App\Http\Controllers\BackofficeGuestController@store                    | web          |
+|        | GET|HEAD  | backoffice/guest/create                                | guest.create               | App\Http\Controllers\BackofficeGuestController@create                   | web          |
+|        | GET|HEAD  | backoffice/guest/{guest}                               | guest.show                 | App\Http\Controllers\BackofficeGuestController@show                     | web          |
+|        | PUT|PATCH | backoffice/guest/{guest}                               | guest.update               | App\Http\Controllers\BackofficeGuestController@update                   | web          |
+|        | DELETE    | backoffice/guest/{guest}                               | guest.destroy              | App\Http\Controllers\BackofficeGuestController@destroy                  | web          |
+|        | GET|HEAD  | backoffice/guest/{guest}/edit                          | guest.edit                 | App\Http\Controllers\BackofficeGuestController@edit                     | web          |
 |        | GET|HEAD  | confirm-password                                       | password.confirm           | App\Http\Controllers\Auth\ConfirmablePasswordController@show            | web          |
 |        |           |                                                        |                            |                                                                         | auth         |
 |        | POST      | confirm-password                                       |                            | App\Http\Controllers\Auth\ConfirmablePasswordController@store           | web          |
@@ -82,6 +82,7 @@
 |        |           |                                                        |                            |                                                                         | auth         |
 |        |           |                                                        |                            |                                                                         | throttle:6,1 |
 |        | GET|HEAD  | events                                                 | events                     | App\Http\Controllers\EventsController@index                             | web          |
+|        | GET|HEAD  | events/{event}                                         | event.show                 | App\Http\Controllers\EventsController@show                              | web          |
 |        | GET|HEAD  | forgot-password                                        | password.request           | App\Http\Controllers\Auth\PasswordResetLinkController@create            | web          |
 |        |           |                                                        |                            |                                                                         | guest        |
 |        | POST      | forgot-password                                        | password.email             | App\Http\Controllers\Auth\PasswordResetLinkController@store             | web          |

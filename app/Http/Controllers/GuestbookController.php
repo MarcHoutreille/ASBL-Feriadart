@@ -14,7 +14,7 @@ class GuestbookController extends Controller
      */
     public function index()
     {
-        $guests = Guest::all();
+        $guests = Guest::all()->sortByDesc('created_at');
         return view('guestbook.index', ['guests' => $guests]);
     }
 
