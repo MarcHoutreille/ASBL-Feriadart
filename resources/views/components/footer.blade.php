@@ -1,9 +1,9 @@
-<footer class="text-gray-600">
-    <div class="container h-72 mx-auto ">
+<footer class="text-gray-600 ">
+    <div class="container h-72 mx-auto">
         
         <div class="block md:flex justify-evenly">
          
-                <div class="text-center mt-4 md:my-auto">
+                <div class="text-center mt-4 md:my-auto md:ml-48">
                     <a href="{{ route('contact') }}" class="text-md text-gray-700 underline">
                         Contact
                     </a>
@@ -29,12 +29,11 @@
                 </div>
 
               
-              <div class="my-4 md:my-auto md:mt-16">      
-               
-                <img class="m-auto rounded-full h-40" src="/images/FeriaLogoBlack.png" alt="logo">
+                 <div class="my-4 md:my-auto md:mt-16">      
+    
+                <img class="mx-auto rounded-full h-40" src="/images/FeriaLogoBlack.png" alt="logo">
             
-               
-            </div>
+                </div>
            
 
 
@@ -57,7 +56,7 @@
 
     <div class="bg-gray-100 h-14 flex justify-end">
         
-            <button class="px-auto my-auto mr-2"><svg id="secret"
+            <div class="px-auto my-auto mr-2"><svg id="secret"
                 width="20.000000pt" height="20.000000pt" viewBox="0 0 30.000000 30.000000"
                 preserveAspectRatio="xMidYMid meet">
                 <g transform="translate(0.000000,30.000000) scale(0.100000,-0.100000)"
@@ -73,7 +72,7 @@
                 -34 -25 -40 0 -45 2 -39 18 4 9 9 24 12 33 3 9 19 21 36 26 38 12 44 9 27 -12z"/>
                 </g>
                 </svg>
-                </button>
+            </div>
           
         
     </div>
