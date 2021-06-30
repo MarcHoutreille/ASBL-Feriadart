@@ -1,111 +1,100 @@
-<footer class="text-gray-600 body-font">
-    <div class="container px-5 py-24 mx-auto">
-        <div class="flex flex-wrap md:text-left text-center order-first">
-            <div class="lg:w-1/4 md:w-1/2 w-full px-4">
-                <h2 class="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">CATEGORIES</h2>
-                <nav class="list-none mb-10">
-                    @if (Route::has('login'))
-                    @auth
-                    <li>
-                        <a href="{{ route('backoffice.index') }}" class="text-sm text-gray-700 underline">Backoffice</a>
-                    </li>
-                    @else
-                    <li>
-                        <a href="{{ route('login') }}" class="text-sm text-gray-700 underline">Log in</a>
-                    </li>
-                    @if (Route::has('register'))
-                    <li>
-                        <a href="{{ route('register') }}" class="text-sm text-gray-700 underline">Register</a>
-                    </li>
-                    @endif
-                    @endauth
-                    @endif
-                </nav>
-            </div>
-            <div class="lg:w-1/4 md:w-1/2 w-full px-4">
-                <h2 class="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">CATEGORIES</h2>
-                <nav class="list-none mb-10">
-                    <li>
-                        <a class="text-gray-600 hover:text-gray-800">First Link</a>
-                    </li>
-                    <li>
-                        <a class="text-gray-600 hover:text-gray-800">Second Link</a>
-                    </li>
-                    <li>
-                        <a class="text-gray-600 hover:text-gray-800">Third Link</a>
-                    </li>
-                    <li>
-                        <a class="text-gray-600 hover:text-gray-800">Fourth Link</a>
-                    </li>
-                </nav>
-            </div>
-            <div class="lg:w-1/4 md:w-1/2 w-full px-4">
-                <h2 class="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">CATEGORIES</h2>
-                <nav class="list-none mb-10">
-                    <li>
-                        <a class="text-gray-600 hover:text-gray-800">First Link</a>
-                    </li>
-                    <li>
-                        <a class="text-gray-600 hover:text-gray-800">Second Link</a>
-                    </li>
-                    <li>
-                        <a class="text-gray-600 hover:text-gray-800">Third Link</a>
-                    </li>
-                    <li>
-                        <a class="text-gray-600 hover:text-gray-800">Fourth Link</a>
-                    </li>
-                </nav>
-            </div>
-            <div class="lg:w-1/4 md:w-1/2 w-full px-4">
-                <h2 class="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">SUBSCRIBE</h2>
-                <div class="flex xl:flex-nowrap md:flex-nowrap lg:flex-wrap flex-wrap justify-center items-end md:justify-start">
-                    <div class="relative w-40 sm:w-auto xl:mr-4 lg:mr-0 sm:mr-4 mr-2">
-                        <label for="footer-field" class="leading-7 text-sm text-gray-600">Placeholder</label>
-                        <input type="text" id="footer-field" name="footer-field" class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:bg-transparent focus:ring-2 focus:ring-indigo-200 focus:border-indigo-500 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+<footer class="text-gray-600">
+    <div class="container h-72 mx-auto ">
+        
+        <div class="block md:flex justify-evenly">
+         
+                <div class="text-center mt-4 md:my-auto">
+                    <a href="{{ route('contact') }}" class="text-md text-gray-700 underline">
+                        Contact
+                    </a>
+                    <div class="list-none mb-10 hidden" id="backnav">
+                        @if (Route::has('login'))
+                        @auth
+                        <li>
+                            <a href="{{ route('backoffice.index') }}" class="text-md text-gray-700 underline">Backoffice</a>
+                        </li>
+                        @else
+                        <li>
+                            <a href="{{ route('login') }}" class="text-md text-gray-700 underline">Log in</a>
+                        </li>
+                        @if (Route::has('register'))
+                        <li>
+                            <a href="{{ route('register') }}" class="text-md text-gray-700 underline">Register</a>
+                        </li>
+                        @endif
+                        @endauth
+                        @endif
                     </div>
-                    <button class="lg:mt-2 xl:mt-0 flex-shrink-0 inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded">Button</button>
+               
                 </div>
-                <p class="text-gray-500 text-sm mt-2 md:text-left text-center">Bitters chicharrones fanny pack
-                    <br class="lg:block hidden">waistcoat green juice
-                </p>
+
+              
+              <div class="my-4 md:my-auto md:mt-16">      
+               
+                <img class="m-auto rounded-full h-40" src="/images/FeriaLogoBlack.png" alt="logo">
+            
+               
             </div>
+           
+
+
+            <div class="text-center md:my-auto">
+                
+                    <a href="https://www.facebook.com/FeriadArt/?ref=page_internal" class="inline-flex text-black">
+                        <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5 mr-2" viewBox="0 0 24 24"> 
+                            <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"> </path>
+                           </svg><span class="text-md text-gray-700 underline">Check out our Facebook page</span>
+                    </a>
+              
+            </div>
+            
+                 
         </div>
+          
+        
     </div>
-    <div class="bg-gray-100">
-        <div class="container px-5 py-6 mx-auto flex items-center sm:flex-row flex-col">
-            <a class="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-10 h-10 text-white p-2 bg-indigo-500 rounded-full" viewBox="0 0 24 24">
-                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+
+
+    <div class="bg-gray-100 h-14 flex justify-end">
+        
+            <button class="px-auto my-auto mr-2"><svg id="secret"
+                width="20.000000pt" height="20.000000pt" viewBox="0 0 30.000000 30.000000"
+                preserveAspectRatio="xMidYMid meet">
+                <g transform="translate(0.000000,30.000000) scale(0.100000,-0.100000)"
+                fill="#000000" stroke="none">
+                <path d="M55 270 c-8 -12 23 -65 33 -56 3 4 0 12 -6 18 -7 7 -12 16 -12 22 0
+                5 7 1 15 -10 8 -10 15 -14 15 -8 0 18 -37 47 -45 34z"/>
+                <path d="M125 246 c-15 -14 -24 -30 -20 -36 4 -7 -2 -14 -14 -17 -12 -3 -21
+                -12 -21 -19 0 -17 -11 -20 100 20 52 18 96 39 98 46 3 9 -3 11 -19 7 -14 -3
+                -32 0 -43 9 -28 20 -51 17 -81 -10z"/>
+                <path d="M165 176 c-75 -26 -85 -33 -85 -54 0 -9 -9 -28 -20 -42 -36 -46 -29
+                -50 85 -50 88 0 105 2 105 15 0 9 -13 24 -30 33 -36 21 -37 24 -5 56 25 25 32
+                51 18 59 -5 2 -35 -5 -68 -17z m5 -51 c-10 -12 -10 -21 -2 -40 11 -25 11 -25
+                -34 -25 -40 0 -45 2 -39 18 4 9 9 24 12 33 3 9 19 21 36 26 38 12 44 9 27 -12z"/>
+                </g>
                 </svg>
-                <span class="ml-3 text-xl">Tailblocks</span>
-            </a>
-            <p class="text-sm text-gray-500 sm:ml-6 sm:mt-0 mt-4">© 2020 Tailblocks —
-                <a href="https://twitter.com/knyttneve" rel="noopener noreferrer" class="text-gray-600 ml-1" target="_blank">@knyttneve</a>
-            </p>
-            <span class="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start">
-                <a class="text-gray-500">
-                    <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
-                        <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
-                    </svg>
-                </a>
-                <a class="ml-3 text-gray-500">
-                    <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
-                        <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"></path>
-                    </svg>
-                </a>
-                <a class="ml-3 text-gray-500">
-                    <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
-                        <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
-                        <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"></path>
-                    </svg>
-                </a>
-                <a class="ml-3 text-gray-500">
-                    <svg fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="0" class="w-5 h-5" viewBox="0 0 24 24">
-                        <path stroke="none" d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"></path>
-                        <circle cx="4" cy="4" r="2" stroke="none"></circle>
-                    </svg>
-                </a>
-            </span>
-        </div>
+                </button>
+          
+        
     </div>
 </footer>
+
+
+<script>
+
+    
+
+    const secretButton = document.querySelector('#secret');
+    const backNav = document.querySelector('#backnav');
+
+    function toggleSVG() {
+            backNav.classList.toggle('hidden');
+            backNav.classList.toggle('visible');
+        }
+    
+
+   secretButton.addEventListener('click', toggleSVG);
+
+
+
+</script>
