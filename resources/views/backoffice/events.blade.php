@@ -90,7 +90,7 @@
                                     <form action="{{ route('events.destroy', $event) }}" method="POST" class="my-4">
                                         @csrf
                                         @method('DELETE')
-                                        <button type="submit" class="text-red-600 hover:text-red-900">{{ __('Delete') }}</button>
+                                        <button type="submit" onclick="return confirm('Are you sure?')" class="text-red-600 hover:text-red-900">{{ __('Delete') }}</button>
                                     </form>
                                     @endcan
                                 </td>
