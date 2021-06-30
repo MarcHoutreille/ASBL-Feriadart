@@ -131,6 +131,11 @@ class DatabaseSeeder extends Seeder
         //Create 10 random guest comments
         Guest::factory(10)->create();
 
+        //Create 1 random accepted guest comment
+        Guest::factory(1)->create([
+            'accepted' => 1,
+        ]);
+
         //Create 10 random inscriptions to event #11
         Inscription::factory(10)->create([
             'event_id' => 11,
