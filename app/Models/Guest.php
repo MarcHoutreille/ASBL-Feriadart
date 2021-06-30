@@ -14,5 +14,6 @@ class Guest extends Model
         'title',
         'email',
         'message',
+        'accepted',
     ];
 }

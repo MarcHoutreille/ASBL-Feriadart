@@ -70,7 +70,9 @@
                                     <div class="text-sm text-gray-900">{{ $contact->message }}</div>
                                 </td>
                                 <td class="px-4 py-4 whitespace-normal text-right text-sm font-medium">
-                                    <a href="{{ route('contact.edit', $contact) }}" class="text-indigo-600 hover:text-indigo-900 my-4">{{ __('Edit') }}</a>
+                                    <div class="my-4">
+                                        <a href="{{ route('contact.edit', $contact) }}" class="text-indigo-600 hover:text-indigo-900 my-4">{{ __('Edit') }}</a>
+                                    </div>
                                     @can('delete', $contact)
                                     <form action="{{ route('contact.destroy', $contact) }}" method="POST" class="my-4">
                                         @csrf
@@ -115,7 +117,7 @@
                             </div>
                             <div class="flex-col flex py-3">
                                 <label class="pb-2 text-gray-700 font-semibold">{{ __('Message') }}</label>
-                                <textarea name="message" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" rows="10">@isset($edit) {{ $contactToEdit->message }} @endisset</textarea>
+                                <textarea name="message" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" rows="5">@isset($edit) {{ $contactToEdit->message }} @endisset</textarea>
                             </div>
                             <div class="flex-col flex py-3">
                                 <label class="pb-2 text-gray-700 font-semibold">{{ __('Email') }}</label>

@@ -4,9 +4,10 @@ namespace Database\Seeders;
 
 use App\Models\User;
 use App\Models\Event;
+use App\Models\Guest;
 use App\Models\Article;
 use App\Models\Contact;
-use App\Models\Guest;
+use App\Models\Inscription;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
 
@@ -129,5 +130,10 @@ class DatabaseSeeder extends Seeder
 
         //Create 10 random guest comments
         Guest::factory(10)->create();
+
+        //Create 10 random inscriptions to event #11
+        Inscription::factory(10)->create([
+            'event_id' => 11,
+        ]);
     }
 }

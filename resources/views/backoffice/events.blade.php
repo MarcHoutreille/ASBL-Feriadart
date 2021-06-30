@@ -29,7 +29,7 @@
                         <thead class="bg-gray-50">
                             <tr>
                                 <th scope="col" class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                    {{ __('Date') }}
+                                    {{ __('Dates') }}
                                 </th>
                                 <th scope="col" class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                                     {{ __('Name') }}
@@ -83,7 +83,9 @@
                                     <div class="text-sm text-gray-500">{{ $event->img_src }}</div>
                                 </td>
                                 <td class="px-4 py-4 whitespace-normal text-right text-sm font-medium">
-                                    <a href="{{ route('events.edit', $event) }}" class="text-indigo-600 hover:text-indigo-900 my-4">{{ __('Edit') }}</a>
+                                    <div class="my-4">
+                                        <a href="{{ route('events.edit', $event) }}" class="text-indigo-600 hover:text-indigo-900 my-4">{{ __('Edit') }}</a>
+                                    </div>
                                     @can('delete', $event)
                                     <form action="{{ route('events.destroy', $event) }}" method="POST" class="my-4">
                                         @csrf

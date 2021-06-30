@@ -26,6 +26,7 @@ class GuestFactory extends Factory
             'title' => $this->faker->jobTitle(),
             'email' => $this->faker->email(),
             'message' => $this->faker->paragraph(6, true),
+            'accepted' => 0,
         ];
     }
 }
