@@ -84,7 +84,9 @@
                                     <div class="text-sm text-gray-500">{{ $article->img_src }}</div>
                                 </td>
                                 <td class="px-4 py-4 whitespace-normal text-right text-sm font-medium">
-                                    <a href="{{ route('articles.edit', $article) }}" class="text-indigo-600 hover:text-indigo-900 my-4">{{ __('Edit') }}</a>
+                                    <div class="my-4">
+                                        <a href="{{ route('articles.edit', $article) }}" class="text-indigo-600 hover:text-indigo-900 my-4">{{ __('Edit') }}</a>
+                                    </div>
                                     @can('delete', $article)
                                     <form action="{{ route('articles.destroy', $article) }}" method="POST" class="my-4">
                                         @csrf

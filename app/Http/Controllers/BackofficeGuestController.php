@@ -72,7 +72,13 @@ class BackofficeGuestController extends Controller
      */
     public function show($id)
     {
-        //
+        $guest = Guest::find($id);
+        $guest->accepted = true;
+        $query = $guest->save();
+
+        if($query){
+            return redirect()->route('guest.index')->with('success','Accepted Successfully');
+        }
     }
 
     /**
@@ -108,6 +114,7 @@ class BackofficeGuestController extends Controller
         $guest->title = $request->title;
         $guest->email = $request->email;
         $guest->message = $request->message;
+        $guest->accepted = $request->accepted;
         $query = $guest->save();
 
         if($query){

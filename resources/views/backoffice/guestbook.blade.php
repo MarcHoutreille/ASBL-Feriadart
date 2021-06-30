@@ -76,7 +76,14 @@
                                     <div class="text-sm text-gray-900">{{ $guest->message }}</div>
                                 </td>
                                 <td class="px-4 py-4 whitespace-normal text-right text-sm font-medium">
-                                    <a href="{{ route('guest.edit', $guest) }}" class="text-indigo-600 hover:text-indigo-900 my-4">{{ __('Edit') }}</a>
+                                    @if(!$guest->accepted)
+                                    <div class="my-4">
+                                        <a href="{{ route('guest.show', $guest) }}" class="text-green-600 hover:text-green-900">{{ __('Accept') }}</a>
+                                    </div>
+                                    @endif
+                                    <div class="my-4">
+                                        <a href="{{ route('guest.edit', $guest) }}" class="text-indigo-600 hover:text-indigo-900">{{ __('Edit') }}</a>
+                                    </div>
                                     @can('delete', $guest)
                                     <form action="{{ route('guest.destroy', $guest) }}" method="POST" class="my-4">
                                         @csrf
@@ -114,6 +121,14 @@
                                 <label class="pb-2 text-gray-700 font-semibold">{{ __('Date') }}</label>
                                 <input type="datetime-local" name="created_at" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" value="{{ date('Y-m-d\TH:i', strtotime($guestToEdit->created_at)) }}" />
                             </div>
+                            <div class="flex-col flex py-3">
+                                <label class="pb-2 text-gray-700 font-semibold">{{ __('Status') }}</label>
+                                <select name="accepted">
+                                    <option value=1 {{ $guestToEdit->accepted ? 'selected' : '' }}>{{ __('Accepted') }}</option>
+                                    <option value=0 {{ $guestToEdit->accepted ? '' : 'selected' }}>{{ __('Rejected') }}</option>
+                                </select>
+                            </div>
+
                             @endisset
                             <div class="flex-col flex py-3">
                                 <label class="pb-2 text-gray-700 font-semibold">{{ __('Name') }}</label>
@@ -125,7 +140,7 @@
                             </div>
                             <div class="flex-col flex py-3">
                                 <label class="pb-2 text-gray-700 font-semibold">{{ __('Message') }}</label>
-                                <textarea name="message" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" rows="10">@isset($edit) {{ $guestToEdit->message }} @endisset</textarea>
+                                <textarea name="message" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" rows="5">@isset($edit) {{ $guestToEdit->message }} @endisset</textarea>
                             </div>
                             <div class="flex-col flex py-3">
                                 <label class="pb-2 text-gray-700 font-semibold">{{ __('Email') }}</label>

@@ -21,8 +21,8 @@
                     <x-nav-link :href="route('events.index')" :active="request()->routeIs('events.index')">
                         {{ __('Events') }}
                     </x-nav-link>
-                    <x-nav-link :href="route('eventsInscriptions.index')" :active="request()->routeIs('eventsInscriptions.index')">
-                        {{ __('Events') }} {{ __('Inscriptions') }}
+                    <x-nav-link :href="route('inscriptions.index')" :active="request()->routeIs('inscriptions.index')">
+                        {{ __('Inscriptions') }}
                     </x-nav-link>
                     <x-nav-link :href="route('eventsPictures.index')" :active="request()->routeIs('eventsPictures.index')">
                         {{ __('Events') }} {{ __('Pictures') }}
@@ -98,7 +98,7 @@
             <x-responsive-nav-link :href="route('events.index')" :active="request()->routeIs('events.index')">
                 {{ __('Events') }}
             </x-responsive-nav-link>
-            <x-responsive-nav-link :href="route('eventsInscriptions.index')" :active="request()->routeIs('inscriptions.index')">
+            <x-responsive-nav-link :href="route('inscriptions.index')" :active="request()->routeIs('inscriptions.index')">
                 {{ __('Events') }} {{ __('Inscriptions') }}
             </x-responsive-nav-link>
             <x-responsive-nav-link :href="route('eventsPictures.index')" :active="request()->routeIs('eventsPictures.index')">
