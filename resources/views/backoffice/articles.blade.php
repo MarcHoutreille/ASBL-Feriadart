@@ -9,6 +9,10 @@
 
         <!-- Add Comment Button -->
         <div class="mx-auto pb-14">
+            <!-- Validation Errors -->
+            <x-auth-validation-errors class="mb-4" :errors="$errors" />
+            <x-success-message class="mb-4" />
+
             <form action="{{ route('articles.create') }}" method="GET">
             @csrf
                 <button class="px-6 py-3 bg-green-700 text-white rounded shadow" id="addEvent-btn">
@@ -68,7 +72,6 @@
                                 </td>
                                 <td class="px-4 py-4 whitespace-normal">
                                     <div class="text-sm text-gray-900">{{ $article->title }}</div>
-                                    <div class="text-sm text-gray-500">{{ $article->slug }}</div>
                                 </td>
                                 <td class="px-4 py-4 whitespace-normal">
                                     <div class="text-sm text-gray-900">{{ $article->excerpt }}</div>

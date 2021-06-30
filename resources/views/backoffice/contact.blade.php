@@ -9,6 +9,10 @@
 
         <!-- Add Contact Message Button -->
         <div class="mx-auto pb-14">
+            <!-- Validation Errors -->
+            <x-auth-validation-errors class="mb-4" :errors="$errors" />
+            <x-success-message class="mb-4" />
+
             <form action="{{ route('contact.create') }}" method="GET">
             @csrf
                 <button type="submit" class="px-6 py-3 bg-green-700 text-white rounded shadow" id="addEvent-btn">

@@ -55,6 +55,9 @@ class BackofficeContactController extends Controller
             'message' => $request->input('message'),
         ]);
 
+        if ($request->has('front')) {
+            return back()->with('success','Added Successfully');    
+        }
         return redirect()->route('contact.index')->with('success','Added Successfully');
     }
 
@@ -116,9 +119,8 @@ class BackofficeContactController extends Controller
      */
     public function destroy(Contact $contact)
     {
-        // dd($contact);
         $this->authorize('delete', $contact);
         $contact->delete();
-        return back();
+        return back()->with('success', 'Deleted Succesfully');
     }
 }

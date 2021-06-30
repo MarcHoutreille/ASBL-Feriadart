@@ -6,6 +6,11 @@
                 <p class="lg:w-2/3 mx-auto leading-relaxed text-base">Whatever cardigan tote bag tumblr hexagon brooklyn asymmetrical gentrify.</p>
             </div>
             <div class="lg:w-1/2 md:w-2/3 mx-auto">
+                <!-- Validation Errors -->
+                <x-auth-validation-errors class="mb-4" :errors="$errors" />
+                <x-success-message class="mb-4" />
+                
+                <!-- Contact Form -->
                 <form action="{{ route('contact.store') }}" method="POST">
                 @csrf
                     <div class="flex flex-wrap -m-2">
@@ -28,7 +33,8 @@
                             </div>
                         </div>
                         <div class="p-2 w-full">
-                            <button class="flex mx-auto text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">{{ __('Send')}}</button>
+                            <input type="hidden" id="front" name="front">
+                            <button type="submit" class="flex mx-auto text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">{{ __('Send')}}</button>
                         </div>
                         <div class="p-2 w-full pt-8 mt-8 border-t border-gray-200 text-center">
                             <a class="text-indigo-500">example@email.com</a>

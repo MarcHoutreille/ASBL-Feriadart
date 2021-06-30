@@ -131,6 +131,6 @@ class BackofficeEventsController extends Controller
     {
         $this->authorize('delete', $event);
         $event->delete();
-        return back();
+        return back()->with('success', 'Deleted Succesfully');
     }
 }

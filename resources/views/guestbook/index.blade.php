@@ -2,6 +2,12 @@
     <section class="text-gray-600 body-font pt-24">
         <h2 class="text-center text-2xl font-medium title-font mb-4 text-gray-900 tracking-widest">{{ __('Guestbook')}}</h2>
 
+        <!-- Validation Errors -->
+        <div class="flex justify-center">
+            <x-auth-validation-errors class="mb-4" :errors="$errors" />
+            <x-success-message class="mb-4" />
+        </div>
+
         <!-- Add Comment Button -->
         <div class="flex justify-center mt-14">
             <button class="px-6 py-3 bg-green-700 text-white rounded shadow" id="addEvent-btn">
@@ -58,6 +64,7 @@
                         </div>
                     </div>
                     <div class="mt-3 flex justify-end space-x-3">
+                        <input type="hidden" id="front" name="front">
                         <button class="px-3 py-1 hover:text-red-800 hover:bg-red-600 hover:bg-opacity-50 rounded" id="close-modal2">{{ __('Cancel') }}</button>
                         <button class="px-3 py-1 text-gray-200 bg-green-800 hover:bg-green-600 rounded" type="submit">{{ __('Send') }}</button>
                     </div>

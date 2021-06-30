@@ -126,6 +126,6 @@ class BackofficeArticlesController extends Controller
     {
         $this->authorize('delete', $article);
         $article->delete();
-        return back();
+        return back()->with('success', 'Deleted Succesfully');
     }
 }

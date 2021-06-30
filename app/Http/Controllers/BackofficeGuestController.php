@@ -57,6 +57,10 @@ class BackofficeGuestController extends Controller
             'message' => $request->input('message'),
         ]);
 
+        if ($request->has('front')) {
+            return back()->with('success','Added Successfully');    
+        }
+
         return redirect()->route('guest.index')->with('success','Added Successfully');
     }
 
@@ -119,9 +123,8 @@ class BackofficeGuestController extends Controller
      */
     public function destroy(Guest $guest)
     {
-        // dd($guest);
         $this->authorize('delete', $guest);
         $guest->delete();
-        return back();
+        return back()->with('success', 'Deleted Succesfully');
     }
 }
