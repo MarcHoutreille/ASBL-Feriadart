@@ -7,7 +7,7 @@
                 <div>
                     {!! $event->description !!}
                 </div>
-                <div class="flex items-center flex-wrap pb-4 mt-4 mb-4 border-b-2 border-gray-100 w-full">
+                <div class="flex items-center flex-wrap mt-4 mb-4 w-full">
                     <a href="{{ $event->url }}" target="_blank" class="text-indigo-500 inline-flex items-center">{{ __('Learn more') }}
                         <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
                             <path d="M5 12h14"></path>
@@ -26,17 +26,7 @@
                         </svg>6
                     </span>
                 </div>
-                <!-- Inscription Button -->
-                <div class="mx-auto pb-14">
-                    <!-- Validation Errors -->
-                    <x-auth-validation-errors class="mb-4" :errors="$errors" />
-                    <x-success-message class="mb-4" />
-
-                    <button type="submit" class="px-6 py-3 bg-green-700 text-white rounded shadow" id="addEvent-btn">
-                        {{ __('Inscription') }}
-                    </button>
-                </div>
-                <div class="inline-flex items-center mt-4 mb-4">
+                <div class="inline-flex items-center mb-4">
                     <!-- <img alt="blog" src="https://dummyimage.com/104x104" class="w-12 h-12 rounded-full flex-shrink-0 object-cover object-center"> -->
                     <span class="flex-grow flex flex-col px-4">
                         <span class="title-font font-medium text-gray-900">{{ $event->email }}</span>
@@ -46,6 +36,16 @@
                         <span class="title-font font-medium text-gray-900"><a>{{ $event->place }}</a></span>
                         <span class="text-blue-400 text-xs tracking-widest mt-0.5"><a href="http://maps.google.com/?q={{ $event->address }}+{{ $event->place }}" target="_blank">{{ $event->address }}</a></span>
                     </span>
+                </div>
+                <!-- Inscription Button -->
+                <div class="mx-auto py-4">
+                    <!-- Validation Errors -->
+                    <x-auth-validation-errors class="mb-4" :errors="$errors" />
+                    <x-success-message class="mb-4" />
+
+                    <button type="submit" class="px-6 py-3 bg-green-700 text-white rounded shadow" id="addEvent-btn">
+                        {{ __('Inscription') }}
+                    </button>
                 </div>
             </div>
             <div>
