@@ -4,21 +4,22 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AboutController;
-use App\Http\Controllers\ArticlesController;
 use App\Http\Controllers\EventsController;
-use App\Http\Controllers\GalleryController;
-use App\Http\Controllers\GuestbookController;
+use App\Http\Controllers\ArtistsController;
 use App\Http\Controllers\ContactController;
-use App\Http\Controllers\BackofficeController;
+use App\Http\Controllers\GalleryController;
+use App\Http\Controllers\ArticlesController;
+use App\Http\Controllers\GuestbookController;
 
-use App\Http\Controllers\BackofficeArticlesController;
-use App\Http\Controllers\BackofficeEventsController;
-use App\Http\Controllers\BackofficeInscriptionsController;
-use App\Http\Controllers\BackofficeArtistsPicturesController;
-use App\Http\Controllers\BackofficeArtistsVideosController;
+use App\Http\Controllers\BackofficeController;
 use App\Http\Controllers\BackofficeFilesController;
 use App\Http\Controllers\BackofficeGuestController;
+use App\Http\Controllers\BackofficeEventsController;
 use App\Http\Controllers\BackofficeContactController;
+use App\Http\Controllers\BackofficeArticlesController;
+use App\Http\Controllers\BackofficeInscriptionsController;
+use App\Http\Controllers\BackofficeArtistsVideosController;
+use App\Http\Controllers\BackofficeArtistsPicturesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -39,6 +40,8 @@ Route::get('/articles/{article:slug}', [ArticlesController::class, 'show'])->nam
 Route::get('/events', [EventsController::class, 'index'])->name('events');
 Route::get('/events/{event:slug}', [EventsController::class, 'show'])->name('event.show');
 Route::get('/gallery', [GalleryController::class, 'index'])->name('gallery');
+Route::get('/artists/event/{event:slug}', [ArtistsController::class, 'index'])->name('artists');
+Route::get('/artists/artist/{artist}', [ArtistsController::class, 'show'])->name('artist.show');
 Route::get('/about', [AboutController::class, 'index'])->name('about');
 Route::get('/guestbook', [GuestbookController::class, 'index'])->name('guestbook');
 Route::get('/contact', [ContactController::class, 'index'])->name('contact');

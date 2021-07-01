@@ -43,9 +43,12 @@
                     <x-auth-validation-errors class="mb-4" :errors="$errors" />
                     <x-success-message class="mb-4" />
 
-                    <button type="submit" class="px-6 py-3 bg-green-700 text-white rounded shadow" id="addEvent-btn">
+                    <button class="px-6 py-3 bg-green-700 text-white rounded shadow" id="addEvent-btn">
                         {{ __('Inscription') }}
                     </button>
+                    <a href="{{ route('artists', $event) }}" class="btn px-6 py-3 bg-blue-700 text-white rounded shadow">
+                        {{ __('View Artists') }}
+                    </a>
                 </div>
             </div>
             <div>
