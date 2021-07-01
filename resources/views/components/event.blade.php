@@ -29,8 +29,8 @@
                 <div class="inline-flex items-center mb-4">
                     <!-- <img alt="blog" src="https://dummyimage.com/104x104" class="w-12 h-12 rounded-full flex-shrink-0 object-cover object-center"> -->
                     <span class="flex-grow flex flex-col px-4">
-                        <span class="title-font font-medium text-gray-900">{{ $event->email }}</span>
-                        <span class="text-blue-400 text-xs tracking-widest mt-0.5">{{ $event->telephone }}</span>
+                        <span class="title-font font-medium text-blue-400"><a href="mailto:{{ $event->email }}">{{ $event->email }}</a></span>
+                        <span class="text-xs tracking-widest mt-0.5 text-gray-900 ">{{ $event->telephone }}</span>
                     </span>
                     <span class="flex-grow flex flex-col px-4">
                         <span class="title-font font-medium text-gray-900"><a>{{ $event->place }}</a></span>

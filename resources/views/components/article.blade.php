@@ -3,13 +3,13 @@
         <div class="flex flex-wrap -m-12 grid grid-cols-none lg:grid-cols-2">
             <div class="p-12 md:w-full flex flex-col items-start">
                 <span class="inline-block py-1 px-2 rounded bg-indigo-50 text-indigo-500 text-xs font-medium tracking-widest">{{ $article->created_at->format('Y-m-d') }}</span>
-                <a class="inline-flex items-center mt-4 mb-4">
+                <div class="inline-flex items-center mt-4 mb-4">
                     <img alt="blog" src="https://dummyimage.com/104x104" class="w-12 h-12 rounded-full flex-shrink-0 object-cover object-center">
                     <span class="flex-grow flex flex-col pl-4">
                         <span class="title-font font-medium text-gray-900">{{ $article->author }}</span>
-                        <span class="text-gray-400 text-xs tracking-widest mt-0.5">{{ $article->contact }}</span>
+                        <span class="text-blue-400 text-xs tracking-widest mt-0.5"><a href="mailto:{{ $article->contact }}">{{ $article->contact }}</a></span>
                     </span>
-                </a>
+                </div>
                 <h2 class="sm:text-3xl text-2xl title-font font-medium text-gray-900 mt-4 mb-4">{{ $article->title }}</h2>
                 <div>
                     {!! $article->body !!}

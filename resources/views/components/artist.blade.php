@@ -32,12 +32,12 @@
                 <div class="inline-flex items-center mb-4">
                     <!-- <img alt="blog" src="https://dummyimage.com/104x104" class="w-12 h-12 rounded-full flex-shrink-0 object-cover object-center"> -->
                     <span class="flex-grow flex flex-col px-4">
-                        <span class="title-font font-medium text-gray-900">{{ $artist->email }}</span>
-                        <span class="text-blue-400 text-xs tracking-widest mt-0.5">{{ $artist->telephone }}</span>
+                        <span class="title-font font-medium text-blue-400"><a href="mailto:{{ $artist->email }}">{{ $artist->email }}</a></span>
+                        <span class="title-font font-medium text-gray-900">{{ $artist->telephone }}</span>
                     </span>
                     <span class="flex-grow flex flex-col px-4">
-                        <span class="title-font font-medium text-gray-900"><a href="{{ $artist->facebook }}" target="_blank">Facebook</a></span>
-                        <span class="text-blue-400 text-xs tracking-widest mt-0.5"><a href="{{ $artist->instagram }}" target="_blank">Instagram</a></span>
+                        <span class="title-font font-medium text-blue-400"><a href="{{ $artist->url }}" target="_blank">Facebook</a></span>
+                        <span class="title-font font-medium text-blue-400"><a href="{{ $artist->url }}" target="_blank">Instagram</a></span>
                     </span>
                 </div>
             </div>

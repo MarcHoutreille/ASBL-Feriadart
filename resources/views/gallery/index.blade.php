@@ -26,7 +26,7 @@
     
     
       <section class="mx-auto mt-10">
-        <h2 class="text-4xl text-center font-bold mb-10">Gallery</h2>
+        <h2 class="text-4xl text-center font-bold mb-10">{{ __('Gallery') }}</h2>
 
         <div class="shadow-2xl mx-auto max-w-3xl">
           <!-- large image on slides -->
@@ -49,8 +49,8 @@
          
           <div class="flex bg-gray-400 rounded shadow-md mx-auto p-4">
             
-              <a class="mx-auto text-black hover:text-gray-800 cursor-pointer text-3xl underline" onclick="plusSlides(-1)">Previous</a>
-              <a class="mx-auto text-black hover:text-gray-800 cursor-pointer text-3xl underline" onclick="plusSlides(1)">Next</a>
+              <a class="mx-auto text-black hover:text-gray-800 cursor-pointer text-3xl underline" onclick="plusSlides(-1)">{{ __('Previous') }}</a>
+              <a class="mx-auto text-black hover:text-gray-800 cursor-pointer text-3xl underline" onclick="plusSlides(1)">{{ __('Next') }}</a>
             
              </div>
         </div> 
