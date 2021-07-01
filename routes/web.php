@@ -16,8 +16,7 @@ use App\Http\Controllers\BackofficeEventsController;
 use App\Http\Controllers\BackofficeInscriptionsController;
 use App\Http\Controllers\BackofficeArtistsPicturesController;
 use App\Http\Controllers\BackofficeArtistsVideosController;
-use App\Http\Controllers\BackofficeEventsPicturesController;
-use App\Http\Controllers\BackofficeEventsVideosController;
+use App\Http\Controllers\BackofficeFilesController;
 use App\Http\Controllers\BackofficeGuestController;
 use App\Http\Controllers\BackofficeContactController;
 
@@ -48,8 +47,7 @@ Route::get('/backoffice', [BackofficeController::class, 'index'])->middleware(['
 Route::resource('/backoffice/articles', BackofficeArticlesController::class);
 Route::resource('/backoffice/events', BackofficeEventsController::class);
 Route::resource('/backoffice/inscriptions', BackofficeInscriptionsController::class);
-Route::resource('/backoffice/eventsPictures', BackofficeEventsPicturesController::class);
-Route::resource('/backoffice/eventsVideos', BackofficeEventsVideosController::class);
+Route::resource('/backoffice/files', BackofficeFilesController::class);
 Route::resource('/backoffice/artistsPictures', BackofficeArtistsPicturesController::class);
 Route::resource('/backoffice/artistsVideos', BackofficeArtistsVideosController::class);
 Route::resource('/backoffice/guest', BackofficeGuestController::class);

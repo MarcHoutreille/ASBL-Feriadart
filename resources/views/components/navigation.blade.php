@@ -24,11 +24,9 @@
                     <x-nav-link :href="route('inscriptions.index')" :active="request()->routeIs('inscriptions.index')">
                         {{ __('Inscriptions') }}
                     </x-nav-link>
-                    <x-nav-link :href="route('eventsPictures.index')" :active="request()->routeIs('eventsPictures.index')">
-                        {{ __('Events') }} {{ __('Pictures') }}
-                    </x-nav-link>
-                    <x-nav-link :href="route('eventsVideos.index')" :active="request()->routeIs('eventsVideos.index')">
-                        {{ __('Events') }} {{ __('Videos') }}
+                  
+                    <x-nav-link :href="route('files.index')" :active="request()->routeIs('files.index')">
+                        {{ __('Files') }}
                     </x-nav-link>
                     <x-nav-link :href="route('artistsPictures.index')" :active="request()->routeIs('artistsPictures.index')">
                         {{ __('Artists') }}  {{ __('Pictures') }}
@@ -101,11 +99,9 @@
             <x-responsive-nav-link :href="route('inscriptions.index')" :active="request()->routeIs('inscriptions.index')">
                 {{ __('Events') }} {{ __('Inscriptions') }}
             </x-responsive-nav-link>
-            <x-responsive-nav-link :href="route('eventsPictures.index')" :active="request()->routeIs('eventsPictures.index')">
-                {{ __('Events') }} {{ __('Pictures') }}
-            </x-responsive-nav-link>
-            <x-responsive-nav-link :href="route('eventsVideos.index')" :active="request()->routeIs('eventsVideos.index')">
-                {{ __('Events') }} {{ __('Videos') }}
+           
+            <x-responsive-nav-link :href="route('files.index')" :active="request()->routeIs('files.index')">
+                {{ __('Files') }} 
             </x-responsive-nav-link>
             <x-responsive-nav-link :href="route('artistsPictures.index')" :active="request()->routeIs('artistsPictures.index')">
                 {{ __('Artists') }}  {{ __('Pictures') }}

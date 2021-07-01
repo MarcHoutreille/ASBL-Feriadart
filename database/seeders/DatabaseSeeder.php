@@ -8,6 +8,8 @@ use App\Models\Guest;
 use App\Models\Article;
 use App\Models\Contact;
 use App\Models\Inscription;
+use App\Models\File;
+
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
 
@@ -139,6 +141,40 @@ class DatabaseSeeder extends Seeder
         //Create 10 random inscriptions to event #11
         Inscription::factory(10)->create([
             'event_id' => 11,
+        ]);
+        File::factory(5)->create([
+            'event_id' => 1,
+        ]);
+        File::create([
+            'event_id' => 11,
+            'type' => "image",
+            'img_src' => "http://127.0.0.1:8000/images/Feriadart0.png",
+          
+        ]);
+        File::create([
+            'event_id' => 11,
+            'type' => "image",
+            'img_src' => "http://127.0.0.1:8000/images/Feriadart1.png",
+        ]);
+        File::create([
+            'event_id' => 11,
+            'type' => "image",
+            'img_src' => "http://127.0.0.1:8000/images/Feriadart2.png",
+        ]);
+        File::create([
+            'event_id' => 11,
+            'type' => "image",
+            'img_src' => "http://127.0.0.1:8000/images/Feriadart3.png",
+        ]);
+        File::create([
+            'event_id' => 11,
+            'type' => "image",
+            'img_src' => "http://127.0.0.1:8000/images/Feriadart4.png",
+        ]);
+        File::create([
+            'event_id' => 11,
+            'type' => "image",
+            'img_src' => "http://127.0.0.1:8000/images/Feriadart5.png",
         ]);
     }
 }
