@@ -16,7 +16,7 @@
             <form action="{{ route('contact.create') }}" method="GET">
             @csrf
                 <button type="submit" class="px-6 py-3 bg-green-700 text-white rounded shadow" id="addEvent-btn">
-                    {{ __('Add Contact Message')}}
+                    {{ __('Add Contact Message') }}
                 </button>
             </form>
         </div>
@@ -108,20 +108,20 @@
                             @method('PUT')
                             <div class="flex-col flex py-3">
                                 <label class="pb-2 text-gray-700 font-semibold">{{ __('Date') }}</label>
-                                <input type="datetime-local" name="created_at" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" value="{{ date('Y-m-d\TH:i', strtotime($contactToEdit->created_at)) }}" />
+                                <input type="datetime-local" name="created_at" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" value="{{ date('Y-m-d\TH:i', strtotime($contactToEdit->created_at)) }}" required />
                             </div>
                             @endisset
                             <div class="flex-col flex py-3">
                                 <label class="pb-2 text-gray-700 font-semibold">{{ __('Name') }}</label>
-                                <input type="text" name="name" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" @isset($edit) value="{{ $contactToEdit->name }}" @endisset />
+                                <input type="text" name="name" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" @isset($edit) value="{{ $contactToEdit->name }}" @endisset required />
                             </div>
                             <div class="flex-col flex py-3">
                                 <label class="pb-2 text-gray-700 font-semibold">{{ __('Message') }}</label>
-                                <textarea name="message" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" rows="5">@isset($edit) {{ $contactToEdit->message }} @endisset</textarea>
+                                <textarea name="message" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" rows="5" required>@isset($edit) {{ $contactToEdit->message }} @endisset</textarea>
                             </div>
                             <div class="flex-col flex py-3">
                                 <label class="pb-2 text-gray-700 font-semibold">{{ __('Email') }}</label>
-                                <input type="email" name="email" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" @isset($edit) value="{{ $contactToEdit->email }}" @endisset />
+                                <input type="email" name="email" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" @isset($edit) value="{{ $contactToEdit->email }}" @endisset required />
                             </div>
                         </div>
                     </div>

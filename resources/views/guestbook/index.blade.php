@@ -48,19 +48,19 @@
                             <div class="md:w-1/2-screen m-0 p-5 bg-white w-full tw-h-full shadow md:rounded-lg">
                                 <div class="flex-col flex py-3">
                                     <label class="pb-2 text-gray-700 font-semibold">{{ __('Name') }}</label>
-                                    <input type="text" name="name" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" placeholder="e.g. John Doe">
+                                    <input type="text" name="name" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" placeholder="e.g. John Doe" required>
                                 </div>
                                 <div class="flex-col flex py-3">
                                     <label class="pb-2 text-gray-700 font-semibold">{{ __('Occupation') }}</label>
-                                    <input type="text" name="title" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" placeholder="e.g. Painter">
+                                    <input type="text" name="title" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" placeholder="e.g. Painter" required>
                                 </div>
                                 <div class="flex-col flex py-3">
                                     <label class="pb-2 text-gray-700 font-semibold">{{ __('Email') }}</label>
-                                    <input type="email" name="email" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" placeholder="e.g. johndoe@mail.com">
+                                    <input type="email" name="email" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" placeholder="e.g. johndoe@mail.com" required>
                                 </div>
                                 <div class="flex-col flex py-3">
                                     <label class="pb-2 text-gray-700 font-semibold">{{ __('Message') }}</label>
-                                    <textarea name="message" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" rows="10"></textarea>
+                                    <textarea name="message" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" rows="5" required></textarea>
                                 </div>
                             </div>
                         </div>

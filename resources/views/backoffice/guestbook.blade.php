@@ -15,8 +15,8 @@
 
             <form action="{{ route('guest.create') }}" method="GET">
             @csrf
-                <button class="px-6 py-3 bg-green-700 text-white rounded shadow" id="addEvent-btn">
-                    {{ __('Add Guestbook Comment')}}
+                <button type="submit" class="px-6 py-3 bg-green-700 text-white rounded shadow" id="addEvent-btn">
+                    {{ __('Add Guestbook Comment') }}
                 </button>
             </form>
         </div>
@@ -119,11 +119,11 @@
                             @method('PUT')
                             <div class="flex-col flex py-3">
                                 <label class="pb-2 text-gray-700 font-semibold">{{ __('Date') }}</label>
-                                <input type="datetime-local" name="created_at" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" value="{{ date('Y-m-d\TH:i', strtotime($guestToEdit->created_at)) }}" />
+                                <input type="datetime-local" name="created_at" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" value="{{ date('Y-m-d\TH:i', strtotime($guestToEdit->created_at)) }}" required />
                             </div>
                             <div class="flex-col flex py-3">
                                 <label class="pb-2 text-gray-700 font-semibold">{{ __('Status') }}</label>
-                                <select name="accepted">
+                                <select name="accepted" required>
                                     <option value=1 {{ $guestToEdit->accepted ? 'selected' : '' }}>{{ __('Accepted') }}</option>
                                     <option value=0 {{ $guestToEdit->accepted ? '' : 'selected' }}>{{ __('Rejected') }}</option>
                                 </select>
@@ -132,19 +132,19 @@
                             @endisset
                             <div class="flex-col flex py-3">
                                 <label class="pb-2 text-gray-700 font-semibold">{{ __('Name') }}</label>
-                                <input type="text" name="name" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" @isset($edit) value="{{ $guestToEdit->name }}" @endisset />
+                                <input type="text" name="name" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" @isset($edit) value="{{ $guestToEdit->name }}" @endisset required />
                             </div>
                             <div class="flex-col flex py-3">
                                 <label class="pb-2 text-gray-700 font-semibold">{{ __('Occupation') }}</label>
-                                <input type="text" name="title" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" @isset($edit) value="{{ $guestToEdit->title }}" @endisset />
+                                <input type="text" name="title" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" @isset($edit) value="{{ $guestToEdit->title }}" @endisset required />
                             </div>
                             <div class="flex-col flex py-3">
                                 <label class="pb-2 text-gray-700 font-semibold">{{ __('Message') }}</label>
-                                <textarea name="message" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" rows="5">@isset($edit) {{ $guestToEdit->message }} @endisset</textarea>
+                                <textarea name="message" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" rows="5" required>@isset($edit) {{ $guestToEdit->message }} @endisset</textarea>
                             </div>
                             <div class="flex-col flex py-3">
                                 <label class="pb-2 text-gray-700 font-semibold">{{ __('Email') }}</label>
-                                <input type="email" name="email" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" @isset($edit) value="{{ $guestToEdit->email }}" @endisset />
+                                <input type="email" name="email" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" @isset($edit) value="{{ $guestToEdit->email }}" @endisset required />
                             </div>
                         </div>
                     </div>

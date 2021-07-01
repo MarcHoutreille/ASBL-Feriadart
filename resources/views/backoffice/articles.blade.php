@@ -15,8 +15,8 @@
 
             <form action="{{ route('articles.create') }}" method="GET">
             @csrf
-                <button class="px-6 py-3 bg-green-700 text-white rounded shadow" id="addEvent-btn">
-                    {{ __('Add Article')}}
+                <button type="submit" class="px-6 py-3 bg-green-700 text-white rounded shadow" id="addEvent-btn">
+                    {{ __('Add Article') }}
                 </button>
             </form>
         </div>
@@ -122,36 +122,36 @@
                             @method('PUT')
                             <div class="flex-col flex py-3">
                                 <label class="pb-2 text-gray-700 font-semibold">{{ __('Date') }}</label>
-                                <input type="datetime-local" name="created_at" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" value="{{ date('Y-m-d\TH:i', strtotime($articleToEdit->created_at)) }}" />
+                                <input type="datetime-local" name="created_at" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" value="{{ date('Y-m-d\TH:i', strtotime($articleToEdit->created_at)) }}" required />
                             </div>
                             @endisset
                             <div class="flex-col flex py-3">
                                 <label class="pb-2 text-gray-700 font-semibold">{{ __('Title') }}</label>
-                                <input type="text" name="title" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" @isset($edit) value="{{ $articleToEdit->title }}" @endisset />
+                                <input type="text" name="title" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" @isset($edit) value="{{ $articleToEdit->title }}" @endisset required />
                             </div>
                             <div class="flex-col flex py-3">
                                 <label class="pb-2 text-gray-700 font-semibold">{{ __('Excerpt') }}</label>
-                                <input type="text" name="excerpt" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" @isset($edit) value="{{ $articleToEdit->excerpt }}" @endisset />
+                                <input type="text" name="excerpt" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" @isset($edit) value="{{ $articleToEdit->excerpt }}" @endisset required />
                             </div>
                             <div class="flex-col flex py-3">
                                 <label class="pb-2 text-gray-700 font-semibold">{{ __('Body') }}</label>
-                                <textarea name="body" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" rows="10">@isset($edit) {{ $articleToEdit->body }} @endisset</textarea>
+                                <textarea name="body" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" rows="10" required >@isset($edit) {{ $articleToEdit->body }} @endisset</textarea>
                             </div>
                             <div class="flex-col flex py-3">
                                 <label class="pb-2 text-gray-700 font-semibold">{{ __('Author') }}</label>
-                                <input type="text" name="author" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" @isset($edit) value="{{ $articleToEdit->author }}" @endisset />
+                                <input type="text" name="author" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" @isset($edit) value="{{ $articleToEdit->author }}" @endisset required />
                             </div>
                             <div class="flex-col flex py-3">
                                 <label class="pb-2 text-gray-700 font-semibold">{{ __('Contact Info') }}</label>
-                                <input type="text" name="contact" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" @isset($edit) value="{{ $articleToEdit->contact }}" @endisset />
+                                <input type="text" name="contact" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" @isset($edit) value="{{ $articleToEdit->contact }}" @endisset required />
                             </div>
                             <div class="flex-col flex py-3">
                                 <label class="pb-2 text-gray-700 font-semibold">{{ __('Article URL') }}</label>
-                                <input type="text" name="url" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" @isset($edit) value="{{ $articleToEdit->url }}" @endisset />
+                                <input type="text" name="url" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" @isset($edit) value="{{ $articleToEdit->url }}" @endisset required />
                             </div>
                             <div class="flex-col flex py-3">
                                 <label class="pb-2 text-gray-700 font-semibold">{{ __('Image') }}</label>
-                                <input type="text" name="img_src" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" @isset($edit) value="{{ $articleToEdit->img_src }}" @endisset />
+                                <input type="text" name="img_src" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" @isset($edit) value="{{ $articleToEdit->img_src }}" @endisset required />
                             </div>
                         </div>
                     </div>

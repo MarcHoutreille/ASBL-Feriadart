@@ -59,6 +59,11 @@ class BackofficeInscriptionsController extends Controller
             'img_src' => 'required',
         ]);
         Inscription::create($request->only('event_id', 'fname', 'lname', 'bio', 'products', 'telephone', 'email', 'url', 'img_src'));
+
+        if ($request->has('front')) {
+            return back()->with('success','Inscribed Successfully');    
+        }
+        
         return redirect()->route('inscriptions.index')->with('success', 'Added Succesfully');
     }
 
