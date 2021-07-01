@@ -11,17 +11,17 @@
                         @if (Route::has('login'))
                         @auth
                         <li>
-                            <a href="{{ route('backoffice.index') }}" class="text-md text-gray-700 underline">Backoffice</a>
+                            <a href="{{ route('backoffice.index') }}" class="text-md text-gray-700 underline">{{ __('Backoffice') }}</a>
                         </li>
                         @else
                         <li>
-                            <a href="{{ route('login') }}" class="text-md text-gray-700 underline">Log in</a>
+                            <a href="{{ route('login') }}" class="text-md text-gray-700 underline">{{ __('Log in') }}</a>
                         </li>
-                        @if (Route::has('register'))
+                        <!-- @if (Route::has('register'))
                         <li>
-                            <a href="{{ route('register') }}" class="text-md text-gray-700 underline">Register</a>
+                            <a href="{{ route('register') }}" class="text-md text-gray-700 underline">{{ __('Register') }}</a>
                         </li>
-                        @endif
+                        @endif -->
                         @endauth
                         @endif
                     </div>
