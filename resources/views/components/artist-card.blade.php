@@ -8,7 +8,7 @@
         <div class="px-6 mt-16">
             <h1 class="font-bold text-3xl text-center mb-1">{{ $artist->fname }} {{ $artist->lname }}</h1>
             <p class="text-gray-800 text-sm text-center">{{ $artist->title }}</p>
-            <p class="text-center text-gray-600 text-base pt-3 font-normal">{{ $artist->bio }}</p>
+            <p class="text-center text-gray-600 text-base pt-3 font-normal">{!! $artist->bio !!}</p>
             <div class="w-full flex justify-center pt-5 pb-5">
                 <a href="{{ $artist->url }}" class="mx-5">
                     <div aria-label="Website" role="img">

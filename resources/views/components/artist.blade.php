@@ -4,10 +4,10 @@
             <div class="p-12 md:w-full flex flex-col items-start">
                 <span class="inline-block py-1 px-2 rounded bg-indigo-50 text-indigo-500 text-xs font-medium tracking-widest">{{ $artist->title }}</span>
                 <h2 class="sm:text-3xl text-2xl title-font font-medium text-gray-900 mt-4 mb-4">{{ $artist->fname }} {{ $artist->lname }}</h2>
-                <div>
+                <div class="my-4">
                     {!! $artist->bio !!}
                 </div>
-                <div>
+                <div class="my-4">
                     {!! $artist->products !!}
                 </div>
                 <div class="flex items-center flex-wrap mt-4 mb-4 w-full">
