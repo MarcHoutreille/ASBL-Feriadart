@@ -41,7 +41,7 @@ Route::get('/events/{event:slug}', [EventsController::class, 'show'])->name('eve
 
 
 Route::get('/gallery', [GalleryController::class, 'index'])->name('gallery');
-Route::get('/gallery/{collection:slug}', [GalleryController::class, 'show'])->name('gallery.show');
+Route::get('/gallery/{event:slug}', [GalleryController::class, 'show'])->name('gallery.show');
 
 
 Route::get('/about', [AboutController::class, 'index'])->name('about');
