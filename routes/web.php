@@ -42,6 +42,7 @@ Route::get('/events/{event:slug}', [EventsController::class, 'show'])->name('eve
 Route::get('/gallery', [GalleryController::class, 'index'])->name('gallery');
 Route::get('/artists/event/{event:slug}', [ArtistsController::class, 'index'])->name('artists');
 Route::get('/artists/artist/{artist}', [ArtistsController::class, 'show'])->name('artist.show');
+Route::post('/artists/inscription/{event:slug}', [ArtistsController::class, 'inscription'])->name('artists.inscription');
 Route::get('/about', [AboutController::class, 'index'])->name('about');
 Route::get('/guestbook', [GuestbookController::class, 'index'])->name('guestbook');
 Route::get('/contact', [ContactController::class, 'index'])->name('contact');

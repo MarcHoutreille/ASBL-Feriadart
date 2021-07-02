@@ -38,4 +38,14 @@ class ArtistsController extends Controller
         ]);
     }
 
+    public function inscription($slug)
+    {
+        $event = Event::where('slug', $slug)->first();
+        $create = true;
+        return view('events.show', [
+            'event' => $event,
+            'create' => $create,
+        ]);
+    }
+
 }

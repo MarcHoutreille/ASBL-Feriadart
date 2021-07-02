@@ -38,15 +38,17 @@
                     </span>
                 </div>
                 <!-- Inscription Button -->
-                <div class="mx-auto py-4">
+                <div class="flex mx-auto py-4">
                     <!-- Validation Errors -->
                     <x-auth-validation-errors class="mb-4" :errors="$errors" />
                     <x-success-message class="mb-4" />
-
-                    <button class="px-6 py-3 bg-green-700 text-white rounded shadow" id="addEvent-btn">
-                        {{ __('Inscription') }}
-                    </button>
-                    <a href="{{ route('artists', $event) }}" class="btn px-6 py-3 bg-blue-700 text-white rounded shadow">
+                    <form action="{{ route('artists.inscription', $event) }}" method="POST">
+                        @csrf
+                        <button type="submit" class="btn mx-3 px-6 py-3 bg-green-700 text-white rounded shadow" id="addEvent-btn">
+                            {{ __('Inscription') }}
+                        </button>
+                    </form>
+                    <a href="{{ route('artists', $event) }}" class="btn mx-3 px-6 py-3 bg-blue-700 text-white rounded shadow">
                         {{ __('View Artists') }}
                     </a>
                 </div>
@@ -58,10 +60,10 @@
     </div>
 
     <!-- Inscription Modal -->
-    <div class="bg-black bg-opacity-50 absolute inset-0 hidden justify-center items-start" id="overlay">
+    <div class="bg-black bg-opacity-50 absolute inset-0 {{ $create ? 'flex' : 'hidden' }} justify-center items-start" id="overlay">
         <div class="bg-gray-200 w-2/3 py-2 px-3 rounded shadow-xl text-gray-800 mt-3">
             <div class="flex justify-between items-center">
-                <h4 class="text-lg font-bold">{{ __('Add Inscription') }}</h4>
+                <h4 class="text-lg font-bold">{{ __('Sign Up') }}</h4>
                 <svg class="h-6 w-6 cursor-pointer p-1 hover:bg-gray-300 rounded-full" id="close-modal" fill="currentColor" viewBox="0 0 20 20">
                     <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path>
                 </svg>
@@ -74,7 +76,7 @@
                             <div class="w-full flex-col flex p-4">
                                 <label class="pb-2 text-gray-700 font-semibold">{{ __('Event') }}</label>
                                 <select name="event_id">
-                                    <option value={{ $event->id }} selected >{{ $event->name }}</option>
+                                    <option value={{ $event->id }} selected>{{ $event->name }}</option>
                                 </select>
                             </div>
                             <div class="w-full md:w-1/2 flex-col flex p-3">

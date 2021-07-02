@@ -50,8 +50,10 @@ class EventsController extends Controller
     public function show($slug)
     {
         $event = Event::where('slug', $slug)->first();
+        $create = false;
         return view('events.show', [
-            'event' => $event
+            'event' => $event,
+            'create' => $create,
         ]);
     }
 
