@@ -22,7 +22,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        //Create default admin user
+        //Create real admin user
         $admin = User::create([
             'name'=> 'Admin',
             'username'=> 'admin',
@@ -33,17 +33,17 @@ class DatabaseSeeder extends Seeder
         //Create 10 random users
         //User::factory(10)->create();
 
-        //Create 10 random articles
-        Article::factory(10)->create([
+        //Create 5 random articles
+        Article::factory(5)->create([
             'user_id' => $admin->id,
         ]);
 
-        //Create REAL article
+        //Create real article
         Article::create([
             'user_id' => $admin->id,
             'title' => 'Communiqué de presse',
             'slug' => 'communique-de-presse',
-            'img_src' => 'https://scontent.fcrl1-1.fna.fbcdn.net/v/t1.6435-9/118883528_686926448584494_9201219069583170298_n.jpg?_nc_cat=108&ccb=1-3&_nc_sid=973b4a&_nc_ohc=lC_dBy1ucIMAX8NWxQP&_nc_ht=scontent.fcrl1-1.fna&oh=8ff59af2b4ffe91c93c8fc04d6b3d508&oe=60DE5C7B',
+            'img_src' => 'https://scontent.fcrl1-1.fna.fbcdn.net/v/t1.6435-9/118883528_686926448584494_9201219069583170298_n.jpg?_nc_cat=108&ccb=1-3&_nc_sid=973b4a&_nc_ohc=4x8fOp51GUMAX9TZBUz&_nc_ht=scontent.fcrl1-1.fna&oh=50d531e698f2458799ef6c1996161338&oe=60E250FB',
             'body' => 
                 '<h2 class="sm:text-3xl text-2xl title-font font-medium text-gray-900 mt-4 mb-4">La Feria d’Art organise sa première édition !</h2>
                 <p class="leading-relaxed mb-8"><strong>La Feria d’Art entend casser les codes du marché de l’art classique, et ce, en
@@ -76,19 +76,19 @@ class DatabaseSeeder extends Seeder
             'url' => 'https://www.facebook.com/FeriadArt/',
         ]);
         
-        //Create 10 random events
-        Event::factory(10)->create([
+        //Create 5 random events
+        Event::factory(5)->create([
             'user_id' => $admin->id,
         ]);
 
-        //Create REAL event
+        //Create real event
         Event::create([
             'user_id' => $admin->id,
             'date_start' => '2021-09-18 16:00:00',
             'date_end' => '2021-09-19 20:00:00',
             'name' => "FERIA D'ART #1 Marché pluridisciplinaire & alternatif",
             'slug' => 'feria-d-art-01',
-            'img_src' => 'https://scontent.fcrl1-1.fna.fbcdn.net/v/t1.6435-9/118883528_686926448584494_9201219069583170298_n.jpg?_nc_cat=108&ccb=1-3&_nc_sid=973b4a&_nc_ohc=lC_dBy1ucIMAX8NWxQP&_nc_ht=scontent.fcrl1-1.fna&oh=8ff59af2b4ffe91c93c8fc04d6b3d508&oe=60DE5C7B',
+            'img_src' => 'https://scontent.fcrl1-1.fna.fbcdn.net/v/t1.6435-9/118883528_686926448584494_9201219069583170298_n.jpg?_nc_cat=108&ccb=1-3&_nc_sid=973b4a&_nc_ohc=4x8fOp51GUMAX9TZBUz&_nc_ht=scontent.fcrl1-1.fna&oh=50d531e698f2458799ef6c1996161338&oe=60E250FB',
             'description' => 
                 "<h3 class='leading-relaxed mb-4'>✨Vous souhaitez découvrir et rencontrer des artistes locaux ? Acquérir une œuvre originale à un prix abordable ? ✨</h2>
                 <p class='leading-relaxed mb-4'><strong>Le See U, plus grande occupation temporaire de Belgique, au cœur des anciennes casernes d’Ixelles, ouvre ses portes à la première édition de la Feria d'Art le 18 et 19 septembre ! 🎉</strong></p>
@@ -133,46 +133,205 @@ class DatabaseSeeder extends Seeder
         //Create 10 random guest comments
         Guest::factory(10)->create();
 
-        //Create 1 random accepted guest comment
-        Guest::factory(1)->create([
+        //Create 3 random accepted guest comment
+        Guest::factory(3)->create([
             'accepted' => 1,
         ]);
 
-        //Create 10 random inscriptions to event #11
-        Inscription::factory(10)->create([
-            'event_id' => 11,
+        //Create 6 random inscriptions/artists to each random event
+        Inscription::factory(6)->create([
+            'event_id' => 1,
         ]);
+
+        //Create 6 random inscriptions/artists to each random event
+        Inscription::factory(6)->create([
+            'event_id' => 2,
+        ]);
+
+        //Create 6 random inscriptions/artists to each random event
+        Inscription::factory(6)->create([
+            'event_id' => 3,
+        ]);
+
+        //Create 6 random inscriptions/artists to each random event
+        Inscription::factory(6)->create([
+            'event_id' => 4,
+        ]);
+
+        //Create 6 random inscriptions/artists to each random event
+        Inscription::factory(6)->create([
+            'event_id' => 5,
+        ]);
+
+        //Create 6 real inscriptions/artists to real event #6
+        Inscription::create([
+            'event_id' => 6,
+            'fname' => 'Jack',
+            'lname' => 'at Night',
+            'bio' => 
+                '<p><strong>Chloé/Jack</strong></p>
+                <p>Artiste</p>
+                <br/>
+                <ul>
+                    <li>✴ Dessin, peinture, gravure, ... à BXL</li>
+                    <li>✴ Passion tatouage sous-jacente</li>
+                    <li>✴ Etudiante en langues et littératures germaniques (English and Nederlands)</li>
+                </ul>',
+            'products' => 'Gravures 15€, Planches à pain 30€.',
+            'telephone' => '01234567890',
+            'email' => 'chloe.est.jacobs@gmail.com',
+            'url' => 'https://jackatnight.bigcartel.com/',
+            'img_src' => 'https://scontent.fcrl1-1.fna.fbcdn.net/v/t1.6435-9/119651730_692966941313778_786645997237446984_n.jpg?_nc_cat=108&ccb=1-3&_nc_sid=973b4a&_nc_ohc=k53MzXUEt8YAX-BHDoE&_nc_ht=scontent.fcrl1-1.fna&oh=1491b7e345cc9fc5bbec90607653fa8f&oe=60E2AC0B',
+        ]);
+
+        //Create 6 real inscriptions/artists to real event #6
+        Inscription::create([
+            'event_id' => 6,
+            'fname' => 'Elodie',
+            'lname' => 'DK',
+            'bio' => 
+                '<p><strong>Lodk</strong></p>
+                <p>Print artist 🎨</p>
+                <ul>
+                    <li>Tea and book lover 📚</li>
+                    <li>Foodie 🍜</li>
+                    <li>Plantmum 🌱</li>
+                </ul>',
+            'products' => 'Linocut Pack 18€, Silkscreens 20€, Prints 30€',
+            'telephone' => '0123456789',
+            'email' => 'elodk@gmail.com',
+            'url' => 'www.etsy.com/fr/shop/LodkPrints',
+            'img_src' => 'https://scontent.fcrl1-1.fna.fbcdn.net/v/t1.6435-9/119730481_692966921313780_963821317840609107_n.png?_nc_cat=111&ccb=1-3&_nc_sid=973b4a&_nc_ohc=bAYg7r8DKY0AX-DEzXr&_nc_ht=scontent.fcrl1-1.fna&oh=f8c8d0e9379c9546bb6649ede462c8d9&oe=60E213C0',
+        ]);
+
+        //Create 6 real inscriptions/artists to real event #6
+        Inscription::create([
+            'event_id' => 6,
+            'fname' => 'Pacôme',
+            'lname' => 'Le Rouge',
+            'bio' => 
+                '<p><strong>Pacôme Le Rouge</strong></p>
+                <p>Virtual Designer</p>
+                <p>High immersion into emotional worlds</p>
+                <p>Part of @globalurlnation</p>',
+            'products' => 'Prints 30€',
+            'telephone' => '0123456789',
+            'email' => 'pacomelerouge@gmail.com',
+            'url' => 'https://pacome.xyz/',
+            'img_src' => 'https://scontent.fcrl1-1.fna.fbcdn.net/v/t1.6435-9/119690898_692966991313773_1780476648645044294_n.jpg?_nc_cat=105&ccb=1-3&_nc_sid=973b4a&_nc_ohc=6SpUgGLUWS4AX9SX93j&_nc_ht=scontent.fcrl1-1.fna&oh=347bc6057fd59be52064fe09cd289350&oe=60E22E25',
+        ]);
+
+        //Create 6 real inscriptions/artists to real event #6
+        Inscription::create([
+            'event_id' => 6,
+            'fname' => 'Camille',
+            'lname' => 'Toussaint',
+            'bio' => 
+            '<p><strong>Camille Toussaint</strong></p>
+            <p>Illustratrice et membre de l’atelier @tonpiquant 🎨</p>
+            <p>Team @emoustille.lanewsletter 🔥</p>',
+            'products' => 'Linogravures 40€, Affiches 20€',
+            'telephone' => '0123456789',
+            'email' => 'saraheskenazi@mail.com',
+            'url' => 'www.camilletoussaint.com',
+            'img_src' => 'https://scontent.fcrl1-1.fna.fbcdn.net/v/t1.6435-9/119676227_692967027980436_678181737992036831_n.png?_nc_cat=105&ccb=1-3&_nc_sid=973b4a&_nc_ohc=kHD1MROVAesAX-0S-9B&_nc_ht=scontent.fcrl1-1.fna&oh=7cfe82943d2366a5742bcfa385c16bb0&oe=60E29E47',
+        ]);
+
+        //Create 6 real inscriptions/artists to real event #6
+        Inscription::create([
+            'event_id' => 6,
+            'fname' => 'Benjamin',
+            'lname' => 'Marc',
+            'bio' => 
+                '<p><strong>Benjamin Marc</strong></p>
+                <p>Architect / Photographer / Runner / Rider</p>',
+            'products' => 'Photos 20€',
+            'telephone' => '0123456789',
+            'email' => 'benjaminmarc@mail.com',
+            'url' => 'https://benjaminm89.wixsite.com/photography',
+            'img_src' => 'https://scontent.fcrl1-1.fna.fbcdn.net/v/t1.6435-9/119699817_692966964647109_691078133558361336_n.png?_nc_cat=100&ccb=1-3&_nc_sid=973b4a&_nc_ohc=TaJdfNYzpMcAX8WpyYO&_nc_ht=scontent.fcrl1-1.fna&oh=b802591720b8f6037bac5e51eb94b170&oe=60E266CB',
+        ]);
+
+        //Create 6 real inscriptions/artists to real event #6
+        Inscription::create([
+            'event_id' => 6,
+            'fname' => 'Coline',
+            'lname' => 'Cornélis',
+            'bio' => 
+            '<p>𝒊𝒍𝒍𝒖𝒔𝒕𝒓𝒂𝒕𝒊𝒐𝒏</p>
+            <p>𝒅𝒋𝒊𝒏𝒈</p>
+            <p> @passaporta</p>𝒑𝒓𝒐𝒅𝒖𝒄𝒕𝒊𝒐𝒏',
+            'products' => 'Prints 15€',
+            'telephone' => '0123456789',
+            'email' => 'coline.cornelis@hotmail.com',
+            'url' => 'https://www.instagram.com/cocornel',
+            'img_src' => 'https://scontent.fcrl1-1.fna.fbcdn.net/v/t1.6435-9/119741915_692966977980441_7765633406142550922_n.png?_nc_cat=100&ccb=1-3&_nc_sid=973b4a&_nc_ohc=PitGWIWI7vIAX_7upXj&_nc_ht=scontent.fcrl1-1.fna&oh=ec6087274f1e8248fc400be6a28172ac&oe=60E31E65',
+        ]);
+
+        //Create 5 random pictures to random event #1
         File::factory(5)->create([
             'event_id' => 1,
         ]);
+
+        //Create 5 random pictures to random event #2
+        File::factory(5)->create([
+            'event_id' => 2,
+        ]);
+
+        //Create 5 random pictures to random event #3
+        File::factory(5)->create([
+            'event_id' => 3,
+        ]);
+
+        //Create 5 random pictures to random event #4
+        File::factory(5)->create([
+            'event_id' => 4,
+        ]);
+
+        //Create 5 random pictures to random event #5
+        File::factory(5)->create([
+            'event_id' => 5,
+        ]);
+        
+        //Create real picture to real event #6
         File::create([
-            'event_id' => 11,
+            'event_id' => 6,
             'type' => "image",
             'img_src' => "http://127.0.0.1:8000/images/Feriadart0.png",
           
         ]);
+
+        //Create real picture to real event #6
         File::create([
-            'event_id' => 11,
+            'event_id' => 6,
             'type' => "image",
             'img_src' => "http://127.0.0.1:8000/images/Feriadart1.png",
         ]);
+
+        //Create real picture to real event #6
         File::create([
-            'event_id' => 11,
+            'event_id' => 6,
             'type' => "image",
             'img_src' => "http://127.0.0.1:8000/images/Feriadart2.png",
         ]);
+
+        //Create real picture to real event #6
         File::create([
-            'event_id' => 11,
+            'event_id' => 6,
             'type' => "image",
             'img_src' => "http://127.0.0.1:8000/images/Feriadart3.png",
         ]);
+
+        //Create real picture to real event #6
         File::create([
-            'event_id' => 11,
+            'event_id' => 6,
             'type' => "image",
             'img_src' => "http://127.0.0.1:8000/images/Feriadart4.png",
         ]);
+
+        //Create real picture to real event #6
         File::create([
-            'event_id' => 11,
+            'event_id' => 6,
             'type' => "image",
             'img_src' => "http://127.0.0.1:8000/images/Feriadart5.png",
         ]);

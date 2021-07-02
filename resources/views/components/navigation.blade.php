@@ -24,15 +24,11 @@
                     <x-nav-link :href="route('inscriptions.index')" :active="request()->routeIs('inscriptions.index')">
                         {{ __('Inscriptions') }}
                     </x-nav-link>
-                  
+                    <x-nav-link :href="route('artists.index')" :active="request()->routeIs('artists.index')">
+                        {{ __('Artists') }}
+                    </x-nav-link>
                     <x-nav-link :href="route('files.index')" :active="request()->routeIs('files.index')">
                         {{ __('Files') }}
-                    </x-nav-link>
-                    <x-nav-link :href="route('artistsPictures.index')" :active="request()->routeIs('artistsPictures.index')">
-                        {{ __('Artists') }}  {{ __('Pictures') }}
-                    </x-nav-link>
-                    <x-nav-link :href="route('artistsVideos.index')" :active="request()->routeIs('artistsVideos.index')">
-                        {{ __('Artists') }}  {{ __('Videos') }}
                     </x-nav-link>
                     <x-nav-link :href="route('guest.index')" :active="request()->routeIs('guest.index')">
                         {{ __('Guestbook') }}
@@ -97,17 +93,13 @@
                 {{ __('Events') }}
             </x-responsive-nav-link>
             <x-responsive-nav-link :href="route('inscriptions.index')" :active="request()->routeIs('inscriptions.index')">
-                {{ __('Events') }} {{ __('Inscriptions') }}
+                {{ __('Inscriptions') }}
             </x-responsive-nav-link>
-           
+            <x-responsive-nav-link :href="route('artists.index')" :active="request()->routeIs('artists.index')">
+                {{ __('Artists') }}
+            </x-responsive-nav-link>
             <x-responsive-nav-link :href="route('files.index')" :active="request()->routeIs('files.index')">
                 {{ __('Files') }} 
-            </x-responsive-nav-link>
-            <x-responsive-nav-link :href="route('artistsPictures.index')" :active="request()->routeIs('artistsPictures.index')">
-                {{ __('Artists') }}  {{ __('Pictures') }}
-            </x-responsive-nav-link>
-            <x-responsive-nav-link :href="route('artistsVideos.index')" :active="request()->routeIs('artistsVideos.index')">
-                {{ __('Artists') }}  {{ __('Videos') }}
             </x-responsive-nav-link>
             <x-responsive-nav-link :href="route('guest.index')" :active="request()->routeIs('guest.index')">
                 {{ __('Guestbook') }}

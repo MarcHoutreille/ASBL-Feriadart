@@ -6,19 +6,19 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\ArticlesController;
 use App\Http\Controllers\EventsController;
+use App\Http\Controllers\ArtistsController;
 use App\Http\Controllers\GalleryController;
-use App\Http\Controllers\GuestbookController;
 use App\Http\Controllers\ContactController;
-use App\Http\Controllers\BackofficeController;
+use App\Http\Controllers\GuestbookController;
 
-use App\Http\Controllers\BackofficeArticlesController;
-use App\Http\Controllers\BackofficeEventsController;
-use App\Http\Controllers\BackofficeInscriptionsController;
-use App\Http\Controllers\BackofficeArtistsPicturesController;
-use App\Http\Controllers\BackofficeArtistsVideosController;
+use App\Http\Controllers\BackofficeController;
 use App\Http\Controllers\BackofficeFilesController;
 use App\Http\Controllers\BackofficeGuestController;
+use App\Http\Controllers\BackofficeEventsController;
+use App\Http\Controllers\BackofficeInscriptionsController;
 use App\Http\Controllers\BackofficeContactController;
+use App\Http\Controllers\BackofficeArticlesController;
+use App\Http\Controllers\BackofficeArtistsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -44,6 +44,10 @@ Route::get('/gallery', [GalleryController::class, 'index'])->name('gallery');
 Route::get('/gallery/{event:slug}', [GalleryController::class, 'show'])->name('gallery.show');
 
 
+Route::get('/artists/event/{event:slug}', [ArtistsController::class, 'index'])->name('artists');
+Route::get('/artists/artist/{artist}', [ArtistsController::class, 'show'])->name('artist.show');
+Route::post('/artists/inscription/{event:slug}', [ArtistsController::class, 'inscription'])->name('artists.inscription');
+
 Route::get('/about', [AboutController::class, 'index'])->name('about');
 Route::get('/guestbook', [GuestbookController::class, 'index'])->name('guestbook');
 Route::get('/contact', [ContactController::class, 'index'])->name('contact');
@@ -53,8 +57,7 @@ Route::resource('/backoffice/articles', BackofficeArticlesController::class);
 Route::resource('/backoffice/events', BackofficeEventsController::class);
 Route::resource('/backoffice/inscriptions', BackofficeInscriptionsController::class);
 Route::resource('/backoffice/files', BackofficeFilesController::class);
-Route::resource('/backoffice/artistsPictures', BackofficeArtistsPicturesController::class);
-Route::resource('/backoffice/artistsVideos', BackofficeArtistsVideosController::class);
+Route::resource('/backoffice/artists', BackofficeArtistsController::class);
 Route::resource('/backoffice/guest', BackofficeGuestController::class);
 Route::resource('/backoffice/contact', BackofficeContactController::class);
 

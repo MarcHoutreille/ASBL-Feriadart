@@ -11,7 +11,7 @@
         <!-- Add Comment Button -->
         <div class="flex justify-center mt-14">
             <button class="px-6 py-3 bg-green-700 text-white rounded shadow" id="addEvent-btn">
-                {{ __('Leave a Comment')}}
+                {{ __('Leave a comment')}}
             </button>
         </div>
 
@@ -36,7 +36,7 @@
         <div class="bg-black bg-opacity-50 absolute inset-0 hidden justify-center items-start" id="overlay">
             <div class="bg-gray-200 w-2/3 py-2 px-3 rounded shadow-xl text-gray-800 mt-6">
                 <div class="flex justify-between items-center">
-                    <h4 class="text-lg font-bold">{{ __('Leave a Comment') }}</h4>
+                    <h4 class="text-lg font-bold">{{ __('Leave a comment') }}</h4>
                     <svg class="h-6 w-6 cursor-pointer p-1 hover:bg-gray-300 rounded-full" id="close-modal" fill="currentColor" viewBox="0 0 20 20">
                         <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path>
                     </svg>

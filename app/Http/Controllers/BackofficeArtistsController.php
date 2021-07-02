@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class BackofficeArtistsVideosController extends Controller
+class BackofficeArtistsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,8 +13,7 @@ class BackofficeArtistsVideosController extends Controller
      */
     public function index()
     {
-        return view('backoffice.artistsvideos');
-
+        return view('backoffice.artists');
     }
 
     /**

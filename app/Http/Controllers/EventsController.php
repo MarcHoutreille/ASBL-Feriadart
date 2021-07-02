@@ -16,6 +16,8 @@ class EventsController extends Controller
     {
         $events = Event::all()->sortByDesc('date_start');
         return view('events.index', ['events' => $events]);
+
+
     }
 
     /**
@@ -48,7 +50,11 @@ class EventsController extends Controller
     public function show($slug)
     {
         $event = Event::where('slug', $slug)->first();
-        return view('events.show', ['event' => $event]);
+        $create = false;
+        return view('events.show', [
+            'event' => $event,
+            'create' => $create,
+        ]);
     }
 
     /**

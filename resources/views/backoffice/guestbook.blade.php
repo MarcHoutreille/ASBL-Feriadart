@@ -103,7 +103,7 @@
 
     <!-- Add Guestbook Comment Modal -->
     <div class="bg-black bg-opacity-50 absolute inset-0 {{ (isset($edit) || isset($create)) ? 'flex' : 'hidden' }} justify-center items-start" id="overlay">
-        <div class="bg-gray-200 w-2/3 py-2 px-3 rounded shadow-xl text-gray-800 mt-6">
+        <div class="bg-gray-200 w-2/3 py-2 px-3 rounded shadow-xl text-gray-800 mt-3">
             <div class="flex justify-between items-center">
                 <h4 class="text-lg font-bold">{{ isset($create) ? __('Add Guestbook Comment') : __('Update Guestbook Comment') }}</h4>
                 <svg class="h-6 w-6 cursor-pointer p-1 hover:bg-gray-300 rounded-full" id="close-modal" fill="currentColor" viewBox="0 0 20 20">
@@ -112,39 +112,38 @@
             </div>
             <form action="{{ isset($edit) ? route('guest.update', $guestToEdit) : route('guest.store') }}" method="POST">
                 @csrf
-                <div class="mt-2 text-sm">
-                    <div class="md:p-12 bg-gray-200 flex flex-row flex-wrap">
-                        <div class="md:w-1/2-screen m-0 p-5 bg-white w-full tw-h-full shadow md:rounded-lg">
+                <div class="text-sm">
+                    <div class="md:p-12 bg-gray-200">
+                        <div class="bg-white w-full tw-h-full md:w-1/2-screen shadow md:rounded-lg flex flex-wrap p-4">
                             @isset($edit)
                             @method('PUT')
-                            <div class="flex-col flex py-3">
+                            <div class="w-full md:w-1/2 flex-col flex p-3">
                                 <label class="pb-2 text-gray-700 font-semibold">{{ __('Date') }}</label>
                                 <input type="datetime-local" name="created_at" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" value="{{ date('Y-m-d\TH:i', strtotime($guestToEdit->created_at)) }}" required />
                             </div>
-                            <div class="flex-col flex py-3">
+                            <div class="w-full md:w-1/2 flex-col flex p-3">
                                 <label class="pb-2 text-gray-700 font-semibold">{{ __('Status') }}</label>
                                 <select name="accepted" required>
                                     <option value=1 {{ $guestToEdit->accepted ? 'selected' : '' }}>{{ __('Accepted') }}</option>
                                     <option value=0 {{ $guestToEdit->accepted ? '' : 'selected' }}>{{ __('Rejected') }}</option>
                                 </select>
                             </div>
-
                             @endisset
-                            <div class="flex-col flex py-3">
+                            <div class="w-full md:w-1/2 flex-col flex p-3">
                                 <label class="pb-2 text-gray-700 font-semibold">{{ __('Name') }}</label>
                                 <input type="text" name="name" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" @isset($edit) value="{{ $guestToEdit->name }}" @endisset required />
                             </div>
-                            <div class="flex-col flex py-3">
+                            <div class="w-full md:w-1/2 flex-col flex p-3">
+                                <label class="pb-2 text-gray-700 font-semibold">{{ __('Email') }}</label>
+                                <input type="email" name="email" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" @isset($edit) value="{{ $guestToEdit->email }}" @endisset required />
+                            </div>
+                            <div class="w-full flex-col flex p-3">
                                 <label class="pb-2 text-gray-700 font-semibold">{{ __('Occupation') }}</label>
                                 <input type="text" name="title" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" @isset($edit) value="{{ $guestToEdit->title }}" @endisset required />
                             </div>
-                            <div class="flex-col flex py-3">
+                            <div class="w-full flex-col flex p-3">
                                 <label class="pb-2 text-gray-700 font-semibold">{{ __('Message') }}</label>
                                 <textarea name="message" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" rows="5" required>@isset($edit) {{ $guestToEdit->message }} @endisset</textarea>
-                            </div>
-                            <div class="flex-col flex py-3">
-                                <label class="pb-2 text-gray-700 font-semibold">{{ __('Email') }}</label>
-                                <input type="email" name="email" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" @isset($edit) value="{{ $guestToEdit->email }}" @endisset required />
                             </div>
                         </div>
                     </div>
