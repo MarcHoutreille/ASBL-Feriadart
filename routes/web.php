@@ -38,7 +38,12 @@ Route::get('/articles', [ArticlesController::class, 'index'])->name('articles');
 Route::get('/articles/{article:slug}', [ArticlesController::class, 'show'])->name('article.show');
 Route::get('/events', [EventsController::class, 'index'])->name('events');
 Route::get('/events/{event:slug}', [EventsController::class, 'show'])->name('event.show');
+
+
 Route::get('/gallery', [GalleryController::class, 'index'])->name('gallery');
+Route::get('/gallery/{collection:slug}', [GalleryController::class, 'show'])->name('gallery.show');
+
+
 Route::get('/about', [AboutController::class, 'index'])->name('about');
 Route::get('/guestbook', [GuestbookController::class, 'index'])->name('guestbook');
 Route::get('/contact', [ContactController::class, 'index'])->name('contact');

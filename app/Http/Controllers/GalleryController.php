@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Gallery;
+use App\Models\Event;
+
 
 class GalleryController extends Controller
 {
@@ -13,7 +16,8 @@ class GalleryController extends Controller
      */
     public function index()
     {
-        return view('gallery/index');
+        $events = Event::all()->sortByDesc('date_start');
+        return view('gallery.index', ['events' => $events]);
     }
 
     /**
@@ -43,9 +47,10 @@ class GalleryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($slug)
     {
-        //
+        $event = Event::where('slug', $slug)->first();
+        return view('gallery.show', ['event' => $event]);
     }
 
     /**
