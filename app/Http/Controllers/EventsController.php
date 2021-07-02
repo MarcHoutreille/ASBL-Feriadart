@@ -14,10 +14,10 @@ class EventsController extends Controller
      */
     public function index()
     {
-        $events = Event::all()->sortBy('date_start');
-        return view('events.index', [
-            'events' => $events
-        ]);
+        $events = Event::all()->sortByDesc('date_start');
+        return view('events.index', ['events' => $events]);
+
+
     }
 
     /**
