@@ -1,10 +1,10 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Files') }}         
+            {{ __('Files') }}
         </h2>
     </x-slot>
-   
+
     <div class="flex flex-col py-14">
 
         <!-- Add Event Button -->
@@ -14,14 +14,14 @@
             <x-success-message class="mb-4" />
 
             <form action="{{ route('files.create') }}" method="GET">
-            @csrf
+                @csrf
                 <button type="submit" class="px-6 py-3 bg-green-700 text-white rounded shadow" id="addEvent-btn">
                     {{ __('Add Files') }}
                 </button>
             </form>
         </div>
 
-        <!-- files Table -->
+        <!-- Files Table -->
         <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
             <div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
                 <div class="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">
@@ -37,7 +37,6 @@
                                 <th scope="col" class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                                     {{ __('Url') }}
                                 </th>
-                               
                                 <th scope="col" class="relative px-4 py-3">
                                     <span class="sr-only">{{ __('Edit') }}</span>
                                 </th>
@@ -64,7 +63,6 @@
                                 <td class="px-4 py-4 whitespace-normal">
                                     <div class="text-sm text-gray-900">{{ $file->img_src }}</div>
                                 </td>
-                               
                                 <td class="px-4 py-4 whitespace-normal text-right text-sm font-medium">
                                     <div class="my-4">
                                         <a href="{{ route('files.edit', $file) }}" class="text-indigo-600 hover:text-indigo-900 my-4">{{ __('Edit') }}</a>
@@ -86,23 +84,23 @@
         </div>
     </div>
 
-    <!-- Add file Modal -->
+    <!-- Add File Modal -->
     <div class="bg-black bg-opacity-50 absolute inset-0 {{ (isset($edit) || isset($create)) ? 'flex' : 'hidden' }} justify-center items-start" id="overlay">
-        <div class="bg-gray-200 w-2/3 py-2 px-3 rounded shadow-xl text-gray-800 mt-6">
+        <div class="bg-gray-200 w-2/3 py-2 px-3 rounded shadow-xl text-gray-800 mt-3">
             <div class="flex justify-between items-center">
-            <h4 class="text-lg font-bold">{{ isset($create) ? __('Add file') : __('Update file') }}</h4>
+                <h4 class="text-lg font-bold">{{ isset($create) ? __('Add File') : __('Update File') }}</h4>
                 <svg class="h-6 w-6 cursor-pointer p-1 hover:bg-gray-300 rounded-full" id="close-modal" fill="currentColor" viewBox="0 0 20 20">
                     <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path>
                 </svg>
             </div>
             <form action="{{ isset($edit) ? route('files.update', $fileToEdit) : route('files.store') }}" method="POST">
                 @csrf
-                <div class="mt-2 text-sm">
-                    <div class="md:p-12 bg-gray-200 flex flex-row flex-wrap">
-                        <div class="md:w-1/2-screen m-0 p-5 bg-white w-full tw-h-full shadow md:rounded-lg">
+                <div class="text-sm">
+                    <div class="md:p-12 bg-gray-200">
+                        <div class="bg-white w-full tw-h-full md:w-1/2-screen shadow md:rounded-lg flex flex-wrap p-4">
                             @isset($edit)
                             @method('PUT')
-                            <div class="flex-col flex py-3">
+                            <div class="w-full md:w-1/2 flex-col flex p-3">
                                 <label class="pb-2 text-gray-700 font-semibold">{{ __('Event') }}</label>
                                 <select name="event_id">
                                     @foreach($events as $event)
@@ -110,16 +108,16 @@
                                     @endforeach
                                 </select>
                             </div>
-                            <div class="flex-col flex py-3">
+                            <div class="w-full md:w-1/2 flex-col flex p-3">
                                 <label class="pb-2 text-gray-700 font-semibold">{{ __('File type') }}</label>
                                 <select name="type">
-                                    <option value="image" {{ $fileToEdit->type == "image" ? 'selected' : '' }}>image</option>
-                                    <option value="video" {{ $fileToEdit->type == "video" ? 'selected' : '' }}>video</option>
+                                    <option value="image" {{ $fileToEdit->type == "image" ? 'selected' : '' }}>{{ __('Image') }}</option>
+                                    <option value="video" {{ $fileToEdit->type == "video" ? 'selected' : '' }}>{{ __('Video') }}</option>
                                 </select>
                             </div>
                             @endisset
                             @isset($create)
-                            <div class="flex-col flex py-3">
+                            <div class="w-full md:w-1/2 flex-col flex p-3">
                                 <label class="pb-2 text-gray-700 font-semibold">{{ __('Event') }}</label>
                                 <select name="event_id">
                                     @foreach($events as $event)
@@ -127,16 +125,15 @@
                                     @endforeach
                                 </select>
                             </div>
-                            <div class="flex-col flex py-3">
+                            <div class="w-full md:w-1/2 flex-col flex p-3">
                                 <label class="pb-2 text-gray-700 font-semibold">{{ __('File type') }}</label>
                                 <select name="type">
-                                    <option value="image" selected>image</option>
-                                    <option value="video">video</option>
+                                    <option value="image" selected>{{ __('Image') }}</option>
+                                    <option value="video">{{ __('Video') }}</option>
                                 </select>
                             </div>
                             @endisset
-                           
-                            <div class="flex-col flex py-3">
+                            <div class="w-full flex-col flex p-3">
                                 <label class="pb-2 text-gray-700 font-semibold">{{ __('Image Link') }}</label>
                                 <input type="text" name="img_src" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" @isset($edit) value="{{ $fileToEdit->img_src }}" @endisset required />
                             </div>
