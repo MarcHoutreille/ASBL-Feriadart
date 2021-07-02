@@ -4,22 +4,21 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AboutController;
+use App\Http\Controllers\ArticlesController;
 use App\Http\Controllers\EventsController;
 use App\Http\Controllers\ArtistsController;
-use App\Http\Controllers\ContactController;
 use App\Http\Controllers\GalleryController;
-use App\Http\Controllers\ArticlesController;
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\GuestbookController;
 
 use App\Http\Controllers\BackofficeController;
 use App\Http\Controllers\BackofficeFilesController;
 use App\Http\Controllers\BackofficeGuestController;
 use App\Http\Controllers\BackofficeEventsController;
+use App\Http\Controllers\BackofficeInscriptionsController;
 use App\Http\Controllers\BackofficeContactController;
 use App\Http\Controllers\BackofficeArticlesController;
-use App\Http\Controllers\BackofficeInscriptionsController;
-use App\Http\Controllers\BackofficeArtistsVideosController;
-use App\Http\Controllers\BackofficeArtistsPicturesController;
+use App\Http\Controllers\BackofficeArtistsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -52,8 +51,7 @@ Route::resource('/backoffice/articles', BackofficeArticlesController::class);
 Route::resource('/backoffice/events', BackofficeEventsController::class);
 Route::resource('/backoffice/inscriptions', BackofficeInscriptionsController::class);
 Route::resource('/backoffice/files', BackofficeFilesController::class);
-Route::resource('/backoffice/artistsPictures', BackofficeArtistsPicturesController::class);
-Route::resource('/backoffice/artistsVideos', BackofficeArtistsVideosController::class);
+Route::resource('/backoffice/artists', BackofficeArtistsController::class);
 Route::resource('/backoffice/guest', BackofficeGuestController::class);
 Route::resource('/backoffice/contact', BackofficeContactController::class);
 

@@ -37,7 +37,7 @@
                             <button type="submit" class="flex mx-auto text-white bg-green-500 border-0 py-2 px-8 focus:outline-none hover:bg-green-600 rounded text-lg">{{ __('Send') }}</button>
                         </div>
                         <div class="p-2 w-full pt-8 mt-8 border-t border-gray-200 text-center">
-                            <a class="text-indigo-500">example@email.com</a>
+                            <a class="text-indigo-500">feriadart@gmail.com</a>
                             <p class="leading-normal my-5">49 Smith St.
                                 <br>Saint Cloud, MN 56301
                             </p>
