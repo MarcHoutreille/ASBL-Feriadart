@@ -2,9 +2,9 @@
 
 namespace App\Models;
 
+use App\Models\Event;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use App\Models\Event;
 
 
 class File extends Model

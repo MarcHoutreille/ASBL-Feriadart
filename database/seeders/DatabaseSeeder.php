@@ -43,7 +43,7 @@ class DatabaseSeeder extends Seeder
             'user_id' => $admin->id,
             'title' => 'Communiqué de presse',
             'slug' => 'communique-de-presse',
-            'img_src' => 'https://scontent.fcrl1-1.fna.fbcdn.net/v/t1.6435-9/118883528_686926448584494_9201219069583170298_n.jpg?_nc_cat=108&ccb=1-3&_nc_sid=973b4a&_nc_ohc=4x8fOp51GUMAX9TZBUz&_nc_ht=scontent.fcrl1-1.fna&oh=50d531e698f2458799ef6c1996161338&oe=60E250FB',
+            'img_src' => '/images/Feria_event1.png',
             'body' => 
                 '<h2 class="sm:text-3xl text-2xl title-font font-medium text-gray-900 mt-4 mb-4">La Feria d’Art organise sa première édition !</h2>
                 <p class="leading-relaxed mb-8"><strong>La Feria d’Art entend casser les codes du marché de l’art classique, et ce, en
@@ -88,7 +88,7 @@ class DatabaseSeeder extends Seeder
             'date_end' => '2021-09-19 20:00:00',
             'name' => "FERIA D'ART #1 Marché pluridisciplinaire & alternatif",
             'slug' => 'feria-d-art-01',
-            'img_src' => 'https://scontent.fcrl1-1.fna.fbcdn.net/v/t1.6435-9/118883528_686926448584494_9201219069583170298_n.jpg?_nc_cat=108&ccb=1-3&_nc_sid=973b4a&_nc_ohc=4x8fOp51GUMAX9TZBUz&_nc_ht=scontent.fcrl1-1.fna&oh=50d531e698f2458799ef6c1996161338&oe=60E250FB',
+            'img_src' => '/images/Feria_event1.png',
             'description' => 
                 "<h3 class='leading-relaxed mb-4'>✨Vous souhaitez découvrir et rencontrer des artistes locaux ? Acquérir une œuvre originale à un prix abordable ? ✨</h2>
                 <p class='leading-relaxed mb-4'><strong>Le See U, plus grande occupation temporaire de Belgique, au cœur des anciennes casernes d’Ixelles, ouvre ses portes à la première édition de la Feria d'Art le 18 et 19 septembre ! 🎉</strong></p>
@@ -297,7 +297,7 @@ class DatabaseSeeder extends Seeder
         File::create([
             'event_id' => 6,
             'type' => "image",
-            'img_src' => "http://127.0.0.1:8000/images/Feriadart0.png",
+            'img_src' => "/images/Feriadart0.png",
           
         ]);
 
@@ -305,35 +305,35 @@ class DatabaseSeeder extends Seeder
         File::create([
             'event_id' => 6,
             'type' => "image",
-            'img_src' => "http://127.0.0.1:8000/images/Feriadart1.png",
+            'img_src' => "/images/Feriadart1.png",
         ]);
 
         //Create real picture to real event #6
         File::create([
             'event_id' => 6,
             'type' => "image",
-            'img_src' => "http://127.0.0.1:8000/images/Feriadart2.png",
+            'img_src' => "/images/Feriadart2.png",
         ]);
 
         //Create real picture to real event #6
         File::create([
             'event_id' => 6,
             'type' => "image",
-            'img_src' => "http://127.0.0.1:8000/images/Feriadart3.png",
+            'img_src' => "/images/Feriadart3.png",
         ]);
 
         //Create real picture to real event #6
         File::create([
             'event_id' => 6,
             'type' => "image",
-            'img_src' => "http://127.0.0.1:8000/images/Feriadart4.png",
+            'img_src' => "/images/Feriadart4.png",
         ]);
 
         //Create real picture to real event #6
         File::create([
             'event_id' => 6,
             'type' => "image",
-            'img_src' => "http://127.0.0.1:8000/images/Feriadart5.png",
+            'img_src' => "/images/Feriadart5.png",
         ]);
     }
 }
