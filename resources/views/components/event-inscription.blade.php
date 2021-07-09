@@ -1,6 +1,6 @@
 <h3 class="text-center m-8 text-gray-500 font-bold text-xl underline">{{ __('Inscription') }}</h3>
 <form class="w-full max-w-sm mx-auto" action="{{ route('inscriptions.store') }}" method="POST">
-@csrf
+  @csrf
   <div class="md:flex md:items-center mb-6">
     <div class="md:w-1/3">
       <label class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4" for="inline-first-name">

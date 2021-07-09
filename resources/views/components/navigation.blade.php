@@ -99,7 +99,7 @@
                 {{ __('Artists') }}
             </x-responsive-nav-link>
             <x-responsive-nav-link :href="route('files.index')" :active="request()->routeIs('files.index')">
-                {{ __('Files') }} 
+                {{ __('Files') }}
             </x-responsive-nav-link>
             <x-responsive-nav-link :href="route('guest.index')" :active="request()->routeIs('guest.index')">
                 {{ __('Guestbook') }}

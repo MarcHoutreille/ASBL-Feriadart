@@ -10,7 +10,7 @@
                 </h1>
                 <p class="mb-8 leading-relaxed">Bonjour à tou·te·s, 🎨 Pourquoi ne pas décorer son intérieur ou offrir une oeuvre originale à ses proches créée et pensée par un artiste local? C’est ce que la Feria d’Art propose ! La Feria d’Art souhaite casser les codes du marché de l’art classique, et ce, en désacralisant l’achat d’une oeuvre d’art tout en offrant une expérience inclusive pour les artistes et le public. Nous vous annonçons avec enthousiasme que la première édition prendra place vendredi 18 et samedi 19 septembre 2020 dans la plus grande occupation temporaire de Belgique, à Bruxelles, au See U.</p>
                 <div class="flex justify-center">
-                    <a href="/events/feria-d-art-01"class="btn inline-flex text-white bg-green-500 border-0 py-2 px-6 focus:outline-none hover:bg-green-600 rounded text-lg">{{__('Learn more')}}</a>
+                    <a href="/events/feria-d-art-01" class="btn inline-flex text-white bg-green-500 border-0 py-2 px-6 focus:outline-none hover:bg-green-600 rounded text-lg">{{__('Learn more')}}</a>
                 </div>
             </div>
         </div>

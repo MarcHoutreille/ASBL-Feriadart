@@ -9,10 +9,10 @@
                 <!-- Validation Errors -->
                 <x-auth-validation-errors class="mb-4" :errors="$errors" />
                 <x-success-message class="mb-4" />
-                
+
                 <!-- Contact Form -->
                 <form action="{{ route('contact.store') }}" method="POST">
-                @csrf
+                    @csrf
                     <div class="flex flex-wrap -m-2">
                         <div class="p-2 w-1/2">
                             <div class="relative">

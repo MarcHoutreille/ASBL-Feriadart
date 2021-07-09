@@ -12,10 +12,7 @@
                         <path d="M12 5l7 7-7 7"></path>
                     </svg>
                 </a>
-               
             </div>
         </div>
     </div>
-</div> 
-
-
+</div>

@@ -14,7 +14,7 @@
             <x-success-message class="mb-4" />
 
             <form action="{{ route('articles.create') }}" method="GET">
-            @csrf
+                @csrf
                 <button type="submit" class="px-6 py-3 bg-green-700 text-white rounded shadow" id="addEvent-btn">
                     {{ __('Add Article') }}
                 </button>
@@ -135,7 +135,7 @@
                             </div>
                             <div class="w-full flex-col flex p-3">
                                 <label class="pb-2 text-gray-700 font-semibold">{{ __('Body') }}</label>
-                                <textarea name="body" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" rows="10" required >@isset($edit) {{ $articleToEdit->body }} @endisset</textarea>
+                                <textarea name="body" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" rows="10" required>@isset($edit) {{ $articleToEdit->body }} @endisset</textarea>
                             </div>
                             <div class="w-full md:w-1/2 flex-col flex p-3">
                                 <label class="pb-2 text-gray-700 font-semibold">{{ __('Author') }}</label>

@@ -1,4 +1,3 @@
-
 <header class="text-gray-700">
     <div class="overflow-hidden	h-0 xs:h-30 md:h-40">
         <img class="invisible sm:visible" src="/images/FeriaBijtels.png" alt="Feria D'art">
@@ -29,9 +28,9 @@
                     <div class="py-1" role="none">
                         <!-- Active: "bg-gray-100 text-gray-900", Not Active: "text-gray-700" -->
                         @foreach(config('app.languages') as $langLocale => $langName)
-                            <a href="{{ route('lang.switch', $langLocale) }}" class="text-gray-700 block w-full px-3 py-2 text-sm hover:bg-gray-200" role="menuitem" tabindex="-1" id="menu-item-0">
-                                {{ strtoupper($langLocale) }}
-                            </a>
+                        <a href="{{ route('lang.switch', $langLocale) }}" class="text-gray-700 block w-full px-3 py-2 text-sm hover:bg-gray-200" role="menuitem" tabindex="-1" id="menu-item-0">
+                            {{ strtoupper($langLocale) }}
+                        </a>
                         @endforeach
                     </div>
                 </div>
@@ -45,9 +44,9 @@
         document.getElementById("myDropdown").classList.toggle("invisible");
     }
     window.onclick = function(event) {
-        if (!event.target.matches('.dropbtn')) { 
+        if (!event.target.matches('.dropbtn')) {
             var dropdown = document.getElementById("myDropdown");
-            if (!dropdown.classList.contains("invisible")) { 
+            if (!dropdown.classList.contains("invisible")) {
                 dropdown.classList.toggle("invisible");
             }
         }

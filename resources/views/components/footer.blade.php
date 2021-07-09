@@ -61,6 +61,7 @@
 <script>
     const secretButton = document.querySelector('#secret');
     const backNav = document.querySelector('#backnav');
+
     function toggleSVG() {
         backNav.classList.toggle('hidden');
         backNav.classList.toggle('visible');
