@@ -17,7 +17,7 @@ class CreateFilesTable extends Migration
             $table->id();
             $table->foreignId('event_id')->constrained()->onDelete('cascade');
             $table->string('type',64);
-            $table->string('img_src',128);
+            $table->string('img_src',256);
             $table->timestamps();
             
         });

@@ -18,7 +18,7 @@ class CreateArticlesTable extends Migration
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->string('title',128);
             $table->string('slug',128)->unique();
-            $table->string('img_src',128);
+            $table->string('img_src',256);
             $table->text('excerpt');
             $table->text('body');
             $table->string('author',128);

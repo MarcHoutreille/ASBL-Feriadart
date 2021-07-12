@@ -23,7 +23,7 @@ class CreateInscriptionsTable extends Migration
             $table->string('telephone',64);
             $table->string('email',128);
             $table->string('url',128);
-            $table->string('img_src',128);
+            $table->string('img_src',256);
             $table->timestamps();
         });
     }

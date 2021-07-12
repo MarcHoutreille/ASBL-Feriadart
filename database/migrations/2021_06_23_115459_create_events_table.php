@@ -20,7 +20,7 @@ class CreateEventsTable extends Migration
             $table->dateTime('date_end', $precision = 0);
             $table->string('name',128);
             $table->string('slug',128)->unique();
-            $table->string('img_src',128);
+            $table->string('img_src',256);
             $table->text('description');
             $table->string('place',64);
             $table->string('address',128);
