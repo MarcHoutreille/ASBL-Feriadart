@@ -7,13 +7,13 @@
 
         <div class="justify-around sm:flex mx-4">
             <a href="{{ route('home') }}" class="sm:mx-1"><img class="m-auto rounded-full h-12" src="/images/FeriaLogoWhite.png" alt="logo"></a>
-            <a href="{{ route('home') }}" class="text-center block mt-2 hover:text-white @if (request()->routeIs('home')) text-white @endif">{{ __('Home') }}</a>
-            <a href="{{ route('articles') }}" class="text-center block mt-2 hover:text-white @if (request()->routeIs('articles')) text-white @endif">{{ __('Articles') }}</a>
-            <a href="{{ route('events') }}" class="text-center block mt-2 hover:text-white @if (request()->routeIs('events')) text-white @endif">{{ __('Events') }}</a>
-            <a href="{{ route('gallery') }}" class="text-center block mt-2 hover:text-white @if (request()->routeIs('gallery')) text-white @endif">{{ __('Gallery') }}</a>
-            <a href="{{ route('about') }}" class="text-center block mt-2 hover:text-white @if (request()->routeIs('about')) text-white @endif">{{ __('About Us') }}</a>
-            <a href="{{ route('guestbook') }}" class="text-center block mt-2 hover:text-white @if (request()->routeIs('guestbook')) text-white @endif">{{ __('Guestbook') }}</a>
-            <a href="{{ route('contact') }}" class="text-center block mt-2 hover:text-white @if (request()->routeIs('contact')) text-white @endif">{{ __('Contact') }}</a>
+            <a href="{{ route('home') }}" class="mx-1 text-center block mt-2 hover:text-white @if (request()->routeIs('home')) text-white @endif">{{ __('Home') }}</a>
+            <a href="{{ route('articles') }}" class="mx-1 text-center block mt-2 hover:text-white @if (request()->routeIs('articles')) text-white @endif">{{ __('Articles') }}</a>
+            <a href="{{ route('events') }}" class="mx-1 text-center block mt-2 hover:text-white @if (request()->routeIs('events')) text-white @endif">{{ __('Events') }}</a>
+            <a href="{{ route('gallery') }}" class="mx-1 text-center block mt-2 hover:text-white @if (request()->routeIs('gallery')) text-white @endif">{{ __('Gallery') }}</a>
+            <a href="{{ route('about') }}" class="mx-1 text-center block mt-2 hover:text-white @if (request()->routeIs('about')) text-white @endif">{{ __('About Us') }}</a>
+            <a href="{{ route('guestbook') }}" class="mx-1 text-center block mt-2 hover:text-white @if (request()->routeIs('guestbook')) text-white @endif">{{ __('Guestbook') }}</a>
+            <a href="{{ route('contact') }}" class="mx-1 text-center block mt-2 hover:text-white @if (request()->routeIs('contact')) text-white @endif">{{ __('Contact') }}</a>
             @if (Route::has('login'))@auth
             <a href="{{ route('backoffice.index') }}" class="text-center block mt-2 hover:text-white @if (request()->routeIs('backoffice.index')) text-white @endif">{{ __('Backoffice') }}</a>
             @endauth
