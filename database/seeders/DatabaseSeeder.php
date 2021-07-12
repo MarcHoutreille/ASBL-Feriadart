@@ -270,27 +270,27 @@ class DatabaseSeeder extends Seeder
 
         //Create 5 random pictures to random event #1
         File::factory(5)->create([
-            'event_id' => 1,
+            'event_id' => 5,
         ]);
 
         //Create 5 random pictures to random event #2
         File::factory(5)->create([
-            'event_id' => 2,
+            'event_id' => 15,
         ]);
 
         //Create 5 random pictures to random event #3
         File::factory(5)->create([
-            'event_id' => 3,
+            'event_id' => 25,
         ]);
 
         //Create 5 random pictures to random event #4
         File::factory(5)->create([
-            'event_id' => 4,
+            'event_id' => 35,
         ]);
 
         //Create 5 random pictures to random event #5
         File::factory(5)->create([
-            'event_id' => 5,
+            'event_id' => 45,
         ]);
         
         //Create real picture to real event #6
