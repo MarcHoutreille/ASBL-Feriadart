@@ -16,11 +16,11 @@ class CreateInscriptionsTable extends Migration
         Schema::create('inscriptions', function (Blueprint $table) {
             $table->id();
             $table->foreignId('event_id')->constrained()->onDelete('cascade');
-            $table->string('fname',64);
-            $table->string('lname',64);
+            $table->string('fname',128 );
+            $table->string('lname',128);
             $table->text('bio');
             $table->text('products');
-            $table->string('telephone',64);
+            $table->string('telephone',128);
             $table->string('email',128);
             $table->string('url',128);
             $table->string('img_src',256);
