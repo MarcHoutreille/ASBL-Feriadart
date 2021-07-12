@@ -18,15 +18,15 @@ class CreateEventsTable extends Migration
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->dateTime('date_start', $precision = 0);
             $table->dateTime('date_end', $precision = 0);
-            $table->string('name');
-            $table->string("slug")->unique();
-            $table->string('img_src');
+            $table->string('name',128);
+            $table->string('slug',128)->unique();
+            $table->string('img_src',128);
             $table->text('description');
-            $table->string('place');
-            $table->string('address');
-            $table->string('telephone');
-            $table->string('email');
-            $table->string('url');
+            $table->string('place',64);
+            $table->string('address',128);
+            $table->string('telephone',64);
+            $table->string('email',128);
+            $table->string('url',128);
             $table->timestamps();
         });
     }

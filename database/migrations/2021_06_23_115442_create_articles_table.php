@@ -16,14 +16,14 @@ class CreateArticlesTable extends Migration
         Schema::create('articles', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
-            $table->string('title');
-            $table->string("slug")->unique();
-            $table->string('img_src');
-            $table->text("excerpt");
-            $table->text("body");
-            $table->string("author");
-            $table->string("contact");
-            $table->string("url");
+            $table->string('title',128);
+            $table->string('slug',128)->unique();
+            $table->string('img_src',128);
+            $table->text('excerpt');
+            $table->text('body');
+            $table->string('author',128);
+            $table->string('contact',64);
+            $table->string('url',128);
             $table->timestamps();
         });
     }
