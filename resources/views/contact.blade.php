@@ -3,7 +3,7 @@
         <div class="container px-5 py-24 mx-auto">
             <div class="flex flex-col text-center w-full mb-12">
                 <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">{{ __('Contact Us')}}</h1>
-                <p class="lg:w-2/3 mx-auto leading-relaxed text-base">Whatever cardigan tote bag tumblr hexagon brooklyn asymmetrical gentrify.</p>
+                {{-- <p class="lg:w-2/3 mx-auto leading-relaxed text-base">Whatever cardigan tote bag tumblr hexagon brooklyn asymmetrical gentrify.</p> --}}
             </div>
             <div class="lg:w-1/2 md:w-2/3 mx-auto">
                 <!-- Validation Errors -->
@@ -38,7 +38,7 @@
                         </div>
                         <div class="p-2 w-full pt-8 mt-8 border-t border-gray-200 text-center">
                             <a class="text-indigo-500">feriadart@gmail.com</a>
-                            <p class="leading-normal my-5">49 Smith St.
+                            {{-- <p class="leading-normal my-5">49 Smith St.
                                 <br>Saint Cloud, MN 56301
                             </p>
                             <span class="inline-flex">
@@ -63,7 +63,7 @@
                                         <path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"></path>
                                     </svg>
                                 </a>
-                            </span>
+                            </span> --}}
                         </div>
                     </div>
                 </form>
