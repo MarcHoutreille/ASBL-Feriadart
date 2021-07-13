@@ -181,7 +181,7 @@ class DatabaseSeeder extends Seeder
             'telephone' => '01234567890',
             'email' => 'chloe.est.jacobs@gmail.com',
             'url' => 'https://jackatnight.bigcartel.com/',
-            'img_src' => 'https://scontent.fcrl1-1.fna.fbcdn.net/v/t1.6435-9/119651730_692966941313778_786645997237446984_n.jpg?_nc_cat=108&ccb=1-3&_nc_sid=973b4a&_nc_ohc=7mBRuvBh2IEAX_P4NzF&_nc_ht=scontent.fcrl1-1.fna&oh=8fe41a1c7d17453d24916b4401aed4cd&oe=60F27E0B',
+            'img_src' => 'https://scontent-bru2-1.xx.fbcdn.net/v/t1.6435-9/119651730_692966941313778_786645997237446984_n.jpg?_nc_cat=108&ccb=1-3&_nc_sid=730e14&_nc_ohc=7mBRuvBh2IEAX82ZDWr&_nc_ht=scontent-bru2-1.xx&oh=c5b90bdcccc9993c7c5d72af6d0e7532&oe=60F27E0B',
         ]);
 
         //Create 6 real inscriptions/artists to real event #6
