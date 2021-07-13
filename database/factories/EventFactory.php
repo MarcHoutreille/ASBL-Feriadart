@@ -24,9 +24,13 @@ class EventFactory extends Factory
         $name = $this->faker->sentence(3);
         $slug = str_replace(' ','-',strtolower($name));
         $slug = str_replace('.','',$slug);
+        $startDate = $this->faker->dateTimeThisYear();
+        $interval = '+ 1 days';
+        $endDate = $this->faker->dateTimeInInterval($startDate, $interval);
+
         return [
-            'date_start' => $this->faker->dateTime(),
-            'date_end' => $this->faker->dateTime(),
+            'date_start' => $startDate,
+            'date_end' => $endDate,
             'name' => $name,
             'slug' => $slug,
             'img_src' => $this->faker->imageUrl($width = 720, $height = 400, 'Event'),
