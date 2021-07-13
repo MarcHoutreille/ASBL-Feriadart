@@ -181,7 +181,7 @@ class DatabaseSeeder extends Seeder
             'telephone' => '01234567890',
             'email' => 'chloe.est.jacobs@gmail.com',
             'url' => 'https://jackatnight.bigcartel.com/',
-            'img_src' => 'https://scontent.fcrl1-1.fna.fbcdn.net/v/t1.6435-9/119651730_692966941313778_786645997237446984_n.jpg?_nc_cat=108&ccb=1-3&_nc_sid=973b4a&_nc_ohc=k53MzXUEt8YAX-BHDoE&_nc_ht=scontent.fcrl1-1.fna&oh=1491b7e345cc9fc5bbec90607653fa8f&oe=60E2AC0B',
+            'img_src' => 'https://scontent.fcrl1-1.fna.fbcdn.net/v/t1.6435-9/119651730_692966941313778_786645997237446984_n.jpg?_nc_cat=108&ccb=1-3&_nc_sid=973b4a&_nc_ohc=7mBRuvBh2IEAX_P4NzF&_nc_ht=scontent.fcrl1-1.fna&oh=8fe41a1c7d17453d24916b4401aed4cd&oe=60F27E0B',
         ]);
 
         //Create 6 real inscriptions/artists to real event #6
@@ -201,7 +201,7 @@ class DatabaseSeeder extends Seeder
             'telephone' => '0123456789',
             'email' => 'elodk@gmail.com',
             'url' => 'www.etsy.com/fr/shop/LodkPrints',
-            'img_src' => 'https://scontent.fcrl1-1.fna.fbcdn.net/v/t1.6435-9/119730481_692966921313780_963821317840609107_n.png?_nc_cat=111&ccb=1-3&_nc_sid=973b4a&_nc_ohc=bAYg7r8DKY0AX-DEzXr&_nc_ht=scontent.fcrl1-1.fna&oh=f8c8d0e9379c9546bb6649ede462c8d9&oe=60E213C0',
+            'img_src' => 'https://scontent-bru2-1.xx.fbcdn.net/v/t1.6435-9/119730481_692966921313780_963821317840609107_n.png?_nc_cat=111&ccb=1-3&_nc_sid=730e14&_nc_ohc=wNebujMxKN0AX-w1EYn&_nc_ht=scontent-bru2-1.xx&oh=1300faee4a68f69db4d0d3aab8630e56&oe=60F1E5C0',
         ]);
 
         //Create 6 real inscriptions/artists to real event #6
@@ -218,7 +218,7 @@ class DatabaseSeeder extends Seeder
             'telephone' => '0123456789',
             'email' => 'pacomelerouge@gmail.com',
             'url' => 'https://pacome.xyz/',
-            'img_src' => 'https://scontent.fcrl1-1.fna.fbcdn.net/v/t1.6435-9/119690898_692966991313773_1780476648645044294_n.jpg?_nc_cat=105&ccb=1-3&_nc_sid=973b4a&_nc_ohc=6SpUgGLUWS4AX9SX93j&_nc_ht=scontent.fcrl1-1.fna&oh=347bc6057fd59be52064fe09cd289350&oe=60E22E25',
+            'img_src' => 'https://scontent-bru2-1.xx.fbcdn.net/v/t1.6435-9/119690898_692966991313773_1780476648645044294_n.jpg?_nc_cat=105&ccb=1-3&_nc_sid=730e14&_nc_ohc=qBE1je4R2yQAX-ei4Pd&_nc_ht=scontent-bru2-1.xx&oh=bc3e4f3760b3636bc29b284a92cd947d&oe=60F20025',
         ]);
 
         //Create 6 real inscriptions/artists to real event #6
@@ -234,7 +234,7 @@ class DatabaseSeeder extends Seeder
             'telephone' => '0123456789',
             'email' => 'saraheskenazi@mail.com',
             'url' => 'www.camilletoussaint.com',
-            'img_src' => 'https://scontent.fcrl1-1.fna.fbcdn.net/v/t1.6435-9/119676227_692967027980436_678181737992036831_n.png?_nc_cat=105&ccb=1-3&_nc_sid=973b4a&_nc_ohc=kHD1MROVAesAX-0S-9B&_nc_ht=scontent.fcrl1-1.fna&oh=7cfe82943d2366a5742bcfa385c16bb0&oe=60E29E47',
+            'img_src' => 'https://scontent-bru2-1.xx.fbcdn.net/v/t1.6435-9/119676227_692967027980436_678181737992036831_n.png?_nc_cat=105&ccb=1-3&_nc_sid=730e14&_nc_ohc=xJpo-shg38AAX85W_JS&_nc_ht=scontent-bru2-1.xx&oh=cf89d0052dd7796ebe052e041209b55e&oe=60F27047',
         ]);
 
         //Create 6 real inscriptions/artists to real event #6
@@ -249,7 +249,7 @@ class DatabaseSeeder extends Seeder
             'telephone' => '0123456789',
             'email' => 'benjaminmarc@mail.com',
             'url' => 'https://benjaminm89.wixsite.com/photography',
-            'img_src' => 'https://scontent.fcrl1-1.fna.fbcdn.net/v/t1.6435-9/119699817_692966964647109_691078133558361336_n.png?_nc_cat=100&ccb=1-3&_nc_sid=973b4a&_nc_ohc=TaJdfNYzpMcAX8WpyYO&_nc_ht=scontent.fcrl1-1.fna&oh=b802591720b8f6037bac5e51eb94b170&oe=60E266CB',
+            'img_src' => 'https://scontent-bru2-1.xx.fbcdn.net/v/t1.6435-9/119699817_692966964647109_691078133558361336_n.png?_nc_cat=100&ccb=1-3&_nc_sid=730e14&_nc_ohc=bo9e0J8VxRUAX8sY4hE&_nc_ht=scontent-bru2-1.xx&oh=83f223dbce39aaccb331ec6014253751&oe=60F238CB',
         ]);
 
         //Create 6 real inscriptions/artists to real event #6
@@ -265,7 +265,7 @@ class DatabaseSeeder extends Seeder
             'telephone' => '0123456789',
             'email' => 'coline.cornelis@hotmail.com',
             'url' => 'https://www.instagram.com/cocornel',
-            'img_src' => 'https://scontent.fcrl1-1.fna.fbcdn.net/v/t1.6435-9/119741915_692966977980441_7765633406142550922_n.png?_nc_cat=100&ccb=1-3&_nc_sid=973b4a&_nc_ohc=PitGWIWI7vIAX_7upXj&_nc_ht=scontent.fcrl1-1.fna&oh=ec6087274f1e8248fc400be6a28172ac&oe=60E31E65',
+            'img_src' => 'https://scontent-bru2-1.xx.fbcdn.net/v/t1.6435-9/119741915_692966977980441_7765633406142550922_n.png?_nc_cat=100&ccb=1-3&_nc_sid=730e14&_nc_ohc=CqP5nmrR7sYAX_LItPY&_nc_ht=scontent-bru2-1.xx&oh=73a17edd5f912518efa5514220fe641d&oe=60F2F065',
         ]);
 
         //Create 5 random pictures to random event #1
