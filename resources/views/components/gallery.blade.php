@@ -1,5 +1,19 @@
+<style>
+  .glide__slide {
+    opacity: .8;
+    transform: scale(0.9);
+    transition: 0.1s ease;
+  }
+
+  .glide__slide--active {
+    filter: none;
+    opacity: 1;
+    transform: scale(1);
+  }
+</style>
+
 <!--- CAROUSEL --->
-<div class="glide">
+<div class="glide h-auto">
   <h2 class="font-semibold text-3xl text-gray-800 leading-tight text-center my-10">
     {{ $event->name }}
   </h2>
@@ -9,7 +23,7 @@
       @foreach ($pictures as $picture)
       <li class="glide__slide">
         <!-- HERE WE PUT OUR SLIDE -->
-        <div class="w-full object-cover rounded shadow-md"><img class="xs:h-40 md:h-80 rounded shadow-md cursor-pointer lg:h-96" src="{{ $picture->img_src}}" alt="image" id="{{ $picture->id }}"></div>
+        <div class="flex align-center justify-center"><img class="max-h-96 rounded shadow-md cursor-pointer" src="{{ $picture->img_src}}" alt="image" id="{{ $picture->id }}"></div>
         <!-- END OF SLIDE -->
       </li>
       @endforeach
@@ -34,17 +48,15 @@
   </div>
 </div>
 
-
-
 <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script>
 <script>
   // https://glidejs.com
-
   new Glide(".glide", {
     type: "carousel",
     startAt: 0,
     perView: 3,
     focusAt: 'center',
+    // NUMBER OF SLIDES
     breakpoints: {
       1400: {
         perView: 3
@@ -55,8 +67,6 @@
       800: {
         perView: 1
       }
-
-    } // NUMBER OF SLIDES
-
+    }
   }).mount();
 </script>
