@@ -13,7 +13,9 @@ class Member extends Model
         'name',
         'title',
         'bio',
+        'img_src',
         'email',
+        'url',
         'facebook',
         'instagram',
     ];
