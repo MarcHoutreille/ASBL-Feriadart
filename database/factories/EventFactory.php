@@ -33,7 +33,7 @@ class EventFactory extends Factory
             'date_end' => $endDate,
             'name' => $name,
             'slug' => $slug,
-            'img_src' => $this->faker->imageUrl($width = 720, $height = 400, 'Event'),
+            'img_src' => 'https://source.unsplash.com/720x400/?craft,art',
             'description' => $this->faker->paragraph(6, true),
             'place' => $this->faker->city(),
             'address' => $this->faker->address(),

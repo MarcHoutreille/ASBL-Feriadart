@@ -18,6 +18,8 @@ class CreateMembersTable extends Migration
             $table->string('name',128);
             $table->string('title',128);
             $table->text('bio');
+            $table->string('img_src',256);
+            $table->string('url',256);
             $table->string('email',128);
             $table->string('facebook',256);
             $table->string('instagram',256);

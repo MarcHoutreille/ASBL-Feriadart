@@ -23,8 +23,8 @@ class FileFactory extends Factory
     {
         return [
 
-        'type' => "image",
-        'img_src' => $this->faker->imageUrl($width = 720, $height = 400, 'Image'),
+        'type' => 'image',
+        'img_src' => 'https://source.unsplash.com/720x400/?art,event',
             ];
     }
 }

@@ -30,6 +30,8 @@ class MemberFactory extends Factory
             'name' => $name,
             'title' => $this->faker->jobTitle(),
             'bio' => $this->faker->paragraph(1, true),
+            'img_src' => 'https://i.pravatar.cc/200?u='.$username,
+            'url' => $this->faker->url(),
             'email' => $username.'@mail.com',
             'facebook' => $facebook,
             'instagram' => $instagram,
