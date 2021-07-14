@@ -2,13 +2,14 @@
   .glide__slide {
     opacity: .8;
     transform: scale(0.9);
-    transition: 0.1s ease;
+    transition: transform 0.1s ease;
   }
 
   .glide__slide--active {
     filter: none;
     opacity: 1;
     transform: scale(1);
+    transition: all 0.1s ease-in-out;
   }
 </style>
 
@@ -47,6 +48,20 @@
     </button>
   </div>
 </div>
+<!-- Inscription Modal -->
+<div class="bg-black bg-opacity-50 absolute inset-0 h-screen justify-center hidden items-start" id="modal">
+  <div class="bg-white w-2/3 py-2 px-3 rounded shadow-xl text-gray-800 mt-3">
+    <div class="flex justify-end items-center">
+      <svg class="h-6 w-6 cursor-pointer p-1 hover:bg-gray-300 rounded-full" id="closeBtn" fill="currentColor" viewBox="0 0 20 20">
+        <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+      </svg>
+    </div>
+    <div class="w-full flex-col flex p-4">
+      <img id="image" src="">
+    </div>
+  </div>
+</div>
+
 
 <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script>
 <script>
@@ -69,4 +84,38 @@
       }
     }
   }).mount();
+</script>
+
+<!-- Button Javascript -->
+<script>
+  window.addEventListener('DOMContentLoaded', () => {
+    // Selects the modal element
+    const modal = document.querySelector('#modal');
+    // Show modal function
+    const showModal = () => {
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+    }
+    // Close modal function
+    const closeModal = () => {
+      modal.classList.remove('flex');
+      modal.classList.add('hidden');
+    }
+    // Selects the button element
+    const closeBtn = document.querySelector('#closeBtn');
+    // When user clicks the X the modal is closed
+    closeBtn.addEventListener('click', closeModal);
+    // Adds an EventListener on each photo to show the modal with the picture in it when clicked
+    const images = document.querySelectorAll('.max-h-96');
+    images.forEach(el => el.addEventListener('click', event => {
+      document.getElementById('image').src = event.target.currentSrc;
+      showModal();
+    }));
+    // When user clicks outside modal it closes the modal
+    window.onclick = function(event) {
+      if (event.target == modal) {
+        closeModal();
+      }
+    }
+  });
 </script>
