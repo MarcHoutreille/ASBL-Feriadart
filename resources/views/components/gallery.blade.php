@@ -23,7 +23,7 @@
       @foreach ($pictures as $picture)
       <li class="glide__slide">
         <!-- HERE WE PUT OUR SLIDE -->
-        <div class="flex align-center justify-center"><img class="max-h-96 rounded shadow-md cursor-pointer" src="{{ $picture->img_src}}" alt="image" id="{{ $picture->id }}"></div>
+        <div class="flex align-center justify-center"><img class="max-h-96 rounded shadow-md cursor-pointer" src="{{ $picture->img_src}}?sig={{ $picture->id }}" alt="image" id="{{ $picture->id }}"></div>
         <!-- END OF SLIDE -->
       </li>
       @endforeach

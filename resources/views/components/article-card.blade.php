@@ -22,7 +22,7 @@
         </span>
     </div>
     <a class="inline-flex items-center">
-        <img alt="blog" src="https://dummyimage.com/104x104" class="w-12 h-12 rounded-full flex-shrink-0 object-cover object-center">
+        <img alt="blog" src="{{ $article->img_src}}?sig={{ $article->id }}" class="w-12 h-12 rounded-full flex-shrink-0 object-cover object-center">
         <span class="flex-grow flex flex-col pl-4">
             <span class="title-font font-medium text-gray-900">{{ $article->author }}</span>
             <span class="text-gray-400 text-xs tracking-widest mt-0.5">{{ $article->contact }}</span>

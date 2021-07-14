@@ -28,7 +28,7 @@ class ArticleFactory extends Factory
         return [
             'title' => $title,
             'slug' => $slug,
-            'img_src' => $this->faker->imageUrl($width = 720, $height = 400, 'Event'),
+            'img_src' => 'https://source.unsplash.com/720x400/?art',
             'body' => $body,
             'excerpt' => substr($body,0,50) . '...',
             'author' => $this->faker->name(),

@@ -2,14 +2,15 @@
 
 namespace Database\Seeders;
 
+use App\Models\File;
 use App\Models\User;
 use App\Models\Event;
 use App\Models\Guest;
+use App\Models\Member;
 use App\Models\Article;
 use App\Models\Contact;
-use App\Models\Inscription;
-use App\Models\File;
 
+use App\Models\Inscription;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
 
@@ -335,5 +336,8 @@ class DatabaseSeeder extends Seeder
             'type' => "image",
             'img_src' => "/images/Feriadart5.png",
         ]);
+
+        //Create 5 random members
+        Member::factory(5)->create();
     }
 }

@@ -24,8 +24,8 @@
                     <x-nav-link :href="route('inscriptions.index')" :active="request()->routeIs('inscriptions.index')">
                         {{ __('Inscriptions') }}
                     </x-nav-link>
-                    <x-nav-link :href="route('artists.index')" :active="request()->routeIs('artists.index')">
-                        {{ __('Artists') }}
+                    <x-nav-link :href="route('members.index')" :active="request()->routeIs('members.index')">
+                        {{ __('Members') }}
                     </x-nav-link>
                     <x-nav-link :href="route('files.index')" :active="request()->routeIs('files.index')">
                         {{ __('Files') }}
@@ -95,8 +95,8 @@
             <x-responsive-nav-link :href="route('inscriptions.index')" :active="request()->routeIs('inscriptions.index')">
                 {{ __('Inscriptions') }}
             </x-responsive-nav-link>
-            <x-responsive-nav-link :href="route('artists.index')" :active="request()->routeIs('artists.index')">
-                {{ __('Artists') }}
+            <x-responsive-nav-link :href="route('members.index')" :active="request()->routeIs('members.index')">
+                {{ __('Members') }}
             </x-responsive-nav-link>
             <x-responsive-nav-link :href="route('files.index')" :active="request()->routeIs('files.index')">
                 {{ __('Files') }}

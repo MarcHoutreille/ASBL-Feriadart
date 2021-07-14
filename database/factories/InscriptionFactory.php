@@ -29,7 +29,7 @@ class InscriptionFactory extends Factory
             'telephone' => $this->faker->e164PhoneNumber(),
             'email' => $this->faker->companyEmail(),
             'url' => $this->faker->url(),
-            'img_src' => $this->faker->imageUrl($width = 720, $height = 400, 'Artist'),
+            'img_src' => 'https://source.unsplash.com/720x400/?art',
         ];
     }
 }

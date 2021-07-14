@@ -18,7 +18,7 @@ use App\Http\Controllers\BackofficeEventsController;
 use App\Http\Controllers\BackofficeInscriptionsController;
 use App\Http\Controllers\BackofficeContactController;
 use App\Http\Controllers\BackofficeArticlesController;
-use App\Http\Controllers\BackofficeArtistsController;
+use App\Http\Controllers\BackofficeMembersController;
 
 /*
 |--------------------------------------------------------------------------
@@ -57,7 +57,7 @@ Route::resource('/backoffice/articles', BackofficeArticlesController::class);
 Route::resource('/backoffice/events', BackofficeEventsController::class);
 Route::resource('/backoffice/inscriptions', BackofficeInscriptionsController::class);
 Route::resource('/backoffice/files', BackofficeFilesController::class);
-Route::resource('/backoffice/artists', BackofficeArtistsController::class);
+Route::resource('/backoffice/members', BackofficeMembersController::class);
 Route::resource('/backoffice/guest', BackofficeGuestController::class);
 Route::resource('/backoffice/contact', BackofficeContactController::class);
 
