@@ -2,7 +2,7 @@
     <section class="text-gray-600 body-font overflow-hidden">
         <div class="container mx-auto flex px-5 py-14 md:flex-row flex-col items-center">
             <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 mb-10 md:mb-0">
-                <img class="object-cover object-center rounded" alt="Inscription" src="https://scontent.fcrl1-1.fna.fbcdn.net/v/t1.6435-9/117037004_658765718067234_5865890609677179388_n.jpg?_nc_cat=103&ccb=1-3&_nc_sid=973b4a&_nc_ohc=JGz0Lxz4gcMAX_7Hx2O&_nc_ht=scontent.fcrl1-1.fna&oh=7c22ee0d1d50e2186978fe2f67347f6f&oe=60F3CB54">
+                <img class="object-cover object-center rounded" alt="Inscription" src="/images/feria-appel.jpg">
             </div>
             <div class="lg:flex-grow md:w-1/2 lg:pl-24 md:pl-16 flex flex-col md:items-start md:text-left items-center text-center">
                 <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">APPEL AUX ARTISTES 📣
