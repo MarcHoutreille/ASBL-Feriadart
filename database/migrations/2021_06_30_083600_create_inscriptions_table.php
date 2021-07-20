@@ -21,7 +21,7 @@ class CreateInscriptionsTable extends Migration
             $table->string('lname',64);
             $table->text('bio');
             $table->text('products');
-            $table->string('telephone',64);
+            $table->string('telephone',128);
             $table->string('email',128);
             $table->string('url',128);
             $table->string('img_src',256);

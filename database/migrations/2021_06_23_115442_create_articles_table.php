@@ -22,7 +22,7 @@ class CreateArticlesTable extends Migration
             $table->text('excerpt');
             $table->text('body');
             $table->string('author',128);
-            $table->string('contact',64);
+            $table->string('contact',128);
             $table->string('url',128);
             $table->timestamps();
         });

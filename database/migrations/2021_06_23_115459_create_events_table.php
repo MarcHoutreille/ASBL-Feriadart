@@ -22,9 +22,9 @@ class CreateEventsTable extends Migration
             $table->string('slug',128)->unique();
             $table->string('img_src',256);
             $table->text('description');
-            $table->string('place',64);
+            $table->string('place',128);
             $table->string('address',128);
-            $table->string('telephone',64);
+            $table->string('telephone',128);
             $table->string('email',128);
             $table->string('url',128);
             $table->timestamps();
