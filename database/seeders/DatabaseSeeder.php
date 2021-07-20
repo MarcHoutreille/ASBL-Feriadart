@@ -141,32 +141,32 @@ class DatabaseSeeder extends Seeder
 
         //Create 6 random inscriptions/artists to each random event
         Inscription::factory(6)->create([
-            'event_id' => 1,
-        ]);
-
-        //Create 6 random inscriptions/artists to each random event
-        Inscription::factory(6)->create([
-            'event_id' => 2,
-        ]);
-
-        //Create 6 random inscriptions/artists to each random event
-        Inscription::factory(6)->create([
-            'event_id' => 3,
-        ]);
-
-        //Create 6 random inscriptions/artists to each random event
-        Inscription::factory(6)->create([
-            'event_id' => 4,
-        ]);
-
-        //Create 6 random inscriptions/artists to each random event
-        Inscription::factory(6)->create([
             'event_id' => 5,
+        ]);
+
+        //Create 6 random inscriptions/artists to each random event
+        Inscription::factory(6)->create([
+            'event_id' => 15,
+        ]);
+
+        //Create 6 random inscriptions/artists to each random event
+        Inscription::factory(6)->create([
+            'event_id' => 25,
+        ]);
+
+        //Create 6 random inscriptions/artists to each random event
+        Inscription::factory(6)->create([
+            'event_id' => 35,
+        ]);
+
+        //Create 6 random inscriptions/artists to each random event
+        Inscription::factory(6)->create([
+            'event_id' => 45,
         ]);
 
         //Create 6 real inscriptions/artists to real event #6
         Inscription::create([
-            'event_id' => 6,
+            'event_id' => 55,
             'fname' => 'Jack',
             'lname' => 'at Night',
             'bio' => 
@@ -188,7 +188,7 @@ class DatabaseSeeder extends Seeder
 
         //Create 6 real inscriptions/artists to real event #6
         Inscription::create([
-            'event_id' => 6,
+            'event_id' => 55,
             'fname' => 'Elodie',
             'lname' => 'DK',
             'bio' => 
@@ -209,7 +209,7 @@ class DatabaseSeeder extends Seeder
 
         //Create 6 real inscriptions/artists to real event #6
         Inscription::create([
-            'event_id' => 6,
+            'event_id' => 55,
             'fname' => 'Pacôme',
             'lname' => 'Le Rouge',
             'bio' => 
@@ -227,7 +227,7 @@ class DatabaseSeeder extends Seeder
 
         //Create 6 real inscriptions/artists to real event #6
         Inscription::create([
-            'event_id' => 6,
+            'event_id' => 55,
             'fname' => 'Camille',
             'lname' => 'Toussaint',
             'bio' => 
@@ -244,7 +244,7 @@ class DatabaseSeeder extends Seeder
 
         //Create 6 real inscriptions/artists to real event #6
         Inscription::create([
-            'event_id' => 6,
+            'event_id' => 55,
             'fname' => 'Benjamin',
             'lname' => 'Marc',
             'bio' => 
@@ -260,7 +260,7 @@ class DatabaseSeeder extends Seeder
 
         //Create 6 real inscriptions/artists to real event #6
         Inscription::create([
-            'event_id' => 6,
+            'event_id' => 55,
             'fname' => 'Coline',
             'lname' => 'Cornélis',
             'bio' => 
@@ -277,32 +277,32 @@ class DatabaseSeeder extends Seeder
 
         //Create 5 random pictures to random event #1
         File::factory(5)->create([
-            'event_id' => 1,
+            'event_id' => 5,
         ]);
 
         //Create 5 random pictures to random event #2
         File::factory(5)->create([
-            'event_id' => 2,
+            'event_id' => 15,
         ]);
 
         //Create 5 random pictures to random event #3
         File::factory(5)->create([
-            'event_id' => 3,
+            'event_id' => 25,
         ]);
 
         //Create 5 random pictures to random event #4
         File::factory(5)->create([
-            'event_id' => 4,
+            'event_id' => 35,
         ]);
 
         //Create 5 random pictures to random event #5
         File::factory(5)->create([
-            'event_id' => 5,
+            'event_id' => 45,
         ]);
         
         //Create real picture to real event #6
         File::create([
-            'event_id' => 6,
+            'event_id' => 55,
             'type' => "image",
             'img_src' => "/images/Feriadart0.png",
           
@@ -310,35 +310,35 @@ class DatabaseSeeder extends Seeder
 
         //Create real picture to real event #6
         File::create([
-            'event_id' => 6,
+            'event_id' => 55,
             'type' => "image",
             'img_src' => "/images/Feriadart1.png",
         ]);
 
         //Create real picture to real event #6
         File::create([
-            'event_id' => 6,
+            'event_id' => 55,
             'type' => "image",
             'img_src' => "/images/Feriadart2.png",
         ]);
 
         //Create real picture to real event #6
         File::create([
-            'event_id' => 6,
+            'event_id' => 55,
             'type' => "image",
             'img_src' => "/images/Feriadart3.png",
         ]);
 
         //Create real picture to real event #6
         File::create([
-            'event_id' => 6,
+            'event_id' => 55,
             'type' => "image",
             'img_src' => "/images/Feriadart4.png",
         ]);
 
         //Create real picture to real event #6
         File::create([
-            'event_id' => 6,
+            'event_id' => 55,
             'type' => "image",
             'img_src' => "/images/Feriadart5.png",
         ]);
