@@ -15,7 +15,7 @@ class BackofficeInscriptionsController extends Controller
      */
     public function index()
     {
-        $inscriptions = Inscription::all()->sortBy('created_at');
+        $inscriptions = Inscription::all()->sortByDesc('created_at');
         return view('backoffice.inscriptions', [
             'inscriptions' => $inscriptions,
         ]);
@@ -29,7 +29,7 @@ class BackofficeInscriptionsController extends Controller
      */
     public function create()
     {
-        $inscriptions = Inscription::all()->sortBy('created_at');
+        $inscriptions = Inscription::all()->sortByDesc('created_at');
         $events = Event::all()->sortBy('date_start');
         $create = true;
         return view('backoffice.inscriptions', [
@@ -96,7 +96,7 @@ class BackofficeInscriptionsController extends Controller
      */
     public function edit($id)
     {
-        $inscriptions = Inscription::all()->sortBy('created_at');
+        $inscriptions = Inscription::all()->sortByDesc('created_at');
         $inscription = Inscription::find($id);
         $events = Event::all()->sortBy('date_start');
         $edit = true;
