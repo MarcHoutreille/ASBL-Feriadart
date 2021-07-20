@@ -2,15 +2,15 @@
     <div class="container px-5 py-24 mx-auto">
         <div class="flex flex-wrap -m-12 grid grid-cols-none lg:grid-cols-2">
             <div class="p-12 md:w-full flex flex-col items-start">
-                <span class="inline-block py-1 px-2 rounded bg-indigo-50 text-indigo-500 text-xs font-medium tracking-widest">{{ $artist->title }}</span>
                 <h2 class="sm:text-3xl text-2xl title-font font-medium text-gray-900 mt-4 mb-4">{{ $artist->fname }} {{ $artist->lname }}</h2>
-                <div class="my-4">
+                <strong class="py-4">
                     {!! $artist->bio !!}
-                </div>
-                <div class="my-4">
+                </strong>
+                <div class="py-4">
                     {!! $artist->products !!}
                 </div>
-                <div class="w-full flex justify-center pt-5 pb-5">
+                <!-- Links -->
+                <div class="flex mx-auto py-4">
                     @if($artist->url)
                     <a href="{{ $artist->url }}" class="mx-5">
                         <div aria-label="Website" role="img">
@@ -45,9 +45,20 @@
                     @endif
                 </div>
             </div>
-            <div class="w-full flex justify-center place-items-center p-4">
-                <img class="p-4" src="{{ $artist->img_src }}" alt="{{ $artist->fname }} {{ $artist->lname }}" />
+            <div class="flex justify-center items-center px-4 py-12">
+                <img src="{{ $artist->img_01 }}" alt="{{ $artist->fname }} {{ $artist->lname }}" />
             </div>
         </div>
     </div>
 </section>
+<!-- <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script>
+<script>
+    var carousel = new Glide('#carousel', {
+        type: 'carousel',
+        perView: 1,
+        focusAt: 'center',
+        hoverpause: true,
+        autoplay: 3000,
+    });
+    carousel.mount();
+</script> -->

@@ -19,7 +19,13 @@ class Inscription extends Model
         'telephone',
         'email',
         'url',
-        'img_src',
+        'facebook',
+        'instagram',
+        'img_01',
+        'img_02',
+        'img_03',
+        'img_04',
+        'img_05',
         'accepted',
     ];
 

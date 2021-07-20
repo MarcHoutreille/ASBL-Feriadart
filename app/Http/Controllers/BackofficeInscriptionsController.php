@@ -56,9 +56,15 @@ class BackofficeInscriptionsController extends Controller
             'telephone' => 'required',
             'email' => 'required',
             'url' => 'required',
-            'img_src' => 'required',
+            'facebook' => 'required',
+            'instagram' => 'required',
+            'img_01' => 'required',
+            'img_02' => 'required',
+            'img_03' => 'required',
+            'img_04' => 'required',
+            'img_05' => 'required',
         ]);
-        Inscription::create($request->only('event_id', 'fname', 'lname', 'bio', 'products', 'telephone', 'email', 'url', 'img_src'));
+        Inscription::create($request->only('event_id', 'fname', 'lname', 'bio', 'products', 'telephone', 'email', 'url', 'facebook', 'instagram', 'img_01', 'img_02', 'img_03', 'img_04', 'img_05'));
         $id = $request->event_id;
         $event = Event::where('id', $id)->first();
         $create = false;
@@ -126,7 +132,13 @@ class BackofficeInscriptionsController extends Controller
         $inscription->telephone = $request->telephone;
         $inscription->email = $request->email;
         $inscription->url = $request->url;
-        $inscription->img_src = $request->img_src;
+        $inscription->facebook = $request->facebook;
+        $inscription->instagram = $request->instagram;
+        $inscription->img_01 = $request->img_01;
+        $inscription->img_02 = $request->img_02;
+        $inscription->img_03 = $request->img_03;
+        $inscription->img_04 = $request->img_04;
+        $inscription->img_05 = $request->img_05;
         $inscription->accepted = $request->accepted;
         $query = $inscription->save();
 

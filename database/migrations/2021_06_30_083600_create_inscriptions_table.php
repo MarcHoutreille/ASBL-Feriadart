@@ -23,8 +23,14 @@ class CreateInscriptionsTable extends Migration
             $table->text('products');
             $table->string('telephone',128);
             $table->string('email',128);
-            $table->string('url',128);
-            $table->string('img_src',256);
+            $table->string('url',128)->nullable();
+            $table->string('facebook',128)->nullable();
+            $table->string('instagram',128)->nullable();
+            $table->string('img_01',256);
+            $table->string('img_02',256)->nullable();
+            $table->string('img_03',256)->nullable();
+            $table->string('img_04',256)->nullable();
+            $table->string('img_05',256)->nullable();
             $table->timestamps();
         });
     }

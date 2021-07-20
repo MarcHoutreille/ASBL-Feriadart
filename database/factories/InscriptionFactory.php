@@ -29,7 +29,13 @@ class InscriptionFactory extends Factory
             'telephone' => $this->faker->e164PhoneNumber(),
             'email' => $this->faker->companyEmail(),
             'url' => $this->faker->url(),
-            'img_src' => 'https://source.unsplash.com/720x400/?art',
+            'facebook' => $this->faker->url(),
+            'instagram' => $this->faker->url(),
+            'img_01' => 'https://source.unsplash.com/720x400/?art',
+            'img_02' => 'https://source.unsplash.com/720x400/?art',
+            'img_03' => 'https://source.unsplash.com/720x400/?art',
+            'img_04' => 'https://source.unsplash.com/720x400/?art',
+            'img_05' => 'https://source.unsplash.com/720x400/?art',
             'accepted' => 0,
         ];
     }

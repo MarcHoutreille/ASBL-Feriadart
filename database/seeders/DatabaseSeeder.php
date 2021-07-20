@@ -182,7 +182,7 @@ class DatabaseSeeder extends Seeder
             'telephone' => '01234567890',
             'email' => 'chloe.est.jacobs@gmail.com',
             'url' => 'https://jackatnight.bigcartel.com/',
-            'img_src' => '/images/artists/artist-jack_at_night.png',
+            'img_01' => '/images/artists/artist-jack_at_night.png',
             'accepted' => 1,
         ]);
 
@@ -203,7 +203,7 @@ class DatabaseSeeder extends Seeder
             'telephone' => '0123456789',
             'email' => 'elodk@gmail.com',
             'url' => 'www.etsy.com/fr/shop/LodkPrints',
-            'img_src' => '/images/artists/artist-elo_dk.png',
+            'img_01' => '/images/artists/artist-elo_dk.png',
             'accepted' => 1,
         ]);
 
@@ -221,7 +221,7 @@ class DatabaseSeeder extends Seeder
             'telephone' => '0123456789',
             'email' => 'pacomelerouge@gmail.com',
             'url' => 'https://pacome.xyz/',
-            'img_src' => '/images/artists/artist-pacome_le_rouge.png',
+            'img_01' => '/images/artists/artist-pacome_le_rouge.png',
             'accepted' => 1,
         ]);
 
@@ -238,7 +238,7 @@ class DatabaseSeeder extends Seeder
             'telephone' => '0123456789',
             'email' => 'saraheskenazi@mail.com',
             'url' => 'www.camilletoussaint.com',
-            'img_src' => '/images/artists/artist-camille_toussaint.png',
+            'img_01' => '/images/artists/artist-camille_toussaint.png',
             'accepted' => 1,
         ]);
 
@@ -254,7 +254,7 @@ class DatabaseSeeder extends Seeder
             'telephone' => '0123456789',
             'email' => 'benjaminmarc@mail.com',
             'url' => 'https://benjaminm89.wixsite.com/photography',
-            'img_src' => '/images/artists/artist-benjamin_marc.png',
+            'img_01' => '/images/artists/artist-benjamin_marc.png',
             'accepted' => 1,
         ]);
 
@@ -270,8 +270,8 @@ class DatabaseSeeder extends Seeder
             'products' => 'Prints 15€',
             'telephone' => '0123456789',
             'email' => 'coline.cornelis@hotmail.com',
-            'url' => 'https://www.instagram.com/cocornel',
-            'img_src' => '/images/artists/artist-cocornel.png',
+            'instagram' => 'https://www.instagram.com/cocornel',
+            'img_01' => '/images/artists/artist-cocornel.png',
             'accepted' => 1,
         ]);
 

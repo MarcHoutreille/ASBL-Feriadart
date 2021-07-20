@@ -2,7 +2,7 @@
     <div class="rounded overflow-hidden shadow-md bg-white">
         <div class="absolute -ml-8 -mt-20 w-full flex justify-center">
             <div class="h-32 w-32">
-                <a href="{{ route('artist.show', $artist) }}"><img src="{{ $artist->img_src }}?sig={{ $artist->id }}" alt="{{ $artist->fname }} {{ $artist->lname }}" role="img" class="rounded-full object-cover h-full w-full shadow-md" /></a>
+                <a href="{{ route('artist.show', $artist) }}"><img src="{{ $artist->img_01 }}?sig={{ $artist->id }}" alt="{{ $artist->fname }} {{ $artist->lname }}" role="img" class="rounded-full object-cover h-full w-full shadow-md" /></a>
             </div>
         </div>
         <div class="px-6 mt-16">

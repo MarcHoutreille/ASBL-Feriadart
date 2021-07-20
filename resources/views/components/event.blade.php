@@ -122,21 +122,20 @@
             </form>
         </div>
     </div>
-
-    <!-- Button Javascript -->
-    <script>
-        window.addEventListener('DOMContentLoaded', () => {
-            const overlay = document.querySelector('#overlay');
-            const delBtn = document.querySelector('#addEvent-btn');
-            const closeBtn = document.querySelector('#close-modal');
-            const closeBtn2 = document.querySelector('#close-modal2');
-            const toggleModal = () => {
-                overlay.classList.toggle('hidden');
-                overlay.classList.toggle('flex');
-            }
-            delBtn.addEventListener('click', toggleModal);
-            closeBtn.addEventListener('click', toggleModal);
-            closeBtn2.addEventListener('click', toggleModal);
-        });
-    </script>
 </section>
+<!-- Button Javascript -->
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        const overlay = document.querySelector('#overlay');
+        const delBtn = document.querySelector('#addEvent-btn');
+        const closeBtn = document.querySelector('#close-modal');
+        const closeBtn2 = document.querySelector('#close-modal2');
+        const toggleModal = () => {
+            overlay.classList.toggle('hidden');
+            overlay.classList.toggle('flex');
+        }
+        delBtn.addEventListener('click', toggleModal);
+        closeBtn.addEventListener('click', toggleModal);
+        closeBtn2.addEventListener('click', toggleModal);
+    });
+</script>
