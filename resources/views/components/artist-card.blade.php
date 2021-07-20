@@ -1,6 +1,6 @@
-<div role="listitem" class="xl:w-1/3 sm:w-3/4 md:w-2/5 relative mt-16 mb-32 sm:mb-24 xl:max-w-sm lg:w-2/5">
+<div role="listitem" class="w-full xl:w-1/3 lg:w-1/2 relative px-8 mt-16 mb-32 sm:mb-24">
     <div class="rounded overflow-hidden shadow-md bg-white">
-        <div class="absolute -mt-20 w-full flex justify-center">
+        <div class="absolute -ml-8 -mt-20 w-full flex justify-center">
             <div class="h-32 w-32">
                 <a href="{{ route('artist.show', $artist) }}"><img src="{{ $artist->img_src }}?sig={{ $artist->id }}" alt="{{ $artist->fname }} {{ $artist->lname }}" role="img" class="rounded-full object-cover h-full w-full shadow-md" /></a>
             </div>

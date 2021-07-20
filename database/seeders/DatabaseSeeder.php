@@ -183,6 +183,7 @@ class DatabaseSeeder extends Seeder
             'email' => 'chloe.est.jacobs@gmail.com',
             'url' => 'https://jackatnight.bigcartel.com/',
             'img_src' => '/images/artists/artist-jack_at_night.png',
+            'accepted' => 1,
         ]);
 
         //Create 6 real inscriptions/artists to real event #6
@@ -203,6 +204,7 @@ class DatabaseSeeder extends Seeder
             'email' => 'elodk@gmail.com',
             'url' => 'www.etsy.com/fr/shop/LodkPrints',
             'img_src' => '/images/artists/artist-elo_dk.png',
+            'accepted' => 1,
         ]);
 
         //Create 6 real inscriptions/artists to real event #6
@@ -220,6 +222,7 @@ class DatabaseSeeder extends Seeder
             'email' => 'pacomelerouge@gmail.com',
             'url' => 'https://pacome.xyz/',
             'img_src' => '/images/artists/artist-pacome_le_rouge.png',
+            'accepted' => 1,
         ]);
 
         //Create 6 real inscriptions/artists to real event #6
@@ -236,6 +239,7 @@ class DatabaseSeeder extends Seeder
             'email' => 'saraheskenazi@mail.com',
             'url' => 'www.camilletoussaint.com',
             'img_src' => '/images/artists/artist-camille_toussaint.png',
+            'accepted' => 1,
         ]);
 
         //Create 6 real inscriptions/artists to real event #6
@@ -251,6 +255,7 @@ class DatabaseSeeder extends Seeder
             'email' => 'benjaminmarc@mail.com',
             'url' => 'https://benjaminm89.wixsite.com/photography',
             'img_src' => '/images/artists/artist-benjamin_marc.png',
+            'accepted' => 1,
         ]);
 
         //Create 6 real inscriptions/artists to real event #6
@@ -267,6 +272,7 @@ class DatabaseSeeder extends Seeder
             'email' => 'coline.cornelis@hotmail.com',
             'url' => 'https://www.instagram.com/cocornel',
             'img_src' => '/images/artists/artist-cocornel.png',
+            'accepted' => 1,
         ]);
 
         //Create 5 random pictures to random event #1

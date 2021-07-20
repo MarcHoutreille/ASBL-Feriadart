@@ -16,6 +16,7 @@ class CreateInscriptionsTable extends Migration
         Schema::create('inscriptions', function (Blueprint $table) {
             $table->id();
             $table->foreignId('event_id')->constrained()->onDelete('cascade');
+            $table->boolean('accepted')->default('0');
             $table->string('fname',64);
             $table->string('lname',64);
             $table->text('bio');

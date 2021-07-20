@@ -85,8 +85,13 @@
                                     <div class="text-sm text-gray-500">{{ $inscription->img_src }}</div>
                                 </td>
                                 <td class="px-4 py-4 whitespace-normal text-right text-sm font-medium">
+                                    @if(!$inscription->accepted)
                                     <div class="my-4">
-                                        <a href="{{ route('inscriptions.edit', $inscription) }}" class="text-indigo-600 hover:text-indigo-900 my-4">{{ __('Edit') }}</a>
+                                        <a href="{{ route('inscriptions.show', $inscription) }}" class="text-green-600 hover:text-green-900">{{ __('Accept') }}</a>
+                                    </div>
+                                    @endif
+                                    <div class="my-4">
+                                        <a href="{{ route('inscriptions.edit', $inscription) }}" class="text-indigo-600 hover:text-indigo-900">{{ __('Edit') }}</a>
                                     </div>
                                     @can('delete', $inscription)
                                     <form action="{{ route('inscriptions.destroy', $inscription) }}" method="POST" class="my-4">
@@ -121,12 +126,19 @@
                         <div class="bg-white w-full tw-h-full md:w-1/2-screen shadow md:rounded-lg flex flex-wrap p-4">
                             @isset($edit)
                             @method('PUT')
-                            <div class="w-full flex-col flex p-3">
+                            <div class="w-full md:w-1/2 flex-col flex p-3">
                                 <label class="pb-2 text-gray-700 font-semibold">{{ __('Event') }}</label>
                                 <select name="event_id">
                                     @foreach($events as $event)
                                     <option value={{ $event->id }} {{ $inscriptionToEdit->event->id == $event->id ? 'selected' : '' }}>{{ $event->name }}</option>
                                     @endforeach
+                                </select>
+                            </div>
+                            <div class="w-full md:w-1/2 flex-col flex p-3">
+                                <label class="pb-2 text-gray-700 font-semibold">{{ __('Status') }}</label>
+                                <select name="accepted" required>
+                                    <option value=1 {{ $inscriptionToEdit->accepted ? 'selected' : '' }}>{{ __('Accepted') }}</option>
+                                    <option value=0 {{ $inscriptionToEdit->accepted ? '' : 'selected' }}>{{ __('Rejected') }}</option>
                                 </select>
                             </div>
                             @endisset

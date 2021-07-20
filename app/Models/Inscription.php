@@ -20,6 +20,7 @@ class Inscription extends Model
         'email',
         'url',
         'img_src',
+        'accepted',
     ];
 
     public function event()

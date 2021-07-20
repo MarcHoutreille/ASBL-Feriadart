@@ -79,7 +79,13 @@ class BackofficeInscriptionsController extends Controller
      */
     public function show($id)
     {
-        //
+        $inscription = Inscription::find($id);
+        $inscription->accepted = true;
+        $query = $inscription->save();
+
+        if($query){
+            return redirect()->route('inscriptions.index')->with('success','Accepted Successfully');
+        }
     }
 
     /**
@@ -121,6 +127,7 @@ class BackofficeInscriptionsController extends Controller
         $inscription->email = $request->email;
         $inscription->url = $request->url;
         $inscription->img_src = $request->img_src;
+        $inscription->accepted = $request->accepted;
         $query = $inscription->save();
 
         if($query){

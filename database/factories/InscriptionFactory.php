@@ -30,6 +30,7 @@ class InscriptionFactory extends Factory
             'email' => $this->faker->companyEmail(),
             'url' => $this->faker->url(),
             'img_src' => 'https://source.unsplash.com/720x400/?art',
+            'accepted' => 0,
         ];
     }
 }
