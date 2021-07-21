@@ -46,8 +46,8 @@
                                 <th scope="col" class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                                     {{ __('Links') }}
                                 </th>
-                                <th scope="col" class="relative px-4 py-3">
-                                    <span class="sr-only">{{ __('Edit') }}</span>
+                                <th scope="col" class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                    {{ __('Edit') }}
                                 </th>
                             </tr>
                         </thead>
@@ -73,15 +73,15 @@
                                     <div class="text-sm text-gray-900">{{ $member->bio }}</div>
                                 </td>
                                 <td class="px-4 py-4 whitespace-normal">
-                                    <div class="text-sm text-gray-900">{{ $member->img_src }}</div>
+                                    <div class="text-sm text-gray-900"><a class="hover:text-blue-400" href="{{ $member->img_src }}" target="_blank">{{ $member->img_src }}</a></div>
                                 </td>
                                 <td class="px-4 py-4 whitespace-normal text-sm text-gray-500">
-                                    <div class="text-sm text-gray-900">{{ $member->email }}</div>
-                                    <div class="text-sm text-gray-500">{{ $member->url }}</div>
+                                    <div class="text-sm text-gray-900"><a class="hover:text-blue-400" href="mailto:{{ $member->email }}">{{ $member->email }}</a></div>
                                 </td>
                                 <td class="px-4 py-4 whitespace-normal text-sm text-gray-500">
-                                    <div class="text-sm text-gray-900">{{ $member->facebook }}</div>
-                                    <div class="text-sm text-gray-500">{{ $member->instagram }}</div>
+                                    <div class="text-sm text-gray-900"><a class="hover:text-blue-400" href="{{ $member->url }}" target="_blank">{{ $member->url }}</a></div>
+                                    <div class="text-sm text-gray-500"><a class="hover:text-blue-400" href="{{ $member->facebook }}" target="_blank">{{ $member->facebook }}</a></div>
+                                    <div class="text-sm text-gray-500"><a class="hover:text-blue-400" href="{{ $member->instagram }}" target="_blank">{{ $member->instagram }}</a></div>
                                 </td>
                                 <td class="px-4 py-4 whitespace-normal text-right text-sm font-medium">
                                     <div class="my-4">

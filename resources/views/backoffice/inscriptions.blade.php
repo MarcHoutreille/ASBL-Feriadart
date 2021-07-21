@@ -41,13 +41,13 @@
                                     {{ __('Products') }}
                                 </th>
                                 <th scope="col" class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                    {{ __('Contact') }}
+                                    {{ __('Info') }}
                                 </th>
                                 <th scope="col" class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                                     {{ __('Links') }}
                                 </th>
-                                <th scope="col" class="relative px-4 py-3">
-                                    <span class="sr-only">{{ __('Edit') }}</span>
+                                <th scope="col" class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                    {{ __('Edit') }}
                                 </th>
                             </tr>
                         </thead>
@@ -78,11 +78,17 @@
                                 </td>
                                 <td class="px-4 py-4 whitespace-normal text-sm text-gray-500">
                                     <div class="text-sm text-gray-900">{{ $inscription->telephone }}</div>
-                                    <div class="text-sm text-gray-500">{{ $inscription->email }}</div>
+                                    <div class="text-sm text-gray-500"><a class="hover:text-blue-400" href="mailto:{{ $inscription->email }}">{{ $inscription->email }}</a></div>
                                 </td>
                                 <td class="px-4 py-4 whitespace-normal text-sm text-gray-500">
-                                    <div class="text-sm text-gray-900">{{ $inscription->url }}</div>
-                                    <div class="text-sm text-gray-500">{{ $inscription->img_src }}</div>
+                                    <div class="text-sm text-gray-900"><a class="hover:text-blue-400" href="{{ $inscription->url }}" target="_blank">{{ $inscription->url }}</a></div>
+                                    <div class="text-sm text-gray-900"><a class="hover:text-blue-400" href="{{ $inscription->facebook }}" target="_blank">{{ $inscription->facebook }}</a></div>
+                                    <div class="text-sm text-gray-900"><a class="hover:text-blue-400" href="{{ $inscription->instagram }}" target="_blank">{{ $inscription->instagram }}</a></div>
+                                    <div class="text-sm text-gray-500"><a class="hover:text-blue-400" href="{{ $inscription->img_01 }}" target="_blank">{{ $inscription->img_01 }}</a></div>
+                                    <div class="text-sm text-gray-500"><a class="hover:text-blue-400" href="{{ $inscription->img_02 }}" target="_blank">{{ $inscription->img_02 }}</a></div>
+                                    <div class="text-sm text-gray-500"><a class="hover:text-blue-400" href="{{ $inscription->img_03 }}" target="_blank">{{ $inscription->img_03 }}</a></div>
+                                    <div class="text-sm text-gray-500"><a class="hover:text-blue-400" href="{{ $inscription->img_04 }}" target="_blank">{{ $inscription->img_04 }}</a></div>
+                                    <div class="text-sm text-gray-500"><a class="hover:text-blue-400" href="{{ $inscription->img_05 }}" target="_blank">{{ $inscription->img_05 }}</a></div>
                                 </td>
                                 <td class="px-4 py-4 whitespace-normal text-right text-sm font-medium">
                                     @if(!$inscription->accepted)
@@ -168,21 +174,49 @@
                                 <label class="pb-2 text-gray-700 font-semibold">{{ __('Products') }}</label>
                                 <textarea name="products" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" rows="5" required>@isset($edit) {{ $inscriptionToEdit->products }} @endisset</textarea>
                             </div>
-                            <div class="w-full md:w-1/2 flex-col flex p-3">
-                                <label class="pb-2 text-gray-700 font-semibold">{{ __('Telephone') }}</label>
-                                <input type="tel" name="telephone" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" @isset($edit) value="{{ $inscriptionToEdit->telephone }}" @endisset required />
+                            <div class="col w-full md:w-1/2">
+                                <div class="w-full flex-col flex p-3">
+                                    <label class="pb-2 text-gray-700 font-semibold">{{ __('Telephone') }}</label>
+                                    <input type="tel" name="telephone" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" @isset($edit) value="{{ $inscriptionToEdit->telephone }}" @endisset required />
+                                </div>
+                                <div class="w-full flex-col flex p-3">
+                                    <label class="pb-2 text-gray-700 font-semibold">{{ __('Email') }}</label>
+                                    <input type="email" name="email" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" @isset($edit) value="{{ $inscriptionToEdit->email }}" @endisset required />
+                                </div>
+                                <div class="w-full flex-col flex p-3">
+                                    <label class="pb-2 text-gray-700 font-semibold">{{ __('Homepage') }}</label>
+                                    <input type="text" name="url" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" @isset($edit) value="{{ $inscriptionToEdit->url }}" @endisset required />
+                                </div>
+                                <div class="w-full flex-col flex p-3">
+                                    <label class="pb-2 text-gray-700 font-semibold">{{ __('Facebook') }}</label>
+                                    <input type="text" name="facebook" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" @isset($edit) value="{{ $inscriptionToEdit->facebook }}" @endisset required />
+                                </div>
+                                <div class="w-full flex-col flex p-3">
+                                    <label class="pb-2 text-gray-700 font-semibold">{{ __('Instagram') }}</label>
+                                    <input type="text" name="instagram" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" @isset($edit) value="{{ $inscriptionToEdit->instagram }}" @endisset required />
+                                </div>
                             </div>
-                            <div class="w-full md:w-1/2 flex-col flex p-3">
-                                <label class="pb-2 text-gray-700 font-semibold">{{ __('Email') }}</label>
-                                <input type="email" name="email" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" @isset($edit) value="{{ $inscriptionToEdit->email }}" @endisset required />
-                            </div>
-                            <div class="w-full md:w-1/2 flex-col flex p-3">
-                                <label class="pb-2 text-gray-700 font-semibold">{{ __('Link to your work') }}</label>
-                                <input type="text" name="url" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" @isset($edit) value="{{ $inscriptionToEdit->url }}" @endisset required />
-                            </div>
-                            <div class="w-full md:w-1/2 flex-col flex p-3">
-                                <label class="pb-2 text-gray-700 font-semibold">{{ __('Image Link') }}</label>
-                                <input type="text" name="img_src" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" @isset($edit) value="{{ $inscriptionToEdit->img_src }}" @endisset required />
+                            <div class="col w-full md:w-1/2">
+                                <div class="w-full flex-col flex p-3">
+                                    <label class="pb-2 text-gray-700 font-semibold">{{ __('Image Link 1') }}</label>
+                                    <input type="text" name="img_01" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" @isset($edit) value="{{ $inscriptionToEdit->img_01 }}" @endisset required />
+                                </div>
+                                <div class="w-full flex-col flex p-3">
+                                    <label class="pb-2 text-gray-700 font-semibold">{{ __('Image Link 2') }}</label>
+                                    <input type="text" name="img_02" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" @isset($edit) value="{{ $inscriptionToEdit->img_02 }}" @endisset required />
+                                </div>
+                                <div class="w-full flex-col flex p-3">
+                                    <label class="pb-2 text-gray-700 font-semibold">{{ __('Image Link 3') }}</label>
+                                    <input type="text" name="img_03" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" @isset($edit) value="{{ $inscriptionToEdit->img_03 }}" @endisset required />
+                                </div>
+                                <div class="w-full flex-col flex p-3">
+                                    <label class="pb-2 text-gray-700 font-semibold">{{ __('Image Link 4') }}</label>
+                                    <input type="text" name="img_04" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" @isset($edit) value="{{ $inscriptionToEdit->img_04 }}" @endisset required />
+                                </div>
+                                <div class="w-full flex-col flex p-3">
+                                    <label class="pb-2 text-gray-700 font-semibold">{{ __('Image Link 5') }}</label>
+                                    <input type="text" name="img_05" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" @isset($edit) value="{{ $inscriptionToEdit->img_05 }}" @endisset required />
+                                </div>
                             </div>
                         </div>
                     </div>

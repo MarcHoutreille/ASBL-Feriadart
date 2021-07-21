@@ -43,8 +43,8 @@
                                 <th scope="col" class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                                     {{ __('Links') }}
                                 </th>
-                                <th scope="col" class="relative px-4 py-3">
-                                    <span class="sr-only">{{ __('Edit') }}</span>
+                                <th scope="col" class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                    {{ __('Edit') }}
                                 </th>
                             </tr>
                         </thead>
@@ -72,15 +72,15 @@
                                 </td>
                                 <td class="px-4 py-4 whitespace-normal">
                                     <div class="text-sm text-gray-900">{{ $event->place }}</div>
-                                    <div class="text-sm text-gray-500">{{ $event->address }}</div>
+                                    <div class="text-sm text-gray-500"><a class="hover:text-blue-400" href="https://www.google.com/maps?q={{ $event->address }}" target="_blank">{{ $event->address }}</a></div>
                                 </td>
                                 <td class="px-4 py-4 whitespace-normal text-sm text-gray-500">
                                     <div class="text-sm text-gray-900">{{ $event->telephone }}</div>
-                                    <div class="text-sm text-gray-500">{{ $event->email }}</div>
+                                    <div class="text-sm text-gray-500"><a class="hover:text-blue-400" href="mailto:{{ $event->email }}">{{ $event->email }}</a></div>
                                 </td>
                                 <td class="px-4 py-4 whitespace-normal text-sm text-gray-500">
-                                    <div class="text-sm text-gray-900">{{ $event->url }}</div>
-                                    <div class="text-sm text-gray-500">{{ $event->img_src }}</div>
+                                    <div class="text-sm text-gray-900"><a class="hover:text-blue-400" href="{{ $event->url }}" target="_blank">{{ $event->url }}</a></div>
+                                    <div class="text-sm text-gray-500"><a class="hover:text-blue-400" href="{{ $event->img_src }}" target="_blank">{{ $event->img_src }}</a></div>
                                 </td>
                                 <td class="px-4 py-4 whitespace-normal text-right text-sm font-medium">
                                     <div class="my-4">

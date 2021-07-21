@@ -43,8 +43,8 @@
                                 <th scope="col" class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                                     {{ __('Message') }}
                                 </th>
-                                <th scope="col" class="relative px-4 py-3">
-                                    <span class="sr-only">{{ __('Edit') }}</span>
+                                <th scope="col" class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                    {{ __('Edit') }}
                                 </th>
                             </tr>
                         </thead>
@@ -70,7 +70,7 @@
                                     <div class="text-sm text-gray-900">{{ $guest->title }}</div>
                                 </td>
                                 <td class="px-4 py-4 whitespace-normal text-sm text-gray-500">
-                                    <div class="text-sm text-gray-900">{{ $guest->email }}</div>
+                                    <div class="text-sm text-gray-900"><a class="hover:text-blue-400" href="mailto:{{ $guest->email }}">{{ $guest->email }}</a></div>
                                 </td>
                                 <td class="px-4 py-4 whitespace-normal text-sm text-gray-500">
                                     <div class="text-sm text-gray-900">{{ $guest->message }}</div>
