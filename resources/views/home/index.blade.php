@@ -1,8 +1,8 @@
 <x-guest-layout>
     <section class="text-gray-600 body-font overflow-hidden">
         <!-- FEATURED ARTIST -->
-        <div class="container px-4 py-14 mx-auto flex flex-col w-full mx-auto">
-            <div class="rounded-t-lg h-64 overflow-hidden">
+        <div class="container flex flex-col w-full px-4 py-14 mx-auto">
+            <div class="h-64 rounded-t-lg overflow-hidden">
                 <img alt="content" class="object-cover object-center h-full w-full" src="{{ $artist->img_01 }}">
             </div>
             <div class="flex flex-col sm:flex-row mt-10">
