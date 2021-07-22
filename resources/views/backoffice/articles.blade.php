@@ -32,9 +32,6 @@
                                     {{ __('Date') }}
                                 </th>
                                 <th scope="col" class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                    {{ __('Author') }}
-                                </th>
-                                <th scope="col" class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                                     {{ __('Title') }}
                                 </th>
                                 <th scope="col" class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
@@ -65,10 +62,6 @@
                                             </div>
                                         </div>
                                     </div>
-                                </td>
-                                <td class="px-4 py-4 whitespace-normal">
-                                    <div class="text-sm text-gray-900">{{ $article->author }}</div>
-                                    <div class="text-sm text-gray-500">{{ $article->contact }}</div>
                                 </td>
                                 <td class="px-4 py-4 whitespace-normal">
                                     <div class="text-sm text-gray-900">{{ $article->title }}</div>
@@ -136,14 +129,6 @@
                             <div class="w-full flex-col flex p-3">
                                 <label class="pb-2 text-gray-700 font-semibold">{{ __('Body') }}</label>
                                 <textarea name="body" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" rows="10" required>@isset($edit) {{ $articleToEdit->body }} @endisset</textarea>
-                            </div>
-                            <div class="w-full md:w-1/2 flex-col flex p-3">
-                                <label class="pb-2 text-gray-700 font-semibold">{{ __('Author') }}</label>
-                                <input type="text" name="author" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" @isset($edit) value="{{ $articleToEdit->author }}" @endisset required />
-                            </div>
-                            <div class="w-full md:w-1/2 flex-col flex p-3">
-                                <label class="pb-2 text-gray-700 font-semibold">{{ __('Contact Info') }}</label>
-                                <input type="text" name="contact" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" @isset($edit) value="{{ $articleToEdit->contact }}" @endisset required />
                             </div>
                             <div class="w-full md:w-1/2 flex-col flex p-3">
                                 <label class="pb-2 text-gray-700 font-semibold">{{ __('Article URL') }}</label>
