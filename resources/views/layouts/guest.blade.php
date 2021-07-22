@@ -15,9 +15,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.2.0/css/glide.theme.css">
 </head>
 
-<body class="font-mono min-h-screen antialiased">
+<body class="font-sans min-h-screen antialiased">
     <x-header />
-    <main class="relative flex items-top justify-center text-gray-900 bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
+    <main class="relative flex items-top justify-center text-gray-900 bg-white sm:items-center py-4 sm:pt-0">
         {{ $slot }}
     </main>
     <x-footer />
