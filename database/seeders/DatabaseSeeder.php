@@ -74,7 +74,7 @@ class DatabaseSeeder extends Seeder
             'excerpt' => 'La Feria d’Art organise sa première édition !',
             'author' => 'Nina Closson',
             'contact' => 'feriadart@gmail.com - +32494999246',
-            'url' => 'https://www.facebook.com/FeriadArt/',
+            'url' => 'http://www.facebook.com/FeriadArt/',
         ]);
         
         //Create 5 random events
@@ -125,7 +125,7 @@ class DatabaseSeeder extends Seeder
             'address' => 'Rue Fritz Toussaint 8, 1050, Ixelles, Bruxelles',
             'telephone' => '+32494999246',
             'email' => 'feriadart@gmail.com',
-            'url' => 'https://www.facebook.com/events/695373977721327/',           
+            'url' => 'http://www.facebook.com/events/695373977721327/',           
         ]);
 
         //Create 10 random contact messages
@@ -181,7 +181,7 @@ class DatabaseSeeder extends Seeder
             'products' => 'Gravures 15€, Planches à pain 30€.',
             'telephone' => '01234567890',
             'email' => 'chloe.est.jacobs@gmail.com',
-            'url' => 'https://jackatnight.bigcartel.com/',
+            'url' => 'http://jackatnight.bigcartel.com/',
             'img_01' => '/images/artists/artist-jack_at_night.png',
             'accepted' => 1,
         ]);
@@ -202,7 +202,7 @@ class DatabaseSeeder extends Seeder
             'products' => 'Linocut Pack 18€, Silkscreens 20€, Prints 30€',
             'telephone' => '0123456789',
             'email' => 'elodk@gmail.com',
-            'url' => 'www.etsy.com/fr/shop/LodkPrints',
+            'url' => 'http://www.etsy.com/fr/shop/LodkPrints',
             'img_01' => '/images/artists/artist-elo_dk.png',
             'accepted' => 1,
         ]);
@@ -220,7 +220,7 @@ class DatabaseSeeder extends Seeder
             'products' => 'Prints 30€',
             'telephone' => '0123456789',
             'email' => 'pacomelerouge@gmail.com',
-            'url' => 'https://pacome.xyz/',
+            'url' => 'http://pacome.xyz/',
             'img_01' => '/images/artists/artist-pacome_le_rouge.png',
             'accepted' => 1,
         ]);
@@ -237,7 +237,7 @@ class DatabaseSeeder extends Seeder
             'products' => 'Linogravures 40€, Affiches 20€',
             'telephone' => '0123456789',
             'email' => 'saraheskenazi@mail.com',
-            'url' => 'www.camilletoussaint.com',
+            'url' => 'http://www.camilletoussaint.com',
             'img_01' => '/images/artists/artist-camille_toussaint.png',
             'accepted' => 1,
         ]);
@@ -253,7 +253,7 @@ class DatabaseSeeder extends Seeder
             'products' => 'Photos 20€',
             'telephone' => '0123456789',
             'email' => 'benjaminmarc@mail.com',
-            'url' => 'https://benjaminm89.wixsite.com/photography',
+            'url' => 'http://benjaminm89.wixsite.com/photography',
             'img_01' => '/images/artists/artist-benjamin_marc.png',
             'accepted' => 1,
         ]);
@@ -270,7 +270,7 @@ class DatabaseSeeder extends Seeder
             'products' => 'Prints 15€',
             'telephone' => '0123456789',
             'email' => 'coline.cornelis@hotmail.com',
-            'instagram' => 'https://www.instagram.com/cocornel',
+            'instagram' => 'http://www.instagram.com/cocornel',
             'img_01' => '/images/artists/artist-cocornel.png',
             'accepted' => 1,
         ]);
