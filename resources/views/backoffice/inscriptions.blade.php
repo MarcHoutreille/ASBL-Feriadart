@@ -185,37 +185,37 @@
                                 </div>
                                 <div class="w-full flex-col flex p-3">
                                     <label class="pb-2 text-gray-700 font-semibold">{{ __('Homepage') }}</label>
-                                    <input type="text" name="url" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" @isset($edit) value="{{ $inscriptionToEdit->url }}" @endisset required />
+                                    <input type="url" placeholder="http://" name="url" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" @isset($edit) value="{{ $inscriptionToEdit->url }}" @endisset required />
                                 </div>
                                 <div class="w-full flex-col flex p-3">
                                     <label class="pb-2 text-gray-700 font-semibold">{{ __('Facebook') }}</label>
-                                    <input type="text" name="facebook" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" @isset($edit) value="{{ $inscriptionToEdit->facebook }}" @endisset required />
+                                    <input type="url" placeholder="http://" name="facebook" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" @isset($edit) value="{{ $inscriptionToEdit->facebook }}" @endisset required />
                                 </div>
                                 <div class="w-full flex-col flex p-3">
                                     <label class="pb-2 text-gray-700 font-semibold">{{ __('Instagram') }}</label>
-                                    <input type="text" name="instagram" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" @isset($edit) value="{{ $inscriptionToEdit->instagram }}" @endisset required />
+                                    <input type="url" placeholder="http://" name="instagram" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" @isset($edit) value="{{ $inscriptionToEdit->instagram }}" @endisset required />
                                 </div>
                             </div>
                             <div class="col w-full md:w-1/2">
                                 <div class="w-full flex-col flex p-3">
                                     <label class="pb-2 text-gray-700 font-semibold">{{ __('Image Link 1') }}</label>
-                                    <input type="text" name="img_01" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" @isset($edit) value="{{ $inscriptionToEdit->img_01 }}" @endisset required />
+                                    <input type="url" placeholder="http://" name="img_01" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" @isset($edit) value="{{ $inscriptionToEdit->img_01 }}" @endisset required />
                                 </div>
                                 <div class="w-full flex-col flex p-3">
                                     <label class="pb-2 text-gray-700 font-semibold">{{ __('Image Link 2') }}</label>
-                                    <input type="text" name="img_02" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" @isset($edit) value="{{ $inscriptionToEdit->img_02 }}" @endisset required />
+                                    <input type="url" placeholder="http://" name="img_02" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" @isset($edit) value="{{ $inscriptionToEdit->img_02 }}" @endisset required />
                                 </div>
                                 <div class="w-full flex-col flex p-3">
                                     <label class="pb-2 text-gray-700 font-semibold">{{ __('Image Link 3') }}</label>
-                                    <input type="text" name="img_03" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" @isset($edit) value="{{ $inscriptionToEdit->img_03 }}" @endisset required />
+                                    <input type="url" placeholder="http://" name="img_03" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" @isset($edit) value="{{ $inscriptionToEdit->img_03 }}" @endisset required />
                                 </div>
                                 <div class="w-full flex-col flex p-3">
                                     <label class="pb-2 text-gray-700 font-semibold">{{ __('Image Link 4') }}</label>
-                                    <input type="text" name="img_04" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" @isset($edit) value="{{ $inscriptionToEdit->img_04 }}" @endisset required />
+                                    <input type="url" placeholder="http://" name="img_04" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" @isset($edit) value="{{ $inscriptionToEdit->img_04 }}" @endisset required />
                                 </div>
                                 <div class="w-full flex-col flex p-3">
                                     <label class="pb-2 text-gray-700 font-semibold">{{ __('Image Link 5') }}</label>
-                                    <input type="text" name="img_05" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" @isset($edit) value="{{ $inscriptionToEdit->img_05 }}" @endisset required />
+                                    <input type="url" placeholder="http://" name="img_05" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" @isset($edit) value="{{ $inscriptionToEdit->img_05 }}" @endisset required />
                                 </div>
                             </div>
                         </div>

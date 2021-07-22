@@ -134,8 +134,8 @@
                             </div>
                             @endisset
                             <div class="w-full flex-col flex p-3">
-                                <label class="pb-2 text-gray-700 font-semibold">{{ __('Image Link') }}</label>
-                                <input type="text" name="img_src" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" @isset($edit) value="{{ $fileToEdit->img_src }}" @endisset required />
+                                <label class="pb-2 text-gray-700 font-semibold">{{ __('Link') }}</label>
+                                <input type="url" placeholder="http://" name="img_src" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" @isset($edit) value="{{ $fileToEdit->img_src }}" @endisset required />
                             </div>
                         </div>
                     </div>
