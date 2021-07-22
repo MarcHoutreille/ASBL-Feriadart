@@ -2,17 +2,19 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Article;
+use App\Models\Inscription;
 use App\Models\Event;
+use App\Models\Article;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
     public function index()
     {
-        $articles = Article::all()->sortByDesc('created_at')->take(2);
+        $artist = Inscription::inRandomOrder()->first();
         $events = Event::all()->sortBy('date_start')->take(3);
-        return view('index', ['events' => $events, 'articles' => $articles]);
+        $articles = Article::all()->sortByDesc('created_at')->take(2);
+        return view('home.index', ['artist' => $artist, 'events' => $events, 'articles' => $articles]);
     }
 
  
