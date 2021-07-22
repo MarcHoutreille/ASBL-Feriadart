@@ -14,7 +14,7 @@
 </style>
 
 <!--- CAROUSEL --->
-<div class="glide h-auto">
+<div class="glide h-auto mt-40 mb-60">
   <h2 class="font-semibold text-3xl text-gray-800 leading-tight text-center my-10">
     {{ $event->name }}
   </h2>

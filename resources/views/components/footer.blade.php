@@ -48,7 +48,7 @@
         </div>
     </div>
     <!-- Secret Backoffice Icon -->
-        <div class="flex items-center justify-between bg-white h-12">
+        <div class="flex items-center justify-between bg-white h-9">
             <div><p class=" mx-5 text-purple-700">0753.565.581</p>
             </div>
             <div>
