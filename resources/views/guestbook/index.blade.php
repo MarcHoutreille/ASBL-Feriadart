@@ -10,7 +10,7 @@
 
         <!-- Add Comment Button -->
         <div class="flex justify-center mt-14">
-            <button class="px-6 py-3 bg-green-700 text-white rounded shadow" id="addEvent-btn">
+            <button class="px-6 py-3 bg-yellow-300 hover:bg-yellow-200 text-white rounded shadow" id="addEvent-btn">
                 {{ __('Leave a comment')}}
             </button>
         </div>

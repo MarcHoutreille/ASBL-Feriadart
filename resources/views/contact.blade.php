@@ -34,7 +34,7 @@
                         </div>
                         <div class="p-2 w-full">
                             <input type="hidden" id="front" name="front">
-                            <button type="submit" class="flex mx-auto text-white bg-green-500 border-0 py-2 px-8 focus:outline-none hover:bg-green-600 rounded text-lg">{{ __('Send') }}</button>
+                            <button type="submit" class="flex mx-auto text-white bg-yellow-300 hover:bg-yellow-200 border-0 py-2 px-8 focus:outline-none rounded text-lg">{{ __('Send') }}</button>
                         </div>
                         <div class="p-2 w-full pt-8 mt-8 border-t border-gray-200 text-center">
                             <a class="text-indigo-500">feriadart@gmail.com</a>
