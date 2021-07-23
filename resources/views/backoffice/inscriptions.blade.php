@@ -172,7 +172,7 @@
                             </div>
                             <div class="w-full flex-col flex p-3">
                                 <label class="pb-2 text-gray-700 font-semibold">{{ __('Products') }}</label>
-                                <textarea name="products" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" rows="5" required>@isset($edit) {{ $inscriptionToEdit->products }} @endisset</textarea>
+                                <textarea name="products" id="products" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" rows="5" required>@isset($edit) {{ $inscriptionToEdit->products }} @endisset</textarea>
                             </div>
                             <div class="col w-full md:w-1/2">
                                 <div class="w-full flex-col flex p-3">
@@ -245,5 +245,8 @@
             closeBtn2.addEventListener('click', toggleModal);
         });
     </script>
-
+    <script src="https://cdn.ckeditor.com/4.16.1/standard/ckeditor.js"></script>
+    <script>
+        CKEDITOR.replace( 'products' );
+    </script> 
 </x-app-layout>

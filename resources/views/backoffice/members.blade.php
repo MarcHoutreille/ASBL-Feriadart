@@ -133,7 +133,7 @@
                             </div>
                             <div class="w-full flex-col flex p-3">
                                 <label class="pb-2 text-gray-700 font-semibold">{{ __('Short Bio') }}</label>
-                                <textarea name="bio" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" rows="5" required>@isset($edit) {{ $memberToEdit->bio }} @endisset</textarea>
+                                <textarea name="bio" id="bio" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" rows="5" required>@isset($edit) {{ $memberToEdit->bio }} @endisset</textarea>
                             </div>
                             <div class="w-full flex-col flex p-3">
                                 <label class="pb-2 text-gray-700 font-semibold">{{ __('Image Link') }}</label>
@@ -181,5 +181,8 @@
             closeBtn2.addEventListener('click', toggleModal);
         });
     </script>
-
+    <script src="https://cdn.ckeditor.com/4.16.1/standard/ckeditor.js"></script>
+    <script>
+        CKEDITOR.replace( 'bio' );
+    </script> 
 </x-app-layout>
