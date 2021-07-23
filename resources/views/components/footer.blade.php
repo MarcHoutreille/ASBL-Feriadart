@@ -65,7 +65,7 @@
                                                     </svg>
                 </div>
             </div>
-            <div class="ml-2"><p class="text-purple-700 mx-auto">Productions Associées ASBL - Rue Emile Féron 70, 1060 Bruxelles - TVA N° BE 0896 755 397</p>
+            <div class="ml-2"><p class="text-purple-700 mx-auto">Feria d'Art ASBL - TVA N° BE 0753.565.581 - Rue Washington 208, 1050 Bruxelles</p>
             </div>
           
     </div>
