@@ -1,39 +1,39 @@
 <footer class="bg-purple-700 text-yellow-300">
     <div class="container block lg:flex items-center justify-around py-8 mx-auto">
         <!-- Menu -->
-        <div class="lg:my-auto lg:mx-4 mb-4">
+        <div class="w-full lg:my-auto lg:mx-4 mb-4">
             <ul class="text-center text-lg list-none">
                 <li>
-                    <a href="{{ route('home') }}" class="text-yellow-200 text-center block mx-1 my-auto hover:text-yellow-300 @if (request()->routeIs('home')) text-yellow-300 @endif">{{ __('Home') }}</a>
+                    <a href="{{ route('home') }}" class="text-yellow-200 block mx-1 my-auto hover:text-yellow-300 @if (request()->routeIs('home')) text-yellow-300 @endif">{{ __('Home') }}</a>
                 </li>
                 <li>
-                    <a href="{{ route('about') }}" class="text-yellow-200 text-center block mx-1 my-auto hover:text-yellow-300 @if (request()->routeIs('about')) text-yellow-300 @endif">{{ __('About Us') }}</a>
+                    <a href="{{ route('about') }}" class="text-yellow-200 block mx-1 my-auto hover:text-yellow-300 @if (request()->routeIs('about')) text-yellow-300 @endif">{{ __('About Us') }}</a>
                 </li>
                 <li>
-                    <a href="{{ route('events') }}" class="text-yellow-200 text-center block mx-1 my-auto hover:text-yellow-300 @if (request()->routeIs('events')) text-yellow-300 @endif">{{ __('Events') }}</a>
+                    <a href="{{ route('events') }}" class="text-yellow-200 block mx-1 my-auto hover:text-yellow-300 @if (request()->routeIs('events')) text-yellow-300 @endif">{{ __('Events') }}</a>
                 </li>
                 <li>
-                    <a href="{{ route('gallery') }}" class="text-yellow-200 text-center block mx-1 my-auto hover:text-yellow-300 @if (request()->routeIs('gallery')) text-yellow-300 @endif">{{ __('Gallery') }}</a>
+                    <a href="{{ route('gallery') }}" class="text-yellow-200 block mx-1 my-auto hover:text-yellow-300 @if (request()->routeIs('gallery')) text-yellow-300 @endif">{{ __('Gallery') }}</a>
                 </li>
                 <li>
-                    <a href="{{ route('articles') }}" class="text-yellow-200 text-center block mx-1 my-auto hover:text-yellow-300 @if (request()->routeIs('articles')) text-yellow-300 @endif">{{ __('Articles') }}</a>
+                    <a href="{{ route('articles') }}" class="text-yellow-200 block mx-1 my-auto hover:text-yellow-300 @if (request()->routeIs('articles')) text-yellow-300 @endif">{{ __('Articles') }}</a>
                 </li>
                 <li>
-                    <a href="{{ route('guestbook') }}" class="text-yellow-200 text-center block mx-1 my-auto hover:text-yellow-300 @if (request()->routeIs('guestbook')) text-yellow-300 @endif">{{ __('Guestbook') }}</a>
+                    <a href="{{ route('guestbook') }}" class="text-yellow-200 block mx-1 my-auto hover:text-yellow-300 @if (request()->routeIs('guestbook')) text-yellow-300 @endif">{{ __('Guestbook') }}</a>
                 </li>
                 <li>
-                    <a href="{{ route('contact') }}" class="text-yellow-200 text-center block mx-1 my-auto hover:text-yellow-300 @if (request()->routeIs('contact')) text-yellow-300 @endif">{{ __('Contact') }}</a>        
+                    <a href="{{ route('contact') }}" class="text-yellow-200 block mx-1 my-auto hover:text-yellow-300 @if (request()->routeIs('contact')) text-yellow-300 @endif">{{ __('Contact') }}</a>        
                 </li>
             </ul>
-            <ul class="list-none hidden" id="backnav">
+            <ul class="text-center text-lg list-none hidden" id="backnav">
                 @if (Route::has('login'))
                 @auth
                 <li>
-                    <a href="{{ route('backoffice.index') }}" class="text-yellow-300">{{ __('Backoffice') }}</a>
+                    <a href="{{ route('backoffice.index') }}" class="text-yellow-200 block mx-1 my-auto hover:text-yellow-300">{{ __('Backoffice') }}</a>
                 </li>
                 @else
                 <li>
-                    <a href="{{ route('login') }}" class="text-yellow-300">{{ __('Log in') }}</a>
+                    <a href="{{ route('login') }}" class="text-yellow-200 block mx-1 my-auto hover:text-yellow-300">{{ __('Log in') }}</a>
                 </li>
                 <!-- @if (Route::has('register'))
                     <li>
@@ -45,11 +45,11 @@
             </ul>
         </div>
         <!-- LOGO -->
-        <div class="flex justify-center align-center mx-4">
+        <div class="w-full flex justify-center align-center mx-4">
             <img class="rounded-full h-40" src="/images/FeriaLogoGeel.png" alt="logo">
         </div>
         <!-- SOCIAL MEDIA LINKS -->
-        <div class="text-center mx-4">
+        <div class="w-full text-center mx-4">
             <a href="https://www.facebook.com/FeriadArt" class="inline-flex mt-4">
                 <svg width="24" height="24" stroke="" fill="#FFE202" stroke-linecap="round" stroke-linejoin="round" stroke-width="5" class="mx-2" viewBox="0 0 24 24">
                     <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
