@@ -1,7 +1,7 @@
 <x-guest-layout>
     <section class="text-gray-600 body-font overflow-hidden">
         <!-- FEATURED ARTIST -->
-        <div class="container flex flex-col w-full px-4 py-14 mx-auto">
+        <div class="container flex flex-col w-full px-4 py-4 lg:py-14 mx-auto">
             <div class="h-64 rounded-t-lg overflow-hidden">
                 <img alt="content" class="object-cover object-center h-full w-full" src="{{ $artist->img_01 }}">
             </div>
@@ -31,7 +31,7 @@
         </div>
         <!-- FEATURED EVENT -->
         <div class="container flex px-4 py-14 mx-auto md:flex-row flex-col items-center">
-            <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 mb-10 md:mb-0">
+            <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 mb-8 md:mb-0">
                 <img class="object-cover object-center rounded" alt="Inscription" src="/images/feria-appel.jpg">
             </div>
             <div class="lg:flex-grow md:w-1/2 lg:pl-24 md:pl-16 flex flex-col md:items-start md:text-left items-center text-center">
@@ -45,18 +45,18 @@
             </div>
         </div>
         <!-- NEXT EVENTS -->
-        <div class="container px-5 py-10 mx-auto">
+        <div class="container px-4 py-4 lg:py-14 mx-auto">
             <h2 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">{{ __('Next Events') }}</h2>
-            <div class="-my-8 divide-y-2 divide-gray-100">
+            <div class="my-4 divide-y-2 divide-gray-100">
                 @foreach ($events as $event)
                 <x-event-calendar-card :event="$event" />
                 @endforeach
             </div>
         </div>
         <!-- LAST ARTICLES -->
-        <div class="container px-5 py-10 mx-auto">
+        <div class="container px-4 py-4 mx-auto">
             <h2 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">{{ __('Latest Articles') }}</h2>
-            <div class="flex flex-wrap -m-12">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 my-4">
                 @foreach ($articles as $article)
                 <x-article-card :article="$article" />
                 @endforeach
