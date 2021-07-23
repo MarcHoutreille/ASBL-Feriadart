@@ -1,9 +1,9 @@
 <footer class="text-yellow-300 bg-purple-700 text-lg">
-    <div class="container h-72 mx-auto">
+    <div class="container h-96 md:h-72 mx-auto">
         <div class="block md:flex justify-evenly">
             <!-- Menu -->
-            <div class="text-center mt-4 md:my-auto md:ml-48">
-                <a href="{{ route('contact') }}" class="text-md text-yellow-300 ">
+            <div class="text-center md:my-auto md:ml-48">
+                <a href="{{ route('contact') }}" class="text-md mt-8 text-yellow-300 ">
                     {{ __('Contact') }}
                 </a>
 
@@ -27,7 +27,7 @@
                 </div>
             </div>
             <!-- Logo -->
-            <div class="my-4 md:my-auto md:mt-16">
+            <div class="my-4 md:my-auto md:mt-14">
                 <img class="mx-auto rounded-full h-40" src="/images/FeriaLogoGeel.png" alt="logo">
             </div>
             <!-- Social Media Links -->
@@ -48,11 +48,9 @@
         </div>
     </div>
     <!-- Secret Backoffice Icon -->
-        <div class="flex items-center justify-between bg-white h-9">
-            <div><p class=" mx-5 text-purple-700">0753.565.581</p>
-            </div>
+        <div class="h-24 flex items-center justify-center bg-yellow-300 md:h-9 ">
             <div>
-                <div class="px-auto my-auto mr-2 "><svg id="secret" width="20.000000pt" height="20.000000pt" viewBox="0 0 30.000000 30.000000" preserveAspectRatio="xMidYMid meet">
+                <div class="px-auto my-auto"><svg id="secret" width="20.000000pt" height="20.000000pt" viewBox="0 0 30.000000 30.000000" preserveAspectRatio="xMidYMid meet">
                     <g transform="translate(0.000000,30.000000) scale(0.100000,-0.100000)" fill="#6838FE" stroke="none">
                         <path d="M55 270 c-8 -12 23 -65 33 -56 3 4 0 12 -6 18 -7 7 -12 16 -12 22 0
                     5 7 1 15 -10 8 -10 15 -14 15 -8 0 18 -37 47 -45 34z" />
@@ -67,6 +65,9 @@
                                                     </svg>
                 </div>
             </div>
+            <div class="ml-2"><p class="text-purple-700 mx-auto">Productions Associées ASBL - Rue Emile Féron 70, 1060 Bruxelles - TVA N° BE 0896 755 397</p>
+            </div>
+          
     </div>
 </footer>
 
