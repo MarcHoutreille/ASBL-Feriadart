@@ -25,9 +25,9 @@ class DatabaseSeeder extends Seeder
     {
         //Create real admin user
         $admin = User::create([
-            'name'=> 'Admin',
+            'name'=> "Feria d'Art",
             'username'=> 'admin',
-            'email' => 'admin@email.com',
+            'email' => 'contact@feriadart.art',
             'password' => Hash::make('password')
         ]);
         
