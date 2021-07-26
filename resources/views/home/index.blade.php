@@ -9,13 +9,14 @@
                         <img alt="content" class="object-cover object-center h-full w-full" src="{{ $artist->img_01 }}">
                     </div>
                 </div>
-                <div class="sm:w-2/3 sm:pl-8 sm:py-8 sm:border-l border-gray-200 sm:border-t-0 border-t mt-4 pt-4 sm:mt-0 text-center sm:text-left">
+                <div class="sm:w-2/3 sm:pl-8 sm:py-8 mt-2 pt-4 sm:mt-0 text-center sm:text-left">
                     <div class="flex flex-col items-center text-center justify-center">
-                        <h2 class="font-medium title-font mt-16 text-gray-900 text-lg underline">{{ $artist->fname }} {{ $artist->lname }}</h2>
+                        <h1 class="text-2xl mt-12 text-purple-700">FEATURED ARTISTS</h1>
+                        <h2 class="font-medium title-font mt-2 text-gray-900 text-lg">- {{ $artist->fname }} {{ $artist->lname }} -</h2>
                         
                    
                     <p class="leading-relaxed text-lg mb-4 mt-6">{!! $artist->bio !!}</p>
-                    <a href="{{ $artist->url }}" class="text-indigo-500 inline-flex items-center">{{ __('See More') }}
+                    <a href="{{ $artist->url }}" class="text-purple-700 border-2 border-purple-700 py-2 px-6 rounded mt-2 inline-flex items-center">{{ __('See More') }}
                         <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">
                             <path d="M5 12h14M12 5l7 7-7 7"></path>
                         </svg>
@@ -31,7 +32,7 @@
                     <br class="hidden lg:inline-block">Artiste professionnel·le ou amateur·e ?
                 </h1>
                 <p class="mb-8 leading-relaxed mr-4">Bonjour à tou·te·s, 🎨 Pourquoi ne pas décorer son intérieur ou offrir une oeuvre originale à ses proches créée et pensée par un artiste local? C’est ce que la Feria d’Art propose ! La Feria d’Art souhaite casser les codes du marché de l’art classique, et ce, en désacralisant l’achat d’une oeuvre d’art tout en offrant une expérience inclusive pour les artistes et le public. Nous vous annonçons avec enthousiasme que la première édition prendra place vendredi 18 et samedi 19 septembre 2020 dans la plus grande occupation temporaire de Belgique, à Bruxelles, au See U.</p>
-                <div class="flex justify-center">
+                <div class="flex justify-center mx-auto">
                     <a href="/events/feria-d-art-01" class="btn inline-flex text-purple-700 mb-4 bg-yellow-300 hover:bg-yellow-200 border-2 border-purple-700 py-2 px-6 focus:outline-none rounded text-lg">{{__('Learn more')}}</a>
                 </div>
             </div>
