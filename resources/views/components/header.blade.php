@@ -9,7 +9,7 @@
         <a href="{{ route('guestbook') }}" class="text-yellow-200 text-center block mx-1 my-2 sm:my-auto  hover:text-yellow-300 @if (request()->routeIs('guestbook')) text-yellow-300 @endif">{{ __('Guestbook') }}</a>
         <a href="{{ route('contact') }}" class="text-yellow-200 text-center block mx-1 my-2 sm:my-auto  hover:text-yellow-300 @if (request()->routeIs('contact')) text-yellow-300 @endif">{{ __('Contact') }}</a>
         @if (Route::has('login'))@auth
-        <a href="{{ route('backoffice.index') }}" class="text-purple-600 text-center block my-2 sm:my-auto  hover:text-yellow-300 @if (request()->routeIs('backoffice.index')) text-yellow-300 @endif">{{ __('Backoffice') }}</a>
+        <a href="{{ route('backoffice.index') }}" class="text-yellow-200 text-center block my-2 sm:my-auto  hover:text-yellow-300 @if (request()->routeIs('backoffice.index')) text-yellow-300 @endif">{{ __('Backoffice') }}</a>
         @endauth
         @endif
         @if(count(config('app.languages')) > 1 )
