@@ -31,8 +31,6 @@ class ArticleFactory extends Factory
             'img_src' => 'https://source.unsplash.com/720x400/?art',
             'body' => $body,
             'excerpt' => substr($body,0,50) . '...',
-            'author' => $this->faker->name(),
-            'contact' => $this->faker->email(),
             'url' => $this->faker->url(),
         ];
     }

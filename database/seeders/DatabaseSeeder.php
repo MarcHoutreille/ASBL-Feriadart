@@ -72,8 +72,6 @@ class DatabaseSeeder extends Seeder
                 dévaloriser le travail de l’artiste, nous ouvrons une
                 nouvelle porte pour le dévoiler.</p>',
             'excerpt' => 'La Feria d’Art organise sa première édition !',
-            'author' => 'Nina Closson',
-            'contact' => 'feriadart@gmail.com - +32494999246',
             'url' => 'http://www.facebook.com/FeriadArt/',
         ]);
         
