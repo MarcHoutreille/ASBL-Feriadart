@@ -33,11 +33,11 @@
                     <x-success-message class="mb-4" />
                     <form action="{{ route('artists.inscription', $event) }}" method="POST">
                         @csrf
-                        <button type="submit" class="btn mx-3 px-6 py-3 bg-yellow-300 hover:bg-yellow-200 text-white rounded shadow" id="addEvent-btn">
+                        <button type="submit" class="btn mx-3 px-6 py-3 bg-yellow-300 hover:bg-yellow-200 border-2 border-purple-700 text-purple-700 rounded shadow" id="addEvent-btn">
                             {{ __('Inscription') }}
                         </button>
                     </form>
-                    <a href="{{ route('artists', $event) }}" class="btn mx-3 px-6 py-3 bg-purple-700 hover:bg-purple-500 text-white rounded shadow">
+                    <a href="{{ route('artists', $event) }}" class="btn mx-3 px-6 py-3 bg-purple-700 hover:bg-purple-500 text-yellow-300 rounded shadow">
                         {{ __('View Artists') }}
                     </a>
                 </div>
