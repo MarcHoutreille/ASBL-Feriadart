@@ -34,6 +34,7 @@ class BackofficeArticlesController extends Controller
         return view('backoffice.articles', [
             'articles' => $articles,
             'create' => $create,
+            
         ]);
     }
 
@@ -49,15 +50,17 @@ class BackofficeArticlesController extends Controller
             'title' => 'required',
             'excerpt' => 'required',
             'body' => 'required',
-            'author' => 'required',
-            'contact' => 'required',
             'url' => 'required',
-            'img_src' => 'required',
+            'img_src' => 'required|mimes:jpeg,png,jpg|max:5048',
         ]);
+        $newImageName = time().'-'.$request->title.'.'.$request->img_src->extension();
+        $request->img_src->move(public_path('images/articles'),$newImageName);
+        $request['img_src']= $newImageName;
+        dd($request);
         $title = $request->input('title');
         $request['slug'] = str_replace('.','',(str_replace(' ','-',strtolower($title))));
         $request['user_id'] = Auth::user()->id;
-        Article::create($request->only('user_id', 'title', 'excerpt', 'body', 'slug', 'author', 'contact', 'url', 'img_src'));
+        Article::create($request->only('user_id', 'title', 'excerpt', 'body', 'slug','url', 'img_src'));
         return redirect()->route('articles.index')->with('success', 'Added Succesfully');
     }
 
@@ -106,8 +109,6 @@ class BackofficeArticlesController extends Controller
         $article->excerpt = $request->excerpt;
         $article->body = $request->body;
         $article->img_src = $request->img_src;
-        $article->author = $request->author;
-        $article->contact = $request->contact;
         $article->url = $request->url;
         $query = $article->save();
 
