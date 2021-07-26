@@ -32,16 +32,16 @@
                                     {{ __('Dates') }}
                                 </th>
                                 <th scope="col" class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                    {{ __('Name') }}
+                                    {{ __('Event') }}
                                 </th>
                                 <th scope="col" class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                    {{ __('Place') }}
+                                    {{ __('Inscription') }}
                                 </th>
                                 <th scope="col" class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                    {{ __('Contact') }}
+                                    {{ __('Info') }}
                                 </th>
                                 <th scope="col" class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                    {{ __('Links') }}
+                                    {{ __('Files') }}
                                 </th>
                                 <th scope="col" class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                                     {{ __('Edit') }}
@@ -71,12 +71,14 @@
                                     <div class="text-sm text-gray-500">{{ $event->description }}</div>
                                 </td>
                                 <td class="px-4 py-4 whitespace-normal">
-                                    <div class="text-sm text-gray-900">{{ $event->place }}</div>
-                                    <div class="text-sm text-gray-500"><a class="hover:text-blue-400" href="https://www.google.com/maps?q={{ $event->address }}" target="_blank">{{ $event->address }}</a></div>
+                                <div class="text-sm text-gray-900">{{ $event->inscription_img }}</div>
+                                    <div class="text-sm text-gray-500">{{ $event->inscription_txt }}</div>
                                 </td>
                                 <td class="px-4 py-4 whitespace-normal text-sm text-gray-500">
                                     <div class="text-sm text-gray-900">{{ $event->telephone }}</div>
                                     <div class="text-sm text-gray-500"><a class="hover:text-blue-400" href="mailto:{{ $event->email }}">{{ $event->email }}</a></div>
+                                    <div class="text-sm text-gray-900">{{ $event->place }}</div>
+                                    <div class="text-sm text-gray-500"><a class="hover:text-blue-400" href="https://www.google.com/maps?q={{ $event->address }}" target="_blank">{{ $event->address }}</a></div>
                                 </td>
                                 <td class="px-4 py-4 whitespace-normal text-sm text-gray-500">
                                     <div class="text-sm text-gray-900"><a class="hover:text-blue-400" href="{{ $event->url }}" target="_blank">{{ $event->url }}</a></div>
@@ -121,43 +123,51 @@
                             @method('PUT')
                             @endisset
                             <div class="w-full md:w-1/2 flex-col flex p-3">
-                                <label class="pb-2 text-gray-700 font-semibold">{{ __('Start Date') }}</label>
+                                <label for="date_start"class="pb-2 text-gray-700 font-semibold">{{ __('Start Date') }}</label>
                                 <input type="datetime-local" name="date_start" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" @isset($edit) value="{{ date('Y-m-d\TH:i', strtotime($eventToEdit->created_at)) }}" @endisset required />
                             </div>
                             <div class="w-full md:w-1/2 flex-col flex p-3">
-                                <label class="pb-2 text-gray-700 font-semibold">{{ __('End Date') }}</label>
+                                <label for="date_end" class="pb-2 text-gray-700 font-semibold">{{ __('End Date') }}</label>
                                 <input type="datetime-local" name="date_end" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" @isset($edit) value="{{ date('Y-m-d\TH:i', strtotime($eventToEdit->created_at)) }}" @endisset required />
                             </div>
                             <div class="w-full flex-col flex p-3">
-                                <label class="pb-2 text-gray-700 font-semibold">{{ __('Event Name') }}</label>
+                                <label for="name" class="pb-2 text-gray-700 font-semibold">{{ __('Event Name') }}</label>
                                 <input type="text" name="name" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" @isset($edit) value="{{ $eventToEdit->name }}" @endisset required />
                             </div>
                             <div class="w-full flex-col flex p-3">
-                                <label class="pb-2 text-gray-700 font-semibold">{{ __('Description') }}</label>
-                                <textarea name="description" id="description" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" rows="10" required>@isset($edit) {{ $eventToEdit->description }} @endisset</textarea>
-                            </div>
-                            <div class="w-full md:w-1/2 flex-col flex p-3">
-                                <label class="pb-2 text-gray-700 font-semibold">{{ __('Place') }}</label>
-                                <input type="text" name="place" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" @isset($edit) value="{{ $eventToEdit->place }}" @endisset required />
-                            </div>
-                            <div class="w-full md:w-1/2 flex-col flex p-3">
-                                <label class="pb-2 text-gray-700 font-semibold">{{ __('Address') }}</label>
-                                <input type="text" name="address" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" @isset($edit) value="{{ $eventToEdit->address }}" @endisset required />
-                            </div>
-                            <div class="w-full md:w-1/2 flex-col flex p-3">
-                                <label class="pb-2 text-gray-700 font-semibold">{{ __('Event URL') }}</label>
+                                <label for="url"class="pb-2 text-gray-700 font-semibold">{{ __('Facebook Event URL') }}</label>
                                 <input type="url" placeholder="http://" name="url" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" @isset($edit) value="{{ $eventToEdit->url }}" @endisset required />
                             </div>
                             <div class="w-full md:w-1/2 flex-col flex p-3">
-                                <label class="pb-2 text-gray-700 font-semibold">{{ __('Image Link') }}</label>
+                                <label for="img_src" class="pb-2 text-gray-700 font-semibold">{{ __('Event Image') }}</label>
                                 <input type="url" placeholder="http://" name="img_src" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" @isset($edit) value="{{ $eventToEdit->img_src }}" @endisset required />
                             </div>
                             <div class="w-full md:w-1/2 flex-col flex p-3">
-                                <label class="pb-2 text-gray-700 font-semibold">{{ __('Telephone') }}</label>
+                                <label for="inscription_img" class="pb-2 text-gray-700 font-semibold">{{ __('Inscription Image') }}</label>
+                                <input type="url" placeholder="http://" name="inscription_img" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" @isset($edit) value="{{ $eventToEdit->img_src }}" @endisset required />
+                            </div>
+                            <div class="w-full flex-col flex p-3">
+                                <label for="description" class="pb-2 text-gray-700 font-semibold">{{ __('Description') }}</label>
+                                <textarea name="description" id="description" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" rows="10" required>@isset($edit) {{ $eventToEdit->description }} @endisset</textarea>
+                            </div>
+                            <div class="w-full flex-col flex p-3">
+                                <label for="inscription_txt" class="pb-2 text-gray-700 font-semibold">{{ __('Inscription Text') }}</label>
+                                <textarea name="inscription_txt" id="inscription_txt" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" rows="10" required>@isset($edit) {{ $eventToEdit->description }} @endisset</textarea>
+                            </div>
+                            <div class="w-full md:w-1/2 flex-col flex p-3">
+                                <label for="place" class="pb-2 text-gray-700 font-semibold">{{ __('Place') }}</label>
+                                <input type="text" name="place" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" @isset($edit) value="{{ $eventToEdit->place }}" @endisset required />
+                            </div>
+                            <div class="w-full md:w-1/2 flex-col flex p-3">
+                                <label for="address" class="pb-2 text-gray-700 font-semibold">{{ __('Address') }}</label>
+                                <input type="text" name="address" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" @isset($edit) value="{{ $eventToEdit->address }}" @endisset required />
+                            </div>
+                            <div class="w-full md:w-1/2 flex-col flex p-3">
+                                <label for="telephone" class="pb-2 text-gray-700 font-semibold">{{ __('Telephone') }}</label>
                                 <input type="tel" name="telephone" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" @isset($edit) value="{{ $eventToEdit->telephone }}" @endisset required />
                             </div>
                             <div class="w-full md:w-1/2 flex-col flex p-3">
-                                <label class="pb-2 text-gray-700 font-semibold">{{ __('Email') }}</label>
+                                <label for="email" class="pb-2 text-gray-700 font-semibold">{{ __('Email') }}</label>
                                 <input type="email" name="email" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" @isset($edit) value="{{ $eventToEdit->email }}" @endisset required />
                             </div>
                         </div>
@@ -190,5 +200,6 @@
     <script src="https://cdn.ckeditor.com/4.16.1/standard/ckeditor.js"></script>
     <script>
         CKEDITOR.replace( 'description' );
+        CKEDITOR.replace( 'inscription_txt' );
     </script> 
 </x-app-layout>

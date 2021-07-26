@@ -12,9 +12,10 @@ class HomeController extends Controller
     public function index()
     {
         $artist = Inscription::inRandomOrder()->first();
+        $event = Event::latest()->first();
         $events = Event::all()->sortBy('date_start')->take(3);
         $articles = Article::all()->sortByDesc('created_at')->take(2);
-        return view('home.index', ['artist' => $artist, 'events' => $events, 'articles' => $articles]);
+        return view('home.index', ['artist' => $artist, 'event' => $event, 'events' => $events, 'articles' => $articles]);
     }
 
  

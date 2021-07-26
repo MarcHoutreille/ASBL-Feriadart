@@ -17,6 +17,8 @@ class Event extends Model
         'slug',
         'img_src',
         'description',
+        'inscription_img',
+        'inscription_txt',
         'place',
         'address',
         'telephone',

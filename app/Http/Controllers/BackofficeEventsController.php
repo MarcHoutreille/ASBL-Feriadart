@@ -51,6 +51,8 @@ class BackofficeEventsController extends Controller
             'name' => 'required',
             'img_src' => 'required',
             'description' => 'required',
+            'inscription_img' => 'required',
+            'inscription_txt' => 'required',
             'place' => 'required',
             'address' => 'required',
             'url' => 'required',
@@ -60,7 +62,7 @@ class BackofficeEventsController extends Controller
         $name = $request->input('name');
         $request['slug'] = str_replace('.','',(str_replace(' ','-',strtolower($name))));
         $request['user_id'] = Auth::user()->id;
-        Event::create($request->only('user_id', 'date_start', 'date_end', 'name', 'slug', 'img_src', 'description', 'place', 'address', 'url', 'telephone', 'email'));
+        Event::create($request->only('user_id', 'date_start', 'date_end', 'name', 'slug', 'img_src', 'description', 'inscription_img', 'inscription_txt', 'place', 'address', 'url', 'telephone', 'email'));
         return redirect()->route('events.index')->with('success', 'Added Succesfully');
     }
 
@@ -109,6 +111,8 @@ class BackofficeEventsController extends Controller
         $event->slug = str_replace('.','',(str_replace(' ','-',strtolower($request->name))));
         $event->img_src = $request->img_src;
         $event->description = $request->description;
+        $event->inscription_img = $request->inscription_img;
+        $event->inscription_txt = $request->inscription_txt;
         $event->place = $request->place;
         $event->address = $request->address;
         $event->telephone = $request->telephone;

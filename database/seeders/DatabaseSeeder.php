@@ -121,6 +121,8 @@ class DatabaseSeeder extends Seeder
                     <li>- Gel hydroalcoolique à disposition</li>
                     <li>- Parcours de circulation Covid safe</li>
                 </ul>",
+            'inscription_img' => '/images/feria-appel.jpg',
+            'inscription_txt' => "Bonjour à tou·te·s, 🎨 Pourquoi ne pas décorer son intérieur ou offrir une oeuvre originale à ses proches créée et pensée par un artiste local? C’est ce que la Feria d’Art propose ! La Feria d’Art souhaite casser les codes du marché de l’art classique, et ce, en désacralisant l’achat d’une oeuvre d’art tout en offrant une expérience inclusive pour les artistes et le public. Nous vous annonçons avec enthousiasme que la première édition prendra place vendredi 18 et samedi 19 septembre 2020 dans la plus grande occupation temporaire de Belgique, à Bruxelles, au See U.",
             'place' => 'See U',
             'address' => 'Rue Fritz Toussaint 8, 1050, Ixelles, Bruxelles',
             'telephone' => '+32494999246',

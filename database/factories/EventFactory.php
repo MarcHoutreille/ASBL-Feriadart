@@ -35,6 +35,8 @@ class EventFactory extends Factory
             'slug' => $slug,
             'img_src' => 'https://source.unsplash.com/720x400/?craft,art',
             'description' => $this->faker->paragraph(6, true),
+            'inscription_img' => 'https://source.unsplash.com/720x400/?craft,art',
+            'inscription_txt' => $this->faker->paragraph(3, true),
             'place' => $this->faker->city(),
             'address' => $this->faker->address(),
             'telephone' => $this->faker->e164PhoneNumber(),

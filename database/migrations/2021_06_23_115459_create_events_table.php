@@ -22,6 +22,8 @@ class CreateEventsTable extends Migration
             $table->string('slug',128)->unique();
             $table->string('img_src',256);
             $table->text('description');
+            $table->string('inscription_img',256);
+            $table->text('inscription_txt');
             $table->string('place',128);
             $table->string('address',128);
             $table->string('telephone',128);
