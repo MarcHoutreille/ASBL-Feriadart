@@ -3,8 +3,8 @@
         <!-- FEATURED ARTIST -->
         @if ($artist)
         <div class="container w-full flex flex-col md:flex-row p-4 mx-auto border-b-2 border-white">
-            <div class="w-full h-86 md:p-4 overflow-hidden">
-                <img alt="content" class="rounded-lg object-cover object-center h-full w-full" src="{{ $artist->img_01 }}">
+            <div class="w-full md:p-4 overflow-hidden">
+                <img alt="content" class="rounded-lg object-cover object-center w-full" src="{{ $artist->img_01 }}">
             </div>
             <div class="w-full flex flex-col items-center justify-center text-center md:text-left md:p-8">
                 <h2 class="md:text-4xl text-3xl mb-4 text-purple-700 uppercase font-mono">{{ __('Featured Artist') }}</h2>
@@ -27,8 +27,8 @@
                     <a href="/events/{{ $event->slug }}" class="btn text-lg text-center text-purple-700 bg-yellow-300 hover:bg-yellow-200 border-2 border-purple-700 focus:outline-none rounded py-2 px-6 mb-4">{{ __('Learn more') }}</a>
                 </div>
             </div>
-            <div class="w-full h-86 md:p-4 overflow-hidden">
-                <img alt="content" class="rounded-lg object-cover object-center h-full w-full" src="{{ $event->inscription_img }}">
+            <div class="w-full md:p-4 overflow-hidden">
+                <img alt="content" class="rounded-lg object-cover object-center w-full" src="{{ $event->inscription_img }}">
             </div>
         </div>
         @endif
