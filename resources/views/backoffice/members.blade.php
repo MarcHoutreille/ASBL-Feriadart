@@ -70,7 +70,7 @@
                                     <div class="text-sm text-gray-900">{{ $member->title }}</div>
                                 </td>
                                 <td class="px-4 py-4 whitespace-normal">
-                                    <div class="text-sm text-gray-900">{{ $member->bio }}</div>
+                                    <div class="text-sm text-gray-900">{!! $member->bio !!}</div>
                                 </td>
                                 <td class="px-4 py-4 whitespace-normal">
                                     <div class="text-sm text-gray-900"><a class="hover:text-blue-400" href="{{ $member->img_src }}" target="_blank">{{ $member->img_src }}</a></div>
@@ -113,7 +113,7 @@
                     <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path>
                 </svg>
             </div>
-            <form action="{{ isset($edit) ? route('members.update', $memberToEdit) : route('members.store') }}" method="POST">
+            <form action="{{ isset($edit) ? route('members.update', $memberToEdit) : route('members.store') }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="text-sm">
                     <div class="md:p-12 bg-gray-200">
@@ -124,36 +124,36 @@
                             @isset($create)
                             @endisset
                             <div class="w-full md:w-1/2 flex-col flex p-3">
-                                <label class="pb-2 text-gray-700 font-semibold">{{ __('Name') }}</label>
+                                <label for="name" class="pb-2 text-gray-700 font-semibold">{{ __('Name') }}</label>
                                 <input type="text" name="name" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" @isset($edit) value="{{ $memberToEdit->name }}" @endisset required />
                             </div>
                             <div class="w-full md:w-1/2 flex-col flex p-3">
-                                <label class="pb-2 text-gray-700 font-semibold">{{ __('Occupation') }}</label>
+                                <label for="title" class="pb-2 text-gray-700 font-semibold">{{ __('Occupation') }}</label>
                                 <input type="text" name="title" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" @isset($edit) value="{{ $memberToEdit->title }}" @endisset required />
                             </div>
                             <div class="w-full flex-col flex p-3">
-                                <label class="pb-2 text-gray-700 font-semibold">{{ __('Short Bio') }}</label>
+                                <label for="bio" class="pb-2 text-gray-700 font-semibold">{{ __('Short Bio') }}</label>
                                 <textarea name="bio" id="bio" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" rows="5" required>@isset($edit) {{ $memberToEdit->bio }} @endisset</textarea>
                             </div>
                             <div class="w-full flex-col flex p-3">
-                                <label class="pb-2 text-gray-700 font-semibold">{{ __('Image Link') }}</label>
-                                <input type="url" placeholder="http://" name="img_src" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" @isset($edit) value="{{ $memberToEdit->img_src }}" @endisset required />
+                                <label for="img" class="pb-2 text-gray-700 font-semibold">{{ __('Image') }}</label>
+                                <input type="file" name="img" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" @if (isset($edit)) value="{{ $memberToEdit->img_src }}" @else required @endif />
                             </div>
                             <div class="w-full md:w-1/2 flex-col flex p-3">
-                                <label class="pb-2 text-gray-700 font-semibold">{{ __('Email') }}</label>
+                                <label for="email" class="pb-2 text-gray-700 font-semibold">{{ __('Email') }}</label>
                                 <input type="email" name="email" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" @isset($edit) value="{{ $memberToEdit->email }}" @endisset required />
                             </div>
                             <div class="w-full md:w-1/2 flex-col flex p-3">
-                                <label class="pb-2 text-gray-700 font-semibold">{{ __('Website') }}</label>
-                                <input type="url" placeholder="http://" name="url" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" @isset($edit) value="{{ $memberToEdit->url }}" @endisset required />
+                                <label for="url" class="pb-2 text-gray-700 font-semibold">{{ __('Website') }}</label>
+                                <input type="url" placeholder="http://" name="url" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" @isset($edit) value="{{ $memberToEdit->url }}" @endisset />
                             </div>
                             <div class="w-full md:w-1/2 flex-col flex p-3">
-                                <label class="pb-2 text-gray-700 font-semibold">{{ __('Facebook') }}</label>
-                                <input type="url" placeholder="http://" name="facebook" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" @isset($edit) value="{{ $memberToEdit->facebook }}" @endisset required />
+                                <label for="facebook" class="pb-2 text-gray-700 font-semibold">{{ __('Facebook') }}</label>
+                                <input type="url" placeholder="http://" name="facebook" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" @isset($edit) value="{{ $memberToEdit->facebook }}" @endisset />
                             </div>
                             <div class="w-full md:w-1/2 flex-col flex p-3">
-                                <label class="pb-2 text-gray-700 font-semibold">{{ __('Instagram') }}</label>
-                                <input type="url" placeholder="http://" name="instagram" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" @isset($edit) value="{{ $memberToEdit->instagram }}" @endisset required />
+                                <label for="instagram" class="pb-2 text-gray-700 font-semibold">{{ __('Instagram') }}</label>
+                                <input type="url" placeholder="http://" name="instagram" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" @isset($edit) value="{{ $memberToEdit->instagram }}" @endisset />
                             </div>
                         </div>
                     </div>

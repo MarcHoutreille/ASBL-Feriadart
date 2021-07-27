@@ -74,7 +74,7 @@
                                     <div class="text-sm text-gray-900">{{ $inscription->bio }}</div>
                                 </td>
                                 <td class="px-4 py-4 whitespace-normal">
-                                    <div class="text-sm text-gray-900">{{ $inscription->products }}</div>
+                                    <div class="text-sm text-gray-900">{!! $inscription->products !!}</div>
                                 </td>
                                 <td class="px-4 py-4 whitespace-normal text-sm text-gray-500">
                                     <div class="text-sm text-gray-900">{{ $inscription->telephone }}</div>
@@ -125,7 +125,7 @@
                     <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path>
                 </svg>
             </div>
-            <form action="{{ isset($edit) ? route('inscriptions.update', $inscriptionToEdit) : route('inscriptions.store') }}" method="POST">
+            <form action="{{ isset($edit) ? route('inscriptions.update', $inscriptionToEdit) : route('inscriptions.store') }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="text-sm">
                     <div class="md:p-12 bg-gray-200">
@@ -133,15 +133,15 @@
                             @isset($edit)
                             @method('PUT')
                             <div class="w-full md:w-1/2 flex-col flex p-3">
-                                <label class="pb-2 text-gray-700 font-semibold">{{ __('Event') }}</label>
-                                <select name="event_id">
+                                <label for="event_id" class="pb-2 text-gray-700 font-semibold">{{ __('Event') }}</label>
+                                <select name="event_id" required>
                                     @foreach($events as $event)
                                     <option value={{ $event->id }} {{ $inscriptionToEdit->event->id == $event->id ? 'selected' : '' }}>{{ $event->name }}</option>
                                     @endforeach
                                 </select>
                             </div>
                             <div class="w-full md:w-1/2 flex-col flex p-3">
-                                <label class="pb-2 text-gray-700 font-semibold">{{ __('Status') }}</label>
+                                <label for="accepted" class="pb-2 text-gray-700 font-semibold">{{ __('Status') }}</label>
                                 <select name="accepted" required>
                                     <option value=1 {{ $inscriptionToEdit->accepted ? 'selected' : '' }}>{{ __('Accepted') }}</option>
                                     <option value=0 {{ $inscriptionToEdit->accepted ? '' : 'selected' }}>{{ __('Rejected') }}</option>
@@ -150,8 +150,8 @@
                             @endisset
                             @isset($create)
                             <div class="w-full flex-col flex p-3">
-                                <label class="pb-2 text-gray-700 font-semibold">{{ __('Event') }}</label>
-                                <select name="event_id">
+                                <label for="event_id" class="pb-2 text-gray-700 font-semibold">{{ __('Event') }}</label>
+                                <select name="event_id" required>
                                     @foreach($events as $event)
                                     <option value={{ $event->id }} {{ $event->id == 1 ? 'selected' : '' }}>{{ $event->name }}</option>
                                     @endforeach
@@ -159,63 +159,63 @@
                             </div>
                             @endisset
                             <div class="w-full md:w-1/2 flex-col flex p-3">
-                                <label class="pb-2 text-gray-700 font-semibold">{{ __('First Name') }}</label>
+                                <label for="fname" class="pb-2 text-gray-700 font-semibold">{{ __('First Name') }}</label>
                                 <input type="text" name="fname" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" @isset($edit) value="{{ $inscriptionToEdit->fname }}" @endisset required />
                             </div>
                             <div class="w-full md:w-1/2 flex-col flex p-3">
-                                <label class="pb-2 text-gray-700 font-semibold">{{ __('Last Name') }}</label>
+                                <label for="lname" class="pb-2 text-gray-700 font-semibold">{{ __('Last Name') }}</label>
                                 <input type="text" name="lname" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" @isset($edit) value="{{ $inscriptionToEdit->lname }}" @endisset required />
                             </div>
                             <div class="w-full flex-col flex p-3">
-                                <label class="pb-2 text-gray-700 font-semibold">{{ __('Short Bio') }}</label>
+                                <label for="bio" class="pb-2 text-gray-700 font-semibold">{{ __('Short Bio') }}</label>
                                 <input type="text" name="bio" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" @isset($edit) value="{{ $inscriptionToEdit->bio }}" @endisset required />
                             </div>
                             <div class="w-full flex-col flex p-3">
-                                <label class="pb-2 text-gray-700 font-semibold">{{ __('Products') }}</label>
+                                <label for="products" class="pb-2 text-gray-700 font-semibold">{{ __('Products') }}</label>
                                 <textarea name="products" id="products" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" rows="5" required>@isset($edit) {{ $inscriptionToEdit->products }} @endisset</textarea>
                             </div>
                             <div class="col w-full md:w-1/2">
                                 <div class="w-full flex-col flex p-3">
-                                    <label class="pb-2 text-gray-700 font-semibold">{{ __('Telephone') }}</label>
+                                    <label for="telephone" class="pb-2 text-gray-700 font-semibold">{{ __('Telephone') }}</label>
                                     <input type="tel" name="telephone" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" @isset($edit) value="{{ $inscriptionToEdit->telephone }}" @endisset required />
                                 </div>
                                 <div class="w-full flex-col flex p-3">
-                                    <label class="pb-2 text-gray-700 font-semibold">{{ __('Email') }}</label>
+                                    <label for="email" class="pb-2 text-gray-700 font-semibold">{{ __('Email') }}</label>
                                     <input type="email" name="email" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" @isset($edit) value="{{ $inscriptionToEdit->email }}" @endisset required />
                                 </div>
                                 <div class="w-full flex-col flex p-3">
-                                    <label class="pb-2 text-gray-700 font-semibold">{{ __('Homepage') }}</label>
-                                    <input type="url" placeholder="http://" name="url" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" @isset($edit) value="{{ $inscriptionToEdit->url }}" @endisset required />
+                                    <label for="url" class="pb-2 text-gray-700 font-semibold">{{ __('Homepage') }}</label>
+                                    <input type="url" placeholder="http://" name="url" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" @isset($edit) value="{{ $inscriptionToEdit->url }}" @endisset />
                                 </div>
                                 <div class="w-full flex-col flex p-3">
-                                    <label class="pb-2 text-gray-700 font-semibold">{{ __('Facebook') }}</label>
-                                    <input type="url" placeholder="http://" name="facebook" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" @isset($edit) value="{{ $inscriptionToEdit->facebook }}" @endisset required />
+                                    <label for="facebook" class="pb-2 text-gray-700 font-semibold">{{ __('Facebook') }}</label>
+                                    <input type="url" placeholder="http://" name="facebook" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" @isset($edit) value="{{ $inscriptionToEdit->facebook }}" @endisset />
                                 </div>
                                 <div class="w-full flex-col flex p-3">
-                                    <label class="pb-2 text-gray-700 font-semibold">{{ __('Instagram') }}</label>
-                                    <input type="url" placeholder="http://" name="instagram" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" @isset($edit) value="{{ $inscriptionToEdit->instagram }}" @endisset required />
+                                    <label for="instagram" class="pb-2 text-gray-700 font-semibold">{{ __('Instagram') }}</label>
+                                    <input type="url" placeholder="http://" name="instagram" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" @isset($edit) value="{{ $inscriptionToEdit->instagram }}" @endisset />
                                 </div>
                             </div>
                             <div class="col w-full md:w-1/2">
                                 <div class="w-full flex-col flex p-3">
-                                    <label class="pb-2 text-gray-700 font-semibold">{{ __('Image Link 1') }}</label>
-                                    <input type="url" placeholder="http://" name="img_01" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" @isset($edit) value="{{ $inscriptionToEdit->img_01 }}" @endisset required />
+                                    <label for="img01" class="pb-2 text-gray-700 font-semibold">{{ __('Image Link 1') }}</label>
+                                    <input type="file" name="img01" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" @if (isset($edit)) value="{{ $inscriptionToEdit->img_01 }}" @else required @endif />
                                 </div>
                                 <div class="w-full flex-col flex p-3">
-                                    <label class="pb-2 text-gray-700 font-semibold">{{ __('Image Link 2') }}</label>
-                                    <input type="url" placeholder="http://" name="img_02" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" @isset($edit) value="{{ $inscriptionToEdit->img_02 }}" @endisset required />
+                                    <label for="img02" class="pb-2 text-gray-700 font-semibold">{{ __('Image Link 2') }}</label>
+                                    <input type="file" name="img02" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" @if (isset($edit)) value="{{ $inscriptionToEdit->img_02 }}" @else required @endif />
                                 </div>
                                 <div class="w-full flex-col flex p-3">
-                                    <label class="pb-2 text-gray-700 font-semibold">{{ __('Image Link 3') }}</label>
-                                    <input type="url" placeholder="http://" name="img_03" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" @isset($edit) value="{{ $inscriptionToEdit->img_03 }}" @endisset required />
+                                    <label for="img03" class="pb-2 text-gray-700 font-semibold">{{ __('Image Link 3') }}</label>
+                                    <input type="file" name="img03" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" @if (isset($edit)) value="{{ $inscriptionToEdit->img_03 }}" @else required @endif  />
                                 </div>
                                 <div class="w-full flex-col flex p-3">
-                                    <label class="pb-2 text-gray-700 font-semibold">{{ __('Image Link 4') }}</label>
-                                    <input type="url" placeholder="http://" name="img_04" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" @isset($edit) value="{{ $inscriptionToEdit->img_04 }}" @endisset required />
+                                    <label for="img04" class="pb-2 text-gray-700 font-semibold">{{ __('Image Link 4') }}</label>
+                                    <input type="file" name="img04" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" @if (isset($edit)) value="{{ $inscriptionToEdit->img_04 }}" @else required @endif  />
                                 </div>
                                 <div class="w-full flex-col flex p-3">
-                                    <label class="pb-2 text-gray-700 font-semibold">{{ __('Image Link 5') }}</label>
-                                    <input type="url" placeholder="http://" name="img_05" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" @isset($edit) value="{{ $inscriptionToEdit->img_05 }}" @endisset required />
+                                    <label for="img05" class="pb-2 text-gray-700 font-semibold">{{ __('Image Link 5') }}</label>
+                                    <input type="file" name="img05" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" @if (isset($edit)) value="{{ $inscriptionToEdit->img_05 }}" @else required @endif  />
                                 </div>
                             </div>
                         </div>

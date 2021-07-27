@@ -275,6 +275,52 @@ class DatabaseSeeder extends Seeder
             'accepted' => 1,
         ]);
 
+        Inscription::create([
+            'event_id' => 6,
+            'fname' => 'Robbert',
+            'lname' => 'K',
+            'bio' => 'Afgestuurd aan de AVBK richting Schilderkunst, ik schilder meestal met olie op doek of op hout, soms experimenteer ik ook met andere media',
+            'products' => ' ',
+            'telephone' => '0476/387722',
+            'email' => 'robbert.klockaerts@gmail.com',
+            'instagram' => 'http://www.instagram.com',
+            'img_01' => '/images/artists/birdman.png',
+            'img_02' => '/images/artists/Leak.png',
+            'img_03' => '/images/artists/man&dog.png',
+            'accepted' => 1,
+        ]);
+        
+        Inscription::create([
+            'event_id' => 6,
+            'fname' => 'R.',
+            'lname' => 'Klockaerts',
+            'bio' => 'Schilder meestal met olie op doek, soms experimenteer ik ook met andere media',
+            'products' => ' ',
+            'telephone' => '0476/387722',
+            'email' => 'robbert.klockaerts@gmail.com',
+            'instagram' => 'http://www.instagram.com',
+            'img_01' => '/images/artists/OperaBlue.png',
+            'img_02' => '/images/artists/OperaRed.png',
+            'img_03' => '/images/artists/SB2.png',
+            'img_04' => '/images/artists/Symbols2.png',
+            'img_05' => '/images/artists/Leak.png',
+            'accepted' => 1,
+        ]);
+        
+        Inscription::create([
+            'event_id' => 6,
+            'fname' => 'Robbert',
+            'lname' => 'Klockaerts',
+            'bio' => 'Afgestuurd aan de AVBK richting Schilderkunst, ik schilder meestal met olie op doek of op hout, soms experimenteer ik ook met andere media',
+            'products' => ' ',
+            'telephone' => '0476/387722',
+            'email' => 'robbert.klockaerts@gmail.com',
+            'instagram' => 'http://www.instagram.com',
+            'img_01' => '/images/artists/Symbols2.png',
+             'accepted' => 1,
+        ]);
+
+
         //Create 5 random pictures to random event #1
         File::factory(5)->create([
             'event_id' => 1,

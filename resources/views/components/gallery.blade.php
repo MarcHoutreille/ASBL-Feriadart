@@ -15,7 +15,7 @@
 
 <!--- CAROUSEL --->
 <div class="glide h-auto mt-14 mb-60">
-<h1 class="text-center text-2xl font-medium title-font mb-14 text-gray-900 tracking-widest">{{ $event->name }}</h1>
+<h1 class="text-center text-2xl font-medium title-font mb-14 text-purple-700 tracking-widest">{{ $event->name }}</h1>
   <div class="glide__track" data-glide-el="track">
     <ul class="glide__slides">
       @if ($pictures->count())

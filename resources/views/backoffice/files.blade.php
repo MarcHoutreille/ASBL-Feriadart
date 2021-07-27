@@ -93,7 +93,7 @@
                     <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path>
                 </svg>
             </div>
-            <form action="{{ isset($edit) ? route('files.update', $fileToEdit) : route('files.store') }}" method="POST">
+            <form action="{{ isset($edit) ? route('files.update', $fileToEdit) : route('files.store') }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="text-sm">
                     <div class="md:p-12 bg-gray-200">
@@ -101,16 +101,16 @@
                             @isset($edit)
                             @method('PUT')
                             <div class="w-full md:w-1/2 flex-col flex p-3">
-                                <label class="pb-2 text-gray-700 font-semibold">{{ __('Event') }}</label>
-                                <select name="event_id">
+                                <label for="event_id" class="pb-2 text-gray-700 font-semibold">{{ __('Event') }}</label>
+                                <select name="event_id" required>
                                     @foreach($events as $event)
                                     <option value={{ $event->id }} {{ $fileToEdit->event->id == $event->id ? 'selected' : '' }}>{{ $event->name }}</option>
                                     @endforeach
                                 </select>
                             </div>
                             <div class="w-full md:w-1/2 flex-col flex p-3">
-                                <label class="pb-2 text-gray-700 font-semibold">{{ __('File type') }}</label>
-                                <select name="type">
+                                <label for="type" class="pb-2 text-gray-700 font-semibold">{{ __('File type') }}</label>
+                                <select name="type" required>
                                     <option value="image" {{ $fileToEdit->type == "image" ? 'selected' : '' }}>{{ __('Image') }}</option>
                                     <option value="video" {{ $fileToEdit->type == "video" ? 'selected' : '' }}>{{ __('Video') }}</option>
                                 </select>
@@ -118,24 +118,24 @@
                             @endisset
                             @isset($create)
                             <div class="w-full md:w-1/2 flex-col flex p-3">
-                                <label class="pb-2 text-gray-700 font-semibold">{{ __('Event') }}</label>
-                                <select name="event_id">
+                                <label for="event_id" class="pb-2 text-gray-700 font-semibold">{{ __('Event') }}</label>
+                                <select name="event_id" required>
                                     @foreach($events as $event)
                                     <option value={{ $event->id }} {{ $event->id == 1 ? 'selected' : '' }}>{{ $event->name }}</option>
                                     @endforeach
                                 </select>
                             </div>
                             <div class="w-full md:w-1/2 flex-col flex p-3">
-                                <label class="pb-2 text-gray-700 font-semibold">{{ __('File type') }}</label>
-                                <select name="type">
+                                <label for="type" class="pb-2 text-gray-700 font-semibold">{{ __('File type') }}</label>
+                                <select name="type" required>
                                     <option value="image" selected>{{ __('Image') }}</option>
                                     <option value="video">{{ __('Video') }}</option>
                                 </select>
                             </div>
                             @endisset
                             <div class="w-full flex-col flex p-3">
-                                <label class="pb-2 text-gray-700 font-semibold">{{ __('Link') }}</label>
-                                <input type="url" placeholder="http://" name="img_src" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" @isset($edit) value="{{ $fileToEdit->img_src }}" @endisset required />
+                                <label for="img" class="pb-2 text-gray-700 font-semibold">{{ __('Link') }}</label>
+                                <input type="file" name="img" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" @if (isset($edit)) value="{{ $fileToEdit->img_src }}" @else required @endif />
                             </div>
                         </div>
                     </div>

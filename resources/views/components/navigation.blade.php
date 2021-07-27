@@ -6,7 +6,7 @@
                 <!-- Logo -->
                 <div class="flex-shrink-0 flex items-center">
                     <a href="{{ route('home') }}" class="block h-10 w-auto fill-current text-gray-600 sm:mx-1">
-                        <img class="m-auto rounded-full h-12" src="/images/FeriaLogoWhite.png" alt="logo">
+                        <img class="m-auto rounded-full h-12" src="/images/FeriaLogoGeel.png" alt="logo">
                     </a>
                 </div>
 
@@ -28,7 +28,7 @@
                         {{ __('Members') }}
                     </x-nav-link>
                     <x-nav-link :href="route('files.index')" :active="request()->routeIs('files.index')">
-                        {{ __('Files') }}
+                        {{ __('Gallery') }}
                     </x-nav-link>
                     <x-nav-link :href="route('guest.index')" :active="request()->routeIs('guest.index')">
                         {{ __('Guestbook') }}

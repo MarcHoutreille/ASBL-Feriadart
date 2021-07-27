@@ -49,11 +49,11 @@ class BackofficeContactController extends Controller
             'message' => 'required',
         ]);
 
-        Contact::create([
-            'name' => $request->input('name'),
-            'email' => $request->input('email'),
-            'message' => $request->input('message'),
-        ]);
+        $contact = new Contact;
+        $contact->name = $request->name;
+        $contact->email = $request->email;
+        $contact->message = $request->message;
+        $contact->save();
 
         if ($request->has('front')) {
             return back()->with('success','Added Successfully');    

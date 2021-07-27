@@ -1,5 +1,5 @@
 <section class="text-gray-600 body-font overflow-hidden">
-    <div class="container px-4 py-24 mx-auto">
+    <div class="container px-4 py-4 mx-auto">
         <div class="flex flex-wrap -m-12 grid grid-cols-1 lg:grid-cols-2">
             <div class="p-12 lg:w-full flex flex-col items-start order-last lg:order-first">
                 <span class="inline-block py-1 px-2 rounded bg-indigo-50 text-indigo-500 text-xs font-medium tracking-widest">{{ $article->created_at->format('Y-m-d') }}</span>
@@ -14,7 +14,7 @@
                 <div>
                     {!! $article->body !!}
                 </div>
-                <div class="flex items-center flex-wrap pb-4 mt-4 mb-4 border-b-2 border-gray-100 w-full">
+                <div class="w-full flex flex-wrap items-center pb-4 mt-4 mb-4">
                     <a href="{{ $article->url }}" target="_blank" class="text-indigo-500 inline-flex items-center">{{ __('Learn more') }}
                         <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
                             <path d="M5 12h14"></path>

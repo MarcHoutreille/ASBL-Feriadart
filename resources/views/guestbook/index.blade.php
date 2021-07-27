@@ -1,6 +1,6 @@
 <x-guest-layout>
-    <section class="container px-4 py-14 mx-auto text-gray-600 body-font">
-        <h1 class="text-center text-2xl font-medium title-font mb-4 text-gray-900 tracking-widest">{{ __('Guestbook')}}</h1>
+    <section class="container px-4 py-4 mx-auto text-gray-600 body-font">
+        <h1 class="text-center sm:text-4xl text-3xl font-medium title-font uppercase mb-10 text-purple-700 tracking-widest">{{ __('Guestbook')}}</h1>
 
         <!-- Validation Errors -->
         <div class="flex justify-center">
@@ -9,8 +9,8 @@
         </div>
 
         <!-- Add Comment Button -->
-        <div class="flex justify-center mt-14">
-            <button class="px-6 py-3 bg-yellow-300 hover:bg-yellow-200 text-white rounded shadow" id="addEvent-btn">
+        <div class="flex justify-center">
+            <button class="btn inline-flex text-purple-700 mb-4 bg-yellow-300 hover:bg-yellow-200 border-2 border-purple-700 py-2 px-6 focus:outline-none rounded text-lg" id="addEvent-btn">
                 {{ __('Leave a comment')}}
             </button>
         </div>

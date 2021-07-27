@@ -68,11 +68,11 @@
                                 </td>
                                 <td class="px-4 py-4 whitespace-normal">
                                     <div class="text-sm text-gray-900">{{ $event->name }}</div>
-                                    <div class="text-sm text-gray-500">{{ $event->description }}</div>
+                                    <div class="text-sm text-gray-500">{!! $event->description !!}</div>
                                 </td>
                                 <td class="px-4 py-4 whitespace-normal">
                                 <div class="text-sm text-gray-900">{{ $event->inscription_img }}</div>
-                                    <div class="text-sm text-gray-500">{{ $event->inscription_txt }}</div>
+                                    <div class="text-sm text-gray-500">{!! $event->inscription_txt !!}</div>
                                 </td>
                                 <td class="px-4 py-4 whitespace-normal text-sm text-gray-500">
                                     <div class="text-sm text-gray-900">{{ $event->telephone }}</div>
@@ -114,7 +114,7 @@
                     <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path>
                 </svg>
             </div>
-            <form action="{{ isset($edit) ? route('events.update', $eventToEdit) : route('events.store') }}" method="POST">
+            <form action="{{ isset($edit) ? route('events.update', $eventToEdit) : route('events.store') }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="text-sm">
                     <div class="md:p-12 bg-gray-200">
@@ -137,14 +137,14 @@
                             <div class="w-full flex-col flex p-3">
                                 <label for="url"class="pb-2 text-gray-700 font-semibold">{{ __('Facebook Event URL') }}</label>
                                 <input type="url" placeholder="http://" name="url" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" @isset($edit) value="{{ $eventToEdit->url }}" @endisset required />
-                            </div>
+                            </div> 
                             <div class="w-full md:w-1/2 flex-col flex p-3">
-                                <label for="img_src" class="pb-2 text-gray-700 font-semibold">{{ __('Event Image') }}</label>
-                                <input type="url" placeholder="http://" name="img_src" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" @isset($edit) value="{{ $eventToEdit->img_src }}" @endisset required />
+                                <label for="img" class="pb-2 text-gray-700 font-semibold">{{ __('Event Image') }}</label>
+                                <input type="file" name="img" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" @if (isset($edit)) value="{{ $eventToEdit->img_src }}" @else required @endif />
                             </div>
-                            <div class="w-full md:w-1/2 flex-col flex p-3">
-                                <label for="inscription_img" class="pb-2 text-gray-700 font-semibold">{{ __('Inscription Image') }}</label>
-                                <input type="url" placeholder="http://" name="inscription_img" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" @isset($edit) value="{{ $eventToEdit->img_src }}" @endisset required />
+                           <div class="w-full md:w-1/2 flex-col flex p-3">
+                                <label for="inscriptionimg" class="pb-2 text-gray-700 font-semibold">{{ __('Inscription Image') }}</label>
+                                <input type="file" name="inscriptionimg" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" @if (isset($edit)) value="{{ $eventToEdit->inscription_img }}" @else required @endif />
                             </div>
                             <div class="w-full flex-col flex p-3">
                                 <label for="description" class="pb-2 text-gray-700 font-semibold">{{ __('Description') }}</label>

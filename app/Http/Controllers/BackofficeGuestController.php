@@ -50,18 +50,18 @@ class BackofficeGuestController extends Controller
             'message' => 'required',
         ]);
 
-        Guest::create([
-            'name' => $request->input('name'),
-            'title' => $request->input('title'),
-            'email' => $request->input('email'),
-            'message' => $request->input('message'),
-        ]);
+        $guest = new Guest;
+        $guest->name = $request->name;
+        $guest->title = $request->title;
+        $guest->email = $request->email;
+        $guest->message = $request->message;
+        $guest->save();
 
         if ($request->has('front')) {
-            return back()->with('success','Added Successfully');    
+            return back()->with('success', 'Added Successfully');
         }
 
-        return redirect()->route('guest.index')->with('success','Added Successfully');
+        return redirect()->route('guest.index')->with('success', 'Added Successfully');
     }
 
     /**
@@ -76,8 +76,8 @@ class BackofficeGuestController extends Controller
         $guest->accepted = true;
         $query = $guest->save();
 
-        if($query){
-            return redirect()->route('guest.index')->with('success','Accepted Successfully');
+        if ($query) {
+            return redirect()->route('guest.index')->with('success', 'Accepted Successfully');
         }
     }
 
@@ -117,8 +117,8 @@ class BackofficeGuestController extends Controller
         $guest->accepted = $request->accepted;
         $query = $guest->save();
 
-        if($query){
-            return redirect()->route('guest.index')->with('success','Updated Successfully');
+        if ($query) {
+            return redirect()->route('guest.index')->with('success', 'Updated Successfully');
         }
     }
 
