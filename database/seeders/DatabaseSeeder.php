@@ -126,6 +126,7 @@ class DatabaseSeeder extends Seeder
             'telephone' => '+32494999246',
             'email' => 'feriadart@gmail.com',
             'url' => 'http://www.facebook.com/events/695373977721327/',
+            'open' => 1,
         ]);
 
         //Create 10 random contact messages

@@ -85,6 +85,11 @@
                                     <div class="text-sm text-gray-500"><a class="hover:text-blue-400" href="{{ $event->img_src }}" target="_blank">{{ $event->img_src }}</a></div>
                                 </td>
                                 <td class="px-4 py-4 whitespace-normal text-right text-sm font-medium">
+                                    @if(!$event->open)
+                                    <div class="my-4">
+                                        <a href="{{ route('events.show', $event) }}" class="text-green-600 hover:text-green-900">{{ __('Open') }}</a>
+                                    </div>
+                                    @endif
                                     <div class="my-4">
                                         <a href="{{ route('events.edit', $event) }}" class="text-indigo-600 hover:text-indigo-900 my-4">{{ __('Edit') }}</a>
                                     </div>
@@ -121,6 +126,13 @@
                         <div class="bg-white w-full tw-h-full md:w-1/2-screen shadow md:rounded-lg flex flex-wrap p-4">
                             @isset($edit)
                             @method('PUT')
+                            <div class="w-full flex-col flex p-3">
+                                <label for="open" class="pb-2 text-gray-700 font-semibold">{{ __('Status') }}</label>
+                                <select name="open" required>
+                                    <option value=1 {{ $eventToEdit->open ? 'selected' : '' }}>{{ __('Open') }}</option>
+                                    <option value=0 {{ $eventToEdit->open ? '' : 'selected' }}>{{ __('Close') }}</option>
+                                </select>
+                            </div>
                             @endisset
                             <div class="w-full md:w-1/2 flex-col flex p-3">
                                 <label for="date_start" class="pb-2 text-gray-700 font-semibold">{{ __('Start Date') }}</label>
@@ -152,7 +164,7 @@
                             </div>
                             <div class="w-full flex-col flex p-3">
                                 <label for="inscription_txt" class="pb-2 text-gray-700 font-semibold">{{ __('Inscription Text') }}</label>
-                                <textarea name="inscription_txt" id="inscription_txt" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" rows="10" required>@isset($edit) {{ $eventToEdit->description }} @endisset</textarea>
+                                <textarea name="inscription_txt" id="inscription_txt" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" rows="10" required>@isset($edit) {{ $eventToEdit->inscription_txt }} @endisset</textarea>
                             </div>
                             <div class="w-full md:w-1/2 flex-col flex p-3">
                                 <label for="place" class="pb-2 text-gray-700 font-semibold">{{ __('Place') }}</label>

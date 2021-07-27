@@ -25,7 +25,7 @@
                     <a href="{{ route('contact') }}" class="text-yellow-200 hover:text-yellow-300 @if (request()->routeIs('contact')) text-yellow-300 @endif">{{ __('Contact') }}</a>
                 </li>
             </ul>
-            <ul class="text-center text-lg uppercase list-none hidden" id="backnav">
+            <ul class="text-center text-base uppercase list-none hidden" id="backnav">
                 @if (Route::has('login'))
                 @auth
                 <li class="mx-1 my-1">

@@ -93,7 +93,13 @@ class BackofficeEventsController extends Controller
      */
     public function show($id)
     {
-        //
+        $event = Event::find($id);
+        $event->open = true;
+        $query = $event->save();
+
+        if ($query) {
+            return redirect()->route('events.index')->with('success', 'Opened Successfully');
+        }
     }
 
     /**
@@ -149,6 +155,7 @@ class BackofficeEventsController extends Controller
         $event->telephone = $request->telephone;
         $event->email = $request->email;
         $event->url = $request->url;
+        $event->open = $request->open;
         $query = $event->save();
 
         if ($query) {

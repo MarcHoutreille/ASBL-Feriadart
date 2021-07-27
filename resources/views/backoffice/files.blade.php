@@ -16,7 +16,7 @@
             <form action="{{ route('files.create') }}" method="GET">
                 @csrf
                 <button type="submit" class="px-6 py-3 bg-green-700 text-white rounded shadow" id="addEvent-btn">
-                    {{ __('Add Files') }}
+                    {{ __('Add File') }}
                 </button>
             </form>
         </div>
