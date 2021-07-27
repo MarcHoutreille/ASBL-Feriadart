@@ -31,13 +31,14 @@ class Event extends Model
         return $this->belongsTo(User::class);
     }
 
-    public function scopeFilter($query, array $filters){        
+    public function scopeFilter($query, array $filters)
+    {
         $query->when($filters['search'] ?? false, function ($query, $search) {
             $query
-            ->where('name', 'like', '%' . $search . '%')
-            ->orWhere('description', 'like', '%' . $search . '%')
-            ->orWhere('place', 'like', '%' . $search . '%')
-            ->orWhere('date_start', 'like', '%' . $search . '%');
+                ->where('name', 'like', '%' . $search . '%')
+                ->orWhere('description', 'like', '%' . $search . '%')
+                ->orWhere('place', 'like', '%' . $search . '%')
+                ->orWhere('date_start', 'like', '%' . $search . '%');
         });
     }
 }

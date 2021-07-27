@@ -23,16 +23,16 @@ class MemberFactory extends Factory
     {
         $name = $this->faker->name();
         $replace = array(' ', '.');
-        $username = substr(str_replace($replace,'',strtolower($name)),0).rand(1,999);
-        $facebook = 'https://www.facebook.com/'.$username;
-        $instagram = 'https://www.instagram.com/'.$username;
+        $username = substr(str_replace($replace, '', strtolower($name)), 0) . rand(1, 999);
+        $facebook = 'https://www.facebook.com/' . $username;
+        $instagram = 'https://www.instagram.com/' . $username;
         return [
             'name' => $name,
             'title' => $this->faker->jobTitle(),
             'bio' => $this->faker->paragraph(1, true),
-            'img_src' => 'https://i.pravatar.cc/200?u='.$username,
+            'img_src' => 'https://i.pravatar.cc/200?u=' . $username,
             'url' => $this->faker->url(),
-            'email' => $username.'@mail.com',
+            'email' => $username . '@mail.com',
             'facebook' => $facebook,
             'instagram' => $instagram,
         ];

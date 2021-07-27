@@ -71,7 +71,7 @@
                                     <div class="text-sm text-gray-500">{!! $event->description !!}</div>
                                 </td>
                                 <td class="px-4 py-4 whitespace-normal">
-                                <div class="text-sm text-gray-900">{{ $event->inscription_img }}</div>
+                                    <div class="text-sm text-gray-900">{{ $event->inscription_img }}</div>
                                     <div class="text-sm text-gray-500">{!! $event->inscription_txt !!}</div>
                                 </td>
                                 <td class="px-4 py-4 whitespace-normal text-sm text-gray-500">
@@ -123,7 +123,7 @@
                             @method('PUT')
                             @endisset
                             <div class="w-full md:w-1/2 flex-col flex p-3">
-                                <label for="date_start"class="pb-2 text-gray-700 font-semibold">{{ __('Start Date') }}</label>
+                                <label for="date_start" class="pb-2 text-gray-700 font-semibold">{{ __('Start Date') }}</label>
                                 <input type="datetime-local" name="date_start" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" @isset($edit) value="{{ date('Y-m-d\TH:i', strtotime($eventToEdit->created_at)) }}" @endisset required />
                             </div>
                             <div class="w-full md:w-1/2 flex-col flex p-3">
@@ -135,14 +135,14 @@
                                 <input type="text" name="name" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" @isset($edit) value="{{ $eventToEdit->name }}" @endisset required />
                             </div>
                             <div class="w-full flex-col flex p-3">
-                                <label for="url"class="pb-2 text-gray-700 font-semibold">{{ __('Facebook Event URL') }}</label>
+                                <label for="url" class="pb-2 text-gray-700 font-semibold">{{ __('Facebook Event URL') }}</label>
                                 <input type="url" placeholder="http://" name="url" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" @isset($edit) value="{{ $eventToEdit->url }}" @endisset required />
-                            </div> 
+                            </div>
                             <div class="w-full md:w-1/2 flex-col flex p-3">
                                 <label for="img" class="pb-2 text-gray-700 font-semibold">{{ __('Event Image') }}</label>
                                 <input type="file" name="img" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" @if (isset($edit)) value="{{ $eventToEdit->img_src }}" @else required @endif />
                             </div>
-                           <div class="w-full md:w-1/2 flex-col flex p-3">
+                            <div class="w-full md:w-1/2 flex-col flex p-3">
                                 <label for="inscriptionimg" class="pb-2 text-gray-700 font-semibold">{{ __('Inscription Image') }}</label>
                                 <input type="file" name="inscriptionimg" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" @if (isset($edit)) value="{{ $eventToEdit->inscription_img }}" @else required @endif />
                             </div>
@@ -199,7 +199,7 @@
     </script>
     <script src="https://cdn.ckeditor.com/4.16.1/standard/ckeditor.js"></script>
     <script>
-        CKEDITOR.replace( 'description' );
-        CKEDITOR.replace( 'inscription_txt' );
-    </script> 
+        CKEDITOR.replace('description');
+        CKEDITOR.replace('inscription_txt');
+    </script>
 </x-app-layout>

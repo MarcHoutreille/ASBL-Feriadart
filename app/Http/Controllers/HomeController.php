@@ -17,6 +17,4 @@ class HomeController extends Controller
         $articles = Article::all()->sortByDesc('created_at')->take(2);
         return view('home.index', ['artist' => $artist, 'event' => $event, 'events' => $events, 'articles' => $articles]);
     }
-
- 
 }

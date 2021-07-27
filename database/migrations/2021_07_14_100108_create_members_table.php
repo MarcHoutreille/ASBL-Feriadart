@@ -15,14 +15,14 @@ class CreateMembersTable extends Migration
     {
         Schema::create('members', function (Blueprint $table) {
             $table->id();
-            $table->string('name',128);
-            $table->string('title',128);
+            $table->string('name', 128);
+            $table->string('title', 128);
             $table->text('bio');
-            $table->string('img_src',256);
-            $table->string('email',128);
-            $table->string('url',256)->nullable();
-            $table->string('facebook',256)->nullable();
-            $table->string('instagram',256)->nullable();
+            $table->string('img_src', 256);
+            $table->string('email', 128);
+            $table->string('url', 256)->nullable();
+            $table->string('facebook', 256)->nullable();
+            $table->string('instagram', 256)->nullable();
             $table->timestamps();
         });
     }

@@ -16,7 +16,7 @@
         </div>
         <!-- FEATURED EVENT -->
         <div class="container w-full flex flex-col md:flex-row px-4 py-4 mx-auto border-b-2 border-white">
-            <div class="w-full flex flex-col items-center justify-center text-center md:text-left md:p-8"> 
+            <div class="w-full flex flex-col items-center justify-center text-center md:text-left md:p-8">
                 <h2 class="md:text-4xl text-3xl mb-4 text-purple-700 uppercase font-mono">{{ __('Call to artists') }}</h2>
                 <h3 class="font-medium title-font mb-4 text-purple-700 text-lg">{{ __('Professional or amateur artist') }} ?</h3>
                 <div class="leading-relaxed text-lg mb-8">{!! $event->inscription_txt !!}</div>

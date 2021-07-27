@@ -6,7 +6,6 @@ use App\Models\Member;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
 
-
 class BackofficeMembersController extends Controller
 {
     /**

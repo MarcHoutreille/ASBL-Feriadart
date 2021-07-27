@@ -25,12 +25,12 @@ class DatabaseSeeder extends Seeder
     {
         //Create real admin user
         $admin = User::create([
-            'name'=> "Feria d'Art",
-            'username'=> 'admin',
+            'name' => "Feria d'Art",
+            'username' => 'admin',
             'email' => 'contact@feriadart.art',
             'password' => Hash::make('password')
         ]);
-        
+
         //Create 10 random users
         //User::factory(10)->create();
 
@@ -45,8 +45,8 @@ class DatabaseSeeder extends Seeder
             'title' => 'Communiqué de presse',
             'slug' => 'communique-de-presse',
             'img_src' => '/images/Feria_event1.png',
-            'body' => 
-                '<h2 class="sm:text-3xl text-2xl title-font font-medium text-gray-900 mt-4 mb-4">La Feria d’Art organise sa première édition !</h2>
+            'body' =>
+            '<h2 class="sm:text-3xl text-2xl title-font font-medium text-gray-900 mt-4 mb-4">La Feria d’Art organise sa première édition !</h2>
                 <p class="leading-relaxed mb-8"><strong>La Feria d’Art entend casser les codes du marché de l’art classique, et ce, en
                 désacralisant l’achat d’une oeuvre d’art tout en offrant une expérience inclusive et
                 festive pour les artistes et le public lors d’un marché alternatif.</strong></p>
@@ -74,7 +74,7 @@ class DatabaseSeeder extends Seeder
             'excerpt' => 'La Feria d’Art organise sa première édition !',
             'url' => 'http://www.facebook.com/FeriadArt/',
         ]);
-        
+
         //Create 5 random events
         Event::factory(5)->create([
             'user_id' => $admin->id,
@@ -88,8 +88,8 @@ class DatabaseSeeder extends Seeder
             'name' => "FERIA D'ART #1 Marché pluridisciplinaire & alternatif",
             'slug' => 'feria-d-art-01',
             'img_src' => '/images/Feria_event1.png',
-            'description' => 
-                "<h3 class='leading-relaxed mb-4'>✨Vous souhaitez découvrir et rencontrer des artistes locaux ? Acquérir une œuvre originale à un prix abordable ? ✨</h2>
+            'description' =>
+            "<h3 class='leading-relaxed mb-4'>✨Vous souhaitez découvrir et rencontrer des artistes locaux ? Acquérir une œuvre originale à un prix abordable ? ✨</h2>
                 <p class='leading-relaxed mb-4'><strong>Le See U, plus grande occupation temporaire de Belgique, au cœur des anciennes casernes d’Ixelles, ouvre ses portes à la première édition de la Feria d'Art le 18 et 19 septembre ! 🎉</strong></p>
                 <p class='leading-relaxed mb-4'>☀️ La Feria est un marché d’art alternatif et pluridisciplinaire qui vise à proposer une diversité de productions à petits prix, à donner de la visibilité à des artistes professionnel.les ou amateur.es et à vous permettre d’accéder à des œuvres originales hors des galeries traditionnelles. ☀️</p>
                 <ul class='mb-4'>
@@ -125,7 +125,7 @@ class DatabaseSeeder extends Seeder
             'address' => 'Rue Fritz Toussaint 8, 1050, Ixelles, Bruxelles',
             'telephone' => '+32494999246',
             'email' => 'feriadart@gmail.com',
-            'url' => 'http://www.facebook.com/events/695373977721327/',           
+            'url' => 'http://www.facebook.com/events/695373977721327/',
         ]);
 
         //Create 10 random contact messages
@@ -169,8 +169,8 @@ class DatabaseSeeder extends Seeder
             'event_id' => 6,
             'fname' => 'Jack',
             'lname' => 'at Night',
-            'bio' => 
-                '<p><strong>Chloé/Jack</strong></p>
+            'bio' =>
+            '<p><strong>Chloé/Jack</strong></p>
                 <p>Artiste</p>
                 <br/>
                 <ul>
@@ -191,8 +191,8 @@ class DatabaseSeeder extends Seeder
             'event_id' => 6,
             'fname' => 'Elodie',
             'lname' => 'DK',
-            'bio' => 
-                '<p><strong>Lodk</strong></p>
+            'bio' =>
+            '<p><strong>Lodk</strong></p>
                 <p>Print artist 🎨</p>
                 <ul>
                     <li>Tea and book lover 📚</li>
@@ -212,8 +212,8 @@ class DatabaseSeeder extends Seeder
             'event_id' => 6,
             'fname' => 'Pacôme',
             'lname' => 'Le Rouge',
-            'bio' => 
-                '<p><strong>Pacôme Le Rouge</strong></p>
+            'bio' =>
+            '<p><strong>Pacôme Le Rouge</strong></p>
                 <p>Virtual Designer</p>
                 <p>High immersion into emotional worlds</p>
                 <p>Part of @globalurlnation</p>',
@@ -230,7 +230,7 @@ class DatabaseSeeder extends Seeder
             'event_id' => 6,
             'fname' => 'Camille',
             'lname' => 'Toussaint',
-            'bio' => 
+            'bio' =>
             '<p><strong>Camille Toussaint</strong></p>
             <p>Illustratrice et membre de l’atelier @tonpiquant 🎨</p>
             <p>Team @emoustille.lanewsletter 🔥</p>',
@@ -247,8 +247,8 @@ class DatabaseSeeder extends Seeder
             'event_id' => 6,
             'fname' => 'Benjamin',
             'lname' => 'Marc',
-            'bio' => 
-                '<p><strong>Benjamin Marc</strong></p>
+            'bio' =>
+            '<p><strong>Benjamin Marc</strong></p>
                 <p>Architect / Photographer / Runner / Rider</p>',
             'products' => 'Photos 20€',
             'telephone' => '0123456789',
@@ -263,7 +263,7 @@ class DatabaseSeeder extends Seeder
             'event_id' => 6,
             'fname' => 'Coline',
             'lname' => 'Cornélis',
-            'bio' => 
+            'bio' =>
             '<p>𝒊𝒍𝒍𝒖𝒔𝒕𝒓𝒂𝒕𝒊𝒐𝒏</p>
             <p>𝒅𝒋𝒊𝒏𝒈</p>
             <p> @passaporta</p>𝒑𝒓𝒐𝒅𝒖𝒄𝒕𝒊𝒐𝒏',
@@ -289,7 +289,7 @@ class DatabaseSeeder extends Seeder
             'img_03' => '/images/artists/man&dog.png',
             'accepted' => 1,
         ]);
-        
+
         Inscription::create([
             'event_id' => 6,
             'fname' => 'R.',
@@ -306,7 +306,7 @@ class DatabaseSeeder extends Seeder
             'img_05' => '/images/artists/Leak.png',
             'accepted' => 1,
         ]);
-        
+
         Inscription::create([
             'event_id' => 6,
             'fname' => 'Robbert',
@@ -317,7 +317,7 @@ class DatabaseSeeder extends Seeder
             'email' => 'robbert.klockaerts@gmail.com',
             'instagram' => 'http://www.instagram.com',
             'img_01' => '/images/artists/Symbols2.png',
-             'accepted' => 1,
+            'accepted' => 1,
         ]);
 
 
@@ -345,13 +345,13 @@ class DatabaseSeeder extends Seeder
         File::factory(5)->create([
             'event_id' => 5,
         ]);
-        
+
         //Create real picture to real event #6
         File::create([
             'event_id' => 6,
             'type' => "image",
             'img_src' => "/images/Feriadart0.png",
-          
+
         ]);
 
         //Create real picture to real event #6

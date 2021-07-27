@@ -24,14 +24,15 @@ class Article extends Model
         return $this->belongsTo(User::class);
     }
 
-    public function scopeFilter($query, array $filters){        
+    public function scopeFilter($query, array $filters)
+    {
         $query->when($filters['search'] ?? false, function ($query, $search) {
             $query
-            ->where('title', 'like', '%' . $search . '%')
-            ->orWhere('body', 'like', '%' . $search . '%')
-            ->orWhere('excerpt', 'like', '%' . $search . '%')
-            ->orWhere('author', 'like', '%' . $search . '%')
-            ->orWhere('created_at', 'like', '%' . $search . '%');
+                ->where('title', 'like', '%' . $search . '%')
+                ->orWhere('body', 'like', '%' . $search . '%')
+                ->orWhere('excerpt', 'like', '%' . $search . '%')
+                ->orWhere('author', 'like', '%' . $search . '%')
+                ->orWhere('created_at', 'like', '%' . $search . '%');
         });
     }
 }

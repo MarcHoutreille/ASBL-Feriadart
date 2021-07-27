@@ -16,12 +16,12 @@ class CreateArticlesTable extends Migration
         Schema::create('articles', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
-            $table->string('title',128);
-            $table->string('slug',128)->unique();
-            $table->string('img_src',256);
+            $table->string('title', 128);
+            $table->string('slug', 128)->unique();
+            $table->string('img_src', 256);
             $table->text('excerpt');
             $table->text('body');
-            $table->string('url',128);
+            $table->string('url', 128);
             $table->timestamps();
         });
     }

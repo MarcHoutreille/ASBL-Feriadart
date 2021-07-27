@@ -75,7 +75,7 @@
                                 <td class="px-4 py-4 whitespace-normal text-sm text-gray-500">
                                     <div class="text-sm text-gray-900"><a class="hover:text-blue-400" href="{{ $article->url }}" target="_blank">{{ $article->url }}</a></div>
                                     <div class="text-sm text-gray-500"><a class="hover:text-blue-400" href="{{ $article->img_src }}" target="_blank">{{ $article->img_src }}</a></div>
-                                    
+
                                 </td>
                                 <td class="px-4 py-4 whitespace-normal text-right text-sm font-medium">
                                     <div class="my-4">
@@ -137,10 +137,10 @@
                             </div>
                             <div class="w-full md:w-1/2 flex-col flex p-3">
                                 <label for="img" class="pb-2 text-gray-700 font-semibold">{{ __('Image') }}</label>
-                                <input type="file" name="img" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" @if (isset($edit)) value="{{ $articleToEdit->img_src }}" @else required @endif/>
+                                <input type="file" name="img" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" @if (isset($edit)) value="{{ $articleToEdit->img_src }}" @else required @endif />
                             </div>
-                           
-                            
+
+
                         </div>
                     </div>
                 </div>
@@ -170,6 +170,6 @@
     </script>
     <script src="https://cdn.ckeditor.com/4.16.1/standard/ckeditor.js"></script>
     <script>
-        CKEDITOR.replace( 'body' );
-    </script> 
+        CKEDITOR.replace('body');
+    </script>
 </x-app-layout>

@@ -207,15 +207,15 @@
                                 </div>
                                 <div class="w-full flex-col flex p-3">
                                     <label for="img03" class="pb-2 text-gray-700 font-semibold">{{ __('Image Link 3') }}</label>
-                                    <input type="file" name="img03" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" @if (isset($edit)) value="{{ $inscriptionToEdit->img_03 }}" @else required @endif  />
+                                    <input type="file" name="img03" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" @if (isset($edit)) value="{{ $inscriptionToEdit->img_03 }}" @else required @endif />
                                 </div>
                                 <div class="w-full flex-col flex p-3">
                                     <label for="img04" class="pb-2 text-gray-700 font-semibold">{{ __('Image Link 4') }}</label>
-                                    <input type="file" name="img04" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" @if (isset($edit)) value="{{ $inscriptionToEdit->img_04 }}" @else required @endif  />
+                                    <input type="file" name="img04" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" @if (isset($edit)) value="{{ $inscriptionToEdit->img_04 }}" @else required @endif />
                                 </div>
                                 <div class="w-full flex-col flex p-3">
                                     <label for="img05" class="pb-2 text-gray-700 font-semibold">{{ __('Image Link 5') }}</label>
-                                    <input type="file" name="img05" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" @if (isset($edit)) value="{{ $inscriptionToEdit->img_05 }}" @else required @endif  />
+                                    <input type="file" name="img05" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" @if (isset($edit)) value="{{ $inscriptionToEdit->img_05 }}" @else required @endif />
                                 </div>
                             </div>
                         </div>
@@ -247,6 +247,6 @@
     </script>
     <script src="https://cdn.ckeditor.com/4.16.1/standard/ckeditor.js"></script>
     <script>
-        CKEDITOR.replace( 'products' );
-    </script> 
+        CKEDITOR.replace('products');
+    </script>
 </x-app-layout>

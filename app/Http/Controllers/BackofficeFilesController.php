@@ -9,7 +9,6 @@ use App\Models\File;
 
 use Illuminate\Http\Request;
 
-
 class BackofficeFilesController extends Controller
 {
     /**

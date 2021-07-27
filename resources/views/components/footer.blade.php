@@ -22,7 +22,7 @@
                     <a href="{{ route('guestbook') }}" class="text-yellow-200 mx-1 my-auto hover:text-yellow-300 @if (request()->routeIs('guestbook')) text-yellow-300 @endif">{{ __('Guestbook') }}</a>
                 </li>
                 <li>
-                    <a href="{{ route('contact') }}" class="text-yellow-200 mx-1 my-auto hover:text-yellow-300 @if (request()->routeIs('contact')) text-yellow-300 @endif">{{ __('Contact') }}</a>        
+                    <a href="{{ route('contact') }}" class="text-yellow-200 mx-1 my-auto hover:text-yellow-300 @if (request()->routeIs('contact')) text-yellow-300 @endif">{{ __('Contact') }}</a>
                 </li>
             </ul>
             <ul class="text-center text-lg uppercase list-none hidden" id="backnav">

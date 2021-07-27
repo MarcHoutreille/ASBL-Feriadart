@@ -61,4 +61,4 @@ Route::resource('/backoffice/members', BackofficeMembersController::class);
 Route::resource('/backoffice/guest', BackofficeGuestController::class);
 Route::resource('/backoffice/contact', BackofficeContactController::class);
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';

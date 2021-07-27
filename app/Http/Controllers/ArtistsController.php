@@ -47,5 +47,4 @@ class ArtistsController extends Controller
             'create' => $create,
         ]);
     }
-
 }

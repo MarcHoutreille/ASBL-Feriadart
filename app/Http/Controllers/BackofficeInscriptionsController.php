@@ -71,13 +71,13 @@ class BackofficeInscriptionsController extends Controller
         $inscription->products = $request->products;
         $inscription->telephone = $request->telephone;
         $inscription->email = $request->email;
-        if($request->url) {
+        if ($request->url) {
             $inscription->url = $request->url;
         }
-        if($request->facebook) {
+        if ($request->facebook) {
             $inscription->facebook = $request->facebook;
         }
-        if($request->instagram) {
+        if ($request->instagram) {
             $inscription->instagram = $request->instagram;
         }
         if ($request->img01) {
@@ -115,7 +115,7 @@ class BackofficeInscriptionsController extends Controller
         $id = $request->event_id;
         $event = Event::where('id', $id)->first();
         $create = false;
-        
+
         if ($request->front) {
             return redirect()->route('event.show', [
                 'event' => $event,

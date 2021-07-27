@@ -16,10 +16,9 @@ class CreateFilesTable extends Migration
         Schema::create('files', function (Blueprint $table) {
             $table->id();
             $table->foreignId('event_id')->constrained()->onDelete('cascade');
-            $table->string('type',128);
-            $table->string('img_src',256);
+            $table->string('type', 128);
+            $table->string('img_src', 256);
             $table->timestamps();
-            
         });
     }
 

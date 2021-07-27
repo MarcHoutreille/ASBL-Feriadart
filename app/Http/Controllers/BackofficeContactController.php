@@ -56,9 +56,9 @@ class BackofficeContactController extends Controller
         $contact->save();
 
         if ($request->has('front')) {
-            return back()->with('success','Added Successfully');    
+            return back()->with('success', 'Added Successfully');
         }
-        return redirect()->route('contact.index')->with('success','Added Successfully');
+        return redirect()->route('contact.index')->with('success', 'Added Successfully');
     }
 
     /**
@@ -106,8 +106,8 @@ class BackofficeContactController extends Controller
         $contact->message = $request->message;
         $query = $contact->save();
 
-        if($query){
-            return redirect()->route('contact.index')->with('success','Updated Successfully');
+        if ($query) {
+            return redirect()->route('contact.index')->with('success', 'Updated Successfully');
         }
     }
 

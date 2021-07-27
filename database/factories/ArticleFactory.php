@@ -22,15 +22,15 @@ class ArticleFactory extends Factory
     public function definition()
     {
         $title = $this->faker->sentence(3);
-        $slug = str_replace(' ','-',strtolower($title));
-        $slug = str_replace('.','',$slug);
+        $slug = str_replace(' ', '-', strtolower($title));
+        $slug = str_replace('.', '', $slug);
         $body = $this->faker->paragraph(6, true);
         return [
             'title' => $title,
             'slug' => $slug,
             'img_src' => 'https://source.unsplash.com/720x400/?art',
             'body' => $body,
-            'excerpt' => substr($body,0,50) . '...',
+            'excerpt' => substr($body, 0, 50) . '...',
             'url' => $this->faker->url(),
         ];
     }

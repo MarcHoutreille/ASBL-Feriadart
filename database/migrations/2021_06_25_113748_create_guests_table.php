@@ -15,9 +15,9 @@ class CreateGuestsTable extends Migration
     {
         Schema::create('guests', function (Blueprint $table) {
             $table->id();
-            $table->string('name',128);
-            $table->string('title',128);
-            $table->string('email',128);
+            $table->string('name', 128);
+            $table->string('title', 128);
+            $table->string('email', 128);
             $table->text('message');
             $table->boolean('accepted')->default('0');
             $table->timestamps();
