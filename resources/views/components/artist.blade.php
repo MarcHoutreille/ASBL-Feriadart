@@ -1,7 +1,7 @@
-<section class="container px-4 py-4 mx-auto text-gray-600 body-font overflow-hidden">
-    <div class="-m-12 grid grid-cols-1 lg:grid-cols-2">
-        <div class="p-12">
-            <h1 class="sm:text-3xl text-2xl title-font font-medium text-gray-900 mt-4 mb-4">{{ $artist->fname }} {{ $artist->lname }}</h1>
+<section class="container p-4 mx-auto text-gray-600 body-font overflow-hidden">
+    <div class="grid grid-cols-1 lg:grid-cols-2">
+        <div class="order-last lg:order-first my-auto p-8">
+            <h1 class="text-2xl sm:text-3xl title-font font-medium text-gray-900">{{ $artist->fname }} {{ $artist->lname }}</h1>
             <strong class="py-4">
                 {!! $artist->bio !!}
             </strong>
@@ -44,7 +44,7 @@
                 @endif
             </div>
         </div>
-        <div class="px-4 py-12">
+        <div class="order-first lg:order-last my-auto p-8">
             <!-- <img src="{{ $artist->img_01 }}" alt="{{ $artist->fname }} {{ $artist->lname }}" /> -->
             <div id="carousel" class="glide h-auto">
                 <div class="glide__track" data-glide-el="track">

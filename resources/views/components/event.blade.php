@@ -29,11 +29,11 @@
             <div class="flex mx-auto py-4">
                 <form action="{{ route('artists.inscription', $event) }}" method="POST">
                     @csrf
-                    <button type="submit" class="btn inline-flex text-purple-700 mb-4 mx-4 bg-yellow-300 hover:bg-yellow-200 border-2 border-purple-700 py-2 px-6 focus:outline-none rounded text-lg" id="addEvent-btn">
+                    <button type="submit" class="btn text-lg text-center text-purple-700 bg-yellow-300 hover:bg-yellow-200 border-2 border-purple-700 focus:outline-none rounded py-2 px-6 mb-4 mx-4" id="addEvent-btn">
                         {{ __('Inscription') }}
                     </button>
                 </form>
-                <a href="{{ route('artists', $event) }}" class="btn inline-flex text-yellow-300 mb-4 mx-4 bg-purple-700 hover:bg-purple-500 border-2 border-yellow-300 py-2 px-6 focus:outline-none rounded text-lg">
+                <a href="{{ route('artists', $event) }}" class="btn text-lg text-center text-yellow-300 bg-purple-700 hover:bg-purple-500 border-2 border-yellow-300 focus:outline-none rounded py-2 px-6 mb-4 mx-4">
                     {{ __('View Artists') }}
                 </a>
             </div>

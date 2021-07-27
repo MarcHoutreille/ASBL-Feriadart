@@ -1,15 +1,15 @@
 <header>
     <nav class="bg-gradient-to-b from-purple-700 to-purple-600 relative sm:flex text-base lg:text-xl border-b-8 border-yellow-300 uppercase font-mono font-semibold justify-around px-2 py-8 sm:py-4">
         <a href="{{ route('home') }}"><img class="h-20 sm:h-14 m-auto rounded-full" src="/images/FeriaLogoGeel.png" alt="logo"></a>
-        <a href="{{ route('home') }}" class="text-yellow-200 text-center block mx-1 my-2 sm:my-auto  hover:text-yellow-300 @if (request()->routeIs('home')) text-yellow-300 @endif">{{ __('Home') }}</a>
-        <a href="{{ route('about') }}" class="text-yellow-200 text-center block mx-1 my-2 sm:my-auto  hover:text-yellow-300 @if (request()->routeIs('about')) text-yellow-300 @endif">{{ __('About Us') }}</a>
-        <a href="{{ route('events') }}" class="text-yellow-200 text-center block mx-1 my-2 sm:my-auto  hover:text-yellow-300 @if (request()->routeIs('events')) text-yellow-300 @endif">{{ __('Events') }}</a>
-        <a href="{{ route('gallery') }}" class="text-yellow-200 text-center block mx-1 my-2 sm:my-auto  hover:text-yellow-300 @if (request()->routeIs('gallery')) text-yellow-300 @endif">{{ __('Gallery') }}</a>
-        <a href="{{ route('articles') }}" class="text-yellow-200 text-center block mx-1 my-2 sm:my-auto  hover:text-yellow-300 @if (request()->routeIs('articles')) text-yellow-300 @endif">{{ __('Articles') }}</a>
-        <a href="{{ route('guestbook') }}" class="text-yellow-200 text-center block mx-1 my-2 sm:my-auto  hover:text-yellow-300 @if (request()->routeIs('guestbook')) text-yellow-300 @endif">{{ __('Guestbook') }}</a>
-        <a href="{{ route('contact') }}" class="text-yellow-200 text-center block mx-1 my-2 sm:my-auto  hover:text-yellow-300 @if (request()->routeIs('contact')) text-yellow-300 @endif">{{ __('Contact') }}</a>
+        <a href="{{ route('home') }}" class="text-yellow-200 text-center block mx-1 my-2 sm:my-auto hover:text-yellow-300 @if (request()->routeIs('home')) text-yellow-300 @endif">{{ __('Home') }}</a>
+        <a href="{{ route('about') }}" class="text-yellow-200 text-center block mx-1 my-2 sm:my-auto hover:text-yellow-300 @if (request()->routeIs('about')) text-yellow-300 @endif">{{ __('About Us') }}</a>
+        <a href="{{ route('events') }}" class="text-yellow-200 text-center block mx-1 my-2 sm:my-auto hover:text-yellow-300 @if (request()->routeIs('events')) text-yellow-300 @endif">{{ __('Events') }}</a>
+        <a href="{{ route('gallery') }}" class="text-yellow-200 text-center block mx-1 my-2 sm:my-auto hover:text-yellow-300 @if (request()->routeIs('gallery')) text-yellow-300 @endif">{{ __('Gallery') }}</a>
+        <a href="{{ route('articles') }}" class="text-yellow-200 text-center block mx-1 my-2 sm:my-auto hover:text-yellow-300 @if (request()->routeIs('articles')) text-yellow-300 @endif">{{ __('Articles') }}</a>
+        <a href="{{ route('guestbook') }}" class="text-yellow-200 text-center block mx-1 my-2 sm:my-auto hover:text-yellow-300 @if (request()->routeIs('guestbook')) text-yellow-300 @endif">{{ __('Guestbook') }}</a>
+        <a href="{{ route('contact') }}" class="text-yellow-200 text-center block mx-1 my-2 sm:my-auto hover:text-yellow-300 @if (request()->routeIs('contact')) text-yellow-300 @endif">{{ __('Contact') }}</a>
         @if (Route::has('login'))@auth
-        <a href="{{ route('backoffice.index') }}" class="text-yellow-200 text-center block my-2 sm:my-auto  hover:text-yellow-300 @if (request()->routeIs('backoffice.index')) text-yellow-300 @endif">{{ __('Backoffice') }}</a>
+        <a href="{{ route('backoffice.index') }}" class="text-yellow-200 text-center block mx-1 my-2 sm:my-auto hover:text-yellow-300 @if (request()->routeIs('backoffice.index')) text-yellow-300 @endif">{{ __('Backoffice') }}</a>
         @endauth
         @endif
         @if(count(config('app.languages')) > 1 )
