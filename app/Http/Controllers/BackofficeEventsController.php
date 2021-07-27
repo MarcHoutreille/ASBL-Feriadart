@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Event;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\File;
+
 
 class BackofficeEventsController extends Controller
 {
@@ -19,7 +21,6 @@ class BackofficeEventsController extends Controller
         return view('backoffice.events', [
             'events' => $events
         ]);
-
     }
 
     /**
@@ -49,9 +50,9 @@ class BackofficeEventsController extends Controller
             'date_start' => 'required',
             'date_end' => 'required',
             'name' => 'required',
-            'img_src' => 'required',
+            'img' => 'required|mimes:jpeg,png,jpg|max:5048',
             'description' => 'required',
-            'inscription_img' => 'required',
+            'inscriptionimg' => 'required|mimes:jpeg,png,jpg|max:5048',
             'inscription_txt' => 'required',
             'place' => 'required',
             'address' => 'required',
@@ -59,10 +60,29 @@ class BackofficeEventsController extends Controller
             'telephone' => 'required',
             'email' => 'required',
         ]);
-        $name = $request->input('name');
-        $request['slug'] = str_replace('.','',(str_replace(' ','-',strtolower($name))));
-        $request['user_id'] = Auth::user()->id;
-        Event::create($request->only('user_id', 'date_start', 'date_end', 'name', 'slug', 'img_src', 'description', 'inscription_img', 'inscription_txt', 'place', 'address', 'url', 'telephone', 'email'));
+
+        $event = new Event;
+        $event->user_id = Auth::user()->id;
+        $event->date_start = $request->date_start;
+        $event->date_end = $request->date_end;
+        $event->name = $request->name;
+        $slug = str_replace('.', '', (str_replace(' ', '-', strtolower($request->name))));
+        $event->slug = $slug;
+        $event->description = $request->description;
+        $event->inscription_txt = $request->inscription_txt;
+        $event->place = $request->place;
+        $event->address = $request->address;
+        $event->telephone = $request->telephone;
+        $event->email = $request->email;
+        $event->url = $request->url;
+        $newImage = $slug . '-' . rand() . '.' . $request->img->extension();
+        $request->img->move(public_path('images/events'), $newImage);
+        $event->img_src = "/images/events/" . $newImage;
+        $newInscriptionImage = $slug . "-inscription" . '-' . rand() . '.' . $request->inscriptionimg->extension();
+        $request->inscriptionimg->move(public_path('images/events'), $newInscriptionImage);
+        $event->inscription_img = "/images/events/" . $newInscriptionImage;
+        $event->save();
+
         return redirect()->route('events.index')->with('success', 'Added Succesfully');
     }
 
@@ -108,10 +128,22 @@ class BackofficeEventsController extends Controller
         $event->date_start = $request->date_start;
         $event->date_end = $request->date_end;
         $event->name = $request->name;
-        $event->slug = str_replace('.','',(str_replace(' ','-',strtolower($request->name))));
-        $event->img_src = $request->img_src;
+        $event->slug = str_replace('.', '', (str_replace(' ', '-', strtolower($request->name))));
+        if ($request->img) {
+            $oldImage = $event->img_src;
+            File::delete(public_path($oldImage));
+            $newImage = time() . '-' . $request->title . '.' . $request->img->extension();
+            $request->img->move(public_path('images/events'), $newImage);
+            $event->img_src = '/images/events/' . $newImage;
+        }
+        if ($request->inscriptionimg) {
+            $oldInscriptionImage = $event->inscription_img;
+            File::delete(public_path($oldInscriptionImage));
+            $newInscriptionImage = time() . "-inscription" . '-' . $request->title . '.' . $request->inscriptionimg->extension();
+            $request->inscriptionimg->move(public_path('images/events'), $newInscriptionImage);
+            $event->inscription_img = '/images/events/' . $newInscriptionImage;
+        }
         $event->description = $request->description;
-        $event->inscription_img = $request->inscription_img;
         $event->inscription_txt = $request->inscription_txt;
         $event->place = $request->place;
         $event->address = $request->address;
@@ -120,8 +152,8 @@ class BackofficeEventsController extends Controller
         $event->url = $request->url;
         $query = $event->save();
 
-        if($query){
-            return redirect()->route('events.index')->with('success','Updated Successfully');
+        if ($query) {
+            return redirect()->route('events.index')->with('success', 'Updated Successfully');
         }
     }
 

@@ -3,7 +3,7 @@
     <div class="flex-grow sm:pl-8">
         <h2 class="title-font font-medium text-lg text-gray-900">{{ $member->name }}</h2>
         <h3 class="text-gray-500 mb-3">{{ $member->title }}</h3>
-        <p class="mb-4">{{ $member->bio }}</p>
+        <div class="mb-4">{!! $member->bio !!}</div>
         <span class="inline-flex">
             <a href="mailto:{{ $member->email }}" class="text-gray-500">
                 <svg viewBox="0 -100 512.00002 512" xmlns="http://www.w3.org/2000/svg" width="24" height="24" stroke="currentColor" stroke-width="5" fill="currentColor" stroke-linecap="round" stroke-linejoin="round">

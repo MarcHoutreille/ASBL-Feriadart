@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Member;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
+
 
 class BackofficeMembersController extends Controller
 {
@@ -47,15 +49,29 @@ class BackofficeMembersController extends Controller
             'name' => 'required',
             'title' => 'required',
             'bio' => 'required',
-            'img_src' => 'required',
+            'img' => 'required|mimes:jpeg,png,jpg|max:5048',
             'email' => 'required',
-            'url' => 'required',
-            'facebook' => 'required',
-            'instagram' => 'required',
         ]);
-        Member::create($request->only('name', 'title', 'bio', 'img_src', 'email', 'url', 'facebook', 'instagram'));
+        $member = new Member;
+        $member->name = $request->name;
+        $member->title = $request->title;
+        $member->bio = $request->bio;
+        $member->email = $request->email;
+        $newImage = rand() . '.' . $request->img->extension();
+        $request->img->move(public_path('images/members'), $newImage);
+        $member->img_src = "/images/members/" . $newImage;
+        if ($request->url) {
+            $member->url = $request->url;
+        }
+        if ($request->facebook) {
+            $member->facebook = $request->facebook;
+        }
+        if ($request->instagram) {
+            $member->instagram = $request->instagram;
+        }
+        $member->save();
 
-        return redirect()->route('members.index')->with('success','Added Successfully');
+        return redirect()->route('members.index')->with('success', 'Added Successfully');
     }
 
     /**
@@ -100,15 +116,27 @@ class BackofficeMembersController extends Controller
         $member->name = $request->name;
         $member->title = $request->title;
         $member->bio = $request->bio;
-        $member->img_src = $request->img_src;
         $member->email = $request->email;
-        $member->url = $request->url;
-        $member->facebook = $request->facebook;
-        $member->instagram = $request->instagram;
+        if ($request->img) {
+            $oldImage = $member->img_src;
+            File::delete(public_path($oldImage));
+            $newImage = time() . '-' . $request->title . '.' . $request->img->extension();
+            $request->img->move(public_path('images/members'), $newImage);
+            $member->img_src = '/images/members/' . $newImage;
+        }
+        if ($request->url) {
+            $member->url = $request->url;
+        }
+        if ($request->facebook) {
+            $member->facebook = $request->facebook;
+        }
+        if ($request->instagram) {
+            $member->instagram = $request->instagram;
+        }
         $query = $member->save();
 
-        if($query){
-            return redirect()->route('members.index')->with('success','Updated Successfully');
+        if ($query) {
+            return redirect()->route('members.index')->with('success', 'Updated Successfully');
         }
     }
 

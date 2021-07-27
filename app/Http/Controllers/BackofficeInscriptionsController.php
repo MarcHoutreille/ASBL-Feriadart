@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Event;
 use App\Models\Inscription;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
+
 
 class BackofficeInscriptionsController extends Controller
 {
@@ -19,7 +21,6 @@ class BackofficeInscriptionsController extends Controller
         return view('backoffice.inscriptions', [
             'inscriptions' => $inscriptions,
         ]);
-
     }
 
     /**
@@ -55,24 +56,71 @@ class BackofficeInscriptionsController extends Controller
             'products' => 'required',
             'telephone' => 'required',
             'email' => 'required',
-            'url' => 'required',
-            'facebook' => 'required',
-            'instagram' => 'required',
-            'img_01' => 'required',
-            'img_02' => 'required',
-            'img_03' => 'required',
-            'img_04' => 'required',
-            'img_05' => 'required',
+            'img01' => 'mimes:jpeg,png,jpg|max:5048|required',
+            'img02' => 'mimes:jpeg,png,jpg|max:5048',
+            'img03' => 'mimes:jpeg,png,jpg|max:5048',
+            'img04' => 'mimes:jpeg,png,jpg|max:5048',
+            'img05' => 'mimes:jpeg,png,jpg|max:5048',
         ]);
-        Inscription::create($request->only('event_id', 'fname', 'lname', 'bio', 'products', 'telephone', 'email', 'url', 'facebook', 'instagram', 'img_01', 'img_02', 'img_03', 'img_04', 'img_05'));
+
+        $inscription = new Inscription;
+        $inscription->event_id = $request->event_id;
+        $inscription->fname = $request->fname;
+        $inscription->lname = $request->lname;
+        $inscription->bio = $request->bio;
+        $inscription->products = $request->products;
+        $inscription->telephone = $request->telephone;
+        $inscription->email = $request->email;
+        if($request->url) {
+            $inscription->url = $request->url;
+        }
+        if($request->facebook) {
+            $inscription->facebook = $request->facebook;
+        }
+        if($request->instagram) {
+            $inscription->instagram = $request->instagram;
+        }
+        if ($request->img01) {
+            $newImageName = rand() . '-' . $request->event_id . '.' . $request->img01->extension();
+            $request->img01->move(public_path('images/artists'), $newImageName);
+            $request['img_01'] = "/images/artists/" . $newImageName;
+            $inscription->img_01 = $request->img_01;
+        }
+        if ($request->img02) {
+            $newImageName2 = rand() . '-' . $request->event_id . '.' . $request->img02->extension();
+            $request->img02->move(public_path('images/artists'), $newImageName2);
+            $request['img_02'] = "/images/artists/" . $newImageName2;
+            $inscription->img_02 = $request->img_02;
+        }
+        if ($request->img03) {
+            $newImageName3 = rand() . '-' . $request->event_id . '.' . $request->img03->extension();
+            $request->img03->move(public_path('images/artists'), $newImageName3);
+            $request['img_03'] = "/images/artists/" . $newImageName3;
+            $inscription->img_03 = $request->img_03;
+        }
+        if ($request->img04) {
+            $newImageName4 = rand() . '-' . $request->event_id . '.' . $request->img04->extension();
+            $request->img04->move(public_path('images/artists'), $newImageName4);
+            $request['img_04'] = "/images/artists/" . $newImageName4;
+            $inscription->img_04 = $request->img_04;
+        }
+        if ($request->img05) {
+            $newImageName5 = rand() . '-' . $request->event_id . '.' . $request->img05->extension();
+            $request->img05->move(public_path('images/artists'), $newImageName5);
+            $request['img_05'] = "/images/artists/" . $newImageName5;
+            $inscription->img_05 = $request->img_05;
+        }
+        $inscription->save();
+
         $id = $request->event_id;
         $event = Event::where('id', $id)->first();
         $create = false;
-        if ($request->has('front')) {
-            return view('events.show', [
+        
+        if ($request->front) {
+            return redirect()->route('event.show', [
                 'event' => $event,
                 'create' => $create
-            ])->with('success','Inscribed Successfully');    
+            ])->with('success', 'Inscribed Successfully');
         }
         return redirect()->route('inscriptions.index')->with('success', 'Added Succesfully');
     }
@@ -89,8 +137,8 @@ class BackofficeInscriptionsController extends Controller
         $inscription->accepted = true;
         $query = $inscription->save();
 
-        if($query){
-            return redirect()->route('inscriptions.index')->with('success','Accepted Successfully');
+        if ($query) {
+            return redirect()->route('inscriptions.index')->with('success', 'Accepted Successfully');
         }
     }
 
@@ -142,8 +190,8 @@ class BackofficeInscriptionsController extends Controller
         $inscription->accepted = $request->accepted;
         $query = $inscription->save();
 
-        if($query){
-            return redirect()->route('inscriptions.index')->with('success','Updated Successfully');
+        if ($query) {
+            return redirect()->route('inscriptions.index')->with('success', 'Updated Successfully');
         }
     }
 

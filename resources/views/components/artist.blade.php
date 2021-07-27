@@ -1,7 +1,7 @@
-<section class="container px-5 py-24 mx-auto text-gray-600 body-font overflow-hidden">
+<section class="container px-4 py-4 mx-auto text-gray-600 body-font overflow-hidden">
     <div class="-m-12 grid grid-cols-1 lg:grid-cols-2">
         <div class="p-12">
-            <h2 class="sm:text-3xl text-2xl title-font font-medium text-gray-900 mt-4 mb-4">{{ $artist->fname }} {{ $artist->lname }}</h2>
+            <h1 class="sm:text-3xl text-2xl title-font font-medium text-gray-900 mt-4 mb-4">{{ $artist->fname }} {{ $artist->lname }}</h1>
             <strong class="py-4">
                 {!! $artist->bio !!}
             </strong>
@@ -102,6 +102,5 @@
         perView: 1,
         focusAt: 'center',
         hoverpause: true,
-        autoplay: 2000,
     }).mount();
 </script>

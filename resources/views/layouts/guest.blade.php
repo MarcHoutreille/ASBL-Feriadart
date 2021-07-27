@@ -19,7 +19,7 @@
 </head>
 <body class="font-sans min-h-screen antialiased">
     <x-header />
-    <main class="relative flex items-top justify-center text-gray-900 bg-gradient-to-r from-yellow-300 via-yellow-200 to-yellow-300 sm:items-center py-4 sm:pt-0">
+    <main class="relative flex items-top justify-center text-gray-900 bg-gradient-to-r from-yellow-100 to-white sm:items-center py-4 sm:pt-0">
         {{ $slot }}
     </main>
     <x-footer />

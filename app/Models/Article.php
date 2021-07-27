@@ -16,8 +16,6 @@ class Article extends Model
         'img_src',
         'body',
         'excerpt',
-        'author',
-        'contact',
         'url',
     ];
 

@@ -70,7 +70,7 @@
                                     <div class="text-sm text-gray-900">{{ $article->excerpt }}</div>
                                 </td>
                                 <td class="px-4 py-4 whitespace-normal text-sm text-gray-500">
-                                    <div class="text-sm text-gray-900">{{ $article->body }}</div>
+                                    <div class="text-sm text-gray-900">{!! $article->body !!}</div>
                                 </td>
                                 <td class="px-4 py-4 whitespace-normal text-sm text-gray-500">
                                     <div class="text-sm text-gray-900"><a class="hover:text-blue-400" href="{{ $article->url }}" target="_blank">{{ $article->url }}</a></div>
@@ -115,29 +115,29 @@
                             @isset($edit)
                             @method('PUT')
                             <div class="w-full flex-col flex p-3">
-                                <label class="pb-2 text-gray-700 font-semibold">{{ __('Date') }}</label>
+                                <label for="created_at" class="pb-2 text-gray-700 font-semibold">{{ __('Date') }}</label>
                                 <input type="datetime-local" name="created_at" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" value="{{ date('Y-m-d\TH:i', strtotime($articleToEdit->created_at)) }}" required />
                             </div>
                             @endisset
                             <div class="w-full flex-col flex p-3">
-                                <label class="pb-2 text-gray-700 font-semibold">{{ __('Title') }}</label>
+                                <label for="title" class="pb-2 text-gray-700 font-semibold">{{ __('Title') }}</label>
                                 <input type="text" name="title" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" @isset($edit) value="{{ $articleToEdit->title }}" @endisset required />
                             </div>
                             <div class="w-full flex-col flex p-3">
-                                <label class="pb-2 text-gray-700 font-semibold">{{ __('Excerpt') }}</label>
+                                <label for="excerpt" class="pb-2 text-gray-700 font-semibold">{{ __('Excerpt') }}</label>
                                 <input type="text" name="excerpt" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" @isset($edit) value="{{ $articleToEdit->excerpt }}" @endisset required />
                             </div>
                             <div class="w-full flex-col flex p-3">
-                                <label class="pb-2 text-gray-700 font-semibold">{{ __('Body') }}</label>
+                                <label for="body" class="pb-2 text-gray-700 font-semibold">{{ __('Body') }}</label>
                                 <textarea id="body" name="body" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" rows="10" required>@isset($edit) {{ $articleToEdit->body }} @endisset</textarea>
                             </div>
                             <div class="w-full md:w-1/2 flex-col flex p-3">
-                                <label class="pb-2 text-gray-700 font-semibold">{{ __('Article URL') }}</label>
+                                <label for="url" class="pb-2 text-gray-700 font-semibold">{{ __('Article URL') }}</label>
                                 <input type="url" placeholder="http://" name="url" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" @isset($edit) value="{{ $articleToEdit->url }}" @endisset required />
                             </div>
                             <div class="w-full md:w-1/2 flex-col flex p-3">
-                                <label class="pb-2 text-gray-700 font-semibold">{{ __('Image') }}</label>
-                                <input type="file"  name="img_src" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" @isset($edit) value="{{ $articleToEdit->img_src }}" @endisset required />
+                                <label for="img" class="pb-2 text-gray-700 font-semibold">{{ __('Image') }}</label>
+                                <input type="file" name="img" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" @if (isset($edit)) value="{{ $articleToEdit->img_src }}" @else required @endif/>
                             </div>
                            
                             

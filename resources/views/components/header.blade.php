@@ -1,5 +1,5 @@
 <header>
-    <nav class="bg-purple-600 relative sm:flex text-lg justify-around font-extrabold px-2 py-8 sm:py-4">
+    <nav class="bg-gradient-to-b from-purple-700 to-purple-600 relative sm:flex text-base lg:text-xl border-b-8 border-yellow-300 uppercase font-mono font-semibold justify-around px-2 py-8 sm:py-4">
         <a href="{{ route('home') }}"><img class="h-20 sm:h-14 m-auto rounded-full" src="/images/FeriaLogoGeel.png" alt="logo"></a>
         <a href="{{ route('home') }}" class="text-yellow-200 text-center block mx-1 my-2 sm:my-auto  hover:text-yellow-300 @if (request()->routeIs('home')) text-yellow-300 @endif">{{ __('Home') }}</a>
         <a href="{{ route('about') }}" class="text-yellow-200 text-center block mx-1 my-2 sm:my-auto  hover:text-yellow-300 @if (request()->routeIs('about')) text-yellow-300 @endif">{{ __('About Us') }}</a>

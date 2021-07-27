@@ -53,9 +53,6 @@
                             <tr>
                                 <td class="px-4 py-4 whitespace-normal">
                                     <div class="flex items-center">
-                                        <div class="flex-shrink-0 h-10 w-10">
-                                            <img class="h-10 w-10 rounded-full" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=4&w=256&h=256&q=60" alt="">
-                                        </div>
                                         <div class="ml-4">
                                             <div class="text-sm font-medium text-gray-900">
                                                 {{ $guest->created_at }}
@@ -118,11 +115,11 @@
                             @isset($edit)
                             @method('PUT')
                             <div class="w-full md:w-1/2 flex-col flex p-3">
-                                <label class="pb-2 text-gray-700 font-semibold">{{ __('Date') }}</label>
+                                <label for="created_at" class="pb-2 text-gray-700 font-semibold">{{ __('Date') }}</label>
                                 <input type="datetime-local" name="created_at" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" value="{{ date('Y-m-d\TH:i', strtotime($guestToEdit->created_at)) }}" required />
                             </div>
                             <div class="w-full md:w-1/2 flex-col flex p-3">
-                                <label class="pb-2 text-gray-700 font-semibold">{{ __('Status') }}</label>
+                                <label for="accepted" class="pb-2 text-gray-700 font-semibold">{{ __('Status') }}</label>
                                 <select name="accepted" required>
                                     <option value=1 {{ $guestToEdit->accepted ? 'selected' : '' }}>{{ __('Accepted') }}</option>
                                     <option value=0 {{ $guestToEdit->accepted ? '' : 'selected' }}>{{ __('Rejected') }}</option>
@@ -130,19 +127,19 @@
                             </div>
                             @endisset
                             <div class="w-full md:w-1/2 flex-col flex p-3">
-                                <label class="pb-2 text-gray-700 font-semibold">{{ __('Name') }}</label>
+                                <label for="name" class="pb-2 text-gray-700 font-semibold">{{ __('Name') }}</label>
                                 <input type="text" name="name" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" @isset($edit) value="{{ $guestToEdit->name }}" @endisset required />
                             </div>
                             <div class="w-full md:w-1/2 flex-col flex p-3">
-                                <label class="pb-2 text-gray-700 font-semibold">{{ __('Email') }}</label>
+                                <label for="email" class="pb-2 text-gray-700 font-semibold">{{ __('Email') }}</label>
                                 <input type="email" name="email" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" @isset($edit) value="{{ $guestToEdit->email }}" @endisset required />
                             </div>
                             <div class="w-full flex-col flex p-3">
-                                <label class="pb-2 text-gray-700 font-semibold">{{ __('Occupation') }}</label>
+                                <label for="title" class="pb-2 text-gray-700 font-semibold">{{ __('Occupation') }}</label>
                                 <input type="text" name="title" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" @isset($edit) value="{{ $guestToEdit->title }}" @endisset required />
                             </div>
                             <div class="w-full flex-col flex p-3">
-                                <label class="pb-2 text-gray-700 font-semibold">{{ __('Message') }}</label>
+                                <label for="message" class="pb-2 text-gray-700 font-semibold">{{ __('Message') }}</label>
                                 <textarea name="message" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" rows="5" required>@isset($edit) {{ $guestToEdit->message }} @endisset</textarea>
                             </div>
                         </div>

@@ -1,11 +1,14 @@
 <?php
 
 namespace App\Http\Controllers;
+
+use Illuminate\Support\Facades\File as FileFacades;
 use App\Models\Event;
 
 use App\Models\File;
 
 use Illuminate\Http\Request;
+
 
 class BackofficeFilesController extends Controller
 {
@@ -20,8 +23,6 @@ class BackofficeFilesController extends Controller
         return view('backoffice.files', [
             'files' => $files,
         ]);
-
-
     }
 
     /**
@@ -52,19 +53,24 @@ class BackofficeFilesController extends Controller
         $this->validate($request, [
             'event_id' => 'required',
             'type' => 'required',
-            'img_src' => 'required',
-           
+            'img' => 'required|mimes:jpeg,png,jpg|max:5048',
         ]);
-        File::create($request->only('event_id', 'type', 'img_src'));
+        $file = new File;
+        $file->event_id = $request->event_id;
+        $file->type = $request->type;
+        $newImage = $request->event_id . '-' . rand() . '.' . $request->img->extension();
+        $request->img->move(public_path('images/gallery'), $newImage);
+        $file->img_src = "/images/gallery/" . $newImage;
+        $file->save();
 
         if ($request->has('front')) {
-            return back()->with('success','Added Successfully');    
+            return back()->with('success', 'Added Successfully');
         }
-        
+
         return redirect()->route('files.index')->with('success', 'Added Succesfully');
     }
 
-    
+
 
     /**
      * Display the specified resource.
@@ -109,11 +115,17 @@ class BackofficeFilesController extends Controller
         $file = File::find($id);
         $file->event_id = $request->event_id;
         $file->type = $request->type;
-        $file->img_src = $request->img_src;
+        if ($request->img) {
+            $oldImage = $file->img_src;
+            FileFacades::delete(public_path($oldImage));
+            $newImage = time() . '-' . $request->event_id . '.' . $request->img->extension();
+            $request->img->move(public_path('images/gallery'), $newImage);
+            $file->img_src = '/images/gallery/' . $newImage;
+        }
         $query = $file->save();
 
-        if($query){
-            return redirect()->route('files.index')->with('success','Updated Successfully');
+        if ($query) {
+            return redirect()->route('files.index')->with('success', 'Updated Successfully');
         }
     }
 
