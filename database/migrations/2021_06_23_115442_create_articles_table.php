@@ -21,7 +21,7 @@ class CreateArticlesTable extends Migration
             $table->string('img_src', 256);
             $table->text('excerpt');
             $table->text('body');
-            $table->string('url', 128);
+            $table->string('url', 128)->nullable();;
             $table->timestamps();
         });
     }

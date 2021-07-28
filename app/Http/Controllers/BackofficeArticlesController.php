@@ -50,7 +50,6 @@ class BackofficeArticlesController extends Controller
             'title' => 'required',
             'excerpt' => 'required',
             'body' => 'required',
-            'url' => 'required',
             'img' => 'required|mimes:jpeg,png,jpg|max:5048',
         ]);
 
@@ -62,7 +61,9 @@ class BackofficeArticlesController extends Controller
         $article->slug = $slug;
         $article->excerpt = $request->excerpt;
         $article->body = $request->body;
-        $article->url = $request->url;
+        if ($request->url) {
+            $article->url = $request->url;
+        }
         $newImage = $slug . '-' . rand() . '.' . $request->img->extension(); // renames uploaded picture
         $request->img->move(public_path('images/articles'), $newImage); // stores the picture
         $article->img_src = "/images/articles/" . $newImage; // stores the picture path in the DB
@@ -124,7 +125,9 @@ class BackofficeArticlesController extends Controller
             $request->img->move(public_path('images/articles'), $newImage); // stores the picture
             $article->img_src = "/images/articles/" . $newImage; // stores the picture path in the DB
         }
-        $article->url = $request->url;
+        if ($request->url) {
+            $article->url = $request->url;
+        }
         $query = $article->save();
 
         if ($query) {

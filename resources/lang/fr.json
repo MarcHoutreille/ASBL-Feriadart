@@ -54,6 +54,13 @@
     "Type": "Type",
     "Member": "Membre",
     "Message": "Message",
+
+    "Sign up": "S'inscrire",
+    "First name": "Prénom",
+    "Last name": "Nom",
+    "Telephone": "Téléphone",
+    "Website": "Site web",
+    "Image": "Image",
      
     "30 Days": "30 jours",
     "60 Days": "60 jours",

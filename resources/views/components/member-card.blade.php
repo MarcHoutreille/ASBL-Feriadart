@@ -1,7 +1,7 @@
 <div class="h-full flex sm:flex-row flex-col items-center sm:justify-start justify-center text-center sm:text-left">
     <img alt="team" class="flex-shrink-0 rounded-lg w-48 h-48 object-cover object-center sm:mb-0 mb-4" src="{{ $member->img_src }}" alt="{{ $member->name }}">
     <div class="flex-grow sm:pl-8">
-        <h2 class="title-font font-medium text-lg text-gray-900">{{ $member->name }}</h2>
+        <h2 class="title-font font-medium text-lg text-gray-900">{{ $member->fname }} {{ $member->lname }}</h2>
         <h3 class="text-gray-500 mb-3">{{ $member->title }}</h3>
         <div class="mb-4">{!! $member->bio !!}</div>
         <span class="inline-flex">

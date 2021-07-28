@@ -1,11 +1,6 @@
 <x-app-layout>
-    <x-slot name="header">
-        <h1 class="text-3xl sm:text-4xl font-medium title-font uppercase text-center text-purple-700 tracking-widest">
-            {{ __('Guestbook') }}
-        </h1>
-    </x-slot>
-
     <div class="flex flex-col pb-4">
+        <h1 class="text-3xl sm:text-4xl font-medium title-font uppercase text-center text-purple-700 tracking-widest p-4">{{ __('Guestbook') }}</h1>
         <!-- ADD GUESTBOOK COMMENT BUTTON -->
         <div class="text-center mx-auto pb-4">
             <!-- VALIDATION ERRORS -->
@@ -97,25 +92,25 @@
 
     <!-- ADD GUESTBOOK COMMENT MODAL -->
     <div class="bg-black bg-opacity-50 absolute inset-0 {{ (isset($edit) || isset($create)) ? 'flex' : 'hidden' }} justify-center items-start" id="overlay">
-        <div class="bg-gray-200 w-2/3 py-2 px-3 rounded shadow-xl text-gray-800 mt-3">
+        <div class="bg-gradient-to-r from-purple-600 via-purple-500 to-purple-600 w-11/12 md:w-2/3 text-gray-800 rounded-lg shadow-xl -mt-4 border-yellow-300 border-2 focus:outline-none">
             <div class="flex justify-between items-center">
-                <h4 class="text-lg font-bold">{{ isset($create) ? __('Add Guestbook Comment') : __('Update Guestbook Comment') }}</h4>
-                <svg class="h-6 w-6 cursor-pointer p-1 hover:bg-gray-300 rounded-full" id="closeModalX" fill="currentColor" viewBox="0 0 20 20">
+                <h2 class="text-yellow-300 text-lg font-bold p-2 mx-2">{{ isset($create) ? __('Add Guestbook Comment') : __('Update Guestbook Comment') }}</h2>
+                <svg class="h-6 w-6 cursor-pointer text-yellow-300 hover:text-yellow-500 rounded-full mx-2" id="closeModalX" fill="currentColor" viewBox="0 0 20 20">
                     <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path>
                 </svg>
             </div>
             <form action="{{ isset($edit) ? route('guest.update', $guestToEdit) : route('guest.store') }}" method="POST">
                 @csrf
                 <div class="text-sm">
-                    <div class="md:p-12 bg-gray-200">
+                    <div class="bg-gradient-to-r from-purple-600 via-purple-500 to-purple-600 md:px-4">
                         <div class="bg-white w-full tw-h-full md:w-1/2-screen shadow md:rounded-lg flex flex-wrap p-4">
                             @isset($edit)
                             @method('PUT')
-                            <div class="w-full md:w-1/2 flex-col flex p-3">
+                            <div class="w-full md:w-1/2 flex-col flex p-2">
                                 <label for="created_at" class="pb-2 text-gray-700 font-semibold">{{ __('Date') }}</label>
                                 <input type="datetime-local" name="created_at" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" value="{{ date('Y-m-d\TH:i', strtotime($guestToEdit->created_at)) }}" required />
                             </div>
-                            <div class="w-full md:w-1/2 flex-col flex p-3">
+                            <div class="w-full md:w-1/2 flex-col flex p-2">
                                 <label for="accepted" class="pb-2 text-gray-700 font-semibold">{{ __('Status') }}</label>
                                 <select name="accepted" required>
                                     <option value=1 {{ $guestToEdit->accepted ? 'selected' : '' }}>{{ __('Accepted') }}</option>
@@ -123,28 +118,28 @@
                                 </select>
                             </div>
                             @endisset
-                            <div class="w-full md:w-1/2 flex-col flex p-3">
+                            <div class="w-full md:w-1/2 flex-col flex p-2">
                                 <label for="name" class="pb-2 text-gray-700 font-semibold">{{ __('Name') }}</label>
                                 <input type="text" name="name" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" @isset($edit) value="{{ $guestToEdit->name }}" @endisset required />
                             </div>
-                            <div class="w-full md:w-1/2 flex-col flex p-3">
+                            <div class="w-full md:w-1/2 flex-col flex p-2">
                                 <label for="email" class="pb-2 text-gray-700 font-semibold">{{ __('Email') }}</label>
                                 <input type="email" name="email" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" @isset($edit) value="{{ $guestToEdit->email }}" @endisset required />
                             </div>
-                            <div class="w-full flex-col flex p-3">
+                            <div class="w-full flex-col flex p-2">
                                 <label for="title" class="pb-2 text-gray-700 font-semibold">{{ __('Occupation') }}</label>
                                 <input type="text" name="title" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" @isset($edit) value="{{ $guestToEdit->title }}" @endisset required />
                             </div>
-                            <div class="w-full flex-col flex p-3">
+                            <div class="w-full flex-col flex p-2">
                                 <label for="message" class="pb-2 text-gray-700 font-semibold">{{ __('Message') }}</label>
                                 <textarea name="message" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" rows="5" required>@isset($edit) {{ $guestToEdit->message }} @endisset</textarea>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="mt-3 flex justify-end space-x-3">
-                    <button class="px-3 py-1 hover:text-red-800 hover:bg-red-600 hover:bg-opacity-50 rounded" id="closeModal">{{ __('Cancel') }}</button>
-                    <button class="px-3 py-1 text-gray-200 bg-green-800 hover:bg-green-600 rounded" type="submit">{{ isset($edit) ? __('Update') : __('Add') }}</button>
+                <div class="flex justify-center md:justify-end space-x-3 mt-4 mr-4">
+                    <button class="btn text-lg text-center text-yellow-300 bg-purple-700 hover:bg-purple-500 border-2 border-yellow-300 focus:outline-none rounded py-2 px-6 mb-4" type="button" id="closeModal">{{ __('Cancel') }}</button>
+                    <button class="btn text-lg text-center text-purple-700 bg-yellow-300 hover:bg-yellow-200 border-2 border-purple-700 focus:outline-none rounded py-2 px-6 mb-4" type="submit">{{ isset($edit) ? __('Update') : __('Add') }}</button>
                 </div>
             </form>
         </div>

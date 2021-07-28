@@ -54,6 +54,13 @@
     "Type": "Soort",
     "Member": "Lid",
     "Message": "Bericht",
+
+    "Sign up": "Inschrijven",
+    "First name": "Voornaam",
+    "Last name": "Achternaam",
+    "Telephone": "Téléphone",
+    "Website": "Website",
+    "Image": "Afbeelding",
     
     "30 Days": "30 dagen",
     "60 Days": "60 dagen",

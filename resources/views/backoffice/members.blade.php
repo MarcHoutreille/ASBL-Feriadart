@@ -1,11 +1,6 @@
 <x-app-layout>
-    <x-slot name="header">
-        <h1 class="text-3xl sm:text-4xl font-medium title-font uppercase text-center text-purple-700 tracking-widest">
-            {{ __('Members') }}
-        </h1>
-    </x-slot>
-
     <div class="flex flex-col pb-4">
+        <h1 class="text-3xl sm:text-4xl font-medium title-font uppercase text-center text-purple-700 tracking-widest p-4">{{ __('Members') }}</h1>
         <!-- ADD MEMBER BUTTON -->
         <div class="text-center mx-auto pb-4">
             <!-- VALIDATION ERRORS -->
@@ -33,7 +28,7 @@
                                     {{ __('Occupation') }}
                                 </th>
                                 <th scope="col" class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                    {{ __('Short Bio') }}
+                                    {{ __('Short bio') }}
                                 </th>
                                 <th scope="col" class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                                     {{ __('Picture') }}
@@ -58,9 +53,8 @@
                                             <img class="h-10 w-10 rounded-full" src="{{ $member->img_src }}" alt="{{ $member->name }}">
                                         </div>
                                         <div class="ml-4">
-                                            <div class="text-sm font-medium text-gray-900">
-                                                {{ $member->name }}
-                                            </div>
+                                            <div class="text-sm font-medium text-gray-900">{{ $member->fname }}</div>
+                                            <div class="text-sm font-medium text-gray-500">{{ $member->lname }}</div>
                                         </div>
                                     </div>
                                 </td>
@@ -104,61 +98,65 @@
 
     <!-- ADD MEMBER MODAL -->
     <div class="bg-black bg-opacity-50 absolute inset-0 {{ (isset($edit) || isset($create)) ? 'flex' : 'hidden' }} justify-center items-start" id="overlay">
-        <div class="bg-gray-200 w-2/3 py-2 px-3 rounded shadow-xl text-gray-800 mt-3">
+        <div class="bg-gradient-to-r from-purple-600 via-purple-500 to-purple-600 w-11/12 md:w-2/3 text-gray-800 rounded-lg shadow-xl -mt-4 border-yellow-300 border-2 focus:outline-none">
             <div class="flex justify-between items-center">
-                <h4 class="text-lg font-bold">{{ isset($create) ? __('Add Member') : __('Update member') }}</h4>
-                <svg class="h-6 w-6 cursor-pointer p-1 hover:bg-gray-300 rounded-full" id="closeModalX" fill="currentColor" viewBox="0 0 20 20">
+                <h2 class="text-yellow-300 text-lg font-bold p-2 mx-2">{{ isset($create) ? __('Add Member') : __('Update member') }}</h2>
+                <svg class="h-6 w-6 cursor-pointer text-yellow-300 hover:text-yellow-500 rounded-full mx-2" id="closeModalX" fill="currentColor" viewBox="0 0 20 20">
                     <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path>
                 </svg>
             </div>
             <form action="{{ isset($edit) ? route('members.update', $memberToEdit) : route('members.store') }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="text-sm">
-                    <div class="md:p-12 bg-gray-200">
+                <div class="bg-gradient-to-r from-purple-600 via-purple-500 to-purple-600 md:px-4">
                         <div class="bg-white w-full tw-h-full md:w-1/2-screen shadow md:rounded-lg flex flex-wrap p-4">
                             @isset($edit)
                             @method('PUT')
                             @endisset
                             @isset($create)
                             @endisset
-                            <div class="w-full md:w-1/2 flex-col flex p-3">
-                                <label for="name" class="pb-2 text-gray-700 font-semibold">{{ __('Name') }}</label>
-                                <input type="text" name="name" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" @isset($edit) value="{{ $memberToEdit->name }}" @endisset required />
+                            <div class="w-full md:w-1/2 flex-col flex p-2">
+                                <label for="fname" class="pb-2 text-gray-700 font-semibold">{{ __('First name') }}</label>
+                                <input type="text" name="fname" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" @isset($edit) value="{{ $memberToEdit->fname }}" @endisset required />
                             </div>
-                            <div class="w-full md:w-1/2 flex-col flex p-3">
+                            <div class="w-full md:w-1/2 flex-col flex p-2">
+                                <label for="lname" class="pb-2 text-gray-700 font-semibold">{{ __('Last name') }}</label>
+                                <input type="text" name="lname" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" @isset($edit) value="{{ $memberToEdit->lname }}" @endisset required />
+                            </div>
+                            <div class="w-full md:w-1/2 flex-col flex p-2">
                                 <label for="title" class="pb-2 text-gray-700 font-semibold">{{ __('Occupation') }}</label>
                                 <input type="text" name="title" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" @isset($edit) value="{{ $memberToEdit->title }}" @endisset required />
                             </div>
-                            <div class="w-full flex-col flex p-3">
-                                <label for="bio" class="pb-2 text-gray-700 font-semibold">{{ __('Short Bio') }}</label>
-                                <textarea name="bio" id="bio" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" rows="5" required>@isset($edit) {{ $memberToEdit->bio }} @endisset</textarea>
-                            </div>
-                            <div class="w-full flex-col flex p-3">
+                            <div class="w-full md:w-1/2 flex-col flex p-2">
                                 <label for="img" class="pb-2 text-gray-700 font-semibold">{{ __('Image') }}</label>
                                 <input type="file" name="img" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" @if (isset($edit)) value="{{ $memberToEdit->img_src }}" @else required @endif />
                             </div>
-                            <div class="w-full md:w-1/2 flex-col flex p-3">
+                            <div class="w-full flex-col flex p-2">
+                                <label for="bio" class="pb-2 text-gray-700 font-semibold">{{ __('Short bio') }}</label>
+                                <textarea name="bio" id="bio" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" rows="5" required>@isset($edit) {{ $memberToEdit->bio }} @endisset</textarea>
+                            </div>
+                            <div class="w-full md:w-1/2 flex-col flex p-2">
                                 <label for="email" class="pb-2 text-gray-700 font-semibold">{{ __('Email') }}</label>
                                 <input type="email" name="email" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" @isset($edit) value="{{ $memberToEdit->email }}" @endisset required />
                             </div>
-                            <div class="w-full md:w-1/2 flex-col flex p-3">
-                                <label for="url" class="pb-2 text-gray-700 font-semibold">{{ __('Website') }}</label>
+                            <div class="w-full md:w-1/2 flex-col flex p-2">
+                                <label for="url" class="pb-2 text-gray-700 font-semibold">{{ __('Website') }} ({{ __('Optional')}})</label>
                                 <input type="url" placeholder="http://" name="url" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" @isset($edit) value="{{ $memberToEdit->url }}" @endisset />
                             </div>
-                            <div class="w-full md:w-1/2 flex-col flex p-3">
-                                <label for="facebook" class="pb-2 text-gray-700 font-semibold">{{ __('Facebook') }}</label>
+                            <div class="w-full md:w-1/2 flex-col flex p-2">
+                                <label for="facebook" class="pb-2 text-gray-700 font-semibold">{{ __('Facebook') }} ({{ __('Optional')}})</label>
                                 <input type="url" placeholder="http://" name="facebook" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" @isset($edit) value="{{ $memberToEdit->facebook }}" @endisset />
                             </div>
-                            <div class="w-full md:w-1/2 flex-col flex p-3">
-                                <label for="instagram" class="pb-2 text-gray-700 font-semibold">{{ __('Instagram') }}</label>
+                            <div class="w-full md:w-1/2 flex-col flex p-2">
+                                <label for="instagram" class="pb-2 text-gray-700 font-semibold">{{ __('Instagram') }} ({{ __('Optional')}})</label>
                                 <input type="url" placeholder="http://" name="instagram" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" @isset($edit) value="{{ $memberToEdit->instagram }}" @endisset />
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="mt-3 flex justify-end space-x-3">
-                    <button class="px-3 py-1 hover:text-red-800 hover:bg-red-600 hover:bg-opacity-50 rounded" id="closeModal">{{ __('Cancel') }}</button>
-                    <button class="px-3 py-1 text-gray-200 bg-green-800 hover:bg-green-600 rounded" type="submit">{{ isset($edit) ? __('Update') : __('Add') }}</button>
+                <div class="flex justify-center md:justify-end space-x-3 mt-4 mr-4">
+                    <button class="btn text-lg text-center text-yellow-300 bg-purple-700 hover:bg-purple-500 border-2 border-yellow-300 focus:outline-none rounded py-2 px-6 mb-4" type="button" id="closeModal">{{ __('Cancel') }}</button>
+                    <button class="btn text-lg text-center text-purple-700 bg-yellow-300 hover:bg-yellow-200 border-2 border-purple-700 focus:outline-none rounded py-2 px-6 mb-4" type="submit">{{ isset($edit) ? __('Update') : __('Add') }}</button>
                 </div>
             </form>
         </div>

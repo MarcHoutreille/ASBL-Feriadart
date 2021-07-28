@@ -21,13 +21,15 @@ class MemberFactory extends Factory
      */
     public function definition()
     {
-        $name = $this->faker->name();
+        $fname = $this->faker->firstName();
+        $lname = $this->faker->lastName();
         $replace = array(' ', '.');
-        $username = substr(str_replace($replace, '', strtolower($name)), 0) . rand(1, 999);
+        $username = substr(str_replace($replace, '', strtolower($fname)), 0) . rand(1, 999);
         $facebook = 'https://www.facebook.com/' . $username;
         $instagram = 'https://www.instagram.com/' . $username;
         return [
-            'name' => $name,
+            'fname' => $fname,
+            'lname' => $lname,
             'title' => $this->faker->jobTitle(),
             'bio' => $this->faker->paragraph(1, true),
             'img_src' => 'https://i.pravatar.cc/200?u=' . $username,
