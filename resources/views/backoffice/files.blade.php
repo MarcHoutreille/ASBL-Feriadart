@@ -7,13 +7,13 @@
 
     <div class="flex flex-col pb-4">
         <!-- ADD EVENT BUTTON -->
-        <div class="mx-auto pb-4">
+        <div class="text-center mx-auto pb-4">
             <!-- VALIDATION ERRORS -->
             <x-auth-validation-errors class="mb-4" :errors="$errors" />
             <x-success-message class="mb-4" />
             <form action="{{ route('files.create') }}" method="GET">
                 @csrf
-                <button type="submit" class="btn text-lg text-center text-purple-700 bg-yellow-300 hover:bg-yellow-200 border-2 border-purple-700 focus:outline-none rounded py-2 px-6 mb-4" id="addBtn">
+                <button type="submit" class="mx-auto btn text-lg text-center text-purple-700 bg-yellow-300 hover:bg-yellow-200 border-2 border-purple-700 focus:outline-none rounded py-2 px-6 mb-4" id="addBtn">
                     {{ __('Add File') }}
                 </button>
             </form>
