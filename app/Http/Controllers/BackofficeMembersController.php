@@ -150,6 +150,9 @@ class BackofficeMembersController extends Controller
      */
     public function destroy(Member $member)
     {
+        if (File::exists(public_path($member->img_src))) {
+            File::delete(public_path($member->img_src));
+        }
         $this->authorize('delete', $member);
         $member->delete();
         return back()->with('success', 'Deleted Succesfully');

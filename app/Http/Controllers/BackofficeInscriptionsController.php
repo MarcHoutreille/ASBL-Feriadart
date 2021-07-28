@@ -244,6 +244,21 @@ class BackofficeInscriptionsController extends Controller
      */
     public function destroy(Inscription $inscription)
     {
+        if (File::exists(public_path($inscription->img_01))) {
+            File::delete(public_path($inscription->img_01));
+        }
+        if (File::exists(public_path($inscription->img_02))) {
+            File::delete(public_path($inscription->img_02));
+        }
+        if (File::exists(public_path($inscription->img_03))) {
+            File::delete(public_path($inscription->img_03));
+        }
+        if (File::exists(public_path($inscription->img_04))) {
+            File::delete(public_path($inscription->img_04));
+        }
+        if (File::exists(public_path($inscription->img_05))) {
+            File::delete(public_path($inscription->img_05));
+        }
         $this->authorize('delete', $inscription);
         $inscription->delete();
         return back()->with('success', 'Deleted Succesfully');

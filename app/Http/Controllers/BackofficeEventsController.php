@@ -174,7 +174,13 @@ class BackofficeEventsController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function destroy(Event $event)
-    {
+    {   
+        if (File::exists(public_path($event->img_src))) {
+            File::delete(public_path($event->img_src));
+        }
+        if (File::exists(public_path($event->inscription_img))) {
+            File::delete(public_path($event->inscription_img));
+        }
         $this->authorize('delete', $event);
         $event->delete();
         return back()->with('success', 'Deleted Succesfully');

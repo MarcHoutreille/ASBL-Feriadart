@@ -143,6 +143,9 @@ class BackofficeArticlesController extends Controller
      */
     public function destroy(Article $article)
     {
+        if (File::exists(public_path($article->img_src))) {
+            File::delete(public_path($article->img_src));
+        }
         $this->authorize('delete', $article);
         $article->delete();
         return back()->with('success', 'Deleted Succesfully');

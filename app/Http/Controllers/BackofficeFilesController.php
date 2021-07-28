@@ -136,6 +136,9 @@ class BackofficeFilesController extends Controller
      */
     public function destroy(File $file)
     {
+        if (FileFacades::exists(public_path($file->img_src))) {
+            FileFacades::delete(public_path($file->img_src));
+        }
         $this->authorize('delete', $file);
         $file->delete();
         return back()->with('success', 'Deleted Succesfully');
