@@ -196,19 +196,19 @@
                                 </div>
                                 <div class="w-full flex-col flex p-2">
                                     <label for="img02" class="pb-2 text-gray-700 font-semibold">{{ __('Image') }} 2 ({{ __('Optional')}})</label>
-                                    <input type="file" name="img02" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" @if (isset($edit)) value="{{ $inscriptionToEdit->img_02 }}" @else required @endif />
+                                    <input type="file" name="img02" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" />
                                 </div>
                                 <div class="w-full flex-col flex p-2">
                                     <label for="img03" class="pb-2 text-gray-700 font-semibold">{{ __('Image') }} 3 ({{ __('Optional')}})</label>
-                                    <input type="file" name="img03" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" @if (isset($edit)) value="{{ $inscriptionToEdit->img_03 }}" @else required @endif />
+                                    <input type="file" name="img03" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" />
                                 </div>
                                 <div class="w-full flex-col flex p-2">
                                     <label for="img04" class="pb-2 text-gray-700 font-semibold">{{ __('Image') }} 4 ({{ __('Optional')}})</label>
-                                    <input type="file" name="img04" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" @if (isset($edit)) value="{{ $inscriptionToEdit->img_04 }}" @else required @endif />
+                                    <input type="file" name="img04" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" />
                                 </div>
                                 <div class="w-full flex-col flex p-2">
                                     <label for="img05" class="pb-2 text-gray-700 font-semibold">{{ __('Image') }} 5 ({{ __('Optional')}})</label>
-                                    <input type="file" name="img05" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" @if (isset($edit)) value="{{ $inscriptionToEdit->img_05 }}" @else required @endif />
+                                    <input type="file" name="img05" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" />
                                 </div>
                             </div>
                         </div>
