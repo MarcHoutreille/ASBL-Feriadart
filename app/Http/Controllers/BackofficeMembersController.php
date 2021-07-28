@@ -45,18 +45,20 @@ class BackofficeMembersController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'name' => 'required',
+            'fname' => 'required',
+            'lname' => 'required',
             'title' => 'required',
             'bio' => 'required',
             'img' => 'required|mimes:jpeg,png,jpg|max:5048',
             'email' => 'required',
         ]);
         $member = new Member;
-        $member->name = $request->name;
+        $member->fname = $request->fname;
+        $member->lname = $request->lname;
         $member->title = $request->title;
         $member->bio = $request->bio;
         $member->email = $request->email;
-        $newImage = rand() . '.' . $request->img->extension();
+        $newImage = $request->fname . '-' . rand() . '.' . $request->img->extension();
         $request->img->move(public_path('images/members'), $newImage);
         $member->img_src = "/images/members/" . $newImage;
         if ($request->url) {
@@ -112,14 +114,15 @@ class BackofficeMembersController extends Controller
     public function update(Request $request, $id)
     {
         $member = Member::find($id);
-        $member->name = $request->name;
+        $member->fname = $request->fname;
+        $member->lname = $request->lname;
         $member->title = $request->title;
         $member->bio = $request->bio;
         $member->email = $request->email;
         if ($request->img) {
             $oldImage = $member->img_src;
             File::delete(public_path($oldImage));
-            $newImage = time() . '-' . $request->title . '.' . $request->img->extension();
+            $newImage = $request->fname . '-' . rand() . '.' . $request->img->extension();
             $request->img->move(public_path('images/members'), $newImage);
             $member->img_src = '/images/members/' . $newImage;
         }

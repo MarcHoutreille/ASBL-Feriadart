@@ -117,7 +117,7 @@ class BackofficeFilesController extends Controller
         if ($request->img) {
             $oldImage = $file->img_src;
             FileFacades::delete(public_path($oldImage));
-            $newImage = time() . '-' . $request->event_id . '.' . $request->img->extension();
+            $newImage = $request->event_id . '-' . rand() . '.' . $request->img->extension();
             $request->img->move(public_path('images/gallery'), $newImage);
             $file->img_src = '/images/gallery/' . $newImage;
         }

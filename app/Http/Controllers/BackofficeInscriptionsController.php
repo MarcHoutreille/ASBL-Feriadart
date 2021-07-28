@@ -81,31 +81,31 @@ class BackofficeInscriptionsController extends Controller
             $inscription->instagram = $request->instagram;
         }
         if ($request->img01) {
-            $newImageName = rand() . '-' . $request->event_id . '.' . $request->img01->extension();
+            $newImageName = $request->fname . '-' . rand() . '-' . $request->event_id . '.' . $request->img01->extension();
             $request->img01->move(public_path('images/artists'), $newImageName);
             $request['img_01'] = "/images/artists/" . $newImageName;
             $inscription->img_01 = $request->img_01;
         }
         if ($request->img02) {
-            $newImageName2 = rand() . '-' . $request->event_id . '.' . $request->img02->extension();
+            $newImageName2 = $request->fname . '-' . rand() . '-' . $request->event_id . '.' . $request->img02->extension();
             $request->img02->move(public_path('images/artists'), $newImageName2);
             $request['img_02'] = "/images/artists/" . $newImageName2;
             $inscription->img_02 = $request->img_02;
         }
         if ($request->img03) {
-            $newImageName3 = rand() . '-' . $request->event_id . '.' . $request->img03->extension();
+            $newImageName3 = $request->fname . '-' . rand() . '-' . $request->event_id . '.' . $request->img03->extension();
             $request->img03->move(public_path('images/artists'), $newImageName3);
             $request['img_03'] = "/images/artists/" . $newImageName3;
             $inscription->img_03 = $request->img_03;
         }
         if ($request->img04) {
-            $newImageName4 = rand() . '-' . $request->event_id . '.' . $request->img04->extension();
+            $newImageName4 = $request->fname . '-' . rand() . '-' . $request->event_id . '.' . $request->img04->extension();
             $request->img04->move(public_path('images/artists'), $newImageName4);
             $request['img_04'] = "/images/artists/" . $newImageName4;
             $inscription->img_04 = $request->img_04;
         }
         if ($request->img05) {
-            $newImageName5 = rand() . '-' . $request->event_id . '.' . $request->img05->extension();
+            $newImageName5 = $request->fname . '-' . rand() . '-' . $request->event_id . '.' . $request->img05->extension();
             $request->img05->move(public_path('images/artists'), $newImageName5);
             $request['img_05'] = "/images/artists/" . $newImageName5;
             $inscription->img_05 = $request->img_05;
@@ -179,14 +179,55 @@ class BackofficeInscriptionsController extends Controller
         $inscription->products = $request->products;
         $inscription->telephone = $request->telephone;
         $inscription->email = $request->email;
-        $inscription->url = $request->url;
-        $inscription->facebook = $request->facebook;
-        $inscription->instagram = $request->instagram;
-        $inscription->img_01 = $request->img_01;
-        $inscription->img_02 = $request->img_02;
-        $inscription->img_03 = $request->img_03;
-        $inscription->img_04 = $request->img_04;
-        $inscription->img_05 = $request->img_05;
+        if ($request->img01) {
+            $oldImage = $inscription->img_01;
+            File::delete(public_path($oldImage));
+            $newImageName = $request->fname . '-' . rand() . '-' . $request->event_id . '.' . $request->img01->extension();
+            $request->img01->move(public_path('images/artists'), $newImageName);
+            $request['img_01'] = "/images/artists/" . $newImageName;
+            $inscription->img_01 = $request->img_01;
+        }
+        if ($request->img02) {
+            $oldImage2 = $inscription->img_02;
+            File::delete(public_path($oldImage2));
+            $newImageName2 = $request->fname . '-' . rand() . '-' . $request->event_id . '.' . $request->img02->extension();
+            $request->img02->move(public_path('images/artists'), $newImageName2);
+            $request['img_02'] = "/images/artists/" . $newImageName2;
+            $inscription->img_02 = $request->img_02;
+        }
+        if ($request->img03) {
+            $oldImage3 = $inscription->img_03;
+            File::delete(public_path($oldImage3));
+            $newImageName3 = $request->fname . '-' . rand() . '-' . $request->event_id . '.' . $request->img03->extension();
+            $request->img03->move(public_path('images/artists'), $newImageName3);
+            $request['img_03'] = "/images/artists/" . $newImageName3;
+            $inscription->img_03 = $request->img_03;
+        }
+        if ($request->img04) {
+            $oldImage4 = $inscription->img_04;
+            File::delete(public_path($oldImage4));
+            $newImageName4 = $request->fname . '-' . rand() . '-' . $request->event_id . '.' . $request->img04->extension();
+            $request->img04->move(public_path('images/artists'), $newImageName4);
+            $request['img_04'] = "/images/artists/" . $newImageName4;
+            $inscription->img_04 = $request->img_04;
+        }
+        if ($request->img05) {
+            $oldImage5 = $inscription->img_05;
+            File::delete(public_path($oldImage5));
+            $newImageName5 = $request->fname . '-' . rand() . '-' . $request->event_id . '.' . $request->img05->extension();
+            $request->img05->move(public_path('images/artists'), $newImageName5);
+            $request['img_05'] = "/images/artists/" . $newImageName5;
+            $inscription->img_05 = $request->img_05;
+        }
+        if ($request->url) {
+            $inscription->url = $request->url;
+        }
+        if ($request->facebook) {
+            $inscription->facebook = $request->url;
+        }
+        if ($request->instagram) {
+            $inscription->instagram = $request->url;
+        }
         $inscription->accepted = $request->accepted;
         $query = $inscription->save();
 

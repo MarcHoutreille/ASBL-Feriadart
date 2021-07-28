@@ -24,6 +24,7 @@ class Event extends Model
         'telephone',
         'email',
         'url',
+        'open',
     ];
 
     public function user()
