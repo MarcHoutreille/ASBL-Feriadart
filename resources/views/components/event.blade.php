@@ -93,15 +93,15 @@
                                     <input type="email" name="email" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" required />
                                 </div>
                                 <div class="w-full flex-col flex p-2">
-                                    <label for="url" class="pb-2 text-gray-700 font-semibold">{{ __('Website') }}</label>
+                                    <label for="url" class="pb-2 text-gray-700 font-semibold">{{ __('Website') }} ({{ __('Optional')}})</label>
                                     <input type="url" placeholder="http://" name="url" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" />
                                 </div>
                                 <div class="w-full flex-col flex p-2">
-                                    <label for="facebook" class="pb-2 text-gray-700 font-semibold">{{ __('Facebook') }}</label>
+                                    <label for="facebook" class="pb-2 text-gray-700 font-semibold">{{ __('Facebook') }} ({{ __('Optional')}})</label>
                                     <input type="url" placeholder="http://" name="facebook" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" />
                                 </div>
                                 <div class="w-full flex-col flex p-2">
-                                    <label for="instagram" class="pb-2 text-gray-700 font-semibold">{{ __('Instagram') }}</label>
+                                    <label for="instagram" class="pb-2 text-gray-700 font-semibold">{{ __('Instagram') }} ({{ __('Optional')}})</label>
                                     <input type="url" placeholder="http://" name="instagram" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" />
                                 </div>
                             </div>
@@ -111,19 +111,19 @@
                                     <input type="file" name="img01" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" required />
                                 </div>
                                 <div class="w-full flex-col flex p-2">
-                                    <label class="pb-2 text-gray-700 font-semibold">{{ __('Image') }} 2</label>
+                                    <label class="pb-2 text-gray-700 font-semibold">{{ __('Image') }} 2 ({{ __('Optional')}})</label>
                                     <input type="file" name="img02" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" />
                                 </div>
                                 <div class="w-full flex-col flex p-2">
-                                    <label class="pb-2 text-gray-700 font-semibold">{{ __('Image') }} 3</label>
+                                    <label class="pb-2 text-gray-700 font-semibold">{{ __('Image') }} 3 ({{ __('Optional')}})</label>
                                     <input type="file" name="img03" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" />
                                 </div>
                                 <div class="w-full flex-col flex p-2">
-                                    <label class="pb-2 text-gray-700 font-semibold">{{ __('Image') }} 4</label>
+                                    <label class="pb-2 text-gray-700 font-semibold">{{ __('Image') }} 4 ({{ __('Optional')}})</label>
                                     <input type="file" name="img04" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" />
                                 </div>
                                 <div class="w-full flex-col flex p-2">
-                                    <label class="pb-2 text-gray-700 font-semibold">{{ __('Image') }} 5</label>
+                                    <label class="pb-2 text-gray-700 font-semibold">{{ __('Image') }} 5 ({{ __('Optional')}})</label>
                                     <input type="file" name="img05" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" />
                                 </div>
                             </div>
