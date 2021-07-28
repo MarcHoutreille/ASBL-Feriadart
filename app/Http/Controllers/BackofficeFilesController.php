@@ -18,7 +18,7 @@ class BackofficeFilesController extends Controller
      */
     public function index()
     {
-        $files = File::all()->sortBy('created_at');
+        $files = File::all()->sortByDesc('created_at');
         return view('backoffice.files', [
             'files' => $files,
         ]);

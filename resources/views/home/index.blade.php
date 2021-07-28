@@ -42,7 +42,7 @@
                     <path d="M12 5l7 7-7 7"></path>
                 </svg>
             </a>
-            <div class="my-4 divide-y-2 divide-gray-100">
+            <div class="my-4">
                 @foreach ($events as $event)
                 <x-event-calendar-card :event="$event" />
                 @endforeach

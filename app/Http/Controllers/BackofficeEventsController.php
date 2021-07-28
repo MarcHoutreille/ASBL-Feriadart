@@ -17,7 +17,7 @@ class BackofficeEventsController extends Controller
      */
     public function index()
     {
-        $events = Event::all()->sortBy('date_start');
+        $events = Event::all()->sortByDesc('date_start');
         return view('backoffice.events', [
             'events' => $events
         ]);
