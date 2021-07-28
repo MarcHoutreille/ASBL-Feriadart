@@ -122,8 +122,8 @@
                             <div class="w-full flex-col flex p-2">
                                 <label for="open" class="pb-2 text-gray-700 font-semibold">{{ __('Status') }}</label>
                                 <select name="open" required>
-                                    <option value=1 {{ $eventToEdit->open ? 'selected' : '' }}>{{ __('Open') }}</option>
-                                    <option value=0 {{ $eventToEdit->open ? '' : 'selected' }}>{{ __('Closed') }}</option>
+                                    <option value=1 {{ $eventToEdit->open ? 'selected' : '' }}>{{ __('OPEN') }}</option>
+                                    <option value=0 {{ $eventToEdit->open ? '' : 'selected' }}>{{ __('CLOSED') }}</option>
                                 </select>
                             </div>
                             @endisset
