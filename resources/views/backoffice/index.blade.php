@@ -1,16 +1,13 @@
 <x-app-layout>
     <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+        <h1 class="text-3xl sm:text-4xl font-medium title-font uppercase text-center text-purple-700 tracking-widest">
             {{ __('Backoffice') }}
-        </h2>
+        </h1>
     </x-slot>
-    <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 h-96">
-            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6 bg-white border-b border-gray-200">
-                    {{ __('Hello') }} {{ Auth::user()->name }}!
-                </div>
-            </div>
+
+    <div class="h-64">
+        <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg border-b border-gray-200 p-4">
+            {{ __('Hello') }} {{ Auth::user()->name }}!
         </div>
     </div>
 </x-app-layout>

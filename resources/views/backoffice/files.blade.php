@@ -1,27 +1,24 @@
 <x-app-layout>
     <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+        <h1 class="text-3xl sm:text-4xl font-medium title-font uppercase text-center text-purple-700 tracking-widest">
             {{ __('Files') }}
-        </h2>
+        </h1>
     </x-slot>
 
-    <div class="flex flex-col py-14">
-
-        <!-- Add Event Button -->
-        <div class="mx-auto pb-14">
-            <!-- Validation Errors -->
+    <div class="flex flex-col pb-4">
+        <!-- ADD EVENT BUTTON -->
+        <div class="mx-auto pb-4">
+            <!-- VALIDATION ERRORS -->
             <x-auth-validation-errors class="mb-4" :errors="$errors" />
             <x-success-message class="mb-4" />
-
             <form action="{{ route('files.create') }}" method="GET">
                 @csrf
-                <button type="submit" class="px-6 py-3 bg-green-700 text-white rounded shadow" id="addEvent-btn">
+                <button type="submit" class="btn text-lg text-center text-purple-700 bg-yellow-300 hover:bg-yellow-200 border-2 border-purple-700 focus:outline-none rounded py-2 px-6 mb-4" id="addBtn">
                     {{ __('Add File') }}
                 </button>
             </form>
         </div>
-
-        <!-- Files Table -->
+        <!-- FILES TABLE -->
         <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
             <div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
                 <div class="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">
@@ -84,12 +81,12 @@
         </div>
     </div>
 
-    <!-- Add File Modal -->
+    <!-- ADD FILE MODAL -->
     <div class="bg-black bg-opacity-50 absolute inset-0 {{ (isset($edit) || isset($create)) ? 'flex' : 'hidden' }} justify-center items-start" id="overlay">
         <div class="bg-gray-200 w-2/3 py-2 px-3 rounded shadow-xl text-gray-800 mt-3">
             <div class="flex justify-between items-center">
                 <h4 class="text-lg font-bold">{{ isset($create) ? __('Add File') : __('Update File') }}</h4>
-                <svg class="h-6 w-6 cursor-pointer p-1 hover:bg-gray-300 rounded-full" id="close-modal" fill="currentColor" viewBox="0 0 20 20">
+                <svg class="h-6 w-6 cursor-pointer p-1 hover:bg-gray-300 rounded-full" id="closeModalX" fill="currentColor" viewBox="0 0 20 20">
                     <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path>
                 </svg>
             </div>
@@ -141,28 +138,10 @@
                     </div>
                 </div>
                 <div class="mt-3 flex justify-end space-x-3">
-                    <button class="px-3 py-1 hover:text-red-800 hover:bg-red-600 hover:bg-opacity-50 rounded" id="close-modal2">{{ __('Cancel') }}</button>
+                    <button class="px-3 py-1 hover:text-red-800 hover:bg-red-600 hover:bg-opacity-50 rounded" id="closeModal">{{ __('Cancel') }}</button>
                     <button class="px-3 py-1 text-gray-200 bg-green-800 hover:bg-green-600 rounded" type="submit">{{ isset($edit) ? __('Update') : __('Add') }}</button>
                 </div>
             </form>
         </div>
     </div>
-
-    <!-- Button Javascript -->
-    <script>
-        window.addEventListener('DOMContentLoaded', () => {
-            const overlay = document.querySelector('#overlay');
-            const delBtn = document.querySelector('#addEvent-btn');
-            const closeBtn = document.querySelector('#close-modal');
-            const closeBtn2 = document.querySelector('#close-modal2');
-            const toggleModal = () => {
-                overlay.classList.toggle('hidden');
-                overlay.classList.toggle('flex');
-            }
-            delBtn.addEventListener('click', toggleModal);
-            closeBtn.addEventListener('click', toggleModal);
-            closeBtn2.addEventListener('click', toggleModal);
-        });
-    </script>
-
 </x-app-layout>
