@@ -44,7 +44,7 @@ class DatabaseSeeder extends Seeder
             'user_id' => $admin->id,
             'title' => 'Communiqué de presse',
             'slug' => 'communique-de-presse',
-            'img_src' => '/images/Feria_event1.png',
+            'img_src' => '/images/articles/FeriaZoomOut.png',
             'body' =>
             '<h2 class="sm:text-3xl text-2xl title-font font-medium text-gray-900 mt-4 mb-4">La Feria d’Art organise sa première édition !</h2>
                 <p class="leading-relaxed mb-8"><strong>La Feria d’Art entend casser les codes du marché de l’art classique, et ce, en
@@ -87,7 +87,7 @@ class DatabaseSeeder extends Seeder
             'date_end' => '2021-09-19 20:00:00',
             'name' => "FERIA D'ART #1 Marché pluridisciplinaire & alternatif",
             'slug' => 'feria-d-art-01',
-            'img_src' => '/images/Feria_event1.png',
+            'img_src' => '/images/events/Feria_event1.png',
             'description' =>
             "<h3 class='leading-relaxed mb-4'>✨Vous souhaitez découvrir et rencontrer des artistes locaux ? Acquérir une œuvre originale à un prix abordable ? ✨</h2>
                 <p class='leading-relaxed mb-4'><strong>Le See U, plus grande occupation temporaire de Belgique, au cœur des anciennes casernes d’Ixelles, ouvre ses portes à la première édition de la Feria d'Art le 18 et 19 septembre ! 🎉</strong></p>
@@ -124,7 +124,7 @@ class DatabaseSeeder extends Seeder
             'place' => 'See U',
             'address' => 'Rue Fritz Toussaint 8, 1050, Ixelles, Bruxelles',
             'telephone' => '+32494999246',
-            'email' => 'feriadart@gmail.com',
+            'email' => 'contact@feriadart.art',
             'url' => 'http://www.facebook.com/events/695373977721327/',
             'open' => 1,
         ]);
