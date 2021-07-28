@@ -14,6 +14,7 @@
                 <div>
                     {!! $article->body !!}
                 </div>
+                @isset($article->url)
                 <div class="w-full flex flex-wrap items-center pb-4 mt-4 mb-4">
                     <a href="{{ $article->url }}" target="_blank" class="text-indigo-500 inline-flex items-center">{{ __('Learn more') }}
                         <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -22,6 +23,7 @@
                         </svg>
                     </a>
                 </div>
+                @endisset
             </div>
             <div class="w-full flex justify-center items-center order-first lg:order-last">
                 <img src="{{ $article->img_src }}" alt="{{ $article->title }}" />
