@@ -3,6 +3,7 @@
 namespace Database\Factories;
 
 use App\Models\Article;
+use Illuminate\Support\Str;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class ArticleFactory extends Factory
@@ -22,8 +23,7 @@ class ArticleFactory extends Factory
     public function definition()
     {
         $title = $this->faker->sentence(3);
-        $slug = str_replace(' ', '-', strtolower($title));
-        $slug = str_replace('.', '', $slug);
+        $slug = Str::slug($title, '-');
         $body = $this->faker->paragraph(6, true);
         return [
             'title' => $title,

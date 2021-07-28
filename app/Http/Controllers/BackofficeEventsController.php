@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Event;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\File;
@@ -65,7 +66,8 @@ class BackofficeEventsController extends Controller
         $event->date_start = $request->date_start;
         $event->date_end = $request->date_end;
         $event->name = $request->name;
-        $slug = str_replace('.', '', (str_replace(' ', '-', strtolower($request->name))));
+        $name = $event->name;
+        $slug = Str::slug($name, '-');
         $event->slug = $slug;
         $event->description = $request->description;
         $event->inscription_txt = $request->inscription_txt;
@@ -133,20 +135,22 @@ class BackofficeEventsController extends Controller
         $event->date_start = $request->date_start;
         $event->date_end = $request->date_end;
         $event->name = $request->name;
-        $event->slug = str_replace('.', '', (str_replace(' ', '-', strtolower($request->name))));
+        $name = $event->name;
+        $slug = Str::slug($name, '-');
+        $event->slug = $slug;
         if ($request->img) {
             $oldImage = $event->img_src;
             File::delete(public_path($oldImage));
-            $newImage = time() . '-' . $request->title . '.' . $request->img->extension();
+            $newImage = $slug . '-' . rand() . '.' . $request->img->extension();
             $request->img->move(public_path('images/events'), $newImage);
-            $event->img_src = '/images/events/' . $newImage;
+            $event->img_src = "/images/events/" . $newImage;
         }
         if ($request->inscriptionimg) {
             $oldInscriptionImage = $event->inscription_img;
             File::delete(public_path($oldInscriptionImage));
-            $newInscriptionImage = time() . "-inscription" . '-' . $request->title . '.' . $request->inscriptionimg->extension();
+            $newInscriptionImage = $slug . "-inscription" . '-' . rand() . '.' . $request->inscriptionimg->extension();
             $request->inscriptionimg->move(public_path('images/events'), $newInscriptionImage);
-            $event->inscription_img = '/images/events/' . $newInscriptionImage;
+            $event->inscription_img = "/images/events/" . $newInscriptionImage;
         }
         $event->description = $request->description;
         $event->inscription_txt = $request->inscription_txt;

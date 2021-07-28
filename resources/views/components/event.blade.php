@@ -1,4 +1,9 @@
 <section class="container w-full text-gray-600 body-font px-4 py-4 mx-auto overflow-hidden">
+    <div class="text-center mx-auto">
+        <!-- Validation Errors -->
+        <x-auth-validation-errors class="mb-4" :errors="$errors" />
+        <x-success-message class="mb-4" />
+    </div>
     <div class="flex flex-wrap -m-12 grid grid-cols-1 lg:grid-cols-2">
         <div class="p-12 md:w-full flex flex-col items-start order-last lg:order-first">
             <span class="inline-block py-1 px-2 rounded bg-indigo-50 text-indigo-500 text-xs font-medium tracking-widest">{{ \Carbon\Carbon::parse($event->date_start)->isoFormat('D/M/YYYY HH:mm') }} - {{ \Carbon\Carbon::parse($event->date_end)->isoFormat('D/M/YYYY HH:mm') }}</span>
@@ -36,11 +41,6 @@
                 <a href="{{ route('artists', $event) }}" class="sm:mx-4 btn text-lg text-center text-yellow-300 bg-purple-700 hover:bg-purple-500 border-2 border-yellow-300 focus:outline-none rounded py-2 px-6 mb-4">
                     {{ __('View Artists') }}
                 </a>
-            </div>
-            <div class="mx-auto">
-                <!-- Validation Errors -->
-                <x-auth-validation-errors class="mb-4" :errors="$errors" />
-                <x-success-message class="mb-4" />
             </div>
         </div>
         <div class="w-full flex justify-center items-center order-first lg:order-last">

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Article;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\File;
@@ -56,7 +57,8 @@ class BackofficeArticlesController extends Controller
         $article = new Article;
         $article->user_id = Auth::user()->id;
         $article->title = $request->title;
-        $slug = str_replace('.', '', (str_replace(' ', '-', strtolower($request->title)))); // creates a slug for the article url
+        $title = $article->title;
+        $slug = Str::slug($title, '-');
         $article->slug = $slug;
         $article->excerpt = $request->excerpt;
         $article->body = $request->body;
@@ -110,15 +112,17 @@ class BackofficeArticlesController extends Controller
         $article = Article::find($id);
         $article->created_at = $request->created_at;
         $article->title = $request->title;
-        $article->slug = str_replace('.', '', (str_replace(' ', '-', strtolower($request->title))));
+        $title = $article->title;
+        $slug = Str::slug($title, '-');
+        $article->slug = $slug;
         $article->excerpt = $request->excerpt;
         $article->body = $request->body;
         if ($request->img) { // if the user chooses a new picture
             $oldImage = $article->img_src; // gets the old picture path
             File::delete(public_path($oldImage)); // deletes the old picture
-            $newImage = time() . '-' . $request->title . '.' . $request->img->extension(); // renames the new picture
-            $request->img->move(public_path('images/articles'), $newImage); // stores the new picture
-            $article->img_src = '/images/articles/' . $newImage; // stores the new picture path in the DB
+            $newImage = $slug . '-' . rand() . '.' . $request->img->extension(); // renames uploaded picture
+            $request->img->move(public_path('images/articles'), $newImage); // stores the picture
+            $article->img_src = "/images/articles/" . $newImage; // stores the picture path in the DB
         }
         $article->url = $request->url;
         $query = $article->save();

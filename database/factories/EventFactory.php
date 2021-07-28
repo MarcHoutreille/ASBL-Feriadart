@@ -3,6 +3,7 @@
 namespace Database\Factories;
 
 use App\Models\Event;
+use Illuminate\Support\Str;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class EventFactory extends Factory
@@ -22,8 +23,7 @@ class EventFactory extends Factory
     public function definition()
     {
         $name = $this->faker->sentence(3);
-        $slug = str_replace(' ', '-', strtolower($name));
-        $slug = str_replace('.', '', $slug);
+        $slug = Str::slug($name, '-');
         $startDate = $this->faker->dateTimeThisYear();
         $interval = '+ 1 days';
         $endDate = $this->faker->dateTimeInInterval($startDate, $interval);
