@@ -9,7 +9,7 @@ The site has 4 different domain names: feriadart.org, feriadart.fr , feriadart.b
 all of them are redirected to http://feriadart.art/
 
 
-The site was created for a non-profit art promoting association located in Brussels. It was made by WebDev students under the Umbrella of BeCode (campus Bruxelles). The challenge was to create a website for a real client. This partical project created in group started from scratch.
+The site was created for a non-profit art promoting association located in Brussels. It was made by WebDev students under the Umbrella of BeCode (campus Bruxelles). The challenge was to create a website for a real client. This particular project created in group started from scratch.
 
 
 
