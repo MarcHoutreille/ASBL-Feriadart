@@ -1,18 +1,8 @@
 # FERIA D'ART
-[See the actual site](http://feriadart.art/)
-
+[Deployed Test Site](http://asbl-feriadart.herokuapp.com/)
 Group project for the website of a non-profit art promotion association located in Brussels
 
-## FERIA D'ART : 
-
-### HOME
-
-The home page is constructed out of 4 main components:
-
-![Wireframe 1](readme/Artist-component.png)
-
-
-
+## FERIA D'ART : Contenu attendu pour le site
 
 ### ACCUEIL => NEWS => NOUVEL ARTICLE - NOUVEL EVENT
 
