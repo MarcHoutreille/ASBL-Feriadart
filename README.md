@@ -94,6 +94,7 @@ On the gallery-page you will find all the events. If you select a particual even
 The guestbook-page shows all the comments left by people visiting the site. You can leave your personal comment on the wall. Once accepted it will appear as well.
 
 <br>
+
 ### CONTACT page
 
 <br>
@@ -103,7 +104,7 @@ This pages gives you the possibility to interact with the organization. Its a si
 
 ## FOOTER
 
-The footer link to all the pages of the website, and also to the facebook and instagram page. Undeneath you will find the copyrights of the organization plus extra legal info.
+The footer links to all the pages of the website, and also to the facebook and instagram page. Undeneath you will find the copyrights of the organization plus extra legal info.
 In the footer there is a secret link incorporated to have acces to the backoffice of the site.
 <br>
 
