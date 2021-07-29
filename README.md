@@ -6,18 +6,18 @@
 [See the actual site!](http://feriadart.art/)
 
 The site has 4 different domain names: feriadart.org, feriadart.fr , feriadart.be and feriadart.art
-all of them are directed to (http://feriadart.art/)
+all of them are redirected to http://feriadart.art/
 
 
 Group project for the website of a non-profit art promotion association located in Brussels
 
 
-## HOME page
+## HOME
 
-The home page is constructed out of 4 main components:
+The homepage is constructed out of 4 main components:
 
-1. The artist-component gives a picture (work of an artist) plus info about a random artist who is/was subscribed to an event (everytime you reload the page another artist will appear). 
-You can click the button 'view more' then you will be directed to the artistspage where you can get more info and see more pictures.
+1. The artist-component gives a picture (work of an artist) plus informations about a random artist who is/was subscribed to an event (everytime you reload the page another artist will appear). 
+You can click the button 'view more', you will be redirected to the artistspage where you can get more info and see more pictures from that artist.
 
 
 <br>
@@ -29,7 +29,7 @@ You can click the button 'view more' then you will be directed to the artistspag
 
 
 2. The second section gives info about the upcoming event with a picture of the poster of the event. If you click the button 'Learn More' you can get more info about that event.
-When the event is open to subsription you can subscribe, meaning creating an artistpage, give more info about yourself and upload up to 5 pictures for your personal artistpage.
+When the event is open to subsription you can subscribe, meaning create an artistpage, give more info about yourself as an artist and upload up to 5 pictures for your personal artistpage.
 On the eventpage there is also a button 'view artist' where you can have a look at all the artist who are already subscribed to that particular event. 
 
 
@@ -41,7 +41,7 @@ On the eventpage there is also a button 'view artist' where you can have a look 
 <br>
 
 
-3. The 'Next Events'-section links to event coming up in the future, with also the possibility to see the artists subsribed to that event.
+3. The 'Next Events'-section links to events coming up in the future, with also the possibility to see the artists subsribed to that event.
 
 <br>
 
@@ -50,7 +50,7 @@ On the eventpage there is also a button 'view artist' where you can have a look 
 <br>
 
 
-4. The last section shows collection of links to published articles.
+4. The last section shows a collection of links to published articles.
 
 <br>
 
@@ -79,7 +79,7 @@ They each have a card with link to there personal facebook, website, instagram a
 
 ## EVENTS page
 
-Link to all the events. See above for more information about the buttons and functionalities.
+Link to all the events, see above for more information about the buttons and functionalities.
 
 <br>
 
@@ -100,7 +100,7 @@ The guestbook-page shows all the comments left by people visiting the site. You 
 ## CONTACT page
 
 <br>
-This pages gives you the possibility to interact with the organization. Its a simple contact form that you will need to fill in to get in contact wit Feria d'Art.
+This pages gives you the possibility to interact with the organization. Its a simple contact form that you will need to fill in to get in contact with Feria d'Art.
 
 <br>
 
