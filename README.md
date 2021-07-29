@@ -10,7 +10,7 @@
 Group project for the website of a non-profit art promotion association located in Brussels
 
 
-### HOME page
+## HOME page
 
 The home page is constructed out of 4 main components:
 
@@ -67,7 +67,7 @@ Interesting fact! In the header there is a button that you can click to change t
 <br>
 
 
-### ABOUT page
+## ABOUT page
 
 On the about page you cannot only find more text about the organization, you can also see the people currently working for the organization.
 They each have a card with link to there personal facebook, website, instagram account or mail-address.
@@ -75,34 +75,40 @@ They each have a card with link to there personal facebook, website, instagram a
 <br>
 
 
-### EVENTS page
+## EVENTS page
 
 Link to all the events. See above for more information about the buttons and functionalities.
 
 <br>
 
-### GALLERY page
+## GALLERY page
 
 On the gallery-page you will find all the events. If you select a particual event you can have a look at all the pictures from that event.
 
 <br>
 
 
-### GUESTBOOK page
+## GUESTBOOK page
 
+<br>
 The guestbook-page shows all the comments left by people visiting the site. You can leave your personal comment on the wall. Once accepted it will appear as well.
 
-
+<br>
 ### CONTACT page
 
+<br>
 This pages gives you the possibility to interact with the organization. Its a simple contact form that you will need to fill in to get in contact wit Feria d'Art.
 
-### FOOTER
+<br>
+
+## FOOTER
 
 The footer link to all the pages of the website, and also to the facebook and instagram page. Undeneath you will find the copyrights of the organization plus extra legal info.
 In the footer there is a secret link incorporated to have acces to the backoffice of the site.
 <br>
+
 ![Wirefram 2](readme/footer.png)
+
 <br>
 <br>
 
