@@ -1,7 +1,11 @@
-# FERIA D'ART
+#  FERIA D'ART 
+
+
+<img src="readme/FeriaLogoGeel.png" width="120" height="120">
+
 [See the actual site](http://feriadart.art/)
 
-<img src="readme/FeriaLogoGeel.png" width="100" height="100">
+
 
 Group project for the website of a non-profit art promotion association located in Brussels
 
@@ -11,8 +15,17 @@ Group project for the website of a non-profit art promotion association located 
 
 The home page is constructed out of 4 main components:
 
-1. The artist-component gives a pictures plus info from a random artist who was subscribed to an event (everytime you reload the page anther artist will appear)
+1. The artist-component gives a pictures plus info about a random artist who was subscribed to an event (everytime you reload the page another artist will appear). 
+You can click the button 'view more' then you will be directed to the artistspage where you can see more info and more pictures.
+
 ![Wireframe 1](readme/Artist-component.png)
+
+
+2. The second section gives info about the upcoming event with a picture of the poster of the event. If you click the button 'Learn More' you can get more info about that event.
+When the event is open to subsription you can subscribe, meaning creating an artistpage, give more info about yourself and upload up to 5 pictures for your personal artistpage.
+On the eventpage there is also a button 'view artist' where you can have a look at all the artist who are already subscribed to that particular event. 
+
+![Wirefram 2](readme/event-component.png)
 
 
 
