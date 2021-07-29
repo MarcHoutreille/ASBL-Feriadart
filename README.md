@@ -130,7 +130,7 @@ In the footer there is a secret link incorporated to have acces to the backoffic
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
-## How to install in your computer through Linux Terminal
+# How to install in your computer through Linux Terminal
 1. clone the repo to your computer
 2. $ cd ASBL-Feriadart
 3. $ composer install
@@ -139,7 +139,21 @@ In the footer there is a secret link incorporated to have acces to the backoffic
 6. $ php artisan key:generate
 7. $ php artisan serve
 
+# Other
+
+Switching between different languages was made simple by https://github.com/Laravel-Lang/lang/tree/master/locales
+
+The translation button was implemented thanks to https://5balloons.info/localization-laravel-multi-language-language-switcher/
+ 
+ <br>
+
 ## Tailwind
 
 The front-end part of the site is made with Tailwind in combination with some JavaScript. 
 For the gallery we used Glide.js to create a carousel. 
+
+<br>
+
+## Extra
+
+ To create an icon appearing in the url of the site we used  http://favicon.io/
