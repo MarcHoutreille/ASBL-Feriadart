@@ -24,7 +24,7 @@
     <!-- FRONTPAGE HEADER MENU -->
     <x-header />
     <!-- FRONTPAGE SECTION CONTENT -->
-    <main class="relative flex items-top justify-center text-gray-900 bg-gradient-to-r from-yellow-100 to-white sm:items-center py-4 sm:pt-0">
+    <main class="relative flex items-top justify-center text-gray-900 bg-white sm:items-center py-4 sm:pt-0">
         {{ $slot }}
     </main>
     <!-- FOOTER -->

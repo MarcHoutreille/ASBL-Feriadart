@@ -65,7 +65,7 @@
         </div>
     </div>
     <!-- FOOTER COPYRIGHT AND EXTRA INFO -->
-    <div class="bg-gradient-to-b from-yellow-100 to-white flex border-t-4 border-yellow-300 items-center justify-center p-4">
+    <div class="bg-white flex border-t-4 border-yellow-300 items-center justify-center p-4">
         <!-- SECRET BACKOFFICE ICON -->
         <div class="px-auto my-auto">
             <svg id="secret" width="20.000000pt" height="20.000000pt" viewBox="0 0 30.000000 30.000000" preserveAspectRatio="xMidYMid meet">

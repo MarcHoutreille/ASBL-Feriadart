@@ -21,7 +21,7 @@
     <!-- BACKOFFICE HEADER MENU -->
     <x-navigation />
     <!-- BACKOFFICE SECTION CONTENT -->
-    <main class="relative flex items-top justify-center text-gray-900 bg-gradient-to-r from-yellow-100 via-white to-yellow-100 sm:items-center py-4 sm:pt-0">
+    <main class="relative flex items-top justify-center text-gray-900 bg-white sm:items-center py-4 sm:pt-0">
         {{ $slot }}
     </main>
     <!-- FOOTER -->
