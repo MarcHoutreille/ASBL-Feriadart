@@ -16,8 +16,8 @@ Group project for the website of a non-profit art promotion association located 
 
 The homepage is constructed out of 4 main components:
 
-1. The artist-component gives a picture (work of an artist) plus informations about a random artist who is/was subscribed to an event (everytime you reload the page another artist will appear). 
-You can click the button 'view more', you will be redirected to the artistspage where you can get more info and see more pictures from that artist.
+1. The artist-component gives a picture (work of an artist) plus informations about a random artist who is subscribed to an event (everytime you reload the page another artist will appear). 
+When you click the button 'view more', you will be redirected to the artistspage where you can get more info and see more pictures with work of that artist.
 
 
 <br>
@@ -30,7 +30,7 @@ You can click the button 'view more', you will be redirected to the artistspage 
 
 2. The second section gives info about the upcoming event with a picture of the poster of the event. If you click the button 'Learn More' you can get more info about that event.
 When the event is open to subsription you can subscribe, meaning create an artistpage, give more info about yourself as an artist and upload up to 5 pictures for your personal artistpage.
-On the eventpage there is also a button 'view artist' where you can have a look at all the artist who are already subscribed to that particular event. 
+On the eventpage there is also a button 'view artists' where you can have a look at all the artists who are already subscribed to that particular event. 
 
 
 <br>
@@ -72,14 +72,14 @@ Interesting fact! In the header there is a button that you can click to change t
 ## ABOUT page
 
 On the about page you cannot only find more text about the organization, you can also see the people currently working for the organization.
-They each have a card with link to there personal facebook, website, instagram account or mail-address.
+They each have a card with links to their personal facebook, website, instagram account or mail-address.
 
 <br>
 
 
 ## EVENTS page
 
-Link to all the events, see above for more information about the buttons and functionalities.
+Links to all the events, see above for more information about the buttons and functionalities.
 
 <br>
 
@@ -106,7 +106,7 @@ This pages gives you the possibility to interact with the organization. Its a si
 
 ## FOOTER
 
-The footer links to all the pages of the website, and also to the facebook and instagram page. Undeneath you will find the copyrights of the organization plus extra legal info.
+The footer links to all the pages of the website, and also to the facebook and instagram page. Undeneath you will find the copyrights of the organization plus legal info.
 In the footer there is a secret link incorporated to have acces to the backoffice of the site.
 <br>
 
