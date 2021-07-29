@@ -34,7 +34,7 @@
         @endif
         <!-- NEXT EVENTS -->
         @if ($events)
-        <div class="container w-full p-4 mx-auto border-b-2 border-white">
+        <div class="container w-full p-4 mx-auto border-b-2 border-yellow-300">
             <h2 class="font-mono title-font font-medium sm:text-4xl text-3xl uppercase text-purple-700">{{ __('Next Events') }}</h2>
             <a href="{{ route('events') }}" class="text-indigo-500 inline-flex items-center">{{ __('See all') }}
                 <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
