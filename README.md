@@ -95,7 +95,7 @@ The guestbook-page shows all the comments left by people visiting the site. You 
 
 <br>
 
-### CONTACT page
+## CONTACT page
 
 <br>
 This pages gives you the possibility to interact with the organization. Its a simple contact form that you will need to fill in to get in contact wit Feria d'Art.
@@ -114,7 +114,7 @@ In the footer there is a secret link incorporated to have acces to the backoffic
 <br>
 
 
-### Laravel section
+## Laravel section
 
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
 
