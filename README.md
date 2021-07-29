@@ -9,6 +9,7 @@ all of them are redirected to https://feriadart.art/
 
 The site was created for a non-profit art promoting association located in Brussels. It was made by 4 WebDev students of BeCode (campus Bruxelles). The challenge was to create a website for a real client. This particular project created in group started from scratch.
 
+|----|----|----|----|
 | [Christian Jadot](https://github.com/ChristianJadot) | [Marc Houtreille](https://github.com/MarcHoutreille) | [Robbert Klockaerts](https://github.com/robbertklockaerts) | [Marcelo Romero-Cors](https://github.com/luisromeroaraya) |
 
 <img src="readme/BecodeLogo.png" width="120" height="120">
