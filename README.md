@@ -1,6 +1,8 @@
 # FERIA D'ART
 [See the actual site](http://feriadart.art/)
 
+<img src="https://readme/FeriaLogoGeel" width="100" height="100">
+
 Group project for the website of a non-profit art promotion association located in Brussels
 
 ## FERIA D'ART : 
@@ -9,7 +11,9 @@ Group project for the website of a non-profit art promotion association located 
 
 The home page is constructed out of 4 main components:
 
+1. The artist-component gives a pictures plus info from a random artist who was subscribed to an event (everytime you reload the page anther artist will appear)
 ![Wireframe 1](readme/Artist-component.png)
+
 
 
 
