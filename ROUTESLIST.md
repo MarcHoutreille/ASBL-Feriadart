@@ -20,13 +20,6 @@
 |        | PUT|PATCH | backoffice/articles/{article}              | articles.update      | App\Http\Controllers\BackofficeArticlesController@update                | web          |
 |        | DELETE    | backoffice/articles/{article}              | articles.destroy     | App\Http\Controllers\BackofficeArticlesController@destroy               | web          |
 |        | GET|HEAD  | backoffice/articles/{article}/edit         | articles.edit        | App\Http\Controllers\BackofficeArticlesController@edit                  | web          |
-|        | GET|HEAD  | backoffice/artists                         | artists.index        | App\Http\Controllers\BackofficeArtistsController@index                  | web          |
-|        | POST      | backoffice/artists                         | artists.store        | App\Http\Controllers\BackofficeArtistsController@store                  | web          |
-|        | GET|HEAD  | backoffice/artists/create                  | artists.create       | App\Http\Controllers\BackofficeArtistsController@create                 | web          |
-|        | GET|HEAD  | backoffice/artists/{artist}                | artists.show         | App\Http\Controllers\BackofficeArtistsController@show                   | web          |
-|        | PUT|PATCH | backoffice/artists/{artist}                | artists.update       | App\Http\Controllers\BackofficeArtistsController@update                 | web          |
-|        | DELETE    | backoffice/artists/{artist}                | artists.destroy      | App\Http\Controllers\BackofficeArtistsController@destroy                | web          |
-|        | GET|HEAD  | backoffice/artists/{artist}/edit           | artists.edit         | App\Http\Controllers\BackofficeArtistsController@edit                   | web          |
 |        | GET|HEAD  | backoffice/contact                         | contact.index        | App\Http\Controllers\BackofficeContactController@index                  | web          |
 |        | POST      | backoffice/contact                         | contact.store        | App\Http\Controllers\BackofficeContactController@store                  | web          |
 |        | GET|HEAD  | backoffice/contact/create                  | contact.create       | App\Http\Controllers\BackofficeContactController@create                 | web          |
@@ -62,6 +55,13 @@
 |        | PUT|PATCH | backoffice/inscriptions/{inscription}      | inscriptions.update  | App\Http\Controllers\BackofficeInscriptionsController@update            | web          |
 |        | DELETE    | backoffice/inscriptions/{inscription}      | inscriptions.destroy | App\Http\Controllers\BackofficeInscriptionsController@destroy           | web          |
 |        | GET|HEAD  | backoffice/inscriptions/{inscription}/edit | inscriptions.edit    | App\Http\Controllers\BackofficeInscriptionsController@edit              | web          |
+|        | GET|HEAD  | backoffice/members                         | members.index        | App\Http\Controllers\BackofficeMembersController@index                  | web          |
+|        | POST      | backoffice/members                         | members.store        | App\Http\Controllers\BackofficeMembersController@store                  | web          |
+|        | GET|HEAD  | backoffice/members/create                  | members.create       | App\Http\Controllers\BackofficeMembersController@create                 | web          |
+|        | GET|HEAD  | backoffice/members/{member}                | members.show         | App\Http\Controllers\BackofficeMembersController@show                   | web          |
+|        | PUT|PATCH | backoffice/members/{member}                | members.update       | App\Http\Controllers\BackofficeMembersController@update                 | web          |
+|        | DELETE    | backoffice/members/{member}                | members.destroy      | App\Http\Controllers\BackofficeMembersController@destroy                | web          |
+|        | GET|HEAD  | backoffice/members/{member}/edit           | members.edit         | App\Http\Controllers\BackofficeMembersController@edit                   | web          |
 |        | GET|HEAD  | confirm-password                           | password.confirm     | App\Http\Controllers\Auth\ConfirmablePasswordController@show            | web          |
 |        |           |                                            |                      |                                                                         | auth         |
 |        | POST      | confirm-password                           |                      | App\Http\Controllers\Auth\ConfirmablePasswordController@store           | web          |
@@ -77,6 +77,7 @@
 |        | POST      | forgot-password                            | password.email       | App\Http\Controllers\Auth\PasswordResetLinkController@store             | web          |
 |        |           |                                            |                      |                                                                         | guest        |
 |        | GET|HEAD  | gallery                                    | gallery              | App\Http\Controllers\GalleryController@index                            | web          |
+|        | GET|HEAD  | gallery/{event}                            | gallery.show         | App\Http\Controllers\GalleryController@show                             | web          |
 |        | GET|HEAD  | guestbook                                  | guestbook            | App\Http\Controllers\GuestbookController@index                          | web          |
 |        | GET|HEAD  | lang/{lang}                                | lang.switch          | App\Http\Controllers\LanguageController@switchLang                      | web          |
 |        | GET|HEAD  | login                                      | login                | App\Http\Controllers\Auth\AuthenticatedSessionController@create         | web          |
@@ -85,10 +86,6 @@
 |        |           |                                            |                      |                                                                         | guest        |
 |        | POST      | logout                                     | logout               | App\Http\Controllers\Auth\AuthenticatedSessionController@destroy        | web          |
 |        |           |                                            |                      |                                                                         | auth         |
-|        | GET|HEAD  | register                                   | register             | App\Http\Controllers\Auth\RegisteredUserController@create               | web          |
-|        |           |                                            |                      |                                                                         | guest        |
-|        | POST      | register                                   |                      | App\Http\Controllers\Auth\RegisteredUserController@store                | web          |
-|        |           |                                            |                      |                                                                         | guest        |
 |        | POST      | reset-password                             | password.update      | App\Http\Controllers\Auth\NewPasswordController@store                   | web          |
 |        |           |                                            |                      |                                                                         | guest        |
 |        | GET|HEAD  | reset-password/{token}                     | password.reset       | App\Http\Controllers\Auth\NewPasswordController@create                  | web          |
