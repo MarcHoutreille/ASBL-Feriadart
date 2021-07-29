@@ -2,7 +2,7 @@
     <section class="text-gray-600 body-font overflow-hidden">
         <!-- FEATURED ARTIST -->
         @if ($artist)
-        <div class="container w-full flex flex-col md:flex-row p-4 mx-auto border-b-2 border-white">
+        <div class="container w-full flex flex-col md:flex-row p-4 mx-auto border-b-2 border-yellow-300">
             <div class="w-full md:p-4 overflow-hidden">
                 <img alt="content" class="rounded-lg object-cover object-center w-full" src="{{ $artist->img_01 }}">
             </div>
@@ -18,7 +18,7 @@
         @endif
         <!-- FEATURED EVENT -->
         @if ($event)
-        <div class="container w-full flex flex-col md:flex-row p-4 mx-auto border-b-2 border-white">
+        <div class="container w-full flex flex-col md:flex-row p-4 mx-auto border-b-2 border-yellow-300">
             <div class="w-full flex flex-col items-center justify-center text-center md:text-left md:p-8">
                 <h2 class="md:text-4xl text-3xl mb-4 text-purple-700 uppercase font-mono">{{ __('Call to artists') }}</h2>
                 <h3 class="font-medium title-font mb-4 text-purple-700 text-lg">{{ __('Professional or amateur artist') }} ?</h3>
