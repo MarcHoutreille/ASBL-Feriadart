@@ -1,7 +1,7 @@
 # FERIA D'ART
 [See the actual site](http://feriadart.art/)
 
-<img src="https://readme/FeriaLogoGeel" width="100" height="100">
+<img src="https://readme/FeriaLogoGeel.png" width="100" height="100">
 
 Group project for the website of a non-profit art promotion association located in Brussels
 
