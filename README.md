@@ -7,7 +7,9 @@
 The site has 4 different domain names: feriadart.org, feriadart.fr , feriadart.be and feriadart.art
 all of them are redirected to https://feriadart.art/
 
-The site was created for a non-profit art promoting association located in Brussels. It was made by WebDev students under the Umbrella of BeCode (campus Bruxelles). The challenge was to create a website for a real client. This particular project created in group started from scratch.
+The site was created for a non-profit art promoting association located in Brussels. It was made by 4 WebDev students of BeCode (campus Bruxelles). The challenge was to create a website for a real client. This particular project created in group started from scratch.
+
+| [Christian Jadot](https://github.com/ChristianJadot) | [Marc Houtreille](https://github.com/MarcHoutreille) | [Robbert Klockaerts](https://github.com/robbertklockaerts) | [Marcelo Romero-Cors](https://github.com/luisromeroaraya)
 
 <img src="readme/BecodeLogo.png" width="120" height="120">
 
@@ -42,6 +44,10 @@ The "Logo" button at the left takes you "Home" and the language drop-down button
 
 ![Language Menu](readme/frontpage-language.png)
 
+The menu is also responsive:
+
+![Frontpage Menu](readme/frontpage-hamburger.png)
+
 ### HOME
 
 The "Home" section is separated in 4 main components:
@@ -64,58 +70,62 @@ The "Home" section is separated in 4 main components:
 
 ### ABOUT page
 
-On the about page you can find info about the organization and the Members currently participating in it.
+On the "About" page you can find info about the organization and the Members currently participating in it.
 They each have a card with personal info and links to their personal websites.
 
 ![About Section](readme/frontpage-about-section.png)
 
 ### EVENTS page
 
-Here you will fin links to all present and past Events and if you click on any Event you can get to 3 more sub-sections: Event page, View Artists page and Artist page.
+Here you will find links to all present and past Events ordered by theirs "date_start" value from newest to oldest. If you click on any Event you can get to see 3 more sub-sections: Event page, View Artists page and Artist page.
 
 ![Events Section](readme/frontpage-events-section.png)
 
-#### Event page
+#### Event sub section
 
+The event page contains all the info of the Event and 2 buttons: "Inscription" and "View Artists". The "Inscription" button is only available if the Event has an inscription "Status" of "Open". If the button is available and you click on it you will see a form demanding all the info they need for your inscription. When the Artist sends the form it has to wait for the Admin to accept its inscription.
 
-#### View Artists page
+![Event Subsection](readme/frontpage-event-subsection.png)
 
- there is also a button 'view artists' where you can have a look at all the artists who are already subscribed to that particular event. 
+#### View Artists sub section
 
-#### Artist page
+If you click on the "View Artists" button you can have a look at all the artists who are already accepted to that specific Event. 
+
+![View Artists Subsection](readme/frontpage-artists-subsection.png)
+
+#### Artist sub section
+
+If you click on an "Artist" card you will see a personal page with more info and a small carousel with up to 5 pictures. We used [Glide.js](https://glidejs.com/) to create this carousel. 
+
+![Artist Subsection](readme/frontpage-artist-subsection.png)
+
 ### GALLERY page
 
-On the gallery-page you will find all the events. If you select a particular event you can have a look at all the pictures from that event.
+On the "Gallery" page you will find a list of all present and future Events ordered by theirs "date_start" value from newest to oldest.
 
-We used [Glide.js](https://glidejs.com/) to create the gallery carousel. 
+![Gallery Section](readme/frontpage-gallery-section.png)
 
-<br>
+If you click over an Event you can have a look at all the Pictures that have been uploaded for that Event. We used [Glide.js](https://glidejs.com/) to create the Event Gallery carousel. 
 
+![Gallery Subsection](readme/frontpage-gallery-subsection.png)
 
 ### GUESTBOOK page
 
-<br>
-The guestbook-page shows all the comments left by people visiting the site. You can leave your personal comment on the wall. Once accepted it will appear as well.
+The "Guestbook" page shows all the comments left by people visiting the site. You can leave your personal comment on the wall. Once accepted by the Admin it will appear as well.
 
-<br>
+![Guestbook Section](readme/frontpage-guestbook-section.png)
 
 ### CONTACT page
 
-<br>
-This pages gives you the possibility to interact with the organization. Its a simple contact form that you will need to fill in to get in contact with Feria d'Art.
+This page gives you the possibility to interact with the organization. It's a simple contact form that you will need to fill in to get in touch with Feria d'Art.
 
-<br>
+![Contact Section](readme/frontpage-contact-section.png)
 
 ### FOOTER
 
-The footer links to all the pages of the website, and also to the facebook and instagram page. Undeneath you will find the copyrights of the organization plus legal info.
-In the footer there is a secret link incorporated to have acces to the backoffice of the site.
-<br>
+The "Footer" has links to all the sections of the frontpage as well as social media links. At the bottom you will find some legal and contact info.
 
-![Wirefram 2](readme/footer.png)
-
-<br>
-<br>
+![Footer](readme/frontpage-footer.png)
 
 ## BACKOFFICE
 
