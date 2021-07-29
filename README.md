@@ -3,7 +3,7 @@
 
 <img src="readme/FeriaLogoGeel.png" width="120" height="120">
 
-[See the actual site](http://feriadart.art/)
+[See the actual site!](http://feriadart.art/)
 
 
 
@@ -18,6 +18,8 @@ The home page is constructed out of 4 main components:
 1. The artist-component gives a pictures plus info about a random artist who was subscribed to an event (everytime you reload the page another artist will appear). 
 You can click the button 'view more' then you will be directed to the artistspage where you can see more info and more pictures.
 
+
+
 ![Wireframe 1](readme/Artist-component.png)
 
 
@@ -25,8 +27,21 @@ You can click the button 'view more' then you will be directed to the artistspag
 When the event is open to subsription you can subscribe, meaning creating an artistpage, give more info about yourself and upload up to 5 pictures for your personal artistpage.
 On the eventpage there is also a button 'view artist' where you can have a look at all the artist who are already subscribed to that particular event. 
 
+
+
 ![Wirefram 2](readme/event-component.png)
 
+
+3. The 'Next Events'-section links to event coming up in the future, with also the possibility to see the artists subsribed to that event.
+
+
+![Wirefram 2](readme/nextevent-component.png)
+
+
+4. The last section shows collection of links to published articles.
+
+
+![Wirefram 2](readme/articles-component.png)
 
 
 
