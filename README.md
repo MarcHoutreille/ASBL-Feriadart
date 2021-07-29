@@ -222,7 +222,7 @@ In the "Members" section, the admin can manage the Member elements. Members are 
 
     - You can create a new Member of the team that will be added to the "About" section in the Frontpage. All fields are required except for the url links. The picture will be also copied to the public "/images/members" folder and it has a size limit of 5MB. 
 
-![Backoffice Add Member](readme/backoffice-members-add-01.png)
+![Backoffice Add Member](readme/backoffice-members-add.png)
 
     - You can edit existing Members content.
 
