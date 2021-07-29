@@ -5,6 +5,8 @@
 
 [See the actual site!](http://feriadart.art/)
 
+The site has 4 different domain names: feriadart.org, feriadart.fr and feriadart.be to feriadart.art
+all of them are directed to (http://feriadart.art/)
 
 
 Group project for the website of a non-profit art promotion association located in Brussels
