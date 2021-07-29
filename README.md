@@ -9,8 +9,11 @@ The site has 4 different domain names: feriadart.org, feriadart.fr , feriadart.b
 all of them are redirected to http://feriadart.art/
 
 
-Group project for the website of a non-profit art promotion association located in Brussels
+The site was created for a non-profit art promoting association located in Brussels. It was made by WebDev students under the Umbrella of BeCode (campus Bruxelles). The challenge was to create a website for a real client. This partical project created in group started from scratch.
 
+
+
+<img src="readme/BecodeLogo.png" width="120" height="120">
 
 ## HOME
 
@@ -136,3 +139,7 @@ In the footer there is a secret link incorporated to have acces to the backoffic
 6. $ php artisan key:generate
 7. $ php artisan serve
 
+## Tailwind
+
+The front-end part of the site is made with Tailwind in combination with some JavaScript. 
+For the gallery we used Glide.js to create a carousel. 
