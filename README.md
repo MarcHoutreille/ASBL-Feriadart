@@ -50,10 +50,21 @@ On the eventpage there is also a button 'view artist' where you can have a look 
 
 4. The last section shows collection of links to published articles.
 
+<br>
 
 ![Wirefram 2](readme/articles-component.png)
 
+<br>
+<br>
 
+Interesting fact! In the header there is a button that you can click to change the language of the site!
+
+<br>
+
+![Wirefram 2](readme/languagebutton.png)
+
+<br>
+<br>
 
 
 ### ACCUEIL => NEWS => NOUVEL ARTICLE - NOUVEL EVENT
