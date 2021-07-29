@@ -10,12 +10,12 @@
 Group project for the website of a non-profit art promotion association located in Brussels
 
 
-### HOME page
+## HOME page
 
 The home page is constructed out of 4 main components:
 
-1. The artist-component gives a pictures plus info about a random artist who was subscribed to an event (everytime you reload the page another artist will appear). 
-You can click the button 'view more' then you will be directed to the artistspage where you can see more info and more pictures.
+1. The artist-component gives a picture (work of an artist) plus info about a random artist who is/was subscribed to an event (everytime you reload the page another artist will appear). 
+You can click the button 'view more' then you will be directed to the artistspage where you can get more info and see more pictures.
 
 
 <br>
@@ -67,35 +67,53 @@ Interesting fact! In the header there is a button that you can click to change t
 <br>
 
 
-### ACCUEIL => NEWS => NOUVEL ARTICLE - NOUVEL EVENT
+## ABOUT page
 
-La page d'accueil sera une page d'actualité.
-Elles souhaitent un style **professionel mais festif**
+On the about page you cannot only find more text about the organization, you can also see the people currently working for the organization.
+They each have a card with link to there personal facebook, website, instagram account or mail-address.
 
-### QUI SOMMES-NOUS 
+<br>
 
-Qui Sommes Nous ? Se réfère au projet principalement
 
-### ARTICLES
+## EVENTS page
 
-### EVENEMENTS / EDITIONS => INSCRIPTION
+Link to all the events. See above for more information about the buttons and functionalities.
 
-### GALERIES => VIDEOS / PHOTOS
+<br>
 
-### LIVRE D'OR
+## GALLERY page
 
-### CONTACT
+On the gallery-page you will find all the events. If you select a particual event you can have a look at all the pictures from that event.
 
-### LINK SOCIAL NETWORK / PARTNERS
+<br>
 
-### BACK OFFICE => + DB pour LIVRE D'OR
 
-Il ne sera pas possible de faire un livre d'or avec des images que les utilisateurs peuvent dessiner, comme demandé par le client. Utilisation trop importante de données.
+## GUESTBOOK page
 
-Le logo reste d'actualité, les couleur jaune et mauve peuvent être présentent sur le site, voir où, comment...
-Le style des années 1990 (décennie de la naissance de chacune des collaboratrices) peut être une idée pour le design du site, voir ce que ça peut donner
+<br>
+The guestbook-page shows all the comments left by people visiting the site. You can leave your personal comment on the wall. Once accepted it will appear as well.
 
-Association créée en Janvier 2020
+<br>
+### CONTACT page
+
+<br>
+This pages gives you the possibility to interact with the organization. Its a simple contact form that you will need to fill in to get in contact wit Feria d'Art.
+
+<br>
+
+## FOOTER
+
+The footer link to all the pages of the website, and also to the facebook and instagram page. Undeneath you will find the copyrights of the organization plus extra legal info.
+In the footer there is a secret link incorporated to have acces to the backoffice of the site.
+<br>
+
+![Wirefram 2](readme/footer.png)
+
+<br>
+<br>
+
+
+### Laravel section
 
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
 
