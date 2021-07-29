@@ -5,7 +5,7 @@
 
 [See the actual site!](http://feriadart.art/)
 
-The site has 4 different domain names: feriadart.org, feriadart.fr and feriadart.be to feriadart.art
+The site has 4 different domain names: feriadart.org, feriadart.fr , feriadart.be and feriadart.art
 all of them are directed to (http://feriadart.art/)
 
 
