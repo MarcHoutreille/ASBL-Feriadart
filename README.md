@@ -101,7 +101,7 @@ If you click on an "Artist" card you will see a personal page with more info and
 
 ### GALLERY page
 
-On the "Gallery" page you will find a list of all present and future Events ordered by theirs "date_start" value from newest to oldest.
+On the "Gallery" page you will find a list of all present and future Events ordered by theirs "date_start" value from newest to oldest. Only Events with at least 1 picture will be shown.
 
 ![Gallery Section](readme/frontpage-gallery-section.png)
 

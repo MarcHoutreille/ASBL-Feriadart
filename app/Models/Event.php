@@ -32,6 +32,11 @@ class Event extends Model
         return $this->belongsTo(User::class);
     }
 
+    public function file()
+    {
+        return $this->hasMany(File::class);
+    }
+
     public function scopeFilter($query, array $filters)
     {
         $query->when($filters['search'] ?? false, function ($query, $search) {
