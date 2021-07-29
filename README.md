@@ -9,9 +9,8 @@
 
 Group project for the website of a non-profit art promotion association located in Brussels
 
-## FERIA D'ART : 
 
-### HOME
+### HOME page
 
 The home page is constructed out of 4 main components:
 
@@ -19,8 +18,12 @@ The home page is constructed out of 4 main components:
 You can click the button 'view more' then you will be directed to the artistspage where you can see more info and more pictures.
 
 
+<br>
+
 
 ![Wireframe 1](readme/Artist-component.png)
+<br>
+<br>
 
 
 2. The second section gives info about the upcoming event with a picture of the poster of the event. If you click the button 'Learn More' you can get more info about that event.
@@ -28,14 +31,21 @@ When the event is open to subsription you can subscribe, meaning creating an art
 On the eventpage there is also a button 'view artist' where you can have a look at all the artist who are already subscribed to that particular event. 
 
 
+<br>
+
 
 ![Wirefram 2](readme/event-component.png)
+<br>
+<br>
 
 
 3. The 'Next Events'-section links to event coming up in the future, with also the possibility to see the artists subsribed to that event.
 
+<br>
 
 ![Wirefram 2](readme/nextevent-component.png)
+<br>
+<br>
 
 
 4. The last section shows collection of links to published articles.
