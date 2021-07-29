@@ -1,0 +1,1 @@
+<img class="h-20 w-20 rounded-full" src="{{asset('images/FeriaLogoWhite.png')}}" alt="Logo">
