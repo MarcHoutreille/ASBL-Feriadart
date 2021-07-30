@@ -101,11 +101,11 @@ If you click on an "Artist" card you will see a personal page with more info and
 
 ### GALLERY page
 
-On the "Gallery" page you will find a list of all present and future Events ordered by theirs "date_start" value from newest to oldest. Only Events with at least 1 picture will be shown.
+On the "Gallery" page you will find a list of all present and future Events ordered by theirs "date_start" value from newest to oldest. Only Events with at least 1 Image or Video will be shown.
 
 ![Gallery Section](readme/frontpage-gallery-section.png)
 
-If you click over an Event you can have a look at all the Pictures that have been uploaded for that Event. We used [Glide.js](https://glidejs.com/) to create the Event Gallery carousel. 
+If you click over an Event you can have a look at all the Files that have been uploaded for that Event. The gallery can show JPG/PNG Images or Videos from Youtube/Vimeo. We used [Glide.js](https://glidejs.com/) to create the Event Gallery carousel. 
 
 ![Gallery Subsection](readme/frontpage-gallery-subsection.png)
 
@@ -141,13 +141,13 @@ Then you will enter the backoffice panel which is composed of 8 sections and 2 c
 
 ![Backoffice Menu](readme/backoffice-menu.png)
 
-### BACKOFFICE (WELCOME) page
+### BACKOFFICE - WELCOME page
 
 For the moment, the "Backoffice" section only shows you a welcome message but we could add some other functionalities in the future such as the option to change the current password.
 
 ![Backoffice Welcome](readme/backoffice-section.png)
 
-### ARTICLES page
+### BACKOFFICE - ARTICLES page
 
 In the "Articles" section, the admin can manage the Article elements. Articles are shown according to the "created_at" value from newest to oldest.
 
@@ -165,7 +165,7 @@ In the "Articles" section, the admin can manage the Article elements. Articles a
 
 ![Backoffice Delete Article](readme/backoffice-articles-delete.png)
 
-### EVENTS page
+### BACKOFFICE - EVENTS page
 
 In the "Events" section, the admin can manage the Event elements. Events are shown according to the "date_start" value from newest to oldest.
 
@@ -183,7 +183,7 @@ In the "Events" section, the admin can manage the Event elements. Events are sho
 
 - You can delete existing Events. A confirm message will pop-up when you hit the "Delete" button. This will also automatically delete the images associated to the Event in the public "images/events" folder.
 
-### INSCRIPTIONS page
+### BACKOFFICE - INSCRIPTIONS page
 
 In the "Inscriptions" section, the admin can manage the Artists Inscription elements. Inscriptions are shown according to the "created_at" value from newest to oldest.
 
@@ -200,7 +200,7 @@ In the "Inscriptions" section, the admin can manage the Artists Inscription elem
 ![Backoffice Edit Inscription](readme/backoffice-inscriptions-edit.png)
 
 - You can delete existing Inscriptions. A confirm message will pop-up when you hit the "Delete" button. This will also automatically delete the images associated to the Inscription in the public "images/inscriptions" folder.
-### MEMBERS page
+### BACKOFFICE - MEMBERS page
 
 In the "Members" section, the admin can manage the Member elements. Members are shown according to the "created_at" value from newest to oldest.
 
@@ -213,20 +213,20 @@ In the "Members" section, the admin can manage the Member elements. Members are 
 - You can edit existing Members content.
 
 - You can delete existing Members. A confirm message will pop-up when you hit the "Delete" button. This will also automatically delete the image associated to the Member in the public "images/members" folder.
-### GALLERY page
+### BACKOFFICE - GALLERY page
 
 In the "Gallery" section, the admin can manage the File elements. Files are shown according to the "created_at" value from newest to oldest. We learned how to upload files into Laravel thanks to this [video tutorial](https://www.youtube.com/watch?v=AL8PCThJ9c4).
 
 ![Backoffice Files](readme/backoffice-gallery-section.png)
 
-- You can create a new File associated to a certain Event. There is a select input to choose the file type but for the moment this option doesn't change anything. The pictures will be also copied to the public "/images/gallery" folder and they have a size limit of 5MB each. Pictures will be shown as a carousel in the "Gallery" section of its associated Event. 
+- You can create a new File associated to a certain Event. There is a select input to choose the file type between "Image" and "Video". Videos can be put into the system by simply pasting a valid URL. Youtube videos need to be in this format: https://www.youtube.com/embed/YoutubeID where YoutubeID is the 9 character ID of the video (eg: https://www.youtube.com/embed/9YffrCViTVk). Vimeo videos need to be in this format: https://player.vimeo.com/video/VimeoID where VimeoID is the 9 character ID of the video (eg: https://player.vimeo.com/video/577974858). The database will only store the URL. If the File is an Image, its path will be stored in the database and it will be copied to the public "/images/gallery" folder. Images have a size limit of 5MB. Both type of Files will be shown as a carousel in the "Gallery" section of its associated Event. 
 
 ![Backoffice Add Inscription](readme/backoffice-gallery-add.png)
 
-- You can edit existing Files content.
+- You can edit existing Files content if you want for example change the URL or associate the File to another Event.
 
 - You can delete existing Files. A confirm message will pop-up when you hit the "Delete" button. This will also automatically delete the file from the public "images/gallery" folder.
-### GUESTBOOK page
+### BACKOFFICE - GUESTBOOK page
 
 In the "Guestbook" section, the admin can manage the Guest Comment elements. Guest Comments are shown according to the "created_at" value from newest to oldest.
 
@@ -239,7 +239,7 @@ In the "Guestbook" section, the admin can manage the Guest Comment elements. Gue
 - You can edit existing Guest Comments content. Here you can change the "Status" of the Guest Comment between "Accepted" and "Rejected". You can also quickly accept a Guest Comment by clicking on the "Accept" button next to it. If the Guest Comment is already accepted the button will dissappear.
 
 - You can delete existing Guest Comments. A confirm message will pop-up when you hit the "Delete" button.
-### CONTACT page
+### BACKOFFICE - CONTACT page
 In the "Contact" section, the admin can manage the Contact Message elements. Contact Messages are shown according to the "created_at" value from newest to oldest.
 
 ![Backoffice Contact Messages](readme/backoffice-contact-section.png)
@@ -253,7 +253,7 @@ In the "Contact" section, the admin can manage the Contact Message elements. Con
 - You can delete existing Contact Messages. A confirm message will pop-up when you hit the "Delete" button.
 ### CKEDITOR 4
 
-We used [CKEDITOR 4](https://ckeditor.com/ckeditor-4/) to add a document styling system to the textarea inputs in every Backoffice form. In this way, users can style their texts before sending the forms to the database. This is working in the Backoffice Articles, Events, Inscriptions, Members section and in the Frontpage Event inscription form. We were able to install it thanks to this [video tutorial](https://www.youtube.com/watch?v=-QapNzUE4V0) and this [CDN](https://cdn.ckeditor.com/).
+We used [CKEDITOR 4](https://ckeditor.com/ckeditor-4/) to add a document styling system to the textarea inputs in the Backoffice forms. In this way, users can style their texts before sending the forms to the database. This is working in the Backoffice Articles, Events, Inscriptions, Members section and also in the Frontpage Event inscription form. We were able to install it thanks to this [video tutorial](https://www.youtube.com/watch?v=-QapNzUE4V0) and this [CDN](https://cdn.ckeditor.com/).
 
 ## DEPLOYMENT
 We were able to deploy our Laravel project into our [OVH](https://www.ovh.com/) web hosting thanks to this [video tutorial](https://www.youtube.com/watch?v=6g8G3YQtQt4).
