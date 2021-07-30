@@ -100,13 +100,6 @@
                                     @endforeach
                                 </select>
                             </div>
-                            <div class="w-full md:w-1/2 flex-col flex p-2">
-                                <label for="type" class="pb-2 text-gray-700 font-semibold">{{ __('File type') }}</label>
-                                <select name="type" required>
-                                    <option value="image" {{ $fileToEdit->type == "image" ? 'selected' : '' }}>{{ __('Image') }}</option>
-                                    <option value="video" {{ $fileToEdit->type == "video" ? 'selected' : '' }}>{{ __('Video') }}</option>
-                                </select>
-                            </div>
                             @endisset
                             @isset($create)
                             <div class="w-full md:w-1/2 flex-col flex p-2">
@@ -117,17 +110,17 @@
                                     @endforeach
                                 </select>
                             </div>
+                            @endisset
                             <div class="w-full md:w-1/2 flex-col flex p-2">
                                 <label for="type" class="pb-2 text-gray-700 font-semibold">{{ __('File type') }}</label>
-                                <select name="type" required>
-                                    <option value="image" selected>{{ __('Image') }}</option>
-                                    <option value="video">{{ __('Video') }}</option>
+                                <select id="select" name="type" onchange="changeFileInput()" required>
+                                    <option value="image" @if (isset($edit)) {{ $fileToEdit->type == "image" ? 'selected' : '' }} @else selected @endif >{{ __('Image') }}</option>
+                                    <option value="video" @if (isset($edit)) {{ $fileToEdit->type == "video" ? 'selected' : '' }} @endif >{{ __('Video') }}</option>
                                 </select>
                             </div>
-                            @endisset
                             <div class="w-full flex-col flex p-2">
-                                <label for="img" class="pb-2 text-gray-700 font-semibold">{{ __('Link') }}</label>
-                                <input type="file" name="img" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" @if (isset($edit)) value="{{ $fileToEdit->img_src }}" @else required @endif />
+                                <label for="img" class="pb-2 text-gray-700 font-semibold">{{ __('File') }}</label>
+                                <input id="file" name="img" class="p-2 shadow rounded-lg bg-gray-100 outline-none focus:bg-gray-200" placeholder="https://www.youtube.com/embed/AZertYUioP1" @if (isset($edit) && ($fileToEdit->type == 'video')) type="url" value="{{ $fileToEdit->img_src }}" @else type="file" required @endif />
                             </div>
                         </div>
                     </div>
@@ -140,3 +133,15 @@
         </div>
     </div>
 </x-app-layout>
+<script>
+    function changeFileInput() {
+        input = document.getElementById("file");
+        select = document.getElementById("select");
+        if(select.value == 'image') {
+            input.type="file"; 
+        }
+        else if (select.value == 'video') {
+            input.type="url";
+        }
+    }
+</script>

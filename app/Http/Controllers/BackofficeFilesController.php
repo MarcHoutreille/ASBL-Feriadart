@@ -31,7 +31,7 @@ class BackofficeFilesController extends Controller
      */
     public function create()
     {
-        $files = File::all()->sortBy('created_at');
+        $files = File::all()->sortByDesc('created_at');
         $events = Event::all()->sortBy('date_start');
         $create = true;
         return view('backoffice.files', [
@@ -49,18 +49,34 @@ class BackofficeFilesController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request, [
-            'event_id' => 'required',
-            'type' => 'required',
-            'img' => 'required|mimes:jpeg,png,jpg|max:5048',
-        ]);
-        $file = new File;
-        $file->event_id = $request->event_id;
-        $file->type = $request->type;
-        $newImage = $request->event_id . '-' . rand() . '.' . $request->img->extension();
-        $request->img->move(public_path('images/gallery'), $newImage);
-        $file->img_src = "/images/gallery/" . $newImage;
-        $file->save();
+        if ($request->type == 'image') {
+            $this->validate($request, [
+                'event_id' => 'required',
+                'type' => 'required',
+                'img' => 'required|mimes:jpeg,png,jpg|max:5048',
+            ]);
+            $file = new File;
+            $file->event_id = $request->event_id;
+            $file->type = $request->type;
+            $newImage = $request->event_id . '-' . rand() . '.' . $request->img->extension();
+            $request->img->move(public_path('images/gallery'), $newImage);
+            $file->img_src = "/images/gallery/" . $newImage;
+            $file->save();
+        }
+        
+        else if ($request->type == 'video') {
+            $this->validate($request, [
+                'event_id' => 'required',
+                'type' => 'required',
+                'img' => 'required',
+            ]);
+
+            $file = new File;
+            $file->event_id = $request->event_id;
+            $file->type = $request->type;
+            $file->img_src = $request->img;
+            $file->save();
+        }
 
         if ($request->has('front')) {
             return back()->with('success', 'Added Successfully');
@@ -90,7 +106,7 @@ class BackofficeFilesController extends Controller
      */
     public function edit($id)
     {
-        $files = File::all()->sortBy('created_at');
+        $files = File::all()->sortByDesc('created_at');
         $file = File::find($id);
         $events = Event::all()->sortBy('date_start');
         $edit = true;
@@ -116,10 +132,17 @@ class BackofficeFilesController extends Controller
         $file->type = $request->type;
         if ($request->img) {
             $oldImage = $file->img_src;
-            FileFacades::delete(public_path($oldImage));
-            $newImage = $request->event_id . '-' . rand() . '.' . $request->img->extension();
-            $request->img->move(public_path('images/gallery'), $newImage);
-            $file->img_src = '/images/gallery/' . $newImage;
+            if (FileFacades::exists(public_path($oldImage))) {
+                FileFacades::delete(public_path($oldImage));
+            }
+            if ($request->type == 'image') {
+                $newImage = $request->event_id . '-' . rand() . '.' . $request->img->extension();
+                $request->img->move(public_path('images/gallery'), $newImage);
+                $file->img_src = '/images/gallery/' . $newImage;
+            }
+            else if ($request->type == 'video') {
+                $file->img_src = $request->img;
+            }
         }
         $query = $file->save();
 
