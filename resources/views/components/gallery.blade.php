@@ -1,5 +1,9 @@
 <style>
   .glide__slide {
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     opacity: .8;
     transform: scale(0.9);
     transition: transform 0.1s ease;
@@ -10,6 +14,21 @@
     opacity: 1;
     transform: scale(1);
     transition: all 0.1s ease-in-out;
+  }
+
+  .glide__arrow, .glide__arrow:hover {
+    background-color: white;
+    border: 2px solid rgba(254, 209, 46, 1);
+    opacity: 0.9;
+    transform: translateY(100%);
+  }
+
+  .glide__arrow--left {
+    left: 0.5em;
+  }
+
+  .glide__arrow--right {
+    right: 0.5em;
   }
 </style>
 
@@ -22,7 +41,11 @@
       @foreach ($pictures as $picture)
       <li class="glide__slide">
         <!-- HERE WE PUT OUR SLIDE -->
-        <div class="flex align-center justify-center"><img class="max-h-96 rounded shadow-md cursor-pointer" src="{{ $picture->img_src}}?sig={{ $picture->id }}" alt="image" id="{{ $picture->id }}"></div>
+        @if ($picture->type == 'video')
+        <iframe class="w-full h-96 max-h-96 rounded shadow-md cursor-pointer" src="{{ $picture->img_src }}?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        @else
+        <img class="max-h-96 rounded shadow-md cursor-pointer" src="{{ $picture->img_src }}?sig={{ $picture->id }}" alt="image" id="{{ $picture->id }}">
+        @endif
         <!-- END OF SLIDE -->
       </li>
       @endforeach
@@ -46,16 +69,16 @@
     </button>
   </div>
 </div>
-<!-- Inscription Modal -->
-<div class="bg-black bg-opacity-50 absolute inset-0 h-screen justify-center hidden items-start" id="modal">
-  <div class="bg-white w-2/3 py-2 px-3 rounded shadow-xl text-gray-800 mt-3">
+<!-- IMAGE ZOOM MODAL -->
+<div class="bg-black bg-opacity-50 absolute inset-0 h-screen justify-center hidden items-start z-10" id="modal">
+  <div class="bg-white w-full md:w-2/3 text-gray-800 rounded-lg shadow-xl md:p-2 m-auto">
     <div class="flex justify-end items-center">
       <svg class="h-6 w-6 cursor-pointer p-1 hover:bg-gray-300 rounded-full" id="closeBtn" fill="currentColor" viewBox="0 0 20 20">
         <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path>
       </svg>
     </div>
-    <div class="w-full flex-col flex p-4">
-      <img id="image" src="">
+    <div class="w-full flex-col flex p-2">
+      <img class="rounded-lg" id="image" src="">
     </div>
   </div>
 </div>
