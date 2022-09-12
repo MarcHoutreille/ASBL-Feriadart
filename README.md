@@ -2,10 +2,7 @@
 
 <img src="readme/FeriaLogoGeel.png" width="120" height="120">
 
-[See the actual site!](https://feriadart.art/)
-
-The site has 4 different domain names: feriadart.org, feriadart.fr , feriadart.be and feriadart.art
-all of them are redirected to https://feriadart.art/
+[See the demo site!](https://asbl-feriadart.herokuapp.com/)
 
 The site was created for a non-profit art promoting association located in Brussels. It was made by 4 WebDev students of BeCode (campus Bruxelles). The challenge was to create a website for a real client. This particular project created in group started from scratch.
 
