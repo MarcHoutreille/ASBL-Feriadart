@@ -147,27 +147,27 @@ class DatabaseSeeder extends Seeder
 
         //Create 6 random inscriptions/artists to each random event
         Inscription::factory(6)->create([
-            'event_id' => 2,
+            'event_id' => 11,
         ]);
 
         //Create 6 random inscriptions/artists to each random event
         Inscription::factory(6)->create([
-            'event_id' => 3,
+            'event_id' => 21,
         ]);
 
         //Create 6 random inscriptions/artists to each random event
         Inscription::factory(6)->create([
-            'event_id' => 4,
+            'event_id' => 31,
         ]);
 
         //Create 6 random inscriptions/artists to each random event
         Inscription::factory(6)->create([
-            'event_id' => 5,
+            'event_id' => 41,
         ]);
 
-        //Create 6 real inscriptions/artists to real event #6
+        //Create 6 real inscriptions/artists to real event #51
         Inscription::create([
-            'event_id' => 6,
+            'event_id' => 51,
             'fname' => 'Jack',
             'lname' => 'at Night',
             'bio' =>
@@ -187,9 +187,9 @@ class DatabaseSeeder extends Seeder
             'accepted' => 1,
         ]);
 
-        //Create 6 real inscriptions/artists to real event #6
+        //Create 6 real inscriptions/artists to real event #51
         Inscription::create([
-            'event_id' => 6,
+            'event_id' => 51,
             'fname' => 'Elodie',
             'lname' => 'DK',
             'bio' =>
@@ -208,9 +208,9 @@ class DatabaseSeeder extends Seeder
             'accepted' => 1,
         ]);
 
-        //Create 6 real inscriptions/artists to real event #6
+        //Create 6 real inscriptions/artists to real event #51
         Inscription::create([
-            'event_id' => 6,
+            'event_id' => 51,
             'fname' => 'Pacôme',
             'lname' => 'Le Rouge',
             'bio' =>
@@ -226,9 +226,9 @@ class DatabaseSeeder extends Seeder
             'accepted' => 1,
         ]);
 
-        //Create 6 real inscriptions/artists to real event #6
+        //Create 6 real inscriptions/artists to real event #51
         Inscription::create([
-            'event_id' => 6,
+            'event_id' => 51,
             'fname' => 'Camille',
             'lname' => 'Toussaint',
             'bio' =>
@@ -243,9 +243,9 @@ class DatabaseSeeder extends Seeder
             'accepted' => 1,
         ]);
 
-        //Create 6 real inscriptions/artists to real event #6
+        //Create 6 real inscriptions/artists to real event #51
         Inscription::create([
-            'event_id' => 6,
+            'event_id' => 51,
             'fname' => 'Benjamin',
             'lname' => 'Marc',
             'bio' =>
@@ -259,9 +259,9 @@ class DatabaseSeeder extends Seeder
             'accepted' => 1,
         ]);
 
-        //Create 6 real inscriptions/artists to real event #6
+        //Create 6 real inscriptions/artists to real event #51
         Inscription::create([
-            'event_id' => 6,
+            'event_id' => 51,
             'fname' => 'Coline',
             'lname' => 'Cornélis',
             'bio' =>
@@ -277,7 +277,7 @@ class DatabaseSeeder extends Seeder
         ]);
 
         Inscription::create([
-            'event_id' => 6,
+            'event_id' => 51,
             'fname' => 'Robbert',
             'lname' => 'K',
             'bio' => 'Afgestuurd aan de AVBK richting Schilderkunst, ik schilder meestal met olie op doek of op hout, soms experimenteer ik ook met andere media',
@@ -292,7 +292,7 @@ class DatabaseSeeder extends Seeder
         ]);
 
         Inscription::create([
-            'event_id' => 6,
+            'event_id' => 51,
             'fname' => 'R.',
             'lname' => 'Klockaerts',
             'bio' => 'Schilder meestal met olie op doek, soms experimenteer ik ook met andere media',
@@ -309,7 +309,7 @@ class DatabaseSeeder extends Seeder
         ]);
 
         Inscription::create([
-            'event_id' => 6,
+            'event_id' => 51,
             'fname' => 'Robbert',
             'lname' => 'Klockaerts',
             'bio' => 'Afgestuurd aan de AVBK richting Schilderkunst, ik schilder meestal met olie op doek of op hout, soms experimenteer ik ook met andere media',
@@ -327,65 +327,65 @@ class DatabaseSeeder extends Seeder
             'event_id' => 1,
         ]);
 
-        //Create 5 random pictures to random event #2
+        //Create 5 random pictures to random event #11
         File::factory(5)->create([
-            'event_id' => 2,
+            'event_id' => 11,
         ]);
 
-        //Create 5 random pictures to random event #3
+        //Create 5 random pictures to random event #21
         File::factory(5)->create([
-            'event_id' => 3,
+            'event_id' => 21,
         ]);
 
-        //Create 5 random pictures to random event #4
+        //Create 5 random pictures to random event #31
         File::factory(5)->create([
-            'event_id' => 4,
+            'event_id' => 31,
         ]);
 
-        //Create 5 random pictures to random event #5
+        //Create 5 random pictures to random event #41
         File::factory(5)->create([
-            'event_id' => 5,
+            'event_id' => 41,
         ]);
 
-        //Create real picture to real event #6
+        //Create real picture to real event #51
         File::create([
-            'event_id' => 6,
+            'event_id' => 51,
             'type' => "image",
             'img_src' => "/images/gallery/Feriadart0.png",
 
         ]);
 
-        //Create real picture to real event #6
+        //Create real picture to real event #51
         File::create([
-            'event_id' => 6,
+            'event_id' => 51,
             'type' => "image",
             'img_src' => "/images/gallery/Feriadart1.png",
         ]);
 
-        //Create real picture to real event #6
+        //Create real picture to real event #51
         File::create([
-            'event_id' => 6,
+            'event_id' => 51,
             'type' => "image",
             'img_src' => "/images/gallery/Feriadart2.png",
         ]);
 
-        //Create real picture to real event #6
+        //Create real picture to real event #51
         File::create([
-            'event_id' => 6,
+            'event_id' => 51,
             'type' => "image",
             'img_src' => "/images/gallery/Feriadart3.png",
         ]);
 
-        //Create real picture to real event #6
+        //Create real picture to real event #51
         File::create([
-            'event_id' => 6,
+            'event_id' => 51,
             'type' => "image",
             'img_src' => "/images/gallery/Feriadart4.png",
         ]);
 
-        //Create real picture to real event #6
+        //Create real picture to real event #51
         File::create([
-            'event_id' => 6,
+            'event_id' => 51,
             'type' => "image",
             'img_src' => "/images/gallery/Feriadart5.png",
         ]);
